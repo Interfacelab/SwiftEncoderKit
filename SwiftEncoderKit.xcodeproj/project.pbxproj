@@ -112,6 +112,9 @@
 		FF0B5D5C1C3D3F8F00A15C56 /* ConstCMTimeRangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D581C3D3F8F00A15C56 /* ConstCMTimeRangeModel.swift */; };
 		FF0B5D5F1C3D3FCF00A15C56 /* CMTimeMappingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D5D1C3D3FCF00A15C56 /* CMTimeMappingModel.swift */; };
 		FF0B5D601C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D5E1C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift */; };
+		FF0B5D641C3D402A00A15C56 /* CATransform3DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D621C3D402A00A15C56 /* CATransform3DModel.swift */; };
+		FF0B5D651C3D402A00A15C56 /* ConstCATransform3DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D631C3D402A00A15C56 /* ConstCATransform3DModel.swift */; };
+		FF0B5D671C3D403C00A15C56 /* QuartzCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D661C3D403C00A15C56 /* QuartzCoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +222,9 @@
 		FF0B5D581C3D3F8F00A15C56 /* ConstCMTimeRangeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCMTimeRangeModel.swift; sourceTree = "<group>"; };
 		FF0B5D5D1C3D3FCF00A15C56 /* CMTimeMappingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeMappingModel.swift; sourceTree = "<group>"; };
 		FF0B5D5E1C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCMTimeMappingModel.swift; sourceTree = "<group>"; };
+		FF0B5D621C3D402A00A15C56 /* CATransform3DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3DModel.swift; sourceTree = "<group>"; };
+		FF0B5D631C3D402A00A15C56 /* ConstCATransform3DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCATransform3DModel.swift; sourceTree = "<group>"; };
+		FF0B5D661C3D403C00A15C56 /* QuartzCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzCoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +326,7 @@
 		FF0B5C581C3CF99D00A15C56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5D611C3D402A00A15C56 /* Core Animation */,
 				FF0B5D541C3D3F8F00A15C56 /* Core Media */,
 				FF0B5D231C3D3C8800A15C56 /* Enum */,
 				FF0B5CEB1C3D39E200A15C56 /* API */,
@@ -447,6 +454,7 @@
 		FF0B5CD01C3D386600A15C56 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5D661C3D403C00A15C56 /* QuartzCoreTests.swift */,
 				FF0B5D521C3D3F4000A15C56 /* CoreMediaTests.swift */,
 				FF0B5D2D1C3D3CF400A15C56 /* EnumArrayTests.swift */,
 				FF0B5D2E1C3D3CF400A15C56 /* EnumDictionaryTests.swift */,
@@ -506,6 +514,15 @@
 				FF0B5D581C3D3F8F00A15C56 /* ConstCMTimeRangeModel.swift */,
 			);
 			path = "Core Media";
+			sourceTree = "<group>";
+		};
+		FF0B5D611C3D402A00A15C56 /* Core Animation */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5D621C3D402A00A15C56 /* CATransform3DModel.swift */,
+				FF0B5D631C3D402A00A15C56 /* ConstCATransform3DModel.swift */,
+			);
+			path = "Core Animation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -664,6 +681,7 @@
 				FF0B5C8B1C3CFA8F00A15C56 /* ConstUnsignedIntegerArrayModel.swift in Sources */,
 				FF0B5D0B1C3D3BA800A15C56 /* ConstEncodableModel.swift in Sources */,
 				FF0B5C8D1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift in Sources */,
+				FF0B5D641C3D402A00A15C56 /* CATransform3DModel.swift in Sources */,
 				FF0B5D4A1C3D3F1A00A15C56 /* QuartzCoreEncoding.swift in Sources */,
 				FF0B5CE71C3D398A00A15C56 /* NSCodingEncoding.swift in Sources */,
 				FF0B5D1D1C3D3C6A00A15C56 /* EnumEncoding.swift in Sources */,
@@ -705,6 +723,7 @@
 				FF0B5CD71C3D386600A15C56 /* BoolTests.swift in Sources */,
 				FF0B5D271C3D3C8800A15C56 /* EnumModel.swift in Sources */,
 				FF0B5D161C3D3BDA00A15C56 /* EncodableTests.swift in Sources */,
+				FF0B5D671C3D403C00A15C56 /* QuartzCoreTests.swift in Sources */,
 				FF0B5CFA1C3D3B1F00A15C56 /* ConstStringDictionaryModel.swift in Sources */,
 				FF0B5CA41C3D359E00A15C56 /* ConstBoolArrayModel.swift in Sources */,
 				FF0B5CB51C3D362500A15C56 /* FloatArrayModel.swift in Sources */,
@@ -716,6 +735,7 @@
 				FF0B5C881C3CFA8F00A15C56 /* SignedIntegerModel.swift in Sources */,
 				FF0B5D091C3D3BA800A15C56 /* ConstEncodableArrayModel.swift in Sources */,
 				FF0B5CFF1C3D3B5B00A15C56 /* ConstBoolDictionaryModel.swift in Sources */,
+				FF0B5D651C3D402A00A15C56 /* ConstCATransform3DModel.swift in Sources */,
 				FF0B5C851C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift in Sources */,
 				FF0B5CBE1C3D366D00A15C56 /* StringArrayModel.swift in Sources */,
 				FF0B5CDF1C3D38B500A15C56 /* NSCodingReference.swift in Sources */,
