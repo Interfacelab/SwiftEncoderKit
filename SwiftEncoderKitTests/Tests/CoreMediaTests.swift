@@ -316,4 +316,147 @@ class CoreMediaTests: XCTestCase {
 
     }
 
+    func testCMTimeMappingEncodingDecoding() {
+        let fileName = "/tmp/cmtimemapping.plist"
+
+        let model = CMTimeMappingModel()
+
+        let source = CMTimeRange(start: CMTime(seconds: 12.0, preferredTimescale: 3000),
+            duration: CMTime(seconds: 28.0, preferredTimescale: 3000))
+
+        let target = CMTimeRange(start: CMTime(seconds: 12.0, preferredTimescale: 3000),
+            duration: CMTime(seconds: 56.0, preferredTimescale: 3000))
+
+        model.timeMap = CMTimeMapping(source: source, target: target)
+        model.timeMapOpt = CMTimeMapping(source: target, target: source)
+        model.timeMapOptNil = nil
+
+        model.timeMapA = [CMTimeMapping(source: source, target: target),
+            CMTimeMapping(source: target, target: source)]
+        model.timeMapOptA = [CMTimeMapping(source: target, target: source),
+            CMTimeMapping(source: source, target: target)]
+        model.timeMapOptNilA = nil
+
+        model.timeMapD = ["a": CMTimeMapping(source: source, target: target),
+            "b": CMTimeMapping(source: target, target: source)]
+        model.timeMapOptD = ["c": CMTimeMapping(source: target, target: source),
+            "d": CMTimeMapping(source: source, target: target)]
+        model.timeMapOptNilD = nil
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = CMTimeMappingModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.timeMap.source == source)
+            XCTAssert(reModel!.timeMap.target == target)
+            XCTAssert(reModel!.timeMapOpt!.source == target)
+            XCTAssert(reModel!.timeMapOpt!.target == source)
+            XCTAssert(reModel!.timeMapOptNil == nil)
+
+            XCTAssert(reModel!.timeMapA[0].source == source)
+            XCTAssert(reModel!.timeMapA[0].target == target)
+            XCTAssert(reModel!.timeMapA[1].source == target)
+            XCTAssert(reModel!.timeMapA[1].target == source)
+
+            XCTAssert(reModel!.timeMapOptA![0].source == target)
+            XCTAssert(reModel!.timeMapOptA![0].target == source)
+            XCTAssert(reModel!.timeMapOptA![1].source == source)
+            XCTAssert(reModel!.timeMapOptA![1].target == target)
+
+            XCTAssert(reModel!.timeMapOptNilA == nil)
+
+            XCTAssert(reModel!.timeMapD["a"]!.source == source)
+            XCTAssert(reModel!.timeMapD["a"]!.target == target)
+            XCTAssert(reModel!.timeMapD["b"]!.source == target)
+            XCTAssert(reModel!.timeMapD["b"]!.target == source)
+
+            XCTAssert(reModel!.timeMapOptD!["c"]!.source == target)
+            XCTAssert(reModel!.timeMapOptD!["c"]!.target == source)
+            XCTAssert(reModel!.timeMapOptD!["d"]!.source == source)
+            XCTAssert(reModel!.timeMapOptD!["d"]!.target == target)
+
+            XCTAssert(reModel!.timeMapOptNilD == nil)
+        }
+    }
+
+    func testConstCMTimeMappingEncodingDecoding() {
+        let fileName = "/tmp/const-cmtimemapping.plist"
+
+
+        let source = CMTimeRange(start: CMTime(seconds: 12.0, preferredTimescale: 3000),
+            duration: CMTime(seconds: 28.0, preferredTimescale: 3000))
+
+        let target = CMTimeRange(start: CMTime(seconds: 12.0, preferredTimescale: 3000),
+            duration: CMTime(seconds: 56.0, preferredTimescale: 3000))
+
+        let timeMap = CMTimeMapping(source: source, target: target)
+        let timeMapOpt = CMTimeMapping(source: target, target: source)
+
+        let timeMapA = [CMTimeMapping(source: source, target: target),
+            CMTimeMapping(source: target, target: source)]
+        let timeMapOptA = [CMTimeMapping(source: target, target: source),
+            CMTimeMapping(source: source, target: target)]
+
+        let timeMapD = ["a": CMTimeMapping(source: source, target: target),
+            "b": CMTimeMapping(source: target, target: source)]
+        let timeMapOptD = ["c": CMTimeMapping(source: target, target: source),
+            "d": CMTimeMapping(source: source, target: target)]
+
+        let model = ConstCMTimeMappingModel(timeMap: timeMap,
+            timeMapOpt: timeMapOpt,
+            timeMapOptNil: nil,
+            timeMapA: timeMapA,
+            timeMapOptA: timeMapOptA,
+            timeMapOptNilA: nil,
+            timeMapD: timeMapD,
+            timeMapOptD: timeMapOptD,
+            timeMapOptNilD: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstCMTimeMappingModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.timeMap.source == source)
+            XCTAssert(reModel!.timeMap.target == target)
+            XCTAssert(reModel!.timeMapOpt!.source == target)
+            XCTAssert(reModel!.timeMapOpt!.target == source)
+            XCTAssert(reModel!.timeMapOptNil == nil)
+
+            XCTAssert(reModel!.timeMapA[0].source == source)
+            XCTAssert(reModel!.timeMapA[0].target == target)
+            XCTAssert(reModel!.timeMapA[1].source == target)
+            XCTAssert(reModel!.timeMapA[1].target == source)
+
+            XCTAssert(reModel!.timeMapOptA![0].source == target)
+            XCTAssert(reModel!.timeMapOptA![0].target == source)
+            XCTAssert(reModel!.timeMapOptA![1].source == source)
+            XCTAssert(reModel!.timeMapOptA![1].target == target)
+
+            XCTAssert(reModel!.timeMapOptNilA == nil)
+
+            XCTAssert(reModel!.timeMapD["a"]!.source == source)
+            XCTAssert(reModel!.timeMapD["a"]!.target == target)
+            XCTAssert(reModel!.timeMapD["b"]!.source == target)
+            XCTAssert(reModel!.timeMapD["b"]!.target == source)
+
+            XCTAssert(reModel!.timeMapOptD!["c"]!.source == target)
+            XCTAssert(reModel!.timeMapOptD!["c"]!.target == source)
+            XCTAssert(reModel!.timeMapOptD!["d"]!.source == source)
+            XCTAssert(reModel!.timeMapOptD!["d"]!.target == target)
+            
+            XCTAssert(reModel!.timeMapOptNilD == nil)
+        }
+    }
 }

@@ -110,6 +110,8 @@
 		FF0B5D5A1C3D3F8F00A15C56 /* CMTimeRangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D561C3D3F8F00A15C56 /* CMTimeRangeModel.swift */; };
 		FF0B5D5B1C3D3F8F00A15C56 /* ConstCMTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D571C3D3F8F00A15C56 /* ConstCMTimeModel.swift */; };
 		FF0B5D5C1C3D3F8F00A15C56 /* ConstCMTimeRangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D581C3D3F8F00A15C56 /* ConstCMTimeRangeModel.swift */; };
+		FF0B5D5F1C3D3FCF00A15C56 /* CMTimeMappingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D5D1C3D3FCF00A15C56 /* CMTimeMappingModel.swift */; };
+		FF0B5D601C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D5E1C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +217,8 @@
 		FF0B5D561C3D3F8F00A15C56 /* CMTimeRangeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeRangeModel.swift; sourceTree = "<group>"; };
 		FF0B5D571C3D3F8F00A15C56 /* ConstCMTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCMTimeModel.swift; sourceTree = "<group>"; };
 		FF0B5D581C3D3F8F00A15C56 /* ConstCMTimeRangeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCMTimeRangeModel.swift; sourceTree = "<group>"; };
+		FF0B5D5D1C3D3FCF00A15C56 /* CMTimeMappingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeMappingModel.swift; sourceTree = "<group>"; };
+		FF0B5D5E1C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCMTimeMappingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -494,6 +498,8 @@
 		FF0B5D541C3D3F8F00A15C56 /* Core Media */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5D5D1C3D3FCF00A15C56 /* CMTimeMappingModel.swift */,
+				FF0B5D5E1C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift */,
 				FF0B5D551C3D3F8F00A15C56 /* CMTimeModel.swift */,
 				FF0B5D561C3D3F8F00A15C56 /* CMTimeRangeModel.swift */,
 				FF0B5D571C3D3F8F00A15C56 /* ConstCMTimeModel.swift */,
@@ -682,6 +688,7 @@
 				FF0B5CCA1C3D36FD00A15C56 /* NSCodingArrayModel.swift in Sources */,
 				FF0B5C871C3CFA8F00A15C56 /* SignedIntegerArrayModel.swift in Sources */,
 				FF0B5C6E1C3CF9E900A15C56 /* SignedIntegerEncoding.swift in Sources */,
+				FF0B5D5F1C3D3FCF00A15C56 /* CMTimeMappingModel.swift in Sources */,
 				FF0B5D381C3D3D0800A15C56 /* ConstEnumModel.swift in Sources */,
 				FF0B5CD81C3D386600A15C56 /* FloatTests.swift in Sources */,
 				FF0B5CBD1C3D366D00A15C56 /* ConstStringModel.swift in Sources */,
@@ -690,6 +697,7 @@
 				FF0B5D111C3D3BA800A15C56 /* EncodableSize.swift in Sources */,
 				FF0B5C3D1C3CF63D00A15C56 /* Encodable.swift in Sources */,
 				FF0B5CA51C3D359E00A15C56 /* ConstBoolModel.swift in Sources */,
+				FF0B5D601C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift in Sources */,
 				FF0B5CC81C3D36FD00A15C56 /* ConstNSCodingArrayModel.swift in Sources */,
 				FF0B5D2F1C3D3CF400A15C56 /* EnumArrayTests.swift in Sources */,
 				FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
