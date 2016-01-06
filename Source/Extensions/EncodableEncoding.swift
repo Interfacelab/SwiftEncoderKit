@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EncodableExtension {}
+protocol EncodableEncoding {}
 
 // MARK: Encodable values
 
@@ -99,7 +99,7 @@ func <-- <T: Encodable>(inout left: [String: T]?, right: Decoder) {
 
 // MARK: Encoder
 
-extension Encoder : EncodableExtension {
+extension Encoder : EncodableEncoding {
     func addEncodable(encodable: Encodable?, key: String?) {
         guard let encodableObj = encodable else {
             if key == nil {
@@ -179,7 +179,7 @@ extension Encoder : EncodableExtension {
 
 // MARK: Decoder
 
-extension Decoder : EncodableExtension {
+extension Decoder : EncodableEncoding {
     func encodable<T: Encodable>(key: String?) -> T? {
         let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? [String: AnyObject]
         guard val != nil else {

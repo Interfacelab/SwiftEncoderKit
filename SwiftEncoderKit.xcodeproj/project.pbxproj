@@ -84,9 +84,8 @@
 		FF0B5D0F1C3D3BA800A15C56 /* EncodablePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D061C3D3BA800A15C56 /* EncodablePoint.swift */; };
 		FF0B5D101C3D3BA800A15C56 /* EncodableRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D071C3D3BA800A15C56 /* EncodableRect.swift */; };
 		FF0B5D111C3D3BA800A15C56 /* EncodableSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D081C3D3BA800A15C56 /* EncodableSize.swift */; };
-		FF0B5D131C3D3BCB00A15C56 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D121C3D3BCB00A15C56 /* EncodableExtension.swift */; };
-		FF0B5D141C3D3BCE00A15C56 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D121C3D3BCB00A15C56 /* EncodableExtension.swift */; };
 		FF0B5D161C3D3BDA00A15C56 /* EncodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D151C3D3BDA00A15C56 /* EncodableTests.swift */; };
+		FF0B5D181C3D3C1C00A15C56 /* EncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D171C3D3C1C00A15C56 /* EncodableEncoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,8 +170,8 @@
 		FF0B5D061C3D3BA800A15C56 /* EncodablePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodablePoint.swift; sourceTree = "<group>"; };
 		FF0B5D071C3D3BA800A15C56 /* EncodableRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableRect.swift; sourceTree = "<group>"; };
 		FF0B5D081C3D3BA800A15C56 /* EncodableSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableSize.swift; sourceTree = "<group>"; };
-		FF0B5D121C3D3BCB00A15C56 /* EncodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		FF0B5D151C3D3BDA00A15C56 /* EncodableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableTests.swift; sourceTree = "<group>"; };
+		FF0B5D171C3D3C1C00A15C56 /* EncodableEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableEncoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,7 +247,7 @@
 		FF0B5C4A1C3CF84E00A15C56 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FF0B5D121C3D3BCB00A15C56 /* EncodableExtension.swift */,
+				FF0B5D171C3D3C1C00A15C56 /* EncodableEncoding.swift */,
 				FF0B5CE61C3D398A00A15C56 /* NSCodingEncoding.swift */,
 				FF0B5C931C3CFAC100A15C56 /* BoolEncoding.swift */,
 				FF0B5C951C3CFAC100A15C56 /* FloatEncoding.swift */,
@@ -545,7 +544,6 @@
 				FF0B5C3E1C3CF63D00A15C56 /* Encoder.swift in Sources */,
 				FF0B5CE81C3D398F00A15C56 /* NSCodingEncoding.swift in Sources */,
 				FF0B5CA81C3D35AF00A15C56 /* FloatEncoding.swift in Sources */,
-				FF0B5D141C3D3BCE00A15C56 /* EncodableExtension.swift in Sources */,
 				FF0B5C3C1C3CF63D00A15C56 /* Encodable.swift in Sources */,
 				FF0B5CAA1C3D35B300A15C56 /* SignedIntegerEncoding.swift in Sources */,
 				FF0B5CAB1C3D35B600A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
@@ -567,6 +565,7 @@
 				FF0B5CCE1C3D37FF00A15C56 /* ConstSignedIntegerDictionaryModel.swift in Sources */,
 				FF0B5CB31C3D362500A15C56 /* ConstFloatArrayModel.swift in Sources */,
 				FF0B5CC91C3D36FD00A15C56 /* ConstNSCodingModel.swift in Sources */,
+				FF0B5D181C3D3C1C00A15C56 /* EncodableEncoding.swift in Sources */,
 				FF0B5CD91C3D386600A15C56 /* NSCodingTests.swift in Sources */,
 				FF0B5C971C3CFAC100A15C56 /* BoolEncoding.swift in Sources */,
 				FF0B5CCF1C3D37FF00A15C56 /* SignedIntegerDictionaryModel.swift in Sources */,
@@ -602,7 +601,6 @@
 				FF0B5D111C3D3BA800A15C56 /* EncodableSize.swift in Sources */,
 				FF0B5C3D1C3CF63D00A15C56 /* Encodable.swift in Sources */,
 				FF0B5CA51C3D359E00A15C56 /* ConstBoolModel.swift in Sources */,
-				FF0B5D131C3D3BCB00A15C56 /* EncodableExtension.swift in Sources */,
 				FF0B5CC81C3D36FD00A15C56 /* ConstNSCodingArrayModel.swift in Sources */,
 				FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
 				FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */,
