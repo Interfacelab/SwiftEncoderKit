@@ -21,6 +21,10 @@ class Decoder {
         }
     }
 
+    init(dict: [String: AnyObject]) {
+        _data = dict
+    }
+
     subscript(key: String) -> Decoder {
         _currentKey = key
         return self

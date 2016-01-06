@@ -28,6 +28,7 @@
 		FF0B5C511C3CF85200A15C56 /* BasicTypesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4B1C3CF84E00A15C56 /* BasicTypesExtension.swift */; };
 		FF0B5C521C3CF85400A15C56 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */; };
 		FF0B5C531C3CF85600A15C56 /* NSCodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */; };
+		FF0B5C551C3CF8BF00A15C56 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		FF0B5C4B1C3CF84E00A15C56 /* BasicTypesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTypesExtension.swift; sourceTree = "<group>"; };
 		FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingExtension.swift; sourceTree = "<group>"; };
+		FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		FF0B5C4A1C3CF84E00A15C56 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */,
 				FF0B5C4B1C3CF84E00A15C56 /* BasicTypesExtension.swift */,
 				FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */,
 				FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */,
@@ -278,6 +281,7 @@
 				FF0B5C4E1C3CF84E00A15C56 /* BasicTypesExtension.swift in Sources */,
 				FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */,
 				FF0B5C4F1C3CF84E00A15C56 /* EncodableExtension.swift in Sources */,
+				FF0B5C551C3CF8BF00A15C56 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
