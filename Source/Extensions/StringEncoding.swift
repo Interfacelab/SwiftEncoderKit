@@ -17,7 +17,7 @@ func --> (left:String, right: Encoder) {
 }
 
 func <-- (inout left:String, right: Decoder) {
-    guard let rightValue = right.getStringValue() else {
+    guard let rightValue = right.string() else {
         return
     }
 
@@ -31,7 +31,7 @@ func --> (left:String?, right: Encoder) {
 }
 
 func <-- (inout left:String?, right: Decoder) {
-    guard let rightValue = right.getStringValue() else {
+    guard let rightValue = right.string() else {
         left = nil
         return
     }
@@ -46,7 +46,7 @@ func --> (left:Array<String>, right: Encoder) {
 }
 
 func <-- (inout left:Array<String>, right: Decoder) {
-    guard let rightValue = right.getStringArray() else {
+    guard let rightValue = right.stringArray() else {
         return
     }
 
@@ -60,7 +60,7 @@ func --> (left:Array<String>?, right: Encoder) {
 }
 
 func <-- (inout left:Array<String>?, right: Decoder) {
-    guard let rightValue = right.getStringArray() else {
+    guard let rightValue = right.stringArray() else {
         left = nil
         return
     }
@@ -92,7 +92,7 @@ extension Encoder : StringEncoding {
 // MARK: Decoder
 
 extension Decoder : StringEncoding {
-    func getStringValue() -> String? {
+    func string() -> String? {
         guard let val = valueForCurrentKey() as? String else {
             return nil
         }
@@ -100,7 +100,7 @@ extension Decoder : StringEncoding {
         return val
     }
 
-    func getStringArray() -> Array<String>? {
+    func stringArray() -> Array<String>? {
         guard let val = valueForCurrentKey() as? Array<String> else {
             return nil
         }
@@ -109,7 +109,7 @@ extension Decoder : StringEncoding {
         return val
     }
     
-    func getStringNamed(key: String) -> String? {
+    func string(key: String) -> String? {
         guard let val = valueForKey(key) as? String else {
             return nil
         }
@@ -117,7 +117,7 @@ extension Decoder : StringEncoding {
         return val
     }
     
-    func getStringArrayNamed(key: String) -> Array<String>? {
+    func stringArray(key: String) -> Array<String>? {
         guard let val = valueForKey(key) as? Array<String> else {
             return nil
         }
