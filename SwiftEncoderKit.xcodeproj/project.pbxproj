@@ -9,26 +9,29 @@
 /* Begin PBXBuildFile section */
 		FF0B5C131C3CF3CA00A15C56 /* SwiftEncoderKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0B5C081C3CF3C900A15C56 /* SwiftEncoderKit.framework */; };
 		FF0B5C271C3CF40C00A15C56 /* SwiftEncoderKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0B5C241C3CF40C00A15C56 /* SwiftEncoderKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF0B5C2C1C3CF63200A15C56 /* OtherTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C281C3CF63200A15C56 /* OtherTestModel.swift */; };
-		FF0B5C2D1C3CF63200A15C56 /* Shave_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C291C3CF63200A15C56 /* Shave_iOSTests.swift */; };
-		FF0B5C2F1C3CF63200A15C56 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C2B1C3CF63200A15C56 /* TestModel.swift */; };
 		FF0B5C381C3CF63D00A15C56 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C301C3CF63D00A15C56 /* Decoder.swift */; };
 		FF0B5C391C3CF63D00A15C56 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C301C3CF63D00A15C56 /* Decoder.swift */; };
 		FF0B5C3C1C3CF63D00A15C56 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C321C3CF63D00A15C56 /* Encodable.swift */; };
 		FF0B5C3D1C3CF63D00A15C56 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C321C3CF63D00A15C56 /* Encodable.swift */; };
 		FF0B5C3E1C3CF63D00A15C56 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C361C3CF63D00A15C56 /* Encoder.swift */; };
 		FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C361C3CF63D00A15C56 /* Encoder.swift */; };
-		FF0B5C431C3CF75C00A15C56 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF0B5C421C3CF75C00A15C56 /* test-image.jpg */; };
-		FF0B5C471C3CF76C00A15C56 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C441C3CF76C00A15C56 /* ImageModel.swift */; };
-		FF0B5C481C3CF76C00A15C56 /* SignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C451C3CF76C00A15C56 /* SignedIntegerModel.swift */; };
-		FF0B5C491C3CF76C00A15C56 /* UnsignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C461C3CF76C00A15C56 /* UnsignedIntegerModel.swift */; };
-		FF0B5C4E1C3CF84E00A15C56 /* BasicTypesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4B1C3CF84E00A15C56 /* BasicTypesExtension.swift */; };
 		FF0B5C4F1C3CF84E00A15C56 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */; };
 		FF0B5C501C3CF84E00A15C56 /* NSCodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */; };
-		FF0B5C511C3CF85200A15C56 /* BasicTypesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4B1C3CF84E00A15C56 /* BasicTypesExtension.swift */; };
 		FF0B5C521C3CF85400A15C56 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */; };
 		FF0B5C531C3CF85600A15C56 /* NSCodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */; };
 		FF0B5C551C3CF8BF00A15C56 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */; };
+		FF0B5C611C3CF99D00A15C56 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF0B5C571C3CF99D00A15C56 /* test-image.jpg */; };
+		FF0B5C621C3CF99D00A15C56 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C591C3CF99D00A15C56 /* ImageModel.swift */; };
+		FF0B5C631C3CF99D00A15C56 /* OtherTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5A1C3CF99D00A15C56 /* OtherTestModel.swift */; };
+		FF0B5C641C3CF99D00A15C56 /* SignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5B1C3CF99D00A15C56 /* SignedIntegerModel.swift */; };
+		FF0B5C651C3CF99D00A15C56 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5C1C3CF99D00A15C56 /* TestModel.swift */; };
+		FF0B5C661C3CF99D00A15C56 /* UnsignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5D1C3CF99D00A15C56 /* UnsignedIntegerModel.swift */; };
+		FF0B5C671C3CF99D00A15C56 /* NSCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5E1C3CF99D00A15C56 /* NSCodingTests.swift */; };
+		FF0B5C681C3CF99D00A15C56 /* SignedIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5F1C3CF99D00A15C56 /* SignedIntegerTests.swift */; };
+		FF0B5C691C3CF99D00A15C56 /* UnsignedIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C601C3CF99D00A15C56 /* UnsignedIntegerTests.swift */; };
+		FF0B5C6D1C3CF9E900A15C56 /* BasicTypesEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6A1C3CF9E900A15C56 /* BasicTypesEncoding.swift */; };
+		FF0B5C6E1C3CF9E900A15C56 /* SignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6B1C3CF9E900A15C56 /* SignedIntegerEncoding.swift */; };
+		FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6C1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,20 +50,24 @@
 		FF0B5C191C3CF3CA00A15C56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF0B5C231C3CF40C00A15C56 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF0B5C241C3CF40C00A15C56 /* SwiftEncoderKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftEncoderKit.h; sourceTree = "<group>"; };
-		FF0B5C281C3CF63200A15C56 /* OtherTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherTestModel.swift; sourceTree = "<group>"; };
-		FF0B5C291C3CF63200A15C56 /* Shave_iOSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shave_iOSTests.swift; sourceTree = "<group>"; };
-		FF0B5C2B1C3CF63200A15C56 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		FF0B5C301C3CF63D00A15C56 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		FF0B5C321C3CF63D00A15C56 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		FF0B5C361C3CF63D00A15C56 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
-		FF0B5C421C3CF75C00A15C56 /* test-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test-image.jpg"; sourceTree = "<group>"; };
-		FF0B5C441C3CF76C00A15C56 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
-		FF0B5C451C3CF76C00A15C56 /* SignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerModel.swift; sourceTree = "<group>"; };
-		FF0B5C461C3CF76C00A15C56 /* UnsignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerModel.swift; sourceTree = "<group>"; };
-		FF0B5C4B1C3CF84E00A15C56 /* BasicTypesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTypesExtension.swift; sourceTree = "<group>"; };
 		FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingExtension.swift; sourceTree = "<group>"; };
 		FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		FF0B5C571C3CF99D00A15C56 /* test-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test-image.jpg"; sourceTree = "<group>"; };
+		FF0B5C591C3CF99D00A15C56 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		FF0B5C5A1C3CF99D00A15C56 /* OtherTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherTestModel.swift; sourceTree = "<group>"; };
+		FF0B5C5B1C3CF99D00A15C56 /* SignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerModel.swift; sourceTree = "<group>"; };
+		FF0B5C5C1C3CF99D00A15C56 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		FF0B5C5D1C3CF99D00A15C56 /* UnsignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerModel.swift; sourceTree = "<group>"; };
+		FF0B5C5E1C3CF99D00A15C56 /* NSCodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingTests.swift; sourceTree = "<group>"; };
+		FF0B5C5F1C3CF99D00A15C56 /* SignedIntegerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerTests.swift; sourceTree = "<group>"; };
+		FF0B5C601C3CF99D00A15C56 /* UnsignedIntegerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerTests.swift; sourceTree = "<group>"; };
+		FF0B5C6A1C3CF9E900A15C56 /* BasicTypesEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTypesEncoding.swift; sourceTree = "<group>"; };
+		FF0B5C6B1C3CF9E900A15C56 /* SignedIntegerEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerEncoding.swift; sourceTree = "<group>"; };
+		FF0B5C6C1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerEncoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +111,11 @@
 		FF0B5C161C3CF3CA00A15C56 /* SwiftEncoderKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				FF0B5C441C3CF76C00A15C56 /* ImageModel.swift */,
-				FF0B5C451C3CF76C00A15C56 /* SignedIntegerModel.swift */,
-				FF0B5C461C3CF76C00A15C56 /* UnsignedIntegerModel.swift */,
-				FF0B5C421C3CF75C00A15C56 /* test-image.jpg */,
-				FF0B5C281C3CF63200A15C56 /* OtherTestModel.swift */,
-				FF0B5C291C3CF63200A15C56 /* Shave_iOSTests.swift */,
-				FF0B5C2B1C3CF63200A15C56 /* TestModel.swift */,
+				FF0B5C561C3CF99D00A15C56 /* Resources */,
+				FF0B5C581C3CF99D00A15C56 /* Models */,
+				FF0B5C5E1C3CF99D00A15C56 /* NSCodingTests.swift */,
+				FF0B5C5F1C3CF99D00A15C56 /* SignedIntegerTests.swift */,
+				FF0B5C601C3CF99D00A15C56 /* UnsignedIntegerTests.swift */,
 				FF0B5C191C3CF3CA00A15C56 /* Info.plist */,
 			);
 			path = SwiftEncoderKitTests;
@@ -139,12 +144,34 @@
 		FF0B5C4A1C3CF84E00A15C56 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5C6A1C3CF9E900A15C56 /* BasicTypesEncoding.swift */,
+				FF0B5C6B1C3CF9E900A15C56 /* SignedIntegerEncoding.swift */,
+				FF0B5C6C1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift */,
 				FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */,
-				FF0B5C4B1C3CF84E00A15C56 /* BasicTypesExtension.swift */,
 				FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */,
 				FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF0B5C561C3CF99D00A15C56 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5C571C3CF99D00A15C56 /* test-image.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FF0B5C581C3CF99D00A15C56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5C591C3CF99D00A15C56 /* ImageModel.swift */,
+				FF0B5C5A1C3CF99D00A15C56 /* OtherTestModel.swift */,
+				FF0B5C5B1C3CF99D00A15C56 /* SignedIntegerModel.swift */,
+				FF0B5C5C1C3CF99D00A15C56 /* TestModel.swift */,
+				FF0B5C5D1C3CF99D00A15C56 /* UnsignedIntegerModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF0B5C431C3CF75C00A15C56 /* test-image.jpg in Resources */,
+				FF0B5C611C3CF99D00A15C56 /* test-image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0B5C531C3CF85600A15C56 /* NSCodingExtension.swift in Sources */,
-				FF0B5C511C3CF85200A15C56 /* BasicTypesExtension.swift in Sources */,
 				FF0B5C3E1C3CF63D00A15C56 /* Encoder.swift in Sources */,
 				FF0B5C3C1C3CF63D00A15C56 /* Encodable.swift in Sources */,
 				FF0B5C521C3CF85400A15C56 /* EncodableExtension.swift in Sources */,
@@ -269,19 +295,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0B5C6D1C3CF9E900A15C56 /* BasicTypesEncoding.swift in Sources */,
+				FF0B5C671C3CF99D00A15C56 /* NSCodingTests.swift in Sources */,
 				FF0B5C501C3CF84E00A15C56 /* NSCodingExtension.swift in Sources */,
-				FF0B5C2C1C3CF63200A15C56 /* OtherTestModel.swift in Sources */,
-				FF0B5C491C3CF76C00A15C56 /* UnsignedIntegerModel.swift in Sources */,
-				FF0B5C471C3CF76C00A15C56 /* ImageModel.swift in Sources */,
-				FF0B5C2F1C3CF63200A15C56 /* TestModel.swift in Sources */,
+				FF0B5C661C3CF99D00A15C56 /* UnsignedIntegerModel.swift in Sources */,
 				FF0B5C391C3CF63D00A15C56 /* Decoder.swift in Sources */,
-				FF0B5C481C3CF76C00A15C56 /* SignedIntegerModel.swift in Sources */,
-				FF0B5C2D1C3CF63200A15C56 /* Shave_iOSTests.swift in Sources */,
+				FF0B5C6E1C3CF9E900A15C56 /* SignedIntegerEncoding.swift in Sources */,
+				FF0B5C681C3CF99D00A15C56 /* SignedIntegerTests.swift in Sources */,
+				FF0B5C641C3CF99D00A15C56 /* SignedIntegerModel.swift in Sources */,
+				FF0B5C651C3CF99D00A15C56 /* TestModel.swift in Sources */,
 				FF0B5C3D1C3CF63D00A15C56 /* Encodable.swift in Sources */,
-				FF0B5C4E1C3CF84E00A15C56 /* BasicTypesExtension.swift in Sources */,
+				FF0B5C691C3CF99D00A15C56 /* UnsignedIntegerTests.swift in Sources */,
+				FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
 				FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */,
 				FF0B5C4F1C3CF84E00A15C56 /* EncodableExtension.swift in Sources */,
+				FF0B5C631C3CF99D00A15C56 /* OtherTestModel.swift in Sources */,
 				FF0B5C551C3CF8BF00A15C56 /* ArrayExtension.swift in Sources */,
+				FF0B5C621C3CF99D00A15C56 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
