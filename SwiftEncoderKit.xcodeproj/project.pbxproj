@@ -115,6 +115,13 @@
 		FF0B5D641C3D402A00A15C56 /* CATransform3DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D621C3D402A00A15C56 /* CATransform3DModel.swift */; };
 		FF0B5D651C3D402A00A15C56 /* ConstCATransform3DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D631C3D402A00A15C56 /* ConstCATransform3DModel.swift */; };
 		FF0B5D671C3D403C00A15C56 /* QuartzCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D661C3D403C00A15C56 /* QuartzCoreTests.swift */; };
+		FF0B5D6F1C3D408700A15C56 /* CGAffineTransformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D691C3D408700A15C56 /* CGAffineTransformModel.swift */; };
+		FF0B5D701C3D408700A15C56 /* CGRectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6A1C3D408700A15C56 /* CGRectModel.swift */; };
+		FF0B5D711C3D408700A15C56 /* CGVectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6B1C3D408700A15C56 /* CGVectorModel.swift */; };
+		FF0B5D721C3D408700A15C56 /* ConstCGAffineTransformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6C1C3D408700A15C56 /* ConstCGAffineTransformModel.swift */; };
+		FF0B5D731C3D408700A15C56 /* ConstCGRectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6D1C3D408700A15C56 /* ConstCGRectModel.swift */; };
+		FF0B5D741C3D408700A15C56 /* ConstCGVectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6E1C3D408700A15C56 /* ConstCGVectorModel.swift */; };
+		FF0B5D761C3D409800A15C56 /* CoreAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D751C3D409800A15C56 /* CoreAnimationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,6 +232,13 @@
 		FF0B5D621C3D402A00A15C56 /* CATransform3DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3DModel.swift; sourceTree = "<group>"; };
 		FF0B5D631C3D402A00A15C56 /* ConstCATransform3DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCATransform3DModel.swift; sourceTree = "<group>"; };
 		FF0B5D661C3D403C00A15C56 /* QuartzCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzCoreTests.swift; sourceTree = "<group>"; };
+		FF0B5D691C3D408700A15C56 /* CGAffineTransformModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGAffineTransformModel.swift; sourceTree = "<group>"; };
+		FF0B5D6A1C3D408700A15C56 /* CGRectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectModel.swift; sourceTree = "<group>"; };
+		FF0B5D6B1C3D408700A15C56 /* CGVectorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGVectorModel.swift; sourceTree = "<group>"; };
+		FF0B5D6C1C3D408700A15C56 /* ConstCGAffineTransformModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCGAffineTransformModel.swift; sourceTree = "<group>"; };
+		FF0B5D6D1C3D408700A15C56 /* ConstCGRectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCGRectModel.swift; sourceTree = "<group>"; };
+		FF0B5D6E1C3D408700A15C56 /* ConstCGVectorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCGVectorModel.swift; sourceTree = "<group>"; };
+		FF0B5D751C3D409800A15C56 /* CoreAnimationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAnimationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +340,7 @@
 		FF0B5C581C3CF99D00A15C56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5D681C3D408700A15C56 /* Quartz Core */,
 				FF0B5D611C3D402A00A15C56 /* Core Animation */,
 				FF0B5D541C3D3F8F00A15C56 /* Core Media */,
 				FF0B5D231C3D3C8800A15C56 /* Enum */,
@@ -454,6 +469,7 @@
 		FF0B5CD01C3D386600A15C56 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5D751C3D409800A15C56 /* CoreAnimationTests.swift */,
 				FF0B5D661C3D403C00A15C56 /* QuartzCoreTests.swift */,
 				FF0B5D521C3D3F4000A15C56 /* CoreMediaTests.swift */,
 				FF0B5D2D1C3D3CF400A15C56 /* EnumArrayTests.swift */,
@@ -523,6 +539,19 @@
 				FF0B5D631C3D402A00A15C56 /* ConstCATransform3DModel.swift */,
 			);
 			path = "Core Animation";
+			sourceTree = "<group>";
+		};
+		FF0B5D681C3D408700A15C56 /* Quartz Core */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5D691C3D408700A15C56 /* CGAffineTransformModel.swift */,
+				FF0B5D6A1C3D408700A15C56 /* CGRectModel.swift */,
+				FF0B5D6B1C3D408700A15C56 /* CGVectorModel.swift */,
+				FF0B5D6C1C3D408700A15C56 /* ConstCGAffineTransformModel.swift */,
+				FF0B5D6D1C3D408700A15C56 /* ConstCGRectModel.swift */,
+				FF0B5D6E1C3D408700A15C56 /* ConstCGVectorModel.swift */,
+			);
+			path = "Quartz Core";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,6 +685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0B5CB61C3D362500A15C56 /* FloatModel.swift in Sources */,
+				FF0B5D731C3D408700A15C56 /* ConstCGRectModel.swift in Sources */,
 				FF0B5CE51C3D394300A15C56 /* UnsignedIntegerDictionaryModel.swift in Sources */,
 				FF0B5CFE1C3D3B5B00A15C56 /* BoolDictionaryModel.swift in Sources */,
 				FF0B5D101C3D3BA800A15C56 /* EncodableRect.swift in Sources */,
@@ -683,9 +713,11 @@
 				FF0B5C8D1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift in Sources */,
 				FF0B5D641C3D402A00A15C56 /* CATransform3DModel.swift in Sources */,
 				FF0B5D4A1C3D3F1A00A15C56 /* QuartzCoreEncoding.swift in Sources */,
+				FF0B5D741C3D408700A15C56 /* ConstCGVectorModel.swift in Sources */,
 				FF0B5CE71C3D398A00A15C56 /* NSCodingEncoding.swift in Sources */,
 				FF0B5D1D1C3D3C6A00A15C56 /* EnumEncoding.swift in Sources */,
 				FF0B5CEE1C3D39E200A15C56 /* APIArrayModel.swift in Sources */,
+				FF0B5D701C3D408700A15C56 /* CGRectModel.swift in Sources */,
 				FF0B5D3A1C3D3D0800A15C56 /* EnumDictionaryModel.swift in Sources */,
 				FF0B5D0C1C3D3BA800A15C56 /* EncodableArrayModel.swift in Sources */,
 				FF0B5D5C1C3D3F8F00A15C56 /* ConstCMTimeRangeModel.swift in Sources */,
@@ -718,6 +750,7 @@
 				FF0B5D601C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift in Sources */,
 				FF0B5CC81C3D36FD00A15C56 /* ConstNSCodingArrayModel.swift in Sources */,
 				FF0B5D2F1C3D3CF400A15C56 /* EnumArrayTests.swift in Sources */,
+				FF0B5D6F1C3D408700A15C56 /* CGAffineTransformModel.swift in Sources */,
 				FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
 				FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */,
 				FF0B5CD71C3D386600A15C56 /* BoolTests.swift in Sources */,
@@ -745,7 +778,10 @@
 				FF0B5CA31C3D359E00A15C56 /* BoolModel.swift in Sources */,
 				FF0B5CA21C3D359E00A15C56 /* BoolArrayModel.swift in Sources */,
 				FF0B5C861C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift in Sources */,
+				FF0B5D711C3D408700A15C56 /* CGVectorModel.swift in Sources */,
+				FF0B5D761C3D409800A15C56 /* CoreAnimationTests.swift in Sources */,
 				FF0B5D361C3D3D0800A15C56 /* ConstEnumArrayModel.swift in Sources */,
+				FF0B5D721C3D408700A15C56 /* ConstCGAffineTransformModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
