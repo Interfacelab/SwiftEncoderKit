@@ -69,6 +69,36 @@ func <-- <T: SignedIntegerType>(inout left:Array<T>?, right: Decoder) {
     left = rightValue
 }
 
+// MARK: Integer dictionaries
+
+func --> <T: SignedIntegerType>(left: [String: T], right: Encoder) {
+    right.addIntegerDictionary(left)
+}
+
+func <-- <T: SignedIntegerType>(inout left: [String: T], right: Decoder) {
+    guard let rightValue: [String: T] = right.integerDictionary() else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Optional Integer dictionaries
+
+func --> <T: SignedIntegerType>(left: [String: T]?, right: Encoder) {
+    right.addIntegerDictionary(left)
+}
+
+func <-- <T: SignedIntegerType>(inout left: [String: T]?, right: Decoder) {
+    guard let rightValue: [String: T] = right.integerDictionary() else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
+
+
 
 extension Encoder : SignedIntegerEncoding {
     // MARK: Integer types
@@ -108,6 +138,31 @@ extension Encoder : SignedIntegerEncoding {
                 encoded.append(NSNumber(int: x))
             } else if let x = int as? Int64 {
                 encoded.append(NSNumber(longLong: x))
+            }
+        }
+
+        setValueForCurrentKey(encoded)
+    }
+
+    func addIntegerDictionary<T: SignedIntegerType>(integerDict: [String: T]?) {
+        guard let dict = integerDict else {
+            setValueForCurrentKey(nil)
+            return
+        }
+
+        var encoded:[String: NSNumber] = [:]
+
+        for (key, int) in dict {
+            if let x = int as? Int {
+                encoded[key] = NSNumber(integer: x)
+            } else if let x = int as? Int8 {
+                encoded[key] = NSNumber(char: x)
+            } else if let x = int as? Int16 {
+                encoded[key] = NSNumber(short: x)
+            } else if let x = int as? Int32 {
+                encoded[key] = NSNumber(int: x)
+            } else if let x = int as? Int64 {
+                encoded[key] = NSNumber(longLong: x)
             }
         }
 
@@ -166,6 +221,32 @@ extension Decoder : SignedIntegerEncoding {
         return decoded
     }
 
+    func integerDictionary<T: SignedIntegerType>() -> [String : T]? {
+        guard let val = valueForCurrentKey() as? [String : NSNumber] else {
+            return nil
+        }
+
+        let dt=T.self
+
+        var decoded: [String : T] = [:]
+
+        for (key, ele) in val {
+            if dt == Int.self || dt == Int?.self {
+                decoded[key] = ele.integerValue as? T
+            } else if dt == Int8.self || dt == Int8?.self {
+                decoded[key] = ele.charValue as? T
+            } else if dt == Int16.self || dt == Int16?.self {
+                decoded[key] = ele.shortValue as? T
+            } else if dt == Int32.self || dt == Int32?.self {
+                decoded[key] = ele.intValue as? T
+            } else if dt == Int64.self || dt == Int64?.self {
+                decoded[key] = ele.longLongValue as? T
+            }
+        }
+
+        return decoded
+    }
+
     func integer<T: SignedIntegerType>(key:String) -> T? {
         guard let val = valueForKey(key) as? NSNumber else {
             return nil
@@ -208,6 +289,34 @@ extension Decoder : SignedIntegerEncoding {
                 decoded.append(ele.intValue as! T)
             } else if dt == Int64.self || dt == Int64?.self {
                 decoded.append(ele.longLongValue as! T)
+            }
+        }
+
+        return decoded
+    }
+
+
+
+    func integerDictionary<T: SignedIntegerType>(key: String) -> [String : T]? {
+        guard let val = valueForKey(key) as? [String : NSNumber] else {
+            return nil
+        }
+
+        let dt=T.self
+
+        var decoded: [String : T] = [:]
+
+        for (key, ele) in val {
+            if dt == Int.self || dt == Int?.self {
+                decoded[key] = ele.integerValue as? T
+            } else if dt == Int8.self || dt == Int8?.self {
+                decoded[key] = ele.charValue as? T
+            } else if dt == Int16.self || dt == Int16?.self {
+                decoded[key] = ele.shortValue as? T
+            } else if dt == Int32.self || dt == Int32?.self {
+                decoded[key] = ele.intValue as? T
+            } else if dt == Int64.self || dt == Int64?.self {
+                decoded[key] = ele.longLongValue as? T
             }
         }
 

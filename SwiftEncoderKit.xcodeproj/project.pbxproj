@@ -62,6 +62,8 @@
 		FF0B5CC91C3D36FD00A15C56 /* ConstNSCodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CC51C3D36FD00A15C56 /* ConstNSCodingModel.swift */; };
 		FF0B5CCA1C3D36FD00A15C56 /* NSCodingArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CC61C3D36FD00A15C56 /* NSCodingArrayModel.swift */; };
 		FF0B5CCB1C3D36FD00A15C56 /* NSCodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CC71C3D36FD00A15C56 /* NSCodingModel.swift */; };
+		FF0B5CCE1C3D37FF00A15C56 /* ConstSignedIntegerDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CCC1C3D37FF00A15C56 /* ConstSignedIntegerDictionaryModel.swift */; };
+		FF0B5CCF1C3D37FF00A15C56 /* SignedIntegerDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CCD1C3D37FF00A15C56 /* SignedIntegerDictionaryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,8 @@
 		FF0B5CC51C3D36FD00A15C56 /* ConstNSCodingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstNSCodingModel.swift; sourceTree = "<group>"; };
 		FF0B5CC61C3D36FD00A15C56 /* NSCodingArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingArrayModel.swift; sourceTree = "<group>"; };
 		FF0B5CC71C3D36FD00A15C56 /* NSCodingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingModel.swift; sourceTree = "<group>"; };
+		FF0B5CCC1C3D37FF00A15C56 /* ConstSignedIntegerDictionaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstSignedIntegerDictionaryModel.swift; sourceTree = "<group>"; };
+		FF0B5CCD1C3D37FF00A15C56 /* SignedIntegerDictionaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerDictionaryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +256,8 @@
 		FF0B5C741C3CFA8F00A15C56 /* Signed Integer */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5CCC1C3D37FF00A15C56 /* ConstSignedIntegerDictionaryModel.swift */,
+				FF0B5CCD1C3D37FF00A15C56 /* SignedIntegerDictionaryModel.swift */,
 				FF0B5C751C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift */,
 				FF0B5C761C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift */,
 				FF0B5C771C3CFA8F00A15C56 /* SignedIntegerArrayModel.swift */,
@@ -461,11 +467,13 @@
 			files = (
 				FF0B5CB61C3D362500A15C56 /* FloatModel.swift in Sources */,
 				FF0B5C8C1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift in Sources */,
+				FF0B5CCE1C3D37FF00A15C56 /* ConstSignedIntegerDictionaryModel.swift in Sources */,
 				FF0B5C981C3CFAC100A15C56 /* EncodableEncoding.swift in Sources */,
 				FF0B5C671C3CF99D00A15C56 /* NSCodingTests.swift in Sources */,
 				FF0B5CB31C3D362500A15C56 /* ConstFloatArrayModel.swift in Sources */,
 				FF0B5CC91C3D36FD00A15C56 /* ConstNSCodingModel.swift in Sources */,
 				FF0B5C971C3CFAC100A15C56 /* BoolEncoding.swift in Sources */,
+				FF0B5CCF1C3D37FF00A15C56 /* SignedIntegerDictionaryModel.swift in Sources */,
 				FF0B5C9A1C3CFAC100A15C56 /* StringEncoding.swift in Sources */,
 				FF0B5CBC1C3D366D00A15C56 /* ConstStringArrayModel.swift in Sources */,
 				FF0B5CC31C3D36D800A15C56 /* StringTests.swift in Sources */,

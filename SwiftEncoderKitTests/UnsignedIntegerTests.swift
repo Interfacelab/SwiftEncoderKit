@@ -172,9 +172,9 @@ class UnsignedIntegerTests: XCTestCase {
         let uint64A = [0, UInt64.max / 2, UInt64.max]
 
         let model = ConstUnsignedIntegerArrayModel(uintA: uintA, uint8A: uint8A, uint16A: uint16A,
-            uint32A: uint32A, uint64A: uint64A, uintAOpt: uintA, uint8AOpt: uint8A, uint16AOpt: uint16A,
-            uint32AOpt: uint32A, uint64AOpt: uint64A, uintAOptNil: nil, uint8AOptNil: nil,
-            uint16AOptNil: nil, uint32AOptNil: nil, uint64AOptNil: nil)
+            uint32A: uint32A, uint64A: uint64A, uintAOpt: uintA, uint8AOpt: uint8A,
+            uint16AOpt: uint16A, uint32AOpt: uint32A, uint64AOpt: uint64A, uintAOptNil: nil,
+            uint8AOptNil: nil, uint16AOptNil: nil, uint32AOptNil: nil, uint64AOptNil: nil)
 
         let encoder=Encoder()
         model.encode(encoder)

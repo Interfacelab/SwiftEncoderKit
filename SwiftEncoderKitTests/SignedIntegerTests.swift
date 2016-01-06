@@ -171,6 +171,7 @@ class SignedIntegerTests: XCTestCase {
         let int32A = [0, Int32.max / 2, Int32.max]
         let int64A = [0, Int64.max / 2, Int64.max]
 
+
         let model = ConstSignedIntegerArrayModel(intA: intA, int8A: int8A, int16A: int16A,
             int32A: int32A, int64A: int64A, intAOpt: intA, int8AOpt: int8A, int16AOpt: int16A,
             int32AOpt: int32A, int64AOpt: int64A, intAOptNil: nil, int8AOptNil: nil,
@@ -203,6 +204,109 @@ class SignedIntegerTests: XCTestCase {
             XCTAssert(reModel!.int16AOptNil == nil)
             XCTAssert(reModel!.int32AOptNil == nil)
             XCTAssert(reModel!.int64AOptNil == nil)
+        }
+    }
+
+    func testDictionaryEncodingDecoding() {
+        let fileName = "/tmp/intDict.plist"
+
+        let model = SignedIntegerDictionaryModel()
+
+        model.int = ["a": 0, "b": Int.max / 2, "c": Int.max]
+        model.int8 = ["d": 0, "e": Int8.max / 2, "f": Int8.max]
+        model.int16 = ["e": 0, "g": Int16.max / 2, "h": Int16.max]
+        model.int32 = ["f": 0, "i": Int32.max / 2, "j": Int32.max]
+        model.int64 = ["g": 0, "h": Int64.max / 2, "k": Int64.max]
+
+        model.intOpt = ["a": 0, "b": Int.max / 3, "c": Int.max]
+        model.int8Opt = ["d": 0, "e": Int8.max / 3, "f": Int8.max]
+        model.int16Opt = ["e": 0, "g": Int16.max / 3, "h": Int16.max]
+        model.int32Opt = ["f": 0, "i": Int32.max / 3, "j": Int32.max]
+        model.int64Opt = ["g": 0, "h": Int64.max / 3, "k": Int64.max]
+
+        model.intOptNil = nil
+        model.int8OptNil = nil
+        model.int16OptNil = nil
+        model.int32OptNil = nil
+        model.int64OptNil = nil
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = SignedIntegerDictionaryModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.int == ["a": 0, "b": Int.max / 2, "c": Int.max])
+            XCTAssert(reModel!.int8 == ["d": 0, "e": Int8.max / 2, "f": Int8.max])
+            XCTAssert(reModel!.int16 == ["e": 0, "g": Int16.max / 2, "h": Int16.max])
+            XCTAssert(reModel!.int32 == ["f": 0, "i": Int32.max / 2, "j": Int32.max])
+            XCTAssert(reModel!.int64 == ["g": 0, "h": Int64.max / 2, "k": Int64.max])
+
+            XCTAssert(reModel!.intOpt! == ["a": 0, "b": Int.max / 3, "c": Int.max])
+            XCTAssert(reModel!.int8Opt! == ["d": 0, "e": Int8.max / 3, "f": Int8.max])
+            XCTAssert(reModel!.int16Opt! == ["e": 0, "g": Int16.max / 3, "h": Int16.max])
+            XCTAssert(reModel!.int32Opt! == ["f": 0, "i": Int32.max / 3, "j": Int32.max])
+            XCTAssert(reModel!.int64Opt! == ["g": 0, "h": Int64.max / 3, "k": Int64.max])
+
+            XCTAssert(reModel!.intOptNil == nil)
+            XCTAssert(reModel!.int8OptNil == nil)
+            XCTAssert(reModel!.int16OptNil == nil)
+            XCTAssert(reModel!.int32OptNil == nil)
+            XCTAssert(reModel!.int64OptNil == nil)
+        }
+    }
+
+    func testConstDictionaryEncodingDecoding() {
+        let fileName = "/tmp/constIntDict.plist"
+
+        let int = ["a": 0, "b": Int.max / 2, "c": Int.max]
+        let int8 = ["d": 0, "e": Int8.max / 2, "f": Int8.max]
+        let int16 = ["e": 0, "g": Int16.max / 2, "h": Int16.max]
+        let int32 = ["f": 0, "i": Int32.max / 2, "j": Int32.max]
+        let int64 = ["g": 0, "h": Int64.max / 2, "k": Int64.max]
+
+        let intOpt = ["a": 0, "b": Int.max / 3, "c": Int.max]
+        let int8Opt = ["d": 0, "e": Int8.max / 3, "f": Int8.max]
+        let int16Opt = ["e": 0, "g": Int16.max / 3, "h": Int16.max]
+        let int32Opt = ["f": 0, "i": Int32.max / 3, "j": Int32.max]
+        let int64Opt = ["g": 0, "h": Int64.max / 3, "k": Int64.max]
+
+        let model = ConstSignedIntegerDictionaryModel(int: int, int8: int8, int16: int16,
+            int32: int32, int64: int64, intOpt: intOpt, int8Opt: int8Opt, int16Opt: int16Opt,
+            int32Opt: int32Opt, int64Opt: int64Opt, intOptNil: nil, int8OptNil: nil,
+            int16OptNil: nil, int32OptNil: nil, int64OptNil: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstSignedIntegerDictionaryModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.int == ["a": 0, "b": Int.max / 2, "c": Int.max])
+            XCTAssert(reModel!.int8 == ["d": 0, "e": Int8.max / 2, "f": Int8.max])
+            XCTAssert(reModel!.int16 == ["e": 0, "g": Int16.max / 2, "h": Int16.max])
+            XCTAssert(reModel!.int32 == ["f": 0, "i": Int32.max / 2, "j": Int32.max])
+            XCTAssert(reModel!.int64 == ["g": 0, "h": Int64.max / 2, "k": Int64.max])
+
+            XCTAssert(reModel!.intOpt! == ["a": 0, "b": Int.max / 3, "c": Int.max])
+            XCTAssert(reModel!.int8Opt! == ["d": 0, "e": Int8.max / 3, "f": Int8.max])
+            XCTAssert(reModel!.int16Opt! == ["e": 0, "g": Int16.max / 3, "h": Int16.max])
+            XCTAssert(reModel!.int32Opt! == ["f": 0, "i": Int32.max / 3, "j": Int32.max])
+            XCTAssert(reModel!.int64Opt! == ["g": 0, "h": Int64.max / 3, "k": Int64.max])
+
+            XCTAssert(reModel!.intOptNil == nil)
+            XCTAssert(reModel!.int8OptNil == nil)
+            XCTAssert(reModel!.int16OptNil == nil)
+            XCTAssert(reModel!.int32OptNil == nil)
+            XCTAssert(reModel!.int64OptNil == nil)
         }
     }
 }
