@@ -24,20 +24,6 @@ func <-- <T: UnsignedIntegerType>(inout left:T, right: Decoder) {
     left = rightValue
 }
 
-// MARK: Integer arrays
-
-func --> <T: UnsignedIntegerType>(left:Array<T>, right: Encoder) {
-    right.addUnsignedIntegerArray(left, key:nil)
-}
-
-func <-- <T: UnsignedIntegerType>(inout left:Array<T>, right: Decoder) {
-    guard let rightValue:Array<T> = right.unsignedIntegerArray(nil) else {
-        return
-    }
-
-    left = rightValue
-}
-
 // MARK: Optional integer values
 
 func --> <T: UnsignedIntegerType>(left:T?, right: Encoder) {
@@ -47,6 +33,20 @@ func --> <T: UnsignedIntegerType>(left:T?, right: Encoder) {
 func <-- <T: UnsignedIntegerType>(inout left:T?, right: Decoder) {
     guard let rightValue: T = right.unsignedInteger(nil) else {
         left = nil
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Integer arrays
+
+func --> <T: UnsignedIntegerType>(left:Array<T>, right: Encoder) {
+    right.addUnsignedIntegerArray(left, key:nil)
+}
+
+func <-- <T: UnsignedIntegerType>(inout left:Array<T>, right: Decoder) {
+    guard let rightValue:Array<T> = right.unsignedIntegerArray(nil) else {
         return
     }
 

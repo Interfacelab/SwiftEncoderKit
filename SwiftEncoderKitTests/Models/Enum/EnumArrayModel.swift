@@ -8,51 +8,51 @@
 
 import Foundation
 
-class EnumModel : Encodable {
-    var int: IntEnum = .value1
-    var int8: Int8Enum = .value1
-    var int16: Int16Enum = .value1
-    var int32: Int32Enum = .value1
-    var int64: Int64Enum = .value1
-    var uint: UIntEnum = .value1
-    var uint8: UInt8Enum = .value1
-    var uint16: UInt16Enum = .value1
-    var uint32: UInt32Enum = .value1
-    var uint64: UInt64Enum = .value1
-    var string: StringEnum = .value1
-    var float: FloatEnum = .value1
-    var double: DoubleEnum = .value1
-    var character: CharacterEnum = .value1
+class EnumArrayModel : Encodable {
+    var int: [IntEnum] = []
+    var int8: [Int8Enum] = []
+    var int16: [Int16Enum] = []
+    var int32: [Int32Enum] = []
+    var int64: [Int64Enum] = []
+    var uint: [UIntEnum] = []
+    var uint8: [UInt8Enum] = []
+    var uint16: [UInt16Enum] = []
+    var uint32: [UInt32Enum] = []
+    var uint64: [UInt64Enum] = []
+    var string: [StringEnum] = []
+    var float: [FloatEnum] = []
+    var double: [DoubleEnum] = []
+    var character: [CharacterEnum] = []
 
-    var intOpt: IntEnum?
-    var int8Opt: Int8Enum?
-    var int16Opt: Int16Enum?
-    var int32Opt: Int32Enum?
-    var int64Opt: Int64Enum?
-    var uintOpt: UIntEnum?
-    var uint8Opt: UInt8Enum?
-    var uint16Opt: UInt16Enum?
-    var uint32Opt: UInt32Enum?
-    var uint64Opt: UInt64Enum?
-    var stringOpt: StringEnum?
-    var floatOpt: FloatEnum?
-    var doubleOpt: DoubleEnum?
-    var characterOpt: CharacterEnum?
-
-    var intOptNil: IntEnum? = .value1
-    var int8OptNil: Int8Enum? = .value1
-    var int16OptNil: Int16Enum? = .value1
-    var int32OptNil: Int32Enum? = .value1
-    var int64OptNil: Int64Enum? = .value1
-    var uintOptNil: UIntEnum? = .value1
-    var uint8OptNil: UInt8Enum? = .value1
-    var uint16OptNil: UInt16Enum? = .value1
-    var uint32OptNil: UInt32Enum? = .value1
-    var uint64OptNil: UInt64Enum? = .value1
-    var stringOptNil: StringEnum? = .value1
-    var floatOptNil: FloatEnum? = .value1
-    var doubleOptNil: DoubleEnum? = .value1
-    var characterOptNil: CharacterEnum? = .value1
+    var intOpt: [IntEnum]?
+    var int8Opt: [Int8Enum]?
+    var int16Opt: [Int16Enum]?
+    var int32Opt: [Int32Enum]?
+    var int64Opt: [Int64Enum]?
+    var uintOpt: [UIntEnum]?
+    var uint8Opt: [UInt8Enum]?
+    var uint16Opt: [UInt16Enum]?
+    var uint32Opt: [UInt32Enum]?
+    var uint64Opt: [UInt64Enum]?
+    var stringOpt: [StringEnum]?
+    var floatOpt: [FloatEnum]?
+    var doubleOpt: [DoubleEnum]?
+    var characterOpt: [CharacterEnum]?
+    
+    var intOptNil: [IntEnum]? = []
+    var int8OptNil: [Int8Enum]? = []
+    var int16OptNil: [Int16Enum]? = []
+    var int32OptNil: [Int32Enum]? = []
+    var int64OptNil: [Int64Enum]? = []
+    var uintOptNil: [UIntEnum]? = []
+    var uint8OptNil: [UInt8Enum]? = []
+    var uint16OptNil: [UInt16Enum]? = []
+    var uint32OptNil: [UInt32Enum]? = []
+    var uint64OptNil: [UInt64Enum]? = []
+    var stringOptNil: [StringEnum]? = []
+    var floatOptNil: [FloatEnum]? = []
+    var doubleOptNil: [DoubleEnum]? = []
+    var characterOptNil: [CharacterEnum]? = []
 
     init() {
 
@@ -135,7 +135,7 @@ class EnumModel : Encodable {
         floatOpt --> encoder["floatOpt"]
         doubleOpt --> encoder["doubleOpt"]
         characterOpt --> encoder["characterOpt"]
-        
+
         intOptNil --> encoder["intOptNil"]
         int8OptNil --> encoder["int8OptNil"]
         int16OptNil --> encoder["int16OptNil"]

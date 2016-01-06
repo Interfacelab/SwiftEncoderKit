@@ -32,6 +32,65 @@ func --> <T:RawRepresentable>(left:T?, right: Encoder) {
 
 func <-- <T:RawRepresentable>(inout left:T?, right: Decoder) {
     guard let rightValue: T = right.enumValue(nil) else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: enum arrays
+
+func --> <T: RawRepresentable>(left:Array<T>, right: Encoder) {
+    right.addEnumArray(left, key:nil)
+}
+
+func <-- <T: RawRepresentable>(inout left:Array<T>, right: Decoder) {
+    guard let rightValue:Array<T> = right.enumArray(nil) else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Optional enum arrays
+
+func --> <T: RawRepresentable>(left:Array<T>?, right: Encoder) {
+    right.addEnumArray(left, key:nil)
+}
+
+func <-- <T: RawRepresentable>(inout left:Array<T>?, right: Decoder) {
+    guard let rightValue:Array<T> = right.enumArray(nil) else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Enum dictionaries
+
+func --> <T: RawRepresentable>(left: [String: T], right: Encoder) {
+    right.addEnumDictionary(left, key: nil)
+}
+
+func <-- <T: RawRepresentable>(inout left: [String: T], right: Decoder) {
+    guard let rightValue: [String: T] = right.enumDictionary(nil) else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Optional Enum dictionaries
+
+func --> <T: RawRepresentable>(left: [String: T]?, right: Encoder) {
+    right.addEnumDictionary(left, key: nil)
+}
+
+func <-- <T: RawRepresentable>(inout left: [String: T]?, right: Decoder) {
+    guard let rightValue: [String: T] = right.enumDictionary(nil) else {
+        left = nil
         return
     }
 
@@ -41,39 +100,41 @@ func <-- <T:RawRepresentable>(inout left:T?, right: Decoder) {
 
 extension Encoder : EnumEncoding {
     func encodedEnumValue<T: RawRepresentable>(enumValue: T?) -> NSCoding? {
-        var val: NSCoding? = nil
-
-        if let x = enumValue!.rawValue as? Int {
-            val = NSNumber(integer: x)
-        } else if let x = enumValue!.rawValue as? Int8 {
-            val = NSNumber(char: x)
-        } else if let x = enumValue!.rawValue as? Int16 {
-            val = NSNumber(short: x)
-        } else if let x = enumValue!.rawValue as? Int32 {
-            val = NSNumber(int: x)
-        } else if let x = enumValue!.rawValue as? Int64 {
-            val = NSNumber(longLong: x)
-        } else if let x = enumValue!.rawValue as? UInt {
-            val = NSNumber(unsignedInteger: x)
-        } else if let x = enumValue!.rawValue as? UInt8 {
-            val = NSNumber(unsignedChar: x)
-        } else if let x = enumValue!.rawValue as? UInt16 {
-            val = NSNumber(unsignedShort: x)
-        } else if let x = enumValue!.rawValue as? UInt32 {
-            val = NSNumber(unsignedInt: x)
-        } else if let x = enumValue!.rawValue as? UInt64 {
-            val = NSNumber(unsignedLongLong: x)
-        } else if let x = enumValue!.rawValue as? Float {
-            val = x
-        } else if let x = enumValue!.rawValue as? Double {
-            val = x
-        } else if let x = enumValue!.rawValue as? String {
-            val = x
-        } else if let x = enumValue!.rawValue as? Character {
-            val = String(x)
+        guard enumValue != nil else {
+            return nil
         }
 
-        return val
+        if let x = enumValue!.rawValue as? Int {
+            return NSNumber(integer: x)
+        } else if let x = enumValue!.rawValue as? Int8 {
+            return NSNumber(char: x)
+        } else if let x = enumValue!.rawValue as? Int16 {
+            return NSNumber(short: x)
+        } else if let x = enumValue!.rawValue as? Int32 {
+            return NSNumber(int: x)
+        } else if let x = enumValue!.rawValue as? Int64 {
+            return NSNumber(longLong: x)
+        } else if let x = enumValue!.rawValue as? UInt {
+            return NSNumber(unsignedInteger: x)
+        } else if let x = enumValue!.rawValue as? UInt8 {
+            return NSNumber(unsignedChar: x)
+        } else if let x = enumValue!.rawValue as? UInt16 {
+            return NSNumber(unsignedShort: x)
+        } else if let x = enumValue!.rawValue as? UInt32 {
+            return NSNumber(unsignedInt: x)
+        } else if let x = enumValue!.rawValue as? UInt64 {
+            return NSNumber(unsignedLongLong: x)
+        } else if let x = enumValue!.rawValue as? Float {
+            return x
+        } else if let x = enumValue!.rawValue as? Double {
+            return x
+        } else if let x = enumValue!.rawValue as? String {
+            return x
+        } else if let x = enumValue!.rawValue as? Character {
+            return String(x)
+        }
+
+        return nil
     }
 
     func addEnum<T: RawRepresentable>(enumValue: T?, key:String?) {
@@ -85,17 +146,69 @@ extension Encoder : EnumEncoding {
             setValue(key!, value: val)
         }
     }
+
+    func addEnumArray<T: RawRepresentable>(enumArray: Array<T>?, key: String?) {
+        guard let array = enumArray else {
+            if key == nil {
+                setValueForCurrentKey(nil)
+            } else {
+                setValue(key!, value: nil)
+            }
+
+            return
+        }
+
+        var encoded:[NSCoding] = []
+
+        for enumVal in array {
+            if let val = encodedEnumValue(enumVal) {
+                encoded.append(val)
+            }
+        }
+
+        if key == nil {
+            setValueForCurrentKey(encoded)
+        } else {
+            setValue(key!, value: encoded)
+        }
+    }
+
+    func addEnumDictionary<T: RawRepresentable>(enumDict: [String: T]?, key: String?) {
+        guard let dict = enumDict else {
+            if key == nil {
+                setValueForCurrentKey(nil)
+            } else {
+                setValue(key!, value: nil)
+            }
+
+            return
+        }
+
+        var encoded:[String: NSCoding] = [:]
+
+        for (key, enumVal) in dict {
+            if let val = encodedEnumValue(enumVal) {
+                encoded[key] = val
+            }
+        }
+
+        if key == nil {
+            setValueForCurrentKey(encoded)
+        } else {
+            setValue(key!, value: encoded)
+        }
+    }
 }
 
 extension Decoder: EnumEncoding {
     func decodedEnumValue<T: RawRepresentable>(val: AnyObject?) -> T? {
-        guard let enumVal = val else {
+        guard val != nil else {
             return nil
         }
 
         let dt = T.RawValue.self
 
-        if let x = enumVal as? NSNumber {
+        if let x = val! as? NSNumber {
             if dt == Int.self {
                 return T(rawValue: x.integerValue as! T.RawValue)
             } else if dt == Int8.self {
@@ -121,7 +234,7 @@ extension Decoder: EnumEncoding {
             } else if dt == Double.self {
                 return T(rawValue: x.doubleValue as! T.RawValue)
             }
-        } else if let x = enumVal as? String {
+        } else if let x = val as? String {
             if dt == Character.self {
                 return T(rawValue: Character(x) as! T.RawValue)
 
@@ -137,5 +250,41 @@ extension Decoder: EnumEncoding {
         let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? NSCoding
         let decodedVal: T? = decodedEnumValue(val)
         return decodedVal
+    }
+
+    func enumArray<T: RawRepresentable>(key: String?) -> Array<T>? {
+        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<AnyObject>
+
+        guard val != nil else {
+            return nil
+        }
+
+        var decoded: [T] = []
+
+        for ele in val! {
+            if let decodedVal: T = decodedEnumValue(ele) {
+                decoded.append(decodedVal)
+            }
+        }
+
+        return decoded
+    }
+
+    func enumDictionary<T: RawRepresentable>(key: String?) -> [String : T]? {
+        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? [String : AnyObject]
+
+        guard val != nil else {
+            return nil
+        }
+
+        var decoded: [String : T] = [:]
+
+        for (key, ele) in val! {
+            if let decodedVal: T = decodedEnumValue(ele) {
+                decoded[key] = decodedVal
+            }
+        }
+        
+        return decoded
     }
 }
