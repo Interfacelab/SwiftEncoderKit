@@ -39,12 +39,8 @@ class NSCodingTests: XCTestCase {
         model.colorOpt = UIColor(red:1.0, green: 1.0, blue: 0.0, alpha: 1.0)
         model.colorOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = NSCodingModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:NSCodingModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -85,12 +81,8 @@ class NSCodingTests: XCTestCase {
             color: UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
             colorOpt: UIColor(red:1.0, green: 1.0, blue: 0.0, alpha: 1.0), colorOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstNSCodingModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstNSCodingModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -144,12 +136,8 @@ class NSCodingTests: XCTestCase {
                 blue: 0.0, alpha: 1.0)]
         model.colorOptNilA = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = NSCodingArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:NSCodingArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -229,12 +217,8 @@ class NSCodingTests: XCTestCase {
         let model = ConstNSCodingArrayModel(imageA: imageA, imageOptA: imageOptA, imageOptNilA: nil,
             colorA: colorA, colorOptA: colorOptA, colorOptNilA: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstNSCodingArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstNSCodingArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -315,12 +299,8 @@ class NSCodingTests: XCTestCase {
             "c": UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)]
         model.colorOptNilD = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = NSCodingDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:NSCodingDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -412,12 +392,8 @@ class NSCodingTests: XCTestCase {
         let model = ConstNSCodingDictionaryModel(imageD: imageD, imageOptD: imageOptD,
             imageOptNilD: nil, colorD: colorD, colorOptD: colorOptD, colorOptNilD: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstNSCodingDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstNSCodingDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

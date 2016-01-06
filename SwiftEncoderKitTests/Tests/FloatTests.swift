@@ -35,12 +35,8 @@ class FloatTests: XCTestCase {
         model.doubleOpt = Double.infinity / 2.0
         model.doubleOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = FloatModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:FloatModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -62,12 +58,8 @@ class FloatTests: XCTestCase {
             floatOptNil: nil, double: Double.infinity, doubleOpt: Double.infinity / 2.0,
             doubleOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstFloatModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstFloatModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -97,12 +89,8 @@ class FloatTests: XCTestCase {
         model.doubleAOpt = [20.0, Double.infinity / 3.0, Double.infinity]
         model.doubleAOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = FloatArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:FloatArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -128,12 +116,8 @@ class FloatTests: XCTestCase {
         let model = ConstFloatArrayModel(floatA: floatA, floatAOpt: floatAOpt, floatAOptNil: nil,
             doubleA: doubleA, doubleAOpt: doubleAOpt, doubleAOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstFloatArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstFloatArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -163,12 +147,8 @@ class FloatTests: XCTestCase {
         model.doubleDOpt = ["a": 20.0, "b": Double.infinity / 3.0, "c": Double.infinity]
         model.doubleDOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = FloatDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:FloatDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -198,12 +178,8 @@ class FloatTests: XCTestCase {
         let model = ConstFloatDictionaryModel(floatD: floatD, floatDOpt: floatDOpt,
             floatDOptNil: nil, doubleD: doubleD, doubleDOpt: doubleDOpt, doubleDOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstFloatDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstFloatDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

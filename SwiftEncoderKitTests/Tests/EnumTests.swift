@@ -70,12 +70,8 @@ class EnumTests: XCTestCase {
         model.stringOptNil = nil
         model.characterOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = EnumModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:EnumModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -203,12 +199,8 @@ class EnumTests: XCTestCase {
             doubleOptNil: nil, 
             characterOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstEnumModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstEnumModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

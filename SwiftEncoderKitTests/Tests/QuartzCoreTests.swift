@@ -41,12 +41,8 @@ class QuartzCoreTests: XCTestCase {
             "d": CGRect(x: 95, y: 152, width: 222, height: 601)]
         model.rectOptNilD = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = CGRectModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:CGRectModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -96,12 +92,8 @@ class QuartzCoreTests: XCTestCase {
             rectOptD: rectOptD,
             rectOptNilD: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstCGRectModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstCGRectModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -142,12 +134,8 @@ class QuartzCoreTests: XCTestCase {
         model.vectorOptD = ["c": CGVector(dx: 30, dy: 20), "d": CGVector(dx: 2, dy: 0)]
         model.vectorOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = CGVectorModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:CGVectorModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -189,12 +177,8 @@ class QuartzCoreTests: XCTestCase {
             vectorOptD: vectorOptD,
             vectorOptNilD: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstCGVectorModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstCGVectorModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -234,12 +218,8 @@ class QuartzCoreTests: XCTestCase {
             "d": CGAffineTransformMakeScale(9.0, 1.0)]
         model.transformOptNilD = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = CGAffineTransformModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:CGAffineTransformModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -288,12 +268,8 @@ class QuartzCoreTests: XCTestCase {
             transformOptD: transformOptD,
             transformOptNilD: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstCGAffineTransformModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstCGAffineTransformModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

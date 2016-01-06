@@ -46,4 +46,8 @@ class Decoder {
 
         return val
     }
+
+    func decodedObject<T: Encodable>() -> T? {
+        return T(self)
+    }
 }

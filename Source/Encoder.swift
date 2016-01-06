@@ -28,7 +28,8 @@ class Encoder {
         }
     }
 
-    init() {
+    init(_ object: Encodable) {
+        object.encode(self)
     }
 
     subscript(key: String) -> Encoder {
@@ -36,10 +37,21 @@ class Encoder {
         return self
     }
 
+    /**
+     Sets the value for a given key on the encoder
+
+     - parameter key:   The key for the value
+     - parameter value:	The value to set
+     */
     func setValue(key: String, value: NSCoding?) {
         _data[key] = value ?? NSNull()
     }
 
+    /**
+     Sets the value for the current key
+
+     - parameter value:	The value to set
+     */
     func setValueForCurrentKey(value: NSCoding?) {
         guard let key = _currentKey else {
             return

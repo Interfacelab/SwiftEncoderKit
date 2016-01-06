@@ -30,12 +30,8 @@ class StringTests: XCTestCase {
         model.stringOpt = "Things"
         model.stringOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = StringModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:StringModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -51,12 +47,8 @@ class StringTests: XCTestCase {
 
         let model = ConstStringModel(string: "Nice", stringOpt: "Things", stringOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstStringModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstStringModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -76,12 +68,8 @@ class StringTests: XCTestCase {
         model.stringAOpt = ["by", "design"]
         model.stringAOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = StringArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:StringArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -98,12 +86,8 @@ class StringTests: XCTestCase {
         let model = ConstStringArrayModel(stringA: ["this", "that", "other"],
             stringAOpt: ["by", "design"], stringAOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstStringArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstStringArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -123,12 +107,8 @@ class StringTests: XCTestCase {
         model.stringDOpt = ["A": "by", "B": "design"]
         model.stringDOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = StringDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:StringDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -148,12 +128,8 @@ class StringTests: XCTestCase {
         let model = ConstStringDictionaryModel(stringD: stringD, stringDOpt: stringDOpt,
             stringDOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstStringDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstStringDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

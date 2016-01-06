@@ -70,12 +70,8 @@ class EnumDictionaryTests: XCTestCase {
         model.stringOptNil = nil
         model.characterOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = EnumDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:EnumDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -204,12 +200,8 @@ class EnumDictionaryTests: XCTestCase {
             doubleOptNil: nil,
             characterOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstEnumDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstEnumDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

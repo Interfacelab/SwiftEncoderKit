@@ -42,12 +42,8 @@ class CoreAnimationTests: XCTestCase {
             "d": CATransform3DMakeScale(10, 110, 14)]
         model.t3dOptNilD = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = CATransform3DModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:CATransform3DModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -96,13 +92,8 @@ class CoreAnimationTests: XCTestCase {
             t3dOptD: t3dOptD,
             t3dOptNilD: nil)
 
-
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = CATransform3DModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstCATransform3DModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

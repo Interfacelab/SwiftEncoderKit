@@ -42,12 +42,8 @@ class UnsignedIntegerTests: XCTestCase {
         model.uint32OptNil = nil
         model.uint64OptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = UnsignedIntegerModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:UnsignedIntegerModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -95,12 +91,8 @@ class UnsignedIntegerTests: XCTestCase {
         model.uint32AOptNil = nil
         model.uint64AOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = UnsignedIntegerArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:UnsignedIntegerArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -132,12 +124,8 @@ class UnsignedIntegerTests: XCTestCase {
             uint16Opt: UInt16.max, uint32Opt: UInt32.max, uint64Opt: UInt64.max, uintOptNil: nil,
             uint8OptNil: nil, uint16OptNil: nil, uint32OptNil: nil, uint64OptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstUnsignedIntegerModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstUnsignedIntegerModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -176,12 +164,8 @@ class UnsignedIntegerTests: XCTestCase {
             uint16AOpt: uint16A, uint32AOpt: uint32A, uint64AOpt: uint64A, uintAOptNil: nil,
             uint8AOptNil: nil, uint16AOptNil: nil, uint32AOptNil: nil, uint64AOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstUnsignedIntegerArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstUnsignedIntegerArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -229,12 +213,8 @@ class UnsignedIntegerTests: XCTestCase {
         model.uint32OptNil = nil
         model.uint64OptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = UnsignedIntegerDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:UnsignedIntegerDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -279,12 +259,8 @@ class UnsignedIntegerTests: XCTestCase {
             uint16Opt: uint16Opt, uint32Opt: uint32Opt, uint64Opt: uint64Opt, uintOptNil: nil,
             uint8OptNil: nil, uint16OptNil: nil, uint32OptNil: nil, uint64OptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstUnsignedIntegerDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstUnsignedIntegerDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

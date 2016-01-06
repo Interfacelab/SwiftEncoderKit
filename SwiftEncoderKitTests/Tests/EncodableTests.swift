@@ -29,12 +29,8 @@ class EncodableTests: XCTestCase {
         model.rectOpt = EncodableRect(x: 300, y: 600, width: 900, height: 1200)
         model.rectOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = EncodableModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:EncodableModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -61,12 +57,8 @@ class EncodableTests: XCTestCase {
 
         let model = ConstEncodableModel(rect: rect, rectOpt: rectOpt, rectOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstEncodableModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstEncodableModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -96,12 +88,8 @@ class EncodableTests: XCTestCase {
             EncodableRect(x: 30, y: 60, width: 90, height: 120)]
         model.rectOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = EncodableArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:EncodableArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -140,12 +128,8 @@ class EncodableTests: XCTestCase {
 
         let model = ConstEncodableArrayModel(rect: rect, rectOpt: rectOpt, rectOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstEncodableArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstEncodableArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -185,12 +169,8 @@ class EncodableTests: XCTestCase {
             "two": EncodableRect(x: 30, y: 60, width: 90, height: 120)]
         model.rectOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = EncodableDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:EncodableDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -234,12 +214,8 @@ class EncodableTests: XCTestCase {
 
         let model = ConstEncodableDictionaryModel(rect: rect, rectOpt: rectOpt, rectOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstEncodableDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstEncodableDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

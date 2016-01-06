@@ -112,8 +112,7 @@ extension Encoder : EncodableEncoding {
             return
         }
 
-        let encoder = Encoder()
-        encodableObj.encode(encoder)
+        let encoder = Encoder(encodableObj)
 
         if key == nil {
             setValueForCurrentKey(encoder.data)
@@ -136,8 +135,7 @@ extension Encoder : EncodableEncoding {
 
         var encoded: [[String: NSCoding]] = []
         for ele in array {
-            let encoder=Encoder()
-            ele.encode(encoder)
+            let encoder=Encoder(ele)
             encoded.append(encoder.data)
         }
 
@@ -163,8 +161,7 @@ extension Encoder : EncodableEncoding {
 
         var encoded: [String: [String: NSCoding]] = [:]
         for (key, ele) in dict {
-            let encoder=Encoder()
-            ele.encode(encoder)
+            let encoder=Encoder(ele)
             encoded[key] = encoder.data
         }
 

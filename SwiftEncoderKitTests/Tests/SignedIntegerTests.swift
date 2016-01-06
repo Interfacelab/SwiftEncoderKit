@@ -42,12 +42,8 @@ class SignedIntegerTests: XCTestCase {
         model.int32OptNil = nil
         model.int64OptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = SignedIntegerModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:SignedIntegerModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -95,12 +91,8 @@ class SignedIntegerTests: XCTestCase {
         model.int32AOptNil = nil
         model.int64AOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = SignedIntegerArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:SignedIntegerArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -132,12 +124,8 @@ class SignedIntegerTests: XCTestCase {
             int16Opt: Int16.max, int32Opt: Int32.max, int64Opt: Int64.max, intOptNil: nil,
             int8OptNil: nil, int16OptNil: nil, int32OptNil: nil, int64OptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstSignedIntegerModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstSignedIntegerModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -177,12 +165,8 @@ class SignedIntegerTests: XCTestCase {
             int32AOpt: int32A, int64AOpt: int64A, intAOptNil: nil, int8AOptNil: nil,
             int16AOptNil: nil, int32AOptNil: nil, int64AOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstSignedIntegerArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstSignedIntegerArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -230,12 +214,8 @@ class SignedIntegerTests: XCTestCase {
         model.int32OptNil = nil
         model.int64OptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = SignedIntegerDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:SignedIntegerDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -280,12 +260,8 @@ class SignedIntegerTests: XCTestCase {
             int32Opt: int32Opt, int64Opt: int64Opt, intOptNil: nil, int8OptNil: nil,
             int16OptNil: nil, int32OptNil: nil, int64OptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstSignedIntegerDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstSignedIntegerDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

@@ -29,12 +29,8 @@ class BoolTests: XCTestCase {
         model.boolOpt = true
         model.boolOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = BoolModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:BoolModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -50,12 +46,8 @@ class BoolTests: XCTestCase {
 
         let model = ConstBoolModel(bool: true, boolOpt: true, boolOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstBoolModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstBoolModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -75,12 +67,8 @@ class BoolTests: XCTestCase {
         model.boolAOpt = [true, true, false]
         model.boolAOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = BoolArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:BoolArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -97,12 +85,8 @@ class BoolTests: XCTestCase {
         let model = ConstBoolArrayModel(boolA: [true, true, false, false, true],
             boolAOpt: [true, true, false], boolAOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstBoolArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstBoolArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -122,12 +106,8 @@ class BoolTests: XCTestCase {
         model.boolDOpt = ["d": true, "e": true, "f": false]
         model.boolDOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = BoolDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:BoolDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -146,12 +126,8 @@ class BoolTests: XCTestCase {
 
         let model = ConstBoolDictionaryModel(boolD: boolD, boolDOpt: boolDOpt, boolDOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstBoolDictionaryModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstBoolDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

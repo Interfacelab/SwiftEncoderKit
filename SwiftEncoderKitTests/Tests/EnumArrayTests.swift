@@ -74,12 +74,8 @@ class EnumArrayTests: XCTestCase {
         model.stringOptNil = nil
         model.characterOptNil = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = EnumArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:EnumArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -206,12 +202,8 @@ class EnumArrayTests: XCTestCase {
             doubleOptNil: nil,
             characterOptNil: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstEnumArrayModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstEnumArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

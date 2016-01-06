@@ -43,12 +43,8 @@ class CoreMediaTests: XCTestCase {
             "b": CMTime(seconds: 19.0, preferredTimescale: 3000)]
         model.timeOptNilD = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = CMTimeModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:CMTimeModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -98,12 +94,8 @@ class CoreMediaTests: XCTestCase {
             timeOptNilD: nil
         )
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstCMTimeModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstCMTimeModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -171,12 +163,8 @@ class CoreMediaTests: XCTestCase {
 
         model.timeRangeOptNilD = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = CMTimeRangeModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:CMTimeRangeModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -267,12 +255,8 @@ class CoreMediaTests: XCTestCase {
             timeRangeOptNilD: nil
         )
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = CMTimeRangeModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstCMTimeRangeModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -343,12 +327,8 @@ class CoreMediaTests: XCTestCase {
             "d": CMTimeMapping(source: source, target: target)]
         model.timeMapOptNilD = nil
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = CMTimeMappingModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:CMTimeMappingModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -418,12 +398,8 @@ class CoreMediaTests: XCTestCase {
             timeMapOptD: timeMapOptD,
             timeMapOptNilD: nil)
 
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstCMTimeMappingModel(decoder)
+        Encoder(model).writeToFile(fileName)
+        let reModel:ConstCMTimeMappingModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
