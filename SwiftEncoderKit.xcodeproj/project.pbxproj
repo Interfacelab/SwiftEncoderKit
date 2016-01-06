@@ -66,6 +66,8 @@
 		FF0B5CDC1C3D386600A15C56 /* UnsignedIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CD61C3D386600A15C56 /* UnsignedIntegerTests.swift */; };
 		FF0B5CDF1C3D38B500A15C56 /* NSCodingReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CDE1C3D38B500A15C56 /* NSCodingReference.swift */; };
 		FF0B5CE11C3D38BF00A15C56 /* NSCodingReferenceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CE01C3D38BF00A15C56 /* NSCodingReferenceTest.swift */; };
+		FF0B5CE41C3D394300A15C56 /* ConstUnsignedIntegerDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CE21C3D394300A15C56 /* ConstUnsignedIntegerDictionaryModel.swift */; };
+		FF0B5CE51C3D394300A15C56 /* UnsignedIntegerDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CE31C3D394300A15C56 /* UnsignedIntegerDictionaryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,8 @@
 		FF0B5CD61C3D386600A15C56 /* UnsignedIntegerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerTests.swift; sourceTree = "<group>"; };
 		FF0B5CDE1C3D38B500A15C56 /* NSCodingReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingReference.swift; sourceTree = "<group>"; };
 		FF0B5CE01C3D38BF00A15C56 /* NSCodingReferenceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingReferenceTest.swift; sourceTree = "<group>"; };
+		FF0B5CE21C3D394300A15C56 /* ConstUnsignedIntegerDictionaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstUnsignedIntegerDictionaryModel.swift; sourceTree = "<group>"; };
+		FF0B5CE31C3D394300A15C56 /* UnsignedIntegerDictionaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerDictionaryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +280,8 @@
 		FF0B5C7C1C3CFA8F00A15C56 /* Unsigned Integer */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5CE21C3D394300A15C56 /* ConstUnsignedIntegerDictionaryModel.swift */,
+				FF0B5CE31C3D394300A15C56 /* UnsignedIntegerDictionaryModel.swift */,
 				FF0B5C7D1C3CFA8F00A15C56 /* ConstUnsignedIntegerArrayModel.swift */,
 				FF0B5C7E1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift */,
 				FF0B5C7F1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift */,
@@ -488,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0B5CB61C3D362500A15C56 /* FloatModel.swift in Sources */,
+				FF0B5CE51C3D394300A15C56 /* UnsignedIntegerDictionaryModel.swift in Sources */,
 				FF0B5C8C1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift in Sources */,
 				FF0B5CCE1C3D37FF00A15C56 /* ConstSignedIntegerDictionaryModel.swift in Sources */,
 				FF0B5C981C3CFAC100A15C56 /* EncodableEncoding.swift in Sources */,
@@ -514,6 +521,7 @@
 				FF0B5C6E1C3CF9E900A15C56 /* SignedIntegerEncoding.swift in Sources */,
 				FF0B5CD81C3D386600A15C56 /* FloatTests.swift in Sources */,
 				FF0B5CBD1C3D366D00A15C56 /* ConstStringModel.swift in Sources */,
+				FF0B5CE41C3D394300A15C56 /* ConstUnsignedIntegerDictionaryModel.swift in Sources */,
 				FF0B5C3D1C3CF63D00A15C56 /* Encodable.swift in Sources */,
 				FF0B5CA51C3D359E00A15C56 /* ConstBoolModel.swift in Sources */,
 				FF0B5CC81C3D36FD00A15C56 /* ConstNSCodingArrayModel.swift in Sources */,
