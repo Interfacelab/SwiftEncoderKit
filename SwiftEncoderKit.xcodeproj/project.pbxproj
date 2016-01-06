@@ -86,6 +86,15 @@
 		FF0B5D111C3D3BA800A15C56 /* EncodableSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D081C3D3BA800A15C56 /* EncodableSize.swift */; };
 		FF0B5D161C3D3BDA00A15C56 /* EncodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D151C3D3BDA00A15C56 /* EncodableTests.swift */; };
 		FF0B5D181C3D3C1C00A15C56 /* EncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D171C3D3C1C00A15C56 /* EncodableEncoding.swift */; };
+		FF0B5D1C1C3D3C6A00A15C56 /* CMTimeEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D1A1C3D3C6A00A15C56 /* CMTimeEncoding.swift */; };
+		FF0B5D1D1C3D3C6A00A15C56 /* EnumEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D1B1C3D3C6A00A15C56 /* EnumEncoding.swift */; };
+		FF0B5D1E1C3D3C6E00A15C56 /* CMTimeEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D1A1C3D3C6A00A15C56 /* CMTimeEncoding.swift */; };
+		FF0B5D1F1C3D3C7200A15C56 /* EnumEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D1B1C3D3C6A00A15C56 /* EnumEncoding.swift */; };
+		FF0B5D261C3D3C8800A15C56 /* CMTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D221C3D3C8800A15C56 /* CMTimeModel.swift */; };
+		FF0B5D271C3D3C8800A15C56 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D241C3D3C8800A15C56 /* EnumModel.swift */; };
+		FF0B5D281C3D3C8800A15C56 /* TestEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D251C3D3C8800A15C56 /* TestEnums.swift */; };
+		FF0B5D2B1C3D3CA000A15C56 /* CMTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D291C3D3CA000A15C56 /* CMTimeTests.swift */; };
+		FF0B5D2C1C3D3CA000A15C56 /* EnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D2A1C3D3CA000A15C56 /* EnumTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +181,13 @@
 		FF0B5D081C3D3BA800A15C56 /* EncodableSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableSize.swift; sourceTree = "<group>"; };
 		FF0B5D151C3D3BDA00A15C56 /* EncodableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableTests.swift; sourceTree = "<group>"; };
 		FF0B5D171C3D3C1C00A15C56 /* EncodableEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableEncoding.swift; sourceTree = "<group>"; };
+		FF0B5D1A1C3D3C6A00A15C56 /* CMTimeEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeEncoding.swift; sourceTree = "<group>"; };
+		FF0B5D1B1C3D3C6A00A15C56 /* EnumEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumEncoding.swift; sourceTree = "<group>"; };
+		FF0B5D221C3D3C8800A15C56 /* CMTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeModel.swift; sourceTree = "<group>"; };
+		FF0B5D241C3D3C8800A15C56 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
+		FF0B5D251C3D3C8800A15C56 /* TestEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEnums.swift; sourceTree = "<group>"; };
+		FF0B5D291C3D3CA000A15C56 /* CMTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeTests.swift; sourceTree = "<group>"; };
+		FF0B5D2A1C3D3CA000A15C56 /* EnumTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +263,8 @@
 		FF0B5C4A1C3CF84E00A15C56 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5D191C3D3C6A00A15C56 /* AVFoundation */,
+				FF0B5D1B1C3D3C6A00A15C56 /* EnumEncoding.swift */,
 				FF0B5D171C3D3C1C00A15C56 /* EncodableEncoding.swift */,
 				FF0B5CE61C3D398A00A15C56 /* NSCodingEncoding.swift */,
 				FF0B5C931C3CFAC100A15C56 /* BoolEncoding.swift */,
@@ -269,6 +287,8 @@
 		FF0B5C581C3CF99D00A15C56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5D201C3D3C8800A15C56 /* AVFoundation */,
+				FF0B5D231C3D3C8800A15C56 /* Enum */,
 				FF0B5CEB1C3D39E200A15C56 /* API */,
 				FF0B5CB71C3D366D00A15C56 /* String */,
 				FF0B5CAE1C3D362500A15C56 /* Float */,
@@ -402,6 +422,8 @@
 		FF0B5CD01C3D386600A15C56 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5D291C3D3CA000A15C56 /* CMTimeTests.swift */,
+				FF0B5D2A1C3D3CA000A15C56 /* EnumTests.swift */,
 				FF0B5D151C3D3BDA00A15C56 /* EncodableTests.swift */,
 				FF0B5CE91C3D39DA00A15C56 /* APITests.swift */,
 				FF0B5CD11C3D386600A15C56 /* BoolTests.swift */,
@@ -430,6 +452,39 @@
 				FF0B5CED1C3D39E200A15C56 /* APIModel.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		FF0B5D191C3D3C6A00A15C56 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5D1A1C3D3C6A00A15C56 /* CMTimeEncoding.swift */,
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		FF0B5D201C3D3C8800A15C56 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5D211C3D3C8800A15C56 /* CMTime */,
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		FF0B5D211C3D3C8800A15C56 /* CMTime */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5D221C3D3C8800A15C56 /* CMTimeModel.swift */,
+			);
+			path = CMTime;
+			sourceTree = "<group>";
+		};
+		FF0B5D231C3D3C8800A15C56 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5D241C3D3C8800A15C56 /* EnumModel.swift */,
+				FF0B5D251C3D3C8800A15C56 /* TestEnums.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,6 +603,8 @@
 				FF0B5CAA1C3D35B300A15C56 /* SignedIntegerEncoding.swift in Sources */,
 				FF0B5CAB1C3D35B600A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
 				FF0B5CA91C3D35B100A15C56 /* StringEncoding.swift in Sources */,
+				FF0B5D1F1C3D3C7200A15C56 /* EnumEncoding.swift in Sources */,
+				FF0B5D1E1C3D3C6E00A15C56 /* CMTimeEncoding.swift in Sources */,
 				FF0B5CA61C3D35AA00A15C56 /* BoolEncoding.swift in Sources */,
 				FF0B5C381C3CF63D00A15C56 /* Decoder.swift in Sources */,
 			);
@@ -578,8 +635,10 @@
 				FF0B5C991C3CFAC100A15C56 /* FloatEncoding.swift in Sources */,
 				FF0B5C8B1C3CFA8F00A15C56 /* ConstUnsignedIntegerArrayModel.swift in Sources */,
 				FF0B5D0B1C3D3BA800A15C56 /* ConstEncodableModel.swift in Sources */,
+				FF0B5D1C1C3D3C6A00A15C56 /* CMTimeEncoding.swift in Sources */,
 				FF0B5C8D1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift in Sources */,
 				FF0B5CE71C3D398A00A15C56 /* NSCodingEncoding.swift in Sources */,
+				FF0B5D1D1C3D3C6A00A15C56 /* EnumEncoding.swift in Sources */,
 				FF0B5CEE1C3D39E200A15C56 /* APIArrayModel.swift in Sources */,
 				FF0B5D0C1C3D3BA800A15C56 /* EncodableArrayModel.swift in Sources */,
 				FF0B5CF61C3D3AA100A15C56 /* ConstFloatDictionaryModel.swift in Sources */,
@@ -589,6 +648,7 @@
 				FF0B5CBF1C3D366D00A15C56 /* StringModel.swift in Sources */,
 				FF0B5D0E1C3D3BA800A15C56 /* EncodableModel.swift in Sources */,
 				FF0B5CF21C3D3A3800A15C56 /* ConstNSCodingDictionaryModel.swift in Sources */,
+				FF0B5D281C3D3C8800A15C56 /* TestEnums.swift in Sources */,
 				FF0B5D0D1C3D3BA800A15C56 /* EncodableDictionaryModel.swift in Sources */,
 				FF0B5C8E1C3CFA8F00A15C56 /* UnsignedIntegerModel.swift in Sources */,
 				FF0B5CEF1C3D39E200A15C56 /* APIModel.swift in Sources */,
@@ -605,10 +665,14 @@
 				FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
 				FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */,
 				FF0B5CD71C3D386600A15C56 /* BoolTests.swift in Sources */,
+				FF0B5D271C3D3C8800A15C56 /* EnumModel.swift in Sources */,
 				FF0B5D161C3D3BDA00A15C56 /* EncodableTests.swift in Sources */,
 				FF0B5CFA1C3D3B1F00A15C56 /* ConstStringDictionaryModel.swift in Sources */,
+				FF0B5D261C3D3C8800A15C56 /* CMTimeModel.swift in Sources */,
 				FF0B5CA41C3D359E00A15C56 /* ConstBoolArrayModel.swift in Sources */,
 				FF0B5CB51C3D362500A15C56 /* FloatArrayModel.swift in Sources */,
+				FF0B5D2B1C3D3CA000A15C56 /* CMTimeTests.swift in Sources */,
+				FF0B5D2C1C3D3CA000A15C56 /* EnumTests.swift in Sources */,
 				FF0B5CE11C3D38BF00A15C56 /* NSCodingReferenceTest.swift in Sources */,
 				FF0B5CEA1C3D39DA00A15C56 /* APITests.swift in Sources */,
 				FF0B5D0F1C3D3BA800A15C56 /* EncodablePoint.swift in Sources */,

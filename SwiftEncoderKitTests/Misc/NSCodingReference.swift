@@ -9,30 +9,6 @@
 import UIKit
 import AVFoundation
 
-enum NoRawValueEnum {
-    case value1
-    case value2
-    case value3
-}
-
-enum IntEnum: Int {
-    case value1
-    case value2
-    case value3
-}
-
-enum StringEnum: String {
-    case value1 = "value1"
-    case value2 = "value2"
-    case value3 = "value3"
-}
-
-indirect enum IndirectEnum {
-    case value1(Int)
-    case value2(IndirectEnum)
-    case value3(IndirectEnum)
-}
-
 /// The purpose of this class is to highlight what is encodable/decodable by NSCoder by default
 class NSCodingReference : NSObject, NSCoding {
 
