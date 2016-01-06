@@ -17,7 +17,7 @@ func --> <T: NSCoding>(left:T, right: Encoder) {
 }
 
 func <-- <T: NSCoding>(inout left:T, right: Decoder) {
-    guard let rightValue: T = right.nsCoding() else {
+    guard let rightValue: T = right.nsCoding(nil) else {
         return
     }
 
@@ -31,7 +31,7 @@ func --> <T: NSCoding>(left:T?, right: Encoder) {
 }
 
 func <-- <T: NSCoding>(inout left:T?, right: Decoder) {
-    guard let rightValue: T = right.nsCoding() else {
+    guard let rightValue: T = right.nsCoding(nil) else {
         return
     }
 
@@ -46,7 +46,7 @@ func --> <T: NSCoding>(left:Array<T>, right: Encoder) {
 }
 
 func <-- <T: NSCoding>(inout left:Array<T>, right: Decoder) {
-    guard let rightValue: Array<T> = right.nsCodingArray() else {
+    guard let rightValue: Array<T> = right.nsCodingArray(nil) else {
         return
     }
 
@@ -60,7 +60,7 @@ func --> <T: NSCoding>(left:Array<T>?, right: Encoder) {
 }
 
 func <-- <T: NSCoding>(inout left:Array<T>?, right: Decoder) {
-    guard let rightValue: Array<T> = right.nsCodingArray() else {
+    guard let rightValue: Array<T> = right.nsCodingArray(nil) else {
         left = nil
         return
     }
@@ -76,44 +76,25 @@ extension Encoder : NSCodingExtension {
     }
 
     func addNSCodingArray(nsCodingArray: Array<NSCoding>?) {
-        guard let array = nsCodingArray else {
-            setValueForCurrentKey(nil)
-            return
-        }
-
-        setValueForCurrentKey(array)
+        setValueForCurrentKey(nsCodingArray)
     }
 }
 
 // MARK: Decoder
 
 extension Decoder : NSCodingExtension {
-    func nsCoding<T: NSCoding>() -> T? {
-        guard let val = valueForCurrentKey() as? NSCoding else {
+    func nsCoding<T: NSCoding>(key: String?) -> T? {
+        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? NSCoding
+        guard val != nil else {
             return nil
         }
 
         return val as? T
     }
 
-    func nsCodingArray<T: NSCoding>() -> Array<T>? {
-        guard let val = valueForCurrentKey() as? Array<T> else {
-            return nil
-        }
-
-        return val
-    }
-
-    func nsCoding<T: NSCoding>(key: String) -> T? {
-        guard let val = valueForKey(key) as? NSCoding else {
-            return nil
-        }
-
-        return val as? T
-    }
-
-    func nsCodingArray<T: NSCoding>(key: String) -> Array<T>? {
-        guard let val = valueForKey(key) as? Array<T> else {
+    func nsCodingArray<T: NSCoding>(key: String?) -> Array<T>? {
+        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<T>
+        guard val != nil else {
             return nil
         }
 

@@ -17,7 +17,7 @@ func --> (left:Float, right: Encoder) {
 }
 
 func <-- (inout left:Float, right: Decoder) {
-    guard let rightValue = right.floatValue() else {
+    guard let rightValue = right.float(nil) else {
         return
     }
 
@@ -31,7 +31,7 @@ func --> (left:Float?, right: Encoder) {
 }
 
 func <-- (inout left:Float?, right: Decoder) {
-    guard let rightValue = right.floatValue() else {
+    guard let rightValue = right.float(nil) else {
         left = nil
         return
     }
@@ -46,7 +46,7 @@ func --> (left:Array<Float>, right: Encoder) {
 }
 
 func <-- (inout left:Array<Float>, right: Decoder) {
-    guard let rightValue = right.floatArray() else {
+    guard let rightValue = right.floatArray(nil) else {
         return
     }
 
@@ -60,7 +60,7 @@ func --> (left:Array<Float>?, right: Encoder) {
 }
 
 func <-- (inout left:Array<Float>?, right: Decoder) {
-    guard let rightValue = right.floatArray() else {
+    guard let rightValue = right.floatArray(nil) else {
         left = nil
         return
     }
@@ -75,7 +75,7 @@ func --> (left:Double, right: Encoder) {
 }
 
 func <-- (inout left:Double, right: Decoder) {
-    guard let rightValue = right.double() else {
+    guard let rightValue = right.double(nil) else {
         return
     }
 
@@ -89,7 +89,7 @@ func --> (left:Double?, right: Encoder) {
 }
 
 func <-- (inout left:Double?, right: Decoder) {
-    guard let rightValue = right.double() else {
+    guard let rightValue = right.double(nil) else {
         left = nil
         return
     }
@@ -104,7 +104,7 @@ func --> (left:Array<Double>, right: Encoder) {
 }
 
 func <-- (inout left:Array<Double>, right: Decoder) {
-    guard let rightValue = right.doubleArray() else {
+    guard let rightValue = right.doubleArray(nil) else {
         return
     }
 
@@ -118,7 +118,7 @@ func --> (left:Array<Double>?, right: Encoder) {
 }
 
 func <-- (inout left:Array<Double>?, right: Decoder) {
-    guard let rightValue = right.doubleArray() else {
+    guard let rightValue = right.doubleArray(nil) else {
         left = nil
         return
     }
@@ -132,37 +132,19 @@ extension Encoder : FloatEncoding {
     // MARK: Float and Double
 
     func addFloat(float: Float?) {
-        if float != nil {
-            setValueForCurrentKey(NSNumber(float: float!))
-        } else {
-            setValueForCurrentKey(nil)
-        }
+        setValueForCurrentKey((float == nil) ? nil : NSNumber(float: float!))
     }
 
     func addFloatArray(floatArray: Array<Float>?) {
-        guard let array = floatArray else {
-            setValueForCurrentKey(nil)
-            return
-        }
-
-        setValueForCurrentKey(array)
+        setValueForCurrentKey(floatArray)
     }
 
     func addDouble(double: Double?) {
-        if double != nil {
-            setValueForCurrentKey(NSNumber(double: double!))
-        } else {
-            setValueForCurrentKey(nil)
-        }
+        setValueForCurrentKey((double == nil) ? nil : NSNumber(double: double!))
     }
 
     func addDoubleArray(doubleArray: Array<Double>?) {
-        guard let array = doubleArray else {
-            setValueForCurrentKey(nil)
-            return
-        }
-
-        setValueForCurrentKey(array)
+        setValueForCurrentKey(doubleArray)
     }
 }
 
@@ -171,71 +153,19 @@ extension Encoder : FloatEncoding {
 extension Decoder : FloatEncoding {
     // MARK: Float and Double types
 
-    func floatValue() -> Float? {
-        guard let val = valueForCurrentKey() as? NSNumber else {
-            return nil
-        }
-
-        return val.floatValue
+    func float(key: String?) -> Float? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Float
     }
 
-    func floatArray() -> Array<Float>? {
-        guard let val = valueForCurrentKey() as? Array<Float> else {
-            return nil
-        }
-
-
-        return val
+    func floatArray(key: String?) -> Array<Float>? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<Float>
     }
 
-    func float(key: String) -> Float? {
-        guard let val = valueForKey(key) as? NSNumber else {
-            return nil
-        }
-
-        return val.floatValue
+    func double(key: String?) -> Double? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Double
     }
 
-    func floatArray(key: String) -> Array<Float>? {
-        guard let val = valueForKey(key) as? Array<Float> else {
-            return nil
-        }
-
-
-        return val
-    }
-
-    func double() -> Double? {
-        guard let val = valueForCurrentKey() as? NSNumber else {
-            return nil
-        }
-
-        return val.doubleValue
-    }
-
-    func doubleArray() -> Array<Double>? {
-        guard let val = valueForCurrentKey() as? Array<Double> else {
-            return nil
-        }
-
-
-        return val
-    }
-
-    func double(key: String) -> Double? {
-        guard let val = valueForKey(key) as? NSNumber else {
-            return nil
-        }
-
-        return val.doubleValue
-    }
-
-    func doubleArray(key: String) -> Array<Double>? {
-        guard let val = valueForKey(key) as? Array<Double> else {
-            return nil
-        }
-
-
-        return val
+    func doubleArray(key: String?) -> Array<Double>? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<Double>
     }
 }

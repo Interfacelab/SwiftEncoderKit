@@ -17,7 +17,7 @@ func --> <T: SignedIntegerType>(left:T, right: Encoder) {
 }
 
 func <-- <T: SignedIntegerType>(inout left:T, right: Decoder) {
-    guard let rightValue: T = right.integer() else {
+    guard let rightValue: T = right.integer(nil) else {
         return
     }
 
@@ -32,7 +32,7 @@ func --> <T: SignedIntegerType>(left:Array<T>, right: Encoder) {
 }
 
 func <-- <T: SignedIntegerType>(inout left:Array<T>, right: Decoder) {
-    guard let rightValue:Array<T> = right.integerArray() else {
+    guard let rightValue:Array<T> = right.integerArray(nil) else {
         return
     }
 
@@ -46,7 +46,7 @@ func --> <T: SignedIntegerType>(left:T?, right: Encoder) {
 }
 
 func <-- <T: SignedIntegerType>(inout left:T?, right: Decoder) {
-    guard let rightValue: T = right.integer() else {
+    guard let rightValue: T = right.integer(nil) else {
         left = nil
         return
     }
@@ -61,7 +61,7 @@ func --> <T: SignedIntegerType>(left:Array<T>?, right: Encoder) {
 }
 
 func <-- <T: SignedIntegerType>(inout left:Array<T>?, right: Decoder) {
-    guard let rightValue:Array<T> = right.integerArray() else {
+    guard let rightValue:Array<T> = right.integerArray(nil) else {
         left = nil
         return
     }
@@ -76,7 +76,7 @@ func --> <T: SignedIntegerType>(left: [String: T], right: Encoder) {
 }
 
 func <-- <T: SignedIntegerType>(inout left: [String: T], right: Decoder) {
-    guard let rightValue: [String: T] = right.integerDictionary() else {
+    guard let rightValue: [String: T] = right.integerDictionary(nil) else {
         return
     }
 
@@ -90,7 +90,7 @@ func --> <T: SignedIntegerType>(left: [String: T]?, right: Encoder) {
 }
 
 func <-- <T: SignedIntegerType>(inout left: [String: T]?, right: Decoder) {
-    guard let rightValue: [String: T] = right.integerDictionary() else {
+    guard let rightValue: [String: T] = right.integerDictionary(nil) else {
         left = nil
         return
     }
@@ -173,30 +173,34 @@ extension Encoder : SignedIntegerEncoding {
 extension Decoder : SignedIntegerEncoding {
     // MARK: Integer types
 
-    func integer<T: SignedIntegerType>() -> T? {
-        guard let val = valueForCurrentKey() as? NSNumber else {
+    func integer<T: SignedIntegerType>(key:String?) -> T? {
+        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? NSNumber
+
+        guard val != nil else {
             return nil
         }
 
         let dt=T.self
 
         if dt == Int.self || dt == Int?.self {
-            return val.integerValue as? T
+            return val!.integerValue as? T
         } else if dt == Int8.self || dt == Int8?.self {
-            return val.charValue as? T
+            return val!.charValue as? T
         } else if dt == Int16.self || dt == Int16?.self {
-            return val.shortValue as? T
+            return val!.shortValue as? T
         } else if dt == Int32.self || dt == Int32?.self {
-            return val.intValue as? T
+            return val!.intValue as? T
         } else if dt == Int64.self || dt == Int64?.self {
-            return val.longLongValue as? T
+            return val!.longLongValue as? T
         }
 
         return nil
     }
 
-    func integerArray<T: SignedIntegerType>() -> Array<T>? {
-        guard let val = valueForCurrentKey() as? Array<NSNumber> else {
+    func integerArray<T: SignedIntegerType>(key: String?) -> Array<T>? {
+        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<NSNumber>
+
+        guard val != nil else {
             return nil
         }
 
@@ -204,7 +208,7 @@ extension Decoder : SignedIntegerEncoding {
 
         var decoded: [T] = []
 
-        for ele in val {
+        for ele in val! {
             if dt == Int.self || dt == Int?.self {
                 decoded.append(ele.integerValue as! T)
             } else if dt == Int8.self || dt == Int8?.self {
@@ -221,8 +225,10 @@ extension Decoder : SignedIntegerEncoding {
         return decoded
     }
 
-    func integerDictionary<T: SignedIntegerType>() -> [String : T]? {
-        guard let val = valueForCurrentKey() as? [String : NSNumber] else {
+    func integerDictionary<T: SignedIntegerType>(key: String?) -> [String : T]? {
+        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? [String : NSNumber]
+
+        guard val != nil else {
             return nil
         }
 
@@ -230,83 +236,7 @@ extension Decoder : SignedIntegerEncoding {
 
         var decoded: [String : T] = [:]
 
-        for (key, ele) in val {
-            if dt == Int.self || dt == Int?.self {
-                decoded[key] = ele.integerValue as? T
-            } else if dt == Int8.self || dt == Int8?.self {
-                decoded[key] = ele.charValue as? T
-            } else if dt == Int16.self || dt == Int16?.self {
-                decoded[key] = ele.shortValue as? T
-            } else if dt == Int32.self || dt == Int32?.self {
-                decoded[key] = ele.intValue as? T
-            } else if dt == Int64.self || dt == Int64?.self {
-                decoded[key] = ele.longLongValue as? T
-            }
-        }
-
-        return decoded
-    }
-
-    func integer<T: SignedIntegerType>(key:String) -> T? {
-        guard let val = valueForKey(key) as? NSNumber else {
-            return nil
-        }
-
-        let dt=T.self
-
-        if dt == Int.self || dt == Int?.self {
-            return val.integerValue as? T
-        } else if dt == Int8.self || dt == Int8?.self {
-            return val.charValue as? T
-        } else if dt == Int16.self || dt == Int16?.self {
-            return val.shortValue as? T
-        } else if dt == Int32.self || dt == Int32?.self {
-            return val.intValue as? T
-        } else if dt == Int64.self || dt == Int64?.self {
-            return val.longLongValue as? T
-        }
-
-        return nil
-    }
-
-    func integerArray<T: SignedIntegerType>(key: String) -> Array<T>? {
-        guard let val = valueForKey(key) as? Array<NSNumber> else {
-            return nil
-        }
-
-        let dt=T.self
-
-        var decoded: [T] = []
-
-        for ele in val {
-            if dt == Int.self || dt == Int?.self {
-                decoded.append(ele.integerValue as! T)
-            } else if dt == Int8.self || dt == Int8?.self {
-                decoded.append(ele.charValue as! T)
-            } else if dt == Int16.self || dt == Int16?.self {
-                decoded.append(ele.shortValue as! T)
-            } else if dt == Int32.self || dt == Int32?.self {
-                decoded.append(ele.intValue as! T)
-            } else if dt == Int64.self || dt == Int64?.self {
-                decoded.append(ele.longLongValue as! T)
-            }
-        }
-
-        return decoded
-    }
-
-
-
-    func integerDictionary<T: SignedIntegerType>(key: String) -> [String : T]? {
-        guard let val = valueForKey(key) as? [String : NSNumber] else {
-            return nil
-        }
-
-        let dt=T.self
-
-        var decoded: [String : T] = [:]
-
-        for (key, ele) in val {
+        for (key, ele) in val! {
             if dt == Int.self || dt == Int?.self {
                 decoded[key] = ele.integerValue as? T
             } else if dt == Int8.self || dt == Int8?.self {

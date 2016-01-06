@@ -17,7 +17,7 @@ func --> (left:Bool, right: Encoder) {
 }
 
 func <-- (inout left:Bool, right: Decoder) {
-    guard let rightValue = right.bool() else {
+    guard let rightValue = right.bool(nil) else {
         return
     }
 
@@ -31,7 +31,7 @@ func --> (left:Bool?, right: Encoder) {
 }
 
 func <-- (inout left:Bool?, right: Decoder) {
-    guard let rightValue = right.bool() else {
+    guard let rightValue = right.bool(nil) else {
         left = nil
         return
     }
@@ -46,7 +46,7 @@ func --> (left:Array<Bool>, right: Encoder) {
 }
 
 func <-- (inout left:Array<Bool>, right: Decoder) {
-    guard let rightValue = right.boolArray() else {
+    guard let rightValue = right.boolArray(nil) else {
         return
     }
 
@@ -60,7 +60,7 @@ func --> (left:Array<Bool>?, right: Encoder) {
 }
 
 func <-- (inout left:Array<Bool>?, right: Decoder) {
-    guard let rightValue = right.boolArray() else {
+    guard let rightValue = right.boolArray(nil) else {
         left = nil
         return
     }
@@ -72,57 +72,22 @@ func <-- (inout left:Array<Bool>?, right: Decoder) {
 
 extension Encoder : BoolEncoding {
     func addBool(bool: Bool?) {
-        if bool != nil {
-            setValueForCurrentKey(NSNumber(bool: bool!))
-        } else {
-            setValueForCurrentKey(nil)
-        }
+        setValueForCurrentKey(bool)
     }
 
-    func addBoolArray(doubleArray: Array<Bool>?) {
-        guard let array = doubleArray else {
-            setValueForCurrentKey(nil)
-            return
-        }
-
-        setValueForCurrentKey(array)
+    func addBoolArray(boolArray: Array<Bool>?) {
+        setValueForCurrentKey(boolArray)
     }
 }
 
 // MARK: Decoder
 
 extension Decoder : BoolEncoding {
-    func bool() -> Bool? {
-        guard let val = valueForCurrentKey() as? NSNumber else {
-            return nil
-        }
-
-        return val.boolValue
+    func bool(key: String?) -> Bool? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Bool
     }
 
-    func boolArray() -> Array<Bool>? {
-        guard let val = valueForCurrentKey() as? Array<Bool> else {
-            return nil
-        }
-
-
-        return val
-    }
-
-    func bool(key: String) -> Bool? {
-        guard let val = valueForKey(key) as? NSNumber else {
-            return nil
-        }
-
-        return val.boolValue
-    }
-
-    func boolArray(key: String) -> Array<Bool>? {
-        guard let val = valueForKey(key) as? Array<Bool> else {
-            return nil
-        }
-
-
-        return val
+    func boolArray(key: String?) -> Array<Bool>? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<Bool>
     }
 }

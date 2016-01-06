@@ -17,7 +17,7 @@ func --> <T: UnsignedIntegerType>(left:T, right: Encoder) {
 }
 
 func <-- <T: UnsignedIntegerType>(inout left:T, right: Decoder) {
-    guard let rightValue: T = right.unsignedInteger() else {
+    guard let rightValue: T = right.unsignedInteger(nil) else {
         return
     }
 
@@ -31,7 +31,7 @@ func --> <T: UnsignedIntegerType>(left:Array<T>, right: Encoder) {
 }
 
 func <-- <T: UnsignedIntegerType>(inout left:Array<T>, right: Decoder) {
-    guard let rightValue:Array<T> = right.unsignedIntegerArray() else {
+    guard let rightValue:Array<T> = right.unsignedIntegerArray(nil) else {
         return
     }
 
@@ -45,7 +45,7 @@ func --> <T: UnsignedIntegerType>(left:T?, right: Encoder) {
 }
 
 func <-- <T: UnsignedIntegerType>(inout left:T?, right: Decoder) {
-    guard let rightValue: T = right.unsignedInteger() else {
+    guard let rightValue: T = right.unsignedInteger(nil) else {
         left = nil
         return
     }
@@ -60,7 +60,7 @@ func --> <T: UnsignedIntegerType>(left:Array<T>?, right: Encoder) {
 }
 
 func <-- <T: UnsignedIntegerType>(inout left:Array<T>?, right: Decoder) {
-    guard let rightValue:Array<T> = right.unsignedIntegerArray() else {
+    guard let rightValue:Array<T> = right.unsignedIntegerArray(nil) else {
         left = nil
         return
     }
@@ -114,40 +114,42 @@ extension Encoder : UnsignedIntegerEncoding {
 }
 
 extension Decoder : UnsignedIntegerEncoding {
+    func unsignedInteger<T: UnsignedIntegerType>(key: String?) -> T? {
+        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? NSNumber
 
-    func unsignedInteger<T: UnsignedIntegerType>() -> T? {
-        guard let val = valueForCurrentKey() as? NSNumber else {
+        guard val != nil else {
             return nil
         }
 
         let dt=T.self
 
         if dt == UInt.self || dt == UInt?.self {
-            return val.unsignedIntegerValue as? T
+            return val!.unsignedIntegerValue as? T
         } else if dt == UInt8.self || dt == UInt8?.self {
-            return val.unsignedCharValue as? T
+            return val!.unsignedCharValue as? T
         } else if dt == UInt16.self || dt == UInt16?.self {
-            return val.unsignedShortValue as? T
+            return val!.unsignedShortValue as? T
         } else if dt == UInt32.self || dt == UInt32?.self {
-            return val.unsignedIntValue as? T
+            return val!.unsignedIntValue as? T
         } else if dt == UInt64.self || dt == UInt64?.self {
-            return val.unsignedLongLongValue as? T
+            return val!.unsignedLongLongValue as? T
         }
 
         return nil
     }
 
-    func unsignedIntegerArray<T: UnsignedIntegerType>() -> Array<T>? {
-        guard let val = valueForCurrentKey() as? Array<NSNumber> else {
+    func unsignedIntegerArray<T: UnsignedIntegerType>(key: String?) -> Array<T>? {
+        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<NSNumber>
+
+        guard val != nil else {
             return nil
         }
-
 
         let dt=T.self
 
         var decoded: [T] = []
 
-        for ele in val {
+        for ele in val! {
             if dt == UInt.self || dt == UInt?.self {
                 decoded.append(ele.unsignedIntegerValue as! T)
             } else if dt == UInt8.self || dt == UInt8?.self {
@@ -163,53 +165,4 @@ extension Decoder : UnsignedIntegerEncoding {
 
         return decoded
     }
-
-    func unsignedInteger<T: UnsignedIntegerType>(key:String) -> T? {
-        guard let val = valueForKey(key) as? NSNumber else {
-            return nil
-        }
-
-        let dt=T.self
-
-        if dt == UInt.self || dt == UInt?.self {
-            return val.unsignedIntegerValue as? T
-        } else if dt == UInt8.self || dt == UInt8?.self {
-            return val.unsignedCharValue as? T
-        } else if dt == UInt16.self || dt == UInt16?.self {
-            return val.unsignedShortValue as? T
-        } else if dt == UInt32.self || dt == UInt32?.self {
-            return val.unsignedIntValue as? T
-        } else if dt == UInt64.self || dt == UInt64?.self {
-            return val.unsignedLongLongValue as? T
-        }
-
-        return nil
-    }
-
-    func unsignedIntegerArray<T: UnsignedIntegerType>(key: String) -> Array<T>? {
-        guard let val = valueForKey(key) as? Array<NSNumber> else {
-            return nil
-        }
-
-        let dt=T.self
-
-        var decoded: [T] = []
-
-        for ele in val {
-            if dt == UInt.self || dt == UInt?.self {
-                decoded.append(ele.unsignedIntegerValue as! T)
-            } else if dt == UInt8.self || dt == UInt8?.self {
-                decoded.append(ele.unsignedCharValue as! T)
-            } else if dt == UInt16.self || dt == UInt16?.self {
-                decoded.append(ele.unsignedShortValue as! T)
-            } else if dt == UInt32.self || dt == UInt32?.self {
-                decoded.append(ele.unsignedIntValue as! T)
-            } else if dt == UInt64.self || dt == UInt64?.self {
-                decoded.append(ele.unsignedLongLongValue as! T)
-            }
-        }
-
-        return decoded
-    }
-
 }
