@@ -26,23 +26,22 @@
 
 import Foundation
 
-import UIKit
 
 class NSCodingModel: Encodable {
-    var image: UIImage
-    var imageOpt: UIImage?
-    var imageOptNil: UIImage?
+    var image: OSImage
+    var imageOpt: OSImage?
+    var imageOptNil: OSImage?
 
-    var color: UIColor
-    var colorOpt: UIColor?
-    var colorOptNil: UIColor?
+    var color: OSColor
+    var colorOpt: OSColor?
+    var colorOptNil: OSColor?
 
     init() {
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
 
-        image = UIImage(contentsOfFile: path!)!
-        color = UIColor.whiteColor()
+        image = OSImage(contentsOfFile: path!)!
+        color = OSColor.whiteColor()
     }
 
     required init?(_ decoder: Decoder) {
@@ -51,14 +50,14 @@ class NSCodingModel: Encodable {
 
         // This non-optional hasn't been initialized yet, so we can't use the
         // <-- infix operator
-        image = decoder.nsCoding("image") ?? UIImage(contentsOfFile: path!)!
+        image = decoder.nsCoding("image") ?? OSImage(contentsOfFile: path!)!
 
         imageOpt <-- decoder["imageOpt"]
         imageOptNil <-- decoder["imageOptNil"]
 
         // This non-optional hasn't been initialized yet, so we can't use the
         // <-- infix operator
-        color = decoder.nsCoding("color") ?? UIColor.whiteColor()
+        color = decoder.nsCoding("color") ?? OSColor.whiteColor()
 
         colorOpt <-- decoder["colorOpt"]
         colorOptNil <-- decoder["colorOptNil"]

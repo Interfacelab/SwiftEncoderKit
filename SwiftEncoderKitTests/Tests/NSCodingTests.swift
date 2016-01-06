@@ -35,16 +35,16 @@ class NSCodingTests: XCTestCase {
 
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
-        let image = UIImage(contentsOfFile: path!)!
+        let image = OSImage(contentsOfFile: path!)!
 
         let model = NSCodingModel()
 
-        model.image = UIImage(contentsOfFile: path!)!
-        model.imageOpt = UIImage(contentsOfFile: path!)
+        model.image = OSImage(contentsOfFile: path!)!
+        model.imageOpt = OSImage(contentsOfFile: path!)
         model.imageOptNil = nil
 
-        model.color = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        model.colorOpt = UIColor(red:1.0, green: 1.0, blue: 0.0, alpha: 1.0)
+        model.color = OSColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        model.colorOpt = OSColor(red:1.0, green: 1.0, blue: 0.0, alpha: 1.0)
         model.colorOptNil = nil
 
         Encoder(model).writeToFile(fileName)
@@ -82,12 +82,12 @@ class NSCodingTests: XCTestCase {
 
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
-        let image = UIImage(contentsOfFile: path!)!
+        let image = OSImage(contentsOfFile: path!)!
 
-        let model = ConstNSCodingModel(image: UIImage(contentsOfFile: path!)!,
-            imageOpt: UIImage(contentsOfFile: path!)!, imageOptNil: nil,
-            color: UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
-            colorOpt: UIColor(red:1.0, green: 1.0, blue: 0.0, alpha: 1.0), colorOptNil: nil)
+        let model = ConstNSCodingModel(image: OSImage(contentsOfFile: path!)!,
+            imageOpt: OSImage(contentsOfFile: path!)!, imageOptNil: nil,
+            color: OSColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
+            colorOpt: OSColor(red:1.0, green: 1.0, blue: 0.0, alpha: 1.0), colorOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
         let reModel: ConstNSCodingModel? = Decoder(path: fileName).decodedObject()
@@ -127,20 +127,20 @@ class NSCodingTests: XCTestCase {
 
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
-        let image = UIImage(contentsOfFile: path!)!
+        let image = OSImage(contentsOfFile: path!)!
 
         let model = NSCodingArrayModel()
 
-        model.imageA = [UIImage(contentsOfFile: path!)!, UIImage(contentsOfFile: path!)!]
-        model.imageOptA = [UIImage(contentsOfFile: path!)!, UIImage(contentsOfFile: path!)!,
-            UIImage(contentsOfFile: path!)!]
+        model.imageA = [OSImage(contentsOfFile: path!)!, OSImage(contentsOfFile: path!)!]
+        model.imageOptA = [OSImage(contentsOfFile: path!)!, OSImage(contentsOfFile: path!)!,
+            OSImage(contentsOfFile: path!)!]
         model.imageOptNilA = nil
 
 
-        model.colorA = [UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
-            UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)]
-        model.colorOptA = [UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
-            UIColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0), UIColor(red: 1.0, green: 1.0,
+        model.colorA = [OSColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
+            OSColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)]
+        model.colorOptA = [OSColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
+            OSColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0), OSColor(red: 1.0, green: 1.0,
                 blue: 0.0, alpha: 1.0)]
         model.colorOptNilA = nil
 
@@ -210,16 +210,16 @@ class NSCodingTests: XCTestCase {
 
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
-        let image = UIImage(contentsOfFile: path!)!
+        let image = OSImage(contentsOfFile: path!)!
 
-        let imageA = [UIImage(contentsOfFile: path!)!, UIImage(contentsOfFile: path!)!]
-        let imageOptA = [UIImage(contentsOfFile: path!)!, UIImage(contentsOfFile: path!)!,
-            UIImage(contentsOfFile: path!)!]
+        let imageA = [OSImage(contentsOfFile: path!)!, OSImage(contentsOfFile: path!)!]
+        let imageOptA = [OSImage(contentsOfFile: path!)!, OSImage(contentsOfFile: path!)!,
+            OSImage(contentsOfFile: path!)!]
 
-        let colorA = [UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
-            UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)]
-        let colorOptA = [UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
-            UIColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0), UIColor(red: 1.0, green: 1.0,
+        let colorA = [OSColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
+            OSColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)]
+        let colorOptA = [OSColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
+            OSColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0), OSColor(red: 1.0, green: 1.0,
                 blue: 0.0, alpha: 1.0)]
 
         let model = ConstNSCodingArrayModel(imageA: imageA, imageOptA: imageOptA, imageOptNilA: nil,
@@ -291,20 +291,20 @@ class NSCodingTests: XCTestCase {
 
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
-        let image = UIImage(contentsOfFile: path!)!
+        let image = OSImage(contentsOfFile: path!)!
 
         let model = NSCodingDictionaryModel()
 
-        model.imageD = ["a": UIImage(contentsOfFile: path!)!, "b": UIImage(contentsOfFile: path!)!]
-        model.imageOptD = ["a": UIImage(contentsOfFile: path!)!,
-            "b": UIImage(contentsOfFile: path!)!, "c": UIImage(contentsOfFile: path!)!]
+        model.imageD = ["a": OSImage(contentsOfFile: path!)!, "b": OSImage(contentsOfFile: path!)!]
+        model.imageOptD = ["a": OSImage(contentsOfFile: path!)!,
+            "b": OSImage(contentsOfFile: path!)!, "c": OSImage(contentsOfFile: path!)!]
         model.imageOptNilD = nil
 
-        model.colorD = ["a": UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
-            "b": UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)]
-        model.colorOptD = ["a": UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
-            "b": UIColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0),
-            "c": UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)]
+        model.colorD = ["a": OSColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
+            "b": OSColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)]
+        model.colorOptD = ["a": OSColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
+            "b": OSColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0),
+            "c": OSColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)]
         model.colorOptNilD = nil
 
         Encoder(model).writeToFile(fileName)
@@ -384,18 +384,18 @@ class NSCodingTests: XCTestCase {
 
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
-        let image = UIImage(contentsOfFile: path!)!
+        let image = OSImage(contentsOfFile: path!)!
 
 
-        let imageD = ["a": UIImage(contentsOfFile: path!)!, "b": UIImage(contentsOfFile: path!)!]
-        let imageOptD = ["a": UIImage(contentsOfFile: path!)!,
-            "b": UIImage(contentsOfFile: path!)!, "c": UIImage(contentsOfFile: path!)!]
+        let imageD = ["a": OSImage(contentsOfFile: path!)!, "b": OSImage(contentsOfFile: path!)!]
+        let imageOptD = ["a": OSImage(contentsOfFile: path!)!,
+            "b": OSImage(contentsOfFile: path!)!, "c": OSImage(contentsOfFile: path!)!]
 
-        let colorD = ["a": UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
-            "b": UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)]
-        let colorOptD = ["a": UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
-            "b": UIColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0),
-            "c": UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)]
+        let colorD = ["a": OSColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
+            "b": OSColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)]
+        let colorOptD = ["a": OSColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
+            "b": OSColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0),
+            "c": OSColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)]
 
         let model = ConstNSCodingDictionaryModel(imageD: imageD, imageOptD: imageOptD,
             imageOptNilD: nil, colorD: colorD, colorOptD: colorOptD, colorOptNilD: nil)

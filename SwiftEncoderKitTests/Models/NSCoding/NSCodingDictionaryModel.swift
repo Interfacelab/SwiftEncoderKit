@@ -26,16 +26,14 @@
 
 import Foundation
 
-import UIKit
-
 class NSCodingDictionaryModel: Encodable {
-    var imageD: [String: UIImage]
-    var imageOptD: [String: UIImage]?
-    var imageOptNilD: [String: UIImage]?
+    var imageD: [String: OSImage]
+    var imageOptD: [String: OSImage]?
+    var imageOptNilD: [String: OSImage]?
 
-    var colorD: [String: UIColor]
-    var colorOptD: [String: UIColor]?
-    var colorOptNilD: [String: UIColor]?
+    var colorD: [String: OSColor]
+    var colorOptD: [String: OSColor]?
+    var colorOptNilD: [String: OSColor]?
 
     init() {
         imageD = [:]

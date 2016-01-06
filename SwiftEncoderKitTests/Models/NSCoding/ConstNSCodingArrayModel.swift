@@ -26,16 +26,14 @@
 
 import Foundation
 
-import UIKit
-
 class ConstNSCodingArrayModel: Encodable {
-    let imageA: [UIImage]
-    let imageOptA: [UIImage]?
-    let imageOptNilA: [UIImage]?
+    let imageA: [OSImage]
+    let imageOptA: [OSImage]?
+    let imageOptNilA: [OSImage]?
 
-    let colorA: [UIColor]
-    let colorOptA: [UIColor]?
-    let colorOptNilA: [UIColor]?
+    let colorA: [OSColor]
+    let colorOptA: [OSColor]?
+    let colorOptNilA: [OSColor]?
 
     init() {
         imageA = []
@@ -47,8 +45,8 @@ class ConstNSCodingArrayModel: Encodable {
         colorOptNilA = []
     }
 
-    init(imageA: [UIImage], imageOptA: [UIImage]?, imageOptNilA: [UIImage]?, colorA: [UIColor],
-        colorOptA: [UIColor]?, colorOptNilA: [UIColor]?) {
+    init(imageA: [OSImage], imageOptA: [OSImage]?, imageOptNilA: [OSImage]?, colorA: [OSColor],
+        colorOptA: [OSColor]?, colorOptNilA: [OSColor]?) {
             self.imageA = imageA
             self.imageOptA = imageOptA
             self.imageOptNilA = imageOptNilA

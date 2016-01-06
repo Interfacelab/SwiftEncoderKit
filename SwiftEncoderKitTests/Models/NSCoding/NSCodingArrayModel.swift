@@ -26,16 +26,14 @@
 
 import Foundation
 
-import UIKit
-
 class NSCodingArrayModel: Encodable {
-    var imageA: [UIImage]
-    var imageOptA: [UIImage]?
-    var imageOptNilA: [UIImage]?
+    var imageA: [OSImage]
+    var imageOptA: [OSImage]?
+    var imageOptNilA: [OSImage]?
 
-    var colorA: [UIColor]
-    var colorOptA: [UIColor]?
-    var colorOptNilA: [UIColor]?
+    var colorA: [OSColor]
+    var colorOptA: [OSColor]?
+    var colorOptNilA: [OSColor]?
 
     init() {
         imageA = []

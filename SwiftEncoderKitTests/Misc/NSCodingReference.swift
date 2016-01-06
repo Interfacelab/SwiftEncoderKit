@@ -24,7 +24,6 @@
 //  THE SOFTWARE.
 
 
-import UIKit
 import AVFoundation
 
 /// The purpose of this class is to highlight what is encodable/decodable by NSCoder by default

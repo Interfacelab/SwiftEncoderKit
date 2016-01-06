@@ -26,32 +26,30 @@
 
 import Foundation
 
-import UIKit
-
 class ConstNSCodingModel: Encodable {
-    let image: UIImage
-    let imageOpt: UIImage?
-    let imageOptNil: UIImage?
+    let image: OSImage
+    let imageOpt: OSImage?
+    let imageOptNil: OSImage?
 
-    let color: UIColor
-    let colorOpt: UIColor?
-    let colorOptNil: UIColor?
+    let color: OSColor
+    let colorOpt: OSColor?
+    let colorOptNil: OSColor?
 
     init() {
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
 
-        image = UIImage(contentsOfFile: path!)!
+        image = OSImage(contentsOfFile: path!)!
         imageOpt = nil
-        imageOptNil = UIImage(contentsOfFile: path!)!
+        imageOptNil = OSImage(contentsOfFile: path!)!
 
-        color = UIColor.whiteColor()
+        color = OSColor.whiteColor()
         colorOpt = nil
-        colorOptNil = UIColor.whiteColor()
+        colorOptNil = OSColor.whiteColor()
     }
 
-    init(image: UIImage, imageOpt: UIImage?, imageOptNil: UIImage?, color: UIColor,
-        colorOpt: UIColor?, colorOptNil: UIColor?) {
+    init(image: OSImage, imageOpt: OSImage?, imageOptNil: OSImage?, color: OSColor,
+        colorOpt: OSColor?, colorOptNil: OSColor?) {
             self.image = image
             self.imageOpt = imageOpt
             self.imageOptNil = imageOptNil
@@ -69,11 +67,11 @@ class ConstNSCodingModel: Encodable {
         // the <-- infix operator won't work here, so we'll use the methods on the
         // decoder to get our values
 
-        image = decoder.nsCoding("image") ?? UIImage(contentsOfFile: path!)!
+        image = decoder.nsCoding("image") ?? OSImage(contentsOfFile: path!)!
         imageOpt = decoder.nsCoding("imageOpt")
         imageOptNil = decoder.nsCoding("imageOptNil")
 
-        color = decoder.nsCoding("color") ?? UIColor.whiteColor()
+        color = decoder.nsCoding("color") ?? OSColor.whiteColor()
         colorOpt = decoder.nsCoding("colorOpt")
         colorOptNil = decoder.nsCoding("colorOptNil")
     }

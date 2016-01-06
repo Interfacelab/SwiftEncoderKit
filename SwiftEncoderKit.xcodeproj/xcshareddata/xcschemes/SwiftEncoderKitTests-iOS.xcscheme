@@ -17,8 +17,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF0B5C111C3CF3CA00A15C56"
-               BuildableName = "SwiftEncoderKitTests.xctest"
-               BlueprintName = "SwiftEncoderKitTests"
+               BuildableName = "SwiftEncoderKitTests-iOS.xctest"
+               BlueprintName = "SwiftEncoderKitTests-iOS"
                ReferencedContainer = "container:SwiftEncoderKit.xcodeproj">
             </BuildableReference>
          </TestableReference>

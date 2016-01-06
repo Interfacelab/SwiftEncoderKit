@@ -26,20 +26,18 @@
 
 import Foundation
 
-import UIKit
-
 class ConstNSCodingDictionaryModel: Encodable {
-    let imageD: [String: UIImage]
-    let imageOptD: [String: UIImage]?
-    let imageOptNilD: [String: UIImage]?
+    let imageD: [String: OSImage]
+    let imageOptD: [String: OSImage]?
+    let imageOptNilD: [String: OSImage]?
 
-    let colorD: [String: UIColor]
-    let colorOptD: [String: UIColor]?
-    let colorOptNilD: [String: UIColor]?
+    let colorD: [String: OSColor]
+    let colorOptD: [String: OSColor]?
+    let colorOptNilD: [String: OSColor]?
 
-    init(imageD: [String: UIImage], imageOptD: [String: UIImage]?, imageOptNilD: [String: UIImage]?,
-        colorD: [String: UIColor], colorOptD: [String: UIColor]?,
-        colorOptNilD: [String: UIColor]?) {
+    init(imageD: [String: OSImage], imageOptD: [String: OSImage]?, imageOptNilD: [String: OSImage]?,
+        colorD: [String: OSColor], colorOptD: [String: OSColor]?,
+        colorOptNilD: [String: OSColor]?) {
 
             self.imageD = imageD
             self.imageOptD = imageOptD
