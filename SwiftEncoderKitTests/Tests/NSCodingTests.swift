@@ -390,4 +390,101 @@ class NSCodingTests: XCTestCase {
             XCTAssert(a == 1.0)
         }
     }
+
+    func testConstDictionaryEncodingDecoding() {
+        let fileName = "/tmp/constNSCodingDict.plist"
+
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let path = bundle.pathForResource("test-image", ofType: "jpg")
+        let image = UIImage(contentsOfFile: path!)!
+
+
+        let imageD = ["a": UIImage(contentsOfFile: path!)!, "b": UIImage(contentsOfFile: path!)!]
+        let imageOptD = ["a": UIImage(contentsOfFile: path!)!,
+            "b": UIImage(contentsOfFile: path!)!, "c": UIImage(contentsOfFile: path!)!]
+
+        let colorD = ["a": UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
+            "b": UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)]
+        let colorOptD = ["a": UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
+            "b": UIColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0),
+            "c": UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)]
+
+        let model = ConstNSCodingDictionaryModel(imageD: imageD, imageOptD: imageOptD,
+            imageOptNilD: nil, colorD: colorD, colorOptD: colorOptD, colorOptNilD: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstNSCodingDictionaryModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.imageD.count == 2)
+            XCTAssert(reModel!.imageD["a"] != nil)
+            XCTAssert(reModel!.imageD["b"] != nil)
+            XCTAssert(reModel!.imageD["a"]!.size == image.size)
+            XCTAssert(reModel!.imageD["b"]!.size == image.size)
+
+            XCTAssert(reModel!.imageOptD != nil)
+            XCTAssert(reModel!.imageOptD!.count == 3)
+            XCTAssert(reModel!.imageOptD!["a"] != nil)
+            XCTAssert(reModel!.imageOptD!["b"] != nil)
+            XCTAssert(reModel!.imageOptD!["c"] != nil)
+            XCTAssert(reModel!.imageOptD!["a"]!.size == image.size)
+            XCTAssert(reModel!.imageOptD!["b"]!.size == image.size)
+            XCTAssert(reModel!.imageOptD!["c"]!.size == image.size)
+
+            XCTAssert(reModel!.imageOptNilD == nil)
+
+            XCTAssert(reModel!.colorD.count == 2)
+            XCTAssert(reModel!.colorD["a"] != nil)
+            XCTAssert(reModel!.colorD["b"] != nil)
+
+            XCTAssert(reModel!.colorOptD!.count == 3)
+            XCTAssert(reModel!.colorOptD!["a"] != nil)
+            XCTAssert(reModel!.colorOptD!["b"] != nil)
+            XCTAssert(reModel!.colorOptD!["c"] != nil)
+
+            XCTAssert(reModel!.colorOptNilD == nil)
+
+            var r: CGFloat = 0
+            var g: CGFloat = 0
+            var b: CGFloat = 0
+            var a: CGFloat = 0
+
+            reModel!.colorD["a"]!.getRed(&r, green: &g, blue: &b, alpha: &a)
+            XCTAssert(r == 1.0)
+            XCTAssert(g == 0.0)
+            XCTAssert(b == 0.0)
+            XCTAssert(a == 1.0)
+
+            reModel!.colorD["b"]!.getRed(&r, green: &g, blue: &b, alpha: &a)
+            XCTAssert(r == 0.0)
+            XCTAssert(g == 1.0)
+            XCTAssert(b == 0.0)
+            XCTAssert(a == 1.0)
+
+            reModel!.colorOptD!["a"]!.getRed(&r, green: &g, blue: &b, alpha: &a)
+            XCTAssert(r == 0.0)
+            XCTAssert(g == 1.0)
+            XCTAssert(b == 1.0)
+            XCTAssert(a == 1.0)
+
+            reModel!.colorOptD!["b"]!.getRed(&r, green: &g, blue: &b, alpha: &a)
+            XCTAssert(r == 1.0)
+            XCTAssert(g == 0.0)
+            XCTAssert(b == 1.0)
+            XCTAssert(a == 1.0)
+
+
+            reModel!.colorOptD!["c"]!.getRed(&r, green: &g, blue: &b, alpha: &a)
+            XCTAssert(r == 1.0)
+            XCTAssert(g == 1.0)
+            XCTAssert(b == 0.0)
+            XCTAssert(a == 1.0)
+        }
+    }
 }

@@ -19,14 +19,17 @@ class ConstNSCodingDictionaryModel : Encodable {
     let colorOptD: [String: UIColor]?
     let colorOptNilD: [String: UIColor]?
 
-    init() {
-        imageD = [:]
-        imageOptD = nil
-        imageOptNilD = [:]
+    init(imageD: [String: UIImage], imageOptD: [String: UIImage]?, imageOptNilD: [String: UIImage]?,
+        colorD: [String: UIColor], colorOptD: [String: UIColor]?,
+        colorOptNilD: [String: UIColor]?) {
 
-        colorD = [:]
-        colorOptD = nil
-        colorOptNilD = [:]
+            self.imageD = imageD
+            self.imageOptD = imageOptD
+            self.imageOptNilD = imageOptNilD
+
+            self.colorD = colorD
+            self.colorOptD = colorOptD
+            self.colorOptNilD = colorOptNilD
     }
 
     required init?(_ decoder: Decoder) {
@@ -39,8 +42,8 @@ class ConstNSCodingDictionaryModel : Encodable {
         imageOptNilD = decoder.nsCodingDictionary("imageOptNilD")
 
         colorD = decoder.nsCodingDictionary("colorD") ?? [:]
-        colorOptD = decoder.nsCodingDictionary("colorOptD") ?? [:]
-        colorOptNilD = decoder.nsCodingDictionary("colorOptNilD") ?? [:]
+        colorOptD = decoder.nsCodingDictionary("colorOptD")
+        colorOptNilD = decoder.nsCodingDictionary("colorOptNilD")
     }
 
     func encode(encoder: Encoder) {
