@@ -45,6 +45,27 @@ class BoolTests: XCTestCase {
         }
     }
 
+    func testConstBoolEncodingDecoding() {
+        let fileName = "/tmp/constBool.plist"
+
+        let model = ConstBoolModel(bool: true, boolOpt: true, boolOptNil: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstBoolModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.bool == true)
+            XCTAssert(reModel!.boolOpt! == true)
+            XCTAssert(reModel!.boolOptNil == nil)
+        }
+    }
+
     func testArrayEncodingDecoding() {
         let fileName = "/tmp/boolArray.plist"
 
@@ -70,27 +91,6 @@ class BoolTests: XCTestCase {
         }
     }
 
-    func testConstBoolEncodingDecoding() {
-        let fileName = "/tmp/constBool.plist"
-
-        let model = ConstBoolModel(bool: true, boolOpt: true, boolOptNil: nil)
-
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstBoolModel(decoder)
-
-        XCTAssert(reModel != nil)
-
-        if reModel != nil {
-            XCTAssert(reModel!.bool == true)
-            XCTAssert(reModel!.boolOpt! == true)
-            XCTAssert(reModel!.boolOptNil == nil)
-        }
-    }
-
     func testConstArrayEncodingDecoding() {
         let fileName = "/tmp/boolConstArray.plist"
 
@@ -110,6 +110,55 @@ class BoolTests: XCTestCase {
             XCTAssert(reModel!.boolA == [true, true, false, false, true])
             XCTAssert(reModel!.boolAOpt! == [true, true, false])
             XCTAssert(reModel!.boolAOptNil == nil)
+        }
+    }
+
+    func testDictionaryEncodingDecoding() {
+        let fileName = "/tmp/boolDict.plist"
+
+        let model = BoolDictionaryModel()
+
+        model.boolD = ["a": true, "b": true, "c": false]
+        model.boolDOpt = ["d": true, "e": true, "f": false]
+        model.boolDOptNil = nil
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = BoolDictionaryModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.boolD == ["a": true, "b": true, "c": false])
+            XCTAssert(reModel!.boolDOpt! == ["d": true, "e": true, "f": false])
+            XCTAssert(reModel!.boolDOptNil == nil)
+        }
+    }
+
+    func testConstDictionaryEncodingDecoding() {
+        let fileName = "/tmp/boolDict.plist"
+
+        let boolD = ["a": true, "b": true, "c": false]
+        let boolDOpt = ["d": true, "e": true, "f": false]
+
+        let model = ConstBoolDictionaryModel(boolD: boolD, boolDOpt: boolDOpt, boolDOptNil: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstBoolDictionaryModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.boolD == ["a": true, "b": true, "c": false])
+            XCTAssert(reModel!.boolDOpt! == ["d": true, "e": true, "f": false])
+            XCTAssert(reModel!.boolDOptNil == nil)
         }
     }
 

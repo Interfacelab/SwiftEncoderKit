@@ -82,7 +82,7 @@ func <-- (inout left: [String: String], right: Decoder) {
     left = rightValue
 }
 
-// MARK: Optional Double dictionaries
+// MARK: Optional String dictionaries
 
 func --> (left: [String: String]?, right: Encoder) {
     right.addStringDictionary(left, key: nil)
