@@ -68,6 +68,35 @@ func <-- <T: NSCoding>(inout left:Array<T>?, right: Decoder) {
     left = rightValue
 }
 
+// MARK: NSCoding dictionaries
+
+func --> <T: NSCoding>(left: [String: T], right: Encoder) {
+    right.addNSCodingDictionary(left, key: nil)
+}
+
+func <-- <T: NSCoding>(inout left: [String: T], right: Decoder) {
+    guard let rightValue: [String: T] = right.nsCodingDictionary(nil) else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Optional NSCoding dictionaries
+
+func --> <T: NSCoding>(left: [String: T]?, right: Encoder) {
+    right.addNSCodingDictionary(left, key: nil)
+}
+
+func <-- <T: NSCoding>(inout left: [String: T]?, right: Decoder) {
+    guard let rightValue: [String: T] = right.nsCodingDictionary(nil) else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
+
 // MARK: Encoder
 
 extension Encoder : NSCodingEncoding {
@@ -88,26 +117,28 @@ extension Encoder : NSCodingEncoding {
             setValue(key!, value: objectArray)
         }
     }
+
+    func addNSCodingDictionary<T: NSCoding>(objectDict: [String: T]?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(objectDict)
+        } else {
+            setValue(key!, value: objectDict)
+        }
+    }
 }
 
 // MARK: Decoder
 
 extension Decoder : NSCodingEncoding {
     func nsCoding<T: NSCoding>(key: String?) -> T? {
-        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? NSCoding
-        guard val != nil else {
-            return nil
-        }
-
-        return val as? T
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? T
     }
 
     func nsCodingArray<T: NSCoding>(key: String?) -> Array<T>? {
-        let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<T>
-        guard val != nil else {
-            return nil
-        }
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<T>
+    }
 
-        return val
+    func nsCodingDictionary<T: NSCoding>(key: String?) -> [String: T]? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? [String: T]
     }
 }
