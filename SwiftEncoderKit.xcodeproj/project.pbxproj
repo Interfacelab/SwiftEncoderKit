@@ -604,9 +604,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		FF0B5C071C3CF3C900A15C56 /* SwiftEncoderKit */ = {
+		FF0B5C071C3CF3C900A15C56 /* SwiftEncoderKit-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF0B5C1C1C3CF3CA00A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKit" */;
+			buildConfigurationList = FF0B5C1C1C3CF3CA00A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKit-iOS" */;
 			buildPhases = (
 				FF0B5C031C3CF3C900A15C56 /* Sources */,
 				FF0B5C041C3CF3C900A15C56 /* Frameworks */,
@@ -618,7 +618,7 @@
 			);
 			dependencies = (
 			);
-			name = SwiftEncoderKit;
+			name = "SwiftEncoderKit-iOS";
 			productName = SwiftEncoderKit;
 			productReference = FF0B5C081C3CF3C900A15C56 /* SwiftEncoderKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -671,7 +671,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FF0B5C071C3CF3C900A15C56 /* SwiftEncoderKit */,
+				FF0B5C071C3CF3C900A15C56 /* SwiftEncoderKit-iOS */,
 				FF0B5C111C3CF3CA00A15C56 /* SwiftEncoderKitTests */,
 			);
 		};
@@ -863,7 +863,7 @@
 /* Begin PBXTargetDependency section */
 		FF0B5C151C3CF3CA00A15C56 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FF0B5C071C3CF3C900A15C56 /* SwiftEncoderKit */;
+			target = FF0B5C071C3CF3C900A15C56 /* SwiftEncoderKit-iOS */;
 			targetProxy = FF0B5C141C3CF3CA00A15C56 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -968,9 +968,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interfacelab.SwiftEncoderKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftEncoderKit;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -986,9 +987,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interfacelab.SwiftEncoderKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftEncoderKit;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1025,7 +1027,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF0B5C1C1C3CF3CA00A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKit" */ = {
+		FF0B5C1C1C3CF3CA00A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKit-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF0B5C1D1C3CF3CA00A15C56 /* Debug */,
