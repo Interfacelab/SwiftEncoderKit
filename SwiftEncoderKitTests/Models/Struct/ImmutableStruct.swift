@@ -36,7 +36,7 @@ struct ImmutableStruct : Encodable {
 
     init?(_ decoder: Decoder) {
         int = decoder.integer("int") ?? 0
-        bool = decoder.getBoolNamed("bool") ?? false
+        bool = decoder.bool("bool") ?? false
         string = decoder.getStringNamed("string") ?? "Hello"
         float = decoder.getFloatNamed("float") ?? 0.0
         double = decoder.getDoubleNamed("double") ?? 0.0
