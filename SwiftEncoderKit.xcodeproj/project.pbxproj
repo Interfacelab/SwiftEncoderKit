@@ -15,24 +15,33 @@
 		FF0B5C3D1C3CF63D00A15C56 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C321C3CF63D00A15C56 /* Encodable.swift */; };
 		FF0B5C3E1C3CF63D00A15C56 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C361C3CF63D00A15C56 /* Encoder.swift */; };
 		FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C361C3CF63D00A15C56 /* Encoder.swift */; };
-		FF0B5C4F1C3CF84E00A15C56 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */; };
 		FF0B5C501C3CF84E00A15C56 /* NSCodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */; };
-		FF0B5C521C3CF85400A15C56 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */; };
 		FF0B5C531C3CF85600A15C56 /* NSCodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */; };
 		FF0B5C551C3CF8BF00A15C56 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */; };
 		FF0B5C611C3CF99D00A15C56 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF0B5C571C3CF99D00A15C56 /* test-image.jpg */; };
-		FF0B5C621C3CF99D00A15C56 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C591C3CF99D00A15C56 /* ImageModel.swift */; };
-		FF0B5C631C3CF99D00A15C56 /* OtherTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5A1C3CF99D00A15C56 /* OtherTestModel.swift */; };
-		FF0B5C641C3CF99D00A15C56 /* SignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5B1C3CF99D00A15C56 /* SignedIntegerModel.swift */; };
-		FF0B5C651C3CF99D00A15C56 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5C1C3CF99D00A15C56 /* TestModel.swift */; };
-		FF0B5C661C3CF99D00A15C56 /* UnsignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5D1C3CF99D00A15C56 /* UnsignedIntegerModel.swift */; };
 		FF0B5C671C3CF99D00A15C56 /* NSCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5E1C3CF99D00A15C56 /* NSCodingTests.swift */; };
 		FF0B5C681C3CF99D00A15C56 /* SignedIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C5F1C3CF99D00A15C56 /* SignedIntegerTests.swift */; };
 		FF0B5C691C3CF99D00A15C56 /* UnsignedIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C601C3CF99D00A15C56 /* UnsignedIntegerTests.swift */; };
-		FF0B5C6D1C3CF9E900A15C56 /* BasicTypesEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6A1C3CF9E900A15C56 /* BasicTypesEncoding.swift */; };
 		FF0B5C6E1C3CF9E900A15C56 /* SignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6B1C3CF9E900A15C56 /* SignedIntegerEncoding.swift */; };
 		FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6C1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift */; };
 		FF0B5C711C3CFA3D00A15C56 /* BasicTypesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C701C3CFA3D00A15C56 /* BasicTypesModel.swift */; };
+		FF0B5C841C3CFA8F00A15C56 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C731C3CFA8F00A15C56 /* ImageModel.swift */; };
+		FF0B5C851C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C751C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift */; };
+		FF0B5C861C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C761C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift */; };
+		FF0B5C871C3CFA8F00A15C56 /* SignedIntegerArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C771C3CFA8F00A15C56 /* SignedIntegerArrayModel.swift */; };
+		FF0B5C881C3CFA8F00A15C56 /* SignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C781C3CFA8F00A15C56 /* SignedIntegerModel.swift */; };
+		FF0B5C891C3CFA8F00A15C56 /* EncodableStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C7A1C3CFA8F00A15C56 /* EncodableStruct.swift */; };
+		FF0B5C8A1C3CFA8F00A15C56 /* ImmutableStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C7B1C3CFA8F00A15C56 /* ImmutableStruct.swift */; };
+		FF0B5C8B1C3CFA8F00A15C56 /* ConstUnsignedIntegerArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C7D1C3CFA8F00A15C56 /* ConstUnsignedIntegerArrayModel.swift */; };
+		FF0B5C8C1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C7E1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift */; };
+		FF0B5C8D1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C7F1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift */; };
+		FF0B5C8E1C3CFA8F00A15C56 /* UnsignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C801C3CFA8F00A15C56 /* UnsignedIntegerModel.swift */; };
+		FF0B5C911C3CFA9F00A15C56 /* StructTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C8F1C3CFA9F00A15C56 /* StructTests.swift */; };
+		FF0B5C921C3CFA9F00A15C56 /* BasicTypesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C901C3CFA9F00A15C56 /* BasicTypesTests.swift */; };
+		FF0B5C971C3CFAC100A15C56 /* BoolEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C931C3CFAC100A15C56 /* BoolEncoding.swift */; };
+		FF0B5C981C3CFAC100A15C56 /* EncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C941C3CFAC100A15C56 /* EncodableEncoding.swift */; };
+		FF0B5C991C3CFAC100A15C56 /* FloatEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C951C3CFAC100A15C56 /* FloatEncoding.swift */; };
+		FF0B5C9A1C3CFAC100A15C56 /* StringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C961C3CFAC100A15C56 /* StringEncoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,22 +63,32 @@
 		FF0B5C301C3CF63D00A15C56 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		FF0B5C321C3CF63D00A15C56 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		FF0B5C361C3CF63D00A15C56 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
-		FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingExtension.swift; sourceTree = "<group>"; };
 		FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		FF0B5C571C3CF99D00A15C56 /* test-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test-image.jpg"; sourceTree = "<group>"; };
-		FF0B5C591C3CF99D00A15C56 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
-		FF0B5C5A1C3CF99D00A15C56 /* OtherTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherTestModel.swift; sourceTree = "<group>"; };
-		FF0B5C5B1C3CF99D00A15C56 /* SignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerModel.swift; sourceTree = "<group>"; };
-		FF0B5C5C1C3CF99D00A15C56 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
-		FF0B5C5D1C3CF99D00A15C56 /* UnsignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerModel.swift; sourceTree = "<group>"; };
 		FF0B5C5E1C3CF99D00A15C56 /* NSCodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingTests.swift; sourceTree = "<group>"; };
 		FF0B5C5F1C3CF99D00A15C56 /* SignedIntegerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerTests.swift; sourceTree = "<group>"; };
 		FF0B5C601C3CF99D00A15C56 /* UnsignedIntegerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerTests.swift; sourceTree = "<group>"; };
-		FF0B5C6A1C3CF9E900A15C56 /* BasicTypesEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTypesEncoding.swift; sourceTree = "<group>"; };
 		FF0B5C6B1C3CF9E900A15C56 /* SignedIntegerEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerEncoding.swift; sourceTree = "<group>"; };
 		FF0B5C6C1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerEncoding.swift; sourceTree = "<group>"; };
 		FF0B5C701C3CFA3D00A15C56 /* BasicTypesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTypesModel.swift; sourceTree = "<group>"; };
+		FF0B5C731C3CFA8F00A15C56 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		FF0B5C751C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstSignedIntegerArrayModel.swift; sourceTree = "<group>"; };
+		FF0B5C761C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstSignedIntegerModel.swift; sourceTree = "<group>"; };
+		FF0B5C771C3CFA8F00A15C56 /* SignedIntegerArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerArrayModel.swift; sourceTree = "<group>"; };
+		FF0B5C781C3CFA8F00A15C56 /* SignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerModel.swift; sourceTree = "<group>"; };
+		FF0B5C7A1C3CFA8F00A15C56 /* EncodableStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableStruct.swift; sourceTree = "<group>"; };
+		FF0B5C7B1C3CFA8F00A15C56 /* ImmutableStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmutableStruct.swift; sourceTree = "<group>"; };
+		FF0B5C7D1C3CFA8F00A15C56 /* ConstUnsignedIntegerArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstUnsignedIntegerArrayModel.swift; sourceTree = "<group>"; };
+		FF0B5C7E1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstUnsignedIntegerModel.swift; sourceTree = "<group>"; };
+		FF0B5C7F1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerArrayModel.swift; sourceTree = "<group>"; };
+		FF0B5C801C3CFA8F00A15C56 /* UnsignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerModel.swift; sourceTree = "<group>"; };
+		FF0B5C8F1C3CFA9F00A15C56 /* StructTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructTests.swift; sourceTree = "<group>"; };
+		FF0B5C901C3CFA9F00A15C56 /* BasicTypesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTypesTests.swift; sourceTree = "<group>"; };
+		FF0B5C931C3CFAC100A15C56 /* BoolEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolEncoding.swift; sourceTree = "<group>"; };
+		FF0B5C941C3CFAC100A15C56 /* EncodableEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableEncoding.swift; sourceTree = "<group>"; };
+		FF0B5C951C3CFAC100A15C56 /* FloatEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatEncoding.swift; sourceTree = "<group>"; };
+		FF0B5C961C3CFAC100A15C56 /* StringEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringEncoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +132,8 @@
 		FF0B5C161C3CF3CA00A15C56 /* SwiftEncoderKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5C8F1C3CFA9F00A15C56 /* StructTests.swift */,
+				FF0B5C901C3CFA9F00A15C56 /* BasicTypesTests.swift */,
 				FF0B5C561C3CF99D00A15C56 /* Resources */,
 				FF0B5C581C3CF99D00A15C56 /* Models */,
 				FF0B5C5E1C3CF99D00A15C56 /* NSCodingTests.swift */,
@@ -146,11 +167,13 @@
 		FF0B5C4A1C3CF84E00A15C56 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FF0B5C6A1C3CF9E900A15C56 /* BasicTypesEncoding.swift */,
+				FF0B5C931C3CFAC100A15C56 /* BoolEncoding.swift */,
+				FF0B5C941C3CFAC100A15C56 /* EncodableEncoding.swift */,
+				FF0B5C951C3CFAC100A15C56 /* FloatEncoding.swift */,
+				FF0B5C961C3CFAC100A15C56 /* StringEncoding.swift */,
 				FF0B5C6B1C3CF9E900A15C56 /* SignedIntegerEncoding.swift */,
 				FF0B5C6C1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift */,
 				FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */,
-				FF0B5C4C1C3CF84E00A15C56 /* EncodableExtension.swift */,
 				FF0B5C4D1C3CF84E00A15C56 /* NSCodingExtension.swift */,
 			);
 			path = Extensions;
@@ -167,14 +190,76 @@
 		FF0B5C581C3CF99D00A15C56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5C721C3CFA8F00A15C56 /* NSCoding */,
+				FF0B5C741C3CFA8F00A15C56 /* Signed Integer */,
+				FF0B5C791C3CFA8F00A15C56 /* Struct */,
+				FF0B5C7C1C3CFA8F00A15C56 /* Unsigned Integer */,
+				FF0B5C811C3CFA8F00A15C56 /* CGFloat */,
+				FF0B5C821C3CFA8F00A15C56 /* Core Media */,
+				FF0B5C831C3CFA8F00A15C56 /* API */,
 				FF0B5C701C3CFA3D00A15C56 /* BasicTypesModel.swift */,
-				FF0B5C591C3CF99D00A15C56 /* ImageModel.swift */,
-				FF0B5C5A1C3CF99D00A15C56 /* OtherTestModel.swift */,
-				FF0B5C5B1C3CF99D00A15C56 /* SignedIntegerModel.swift */,
-				FF0B5C5C1C3CF99D00A15C56 /* TestModel.swift */,
-				FF0B5C5D1C3CF99D00A15C56 /* UnsignedIntegerModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FF0B5C721C3CFA8F00A15C56 /* NSCoding */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5C731C3CFA8F00A15C56 /* ImageModel.swift */,
+			);
+			path = NSCoding;
+			sourceTree = "<group>";
+		};
+		FF0B5C741C3CFA8F00A15C56 /* Signed Integer */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5C751C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift */,
+				FF0B5C761C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift */,
+				FF0B5C771C3CFA8F00A15C56 /* SignedIntegerArrayModel.swift */,
+				FF0B5C781C3CFA8F00A15C56 /* SignedIntegerModel.swift */,
+			);
+			path = "Signed Integer";
+			sourceTree = "<group>";
+		};
+		FF0B5C791C3CFA8F00A15C56 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5C7A1C3CFA8F00A15C56 /* EncodableStruct.swift */,
+				FF0B5C7B1C3CFA8F00A15C56 /* ImmutableStruct.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
+		FF0B5C7C1C3CFA8F00A15C56 /* Unsigned Integer */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5C7D1C3CFA8F00A15C56 /* ConstUnsignedIntegerArrayModel.swift */,
+				FF0B5C7E1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift */,
+				FF0B5C7F1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift */,
+				FF0B5C801C3CFA8F00A15C56 /* UnsignedIntegerModel.swift */,
+			);
+			path = "Unsigned Integer";
+			sourceTree = "<group>";
+		};
+		FF0B5C811C3CFA8F00A15C56 /* CGFloat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CGFloat;
+			sourceTree = "<group>";
+		};
+		FF0B5C821C3CFA8F00A15C56 /* Core Media */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Core Media";
+			sourceTree = "<group>";
+		};
+		FF0B5C831C3CFA8F00A15C56 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +374,6 @@
 				FF0B5C531C3CF85600A15C56 /* NSCodingExtension.swift in Sources */,
 				FF0B5C3E1C3CF63D00A15C56 /* Encoder.swift in Sources */,
 				FF0B5C3C1C3CF63D00A15C56 /* Encodable.swift in Sources */,
-				FF0B5C521C3CF85400A15C56 /* EncodableExtension.swift in Sources */,
 				FF0B5C381C3CF63D00A15C56 /* Decoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,24 +382,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF0B5C6D1C3CF9E900A15C56 /* BasicTypesEncoding.swift in Sources */,
+				FF0B5C8A1C3CFA8F00A15C56 /* ImmutableStruct.swift in Sources */,
+				FF0B5C8C1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift in Sources */,
+				FF0B5C981C3CFAC100A15C56 /* EncodableEncoding.swift in Sources */,
 				FF0B5C671C3CF99D00A15C56 /* NSCodingTests.swift in Sources */,
+				FF0B5C971C3CFAC100A15C56 /* BoolEncoding.swift in Sources */,
+				FF0B5C9A1C3CFAC100A15C56 /* StringEncoding.swift in Sources */,
+				FF0B5C891C3CFA8F00A15C56 /* EncodableStruct.swift in Sources */,
+				FF0B5C991C3CFAC100A15C56 /* FloatEncoding.swift in Sources */,
 				FF0B5C711C3CFA3D00A15C56 /* BasicTypesModel.swift in Sources */,
 				FF0B5C501C3CF84E00A15C56 /* NSCodingExtension.swift in Sources */,
-				FF0B5C661C3CF99D00A15C56 /* UnsignedIntegerModel.swift in Sources */,
+				FF0B5C8B1C3CFA8F00A15C56 /* ConstUnsignedIntegerArrayModel.swift in Sources */,
+				FF0B5C8D1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift in Sources */,
 				FF0B5C391C3CF63D00A15C56 /* Decoder.swift in Sources */,
+				FF0B5C911C3CFA9F00A15C56 /* StructTests.swift in Sources */,
+				FF0B5C8E1C3CFA8F00A15C56 /* UnsignedIntegerModel.swift in Sources */,
+				FF0B5C871C3CFA8F00A15C56 /* SignedIntegerArrayModel.swift in Sources */,
 				FF0B5C6E1C3CF9E900A15C56 /* SignedIntegerEncoding.swift in Sources */,
 				FF0B5C681C3CF99D00A15C56 /* SignedIntegerTests.swift in Sources */,
-				FF0B5C641C3CF99D00A15C56 /* SignedIntegerModel.swift in Sources */,
-				FF0B5C651C3CF99D00A15C56 /* TestModel.swift in Sources */,
 				FF0B5C3D1C3CF63D00A15C56 /* Encodable.swift in Sources */,
 				FF0B5C691C3CF99D00A15C56 /* UnsignedIntegerTests.swift in Sources */,
 				FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
 				FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */,
-				FF0B5C4F1C3CF84E00A15C56 /* EncodableExtension.swift in Sources */,
-				FF0B5C631C3CF99D00A15C56 /* OtherTestModel.swift in Sources */,
+				FF0B5C881C3CFA8F00A15C56 /* SignedIntegerModel.swift in Sources */,
+				FF0B5C851C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift in Sources */,
+				FF0B5C921C3CFA9F00A15C56 /* BasicTypesTests.swift in Sources */,
 				FF0B5C551C3CF8BF00A15C56 /* ArrayExtension.swift in Sources */,
-				FF0B5C621C3CF99D00A15C56 /* ImageModel.swift in Sources */,
+				FF0B5C861C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift in Sources */,
+				FF0B5C841C3CFA8F00A15C56 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

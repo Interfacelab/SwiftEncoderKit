@@ -8,15 +8,17 @@
 
 import Foundation
 
-infix operator <-- {}
+infix operator <-- { associativity right }
 
 class Decoder {
     private var _currentKey: String?
-    private var _data:[String: AnyObject]=[:]
+    private let _data:[String: AnyObject]
 
     init(path: String) {
         if let root = NSKeyedUnarchiver.unarchiveObjectWithFile(path) {
             _data = root as! [String: AnyObject]
+        } else {
+            _data = [:]
         }
     }
 

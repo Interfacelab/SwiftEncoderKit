@@ -13,11 +13,11 @@ protocol SignedIntegerEncoding {}
 // MARK: Integer values
 
 func --> <T: SignedIntegerType>(left:T, right: Encoder) {
-    right.addSignedInteger(left)
+    right.addInteger(left)
 }
 
 func <-- <T: SignedIntegerType>(inout left:T, right: Decoder) {
-    guard let rightValue = right.getSignedIntegerValue(left) else {
+    guard let rightValue: T = right.integer() else {
         return
     }
 
@@ -28,11 +28,11 @@ func <-- <T: SignedIntegerType>(inout left:T, right: Decoder) {
 // MARK: Integer arrays
 
 func --> <T: SignedIntegerType>(left:Array<T>, right: Encoder) {
-    right.addSignedIntegerArray(left)
+    right.addIntegerArray(left)
 }
 
 func <-- <T: SignedIntegerType>(inout left:Array<T>, right: Decoder) {
-    guard let rightValue:Array<T> = right.getSignedIntegerArray() else {
+    guard let rightValue:Array<T> = right.integerArray() else {
         return
     }
 
@@ -42,11 +42,11 @@ func <-- <T: SignedIntegerType>(inout left:Array<T>, right: Decoder) {
 // MARK: Optional integer values
 
 func --> <T: SignedIntegerType>(left:T?, right: Encoder) {
-    right.addSignedInteger(left)
+    right.addInteger(left)
 }
 
 func <-- <T: SignedIntegerType>(inout left:T?, right: Decoder) {
-    guard let rightValue = right.getSignedIntegerValue(left) else {
+    guard let rightValue: T = right.integer() else {
         left = nil
         return
     }
@@ -57,11 +57,11 @@ func <-- <T: SignedIntegerType>(inout left:T?, right: Decoder) {
 // MARK: Optional integer arrays
 
 func --> <T: SignedIntegerType>(left:Array<T>?, right: Encoder) {
-    right.addSignedIntegerArray(left)
+    right.addIntegerArray(left)
 }
 
 func <-- <T: SignedIntegerType>(inout left:Array<T>?, right: Decoder) {
-    guard let rightValue:Array<T> = right.getSignedIntegerArray() else {
+    guard let rightValue:Array<T> = right.integerArray() else {
         left = nil
         return
     }
@@ -73,7 +73,7 @@ func <-- <T: SignedIntegerType>(inout left:Array<T>?, right: Decoder) {
 extension Encoder : SignedIntegerEncoding {
     // MARK: Integer types
 
-    func addSignedInteger<T: SignedIntegerType>(int: T?) {
+    func addInteger<T: SignedIntegerType>(int: T?) {
         if let x = int as? Int {
             setValueForCurrentKey(NSNumber(integer: x))
         } else if let x = int as? Int8 {
@@ -89,7 +89,7 @@ extension Encoder : SignedIntegerEncoding {
         }
     }
 
-    func addSignedIntegerArray<T: SignedIntegerType>(integerArray: Array<T>?) {
+    func addIntegerArray<T: SignedIntegerType>(integerArray: Array<T>?) {
         guard let array = integerArray else {
             setValueForCurrentKey(nil)
             return
@@ -118,12 +118,12 @@ extension Encoder : SignedIntegerEncoding {
 extension Decoder : SignedIntegerEncoding {
     // MARK: Integer types
 
-    func getSignedIntegerValue<T: SignedIntegerType>(int: T?) -> T? {
+    func integer<T: SignedIntegerType>() -> T? {
         guard let val = valueForCurrentKey() as? NSNumber else {
             return nil
         }
 
-        let dt = int.dynamicType
+        let dt=T.self
 
         if dt == Int.self || dt == Int?.self {
             return val.integerValue as? T
@@ -140,13 +140,60 @@ extension Decoder : SignedIntegerEncoding {
         return nil
     }
 
-    func getSignedIntegerArray<T: SignedIntegerType>() -> Array<T>? {
+    func integerArray<T: SignedIntegerType>() -> Array<T>? {
         guard let val = valueForCurrentKey() as? Array<NSNumber> else {
             return nil
         }
 
-        let tt=T(0)
-        let dt=tt.dynamicType
+        let dt=T.self
+
+        var decoded: [T] = []
+
+        for ele in val {
+            if dt == Int.self || dt == Int?.self {
+                decoded.append(ele.integerValue as! T)
+            } else if dt == Int8.self || dt == Int8?.self {
+                decoded.append(ele.charValue as! T)
+            } else if dt == Int16.self || dt == Int16?.self {
+                decoded.append(ele.shortValue as! T)
+            } else if dt == Int32.self || dt == Int32?.self {
+                decoded.append(ele.intValue as! T)
+            } else if dt == Int64.self || dt == Int64?.self {
+                decoded.append(ele.longLongValue as! T)
+            }
+        }
+
+        return decoded
+    }
+
+    func integer<T: SignedIntegerType>(key:String) -> T? {
+        guard let val = valueForKey(key) as? NSNumber else {
+            return nil
+        }
+
+        let dt=T.self
+
+        if dt == Int.self || dt == Int?.self {
+            return val.integerValue as? T
+        } else if dt == Int8.self || dt == Int8?.self {
+            return val.charValue as? T
+        } else if dt == Int16.self || dt == Int16?.self {
+            return val.shortValue as? T
+        } else if dt == Int32.self || dt == Int32?.self {
+            return val.intValue as? T
+        } else if dt == Int64.self || dt == Int64?.self {
+            return val.longLongValue as? T
+        }
+
+        return nil
+    }
+
+    func integerArray<T: SignedIntegerType>(key: String) -> Array<T>? {
+        guard let val = valueForKey(key) as? Array<NSNumber> else {
+            return nil
+        }
+
+        let dt=T.self
 
         var decoded: [T] = []
 

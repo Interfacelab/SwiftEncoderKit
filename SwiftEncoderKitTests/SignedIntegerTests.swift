@@ -7,9 +7,6 @@
 //
 
 import XCTest
-import ObjectMapper
-import AVFoundation
-import UIKit
 
 class SignedIntegerTests: XCTestCase {
     
@@ -23,7 +20,8 @@ class SignedIntegerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testSignedIntegerEncodingDecoding() {
+    func testIntegerEncodingDecoding() {
+        let fileName = "/tmp/signed.plist"
         let model = SignedIntegerModel()
 
         model.int = Int.max
@@ -46,9 +44,9 @@ class SignedIntegerTests: XCTestCase {
 
         let encoder=Encoder()
         model.encode(encoder)
-        encoder.writeToFile("/tmp/signed.plist")
+        encoder.writeToFile(fileName)
 
-        let decoder=Decoder(path: "/tmp/signed.plist")
+        let decoder=Decoder(path: fileName)
         let reModel = SignedIntegerModel(decoder)
 
         XCTAssert(reModel != nil)
@@ -74,8 +72,10 @@ class SignedIntegerTests: XCTestCase {
         }
     }
 
-    func testSignedIntegerArrayEncodingDecoding() {
-        let model = SignedIntegerModel()
+    func testArrayEncodingDecoding() {
+        let fileName = "/tmp/intArray.plist"
+
+        let model = SignedIntegerArrayModel()
 
         model.intA = [0, Int.max / 2, Int.max]
         model.int8A = [0, Int8.max / 2, Int8.max]
@@ -97,25 +97,25 @@ class SignedIntegerTests: XCTestCase {
 
         let encoder=Encoder()
         model.encode(encoder)
-        encoder.writeToFile("/tmp/intArray.plist")
+        encoder.writeToFile(fileName)
 
-        let decoder=Decoder(path: "/tmp/intArray.plist")
-        let reModel = SignedIntegerModel(decoder)
+        let decoder=Decoder(path: fileName)
+        let reModel = SignedIntegerArrayModel(decoder)
 
         XCTAssert(reModel != nil)
 
         if reModel != nil {
-            XCTAssert(reModel!.intA == model.intA)
-            XCTAssert(reModel!.int8A == model.int8A)
-            XCTAssert(reModel!.int16A == model.int16A)
-            XCTAssert(reModel!.int32A == model.int32A)
-            XCTAssert(reModel!.int64A == model.int64A)
+            XCTAssert(reModel!.intA == [0, Int.max / 2, Int.max])
+            XCTAssert(reModel!.int8A == [0, Int8.max / 2, Int8.max])
+            XCTAssert(reModel!.int16A == [0, Int16.max / 2, Int16.max])
+            XCTAssert(reModel!.int32A == [0, Int32.max / 2, Int32.max])
+            XCTAssert(reModel!.int64A == [0, Int64.max / 2, Int64.max])
 
-            XCTAssert(reModel!.intAOpt! == model.intAOpt!)
-            XCTAssert(reModel!.int8AOpt! == model.int8AOpt!)
-            XCTAssert(reModel!.int16AOpt! == model.int16AOpt!)
-            XCTAssert(reModel!.int32AOpt! == model.int32AOpt!)
-            XCTAssert(reModel!.int64AOpt! == model.int64AOpt!)
+            XCTAssert(reModel!.intAOpt! == [0, Int.max / 2, Int.max])
+            XCTAssert(reModel!.int8AOpt! == [0, Int8.max / 2, Int8.max])
+            XCTAssert(reModel!.int16AOpt! == [0, Int16.max / 2, Int16.max])
+            XCTAssert(reModel!.int32AOpt! == [0, Int32.max / 2, Int32.max])
+            XCTAssert(reModel!.int64AOpt! == [0, Int64.max / 2, Int64.max])
 
             XCTAssert(reModel!.intAOptNil == nil)
             XCTAssert(reModel!.int8AOptNil == nil)
@@ -124,5 +124,85 @@ class SignedIntegerTests: XCTestCase {
             XCTAssert(reModel!.int64AOptNil == nil)
         }
     }
-    
+
+    func testConstIntegerEncodingDecoding() {
+        let fileName = "/tmp/const.plist"
+        let model = ConstSignedIntegerModel(int: Int.max, int8: Int8.max, int16: Int16.max,
+            int32: Int32.max, int64: Int64.max, intOpt: Int.max, int8Opt: Int8.max,
+            int16Opt: Int16.max, int32Opt: Int32.max, int64Opt: Int64.max, intOptNil: nil,
+            int8OptNil: nil, int16OptNil: nil, int32OptNil: nil, int64OptNil: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstSignedIntegerModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.int == Int.max)
+            XCTAssert(reModel!.int8 == Int8.max)
+            XCTAssert(reModel!.int16 == Int16.max)
+            XCTAssert(reModel!.int32 == Int32.max)
+            XCTAssert(reModel!.int64 == Int64.max)
+
+            XCTAssert(reModel!.intOpt! == Int.max)
+            XCTAssert(reModel!.int8Opt! == Int8.max)
+            XCTAssert(reModel!.int16Opt! == Int16.max)
+            XCTAssert(reModel!.int32Opt! == Int32.max)
+            XCTAssert(reModel!.int64Opt! == Int64.max)
+
+            XCTAssert(reModel!.intOptNil == nil)
+            XCTAssert(reModel!.int8OptNil == nil)
+            XCTAssert(reModel!.int16OptNil == nil)
+            XCTAssert(reModel!.int32OptNil == nil)
+            XCTAssert(reModel!.int64OptNil == nil)
+        }
+    }
+
+    func testConstArrayEncodingDecoding() {
+        let fileName = "/tmp/constIntArray.plist"
+
+        let intA = [0, Int.max / 2, Int.max]
+        let int8A = [0, Int8.max / 2, Int8.max]
+        let int16A = [0, Int16.max / 2, Int16.max]
+        let int32A = [0, Int32.max / 2, Int32.max]
+        let int64A = [0, Int64.max / 2, Int64.max]
+
+        let model = ConstSignedIntegerArrayModel(intA: intA, int8A: int8A, int16A: int16A,
+            int32A: int32A, int64A: int64A, intAOpt: intA, int8AOpt: int8A, int16AOpt: int16A,
+            int32AOpt: int32A, int64AOpt: int64A, intAOptNil: nil, int8AOptNil: nil,
+            int16AOptNil: nil, int32AOptNil: nil, int64AOptNil: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstSignedIntegerArrayModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.intA == [0, Int.max / 2, Int.max])
+            XCTAssert(reModel!.int8A == [0, Int8.max / 2, Int8.max])
+            XCTAssert(reModel!.int16A == [0, Int16.max / 2, Int16.max])
+            XCTAssert(reModel!.int32A == [0, Int32.max / 2, Int32.max])
+            XCTAssert(reModel!.int64A == [0, Int64.max / 2, Int64.max])
+
+            XCTAssert(reModel!.intAOpt! == [0, Int.max / 2, Int.max])
+            XCTAssert(reModel!.int8AOpt! == [0, Int8.max / 2, Int8.max])
+            XCTAssert(reModel!.int16AOpt! == [0, Int16.max / 2, Int16.max])
+            XCTAssert(reModel!.int32AOpt! == [0, Int32.max / 2, Int32.max])
+            XCTAssert(reModel!.int64AOpt! == [0, Int64.max / 2, Int64.max])
+
+            XCTAssert(reModel!.intAOptNil == nil)
+            XCTAssert(reModel!.int8AOptNil == nil)
+            XCTAssert(reModel!.int16AOptNil == nil)
+            XCTAssert(reModel!.int32AOptNil == nil)
+            XCTAssert(reModel!.int64AOptNil == nil)
+        }
+    }
 }

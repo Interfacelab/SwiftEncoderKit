@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BasicTypesEncoding {}
+protocol FloatEncoding {}
 
 // MARK: Float
 
@@ -126,125 +126,9 @@ func <-- (inout left:Array<Double>?, right: Decoder) {
     left = rightValue
 }
 
-// MARK: Bool
-
-func --> (left:Bool, right: Encoder) {
-    right.addBool(left)
-}
-
-func <-- (inout left:Bool, right: Decoder) {
-    guard let rightValue = right.getBoolValue() else {
-        return
-    }
-
-    left = rightValue
-}
-
-// MARK: Bool Optional
-
-func --> (left:Bool?, right: Encoder) {
-    right.addBool(left)
-}
-
-func <-- (inout left:Bool?, right: Decoder) {
-    guard let rightValue = right.getBoolValue() else {
-        left = nil
-        return
-    }
-
-    left = rightValue
-}
-
-// MARK: Bool arrays
-
-func --> (left:Array<Bool>, right: Encoder) {
-    right.addBoolArray(left)
-}
-
-func <-- (inout left:Array<Bool>, right: Decoder) {
-    guard let rightValue = right.getBoolArray() else {
-        return
-    }
-
-    left = rightValue
-}
-
-// MARK: Optional bool arrays
-
-func --> (left:Array<Bool>?, right: Encoder) {
-    right.addBoolArray(left)
-}
-
-func <-- (inout left:Array<Bool>?, right: Decoder) {
-    guard let rightValue = right.getBoolArray() else {
-        left = nil
-        return
-    }
-
-    left = rightValue
-}
-
-// MARK: String
-
-func --> (left:String, right: Encoder) {
-    right.addString(left)
-}
-
-func <-- (inout left:String, right: Decoder) {
-    guard let rightValue = right.getStringValue() else {
-        return
-    }
-
-    left = rightValue
-}
-
-// MARK: String Optional
-
-func --> (left:String?, right: Encoder) {
-    right.addString(left)
-}
-
-func <-- (inout left:String?, right: Decoder) {
-    guard let rightValue = right.getStringValue() else {
-        left = nil
-        return
-    }
-
-    left = rightValue
-}
-
-// MARK: String arrays
-
-func --> (left:Array<String>, right: Encoder) {
-    right.addStringArray(left)
-}
-
-func <-- (inout left:Array<String>, right: Decoder) {
-    guard let rightValue = right.getStringArray() else {
-        return
-    }
-
-    left = rightValue
-}
-
-// MARK: Optional bool arrays
-
-func --> (left:Array<String>?, right: Encoder) {
-    right.addStringArray(left)
-}
-
-func <-- (inout left:Array<String>?, right: Decoder) {
-    guard let rightValue = right.getStringArray() else {
-        left = nil
-        return
-    }
-
-    left = rightValue
-}
-
 // MARK: Encoder
 
-extension Encoder : BasicTypesEncoding {
+extension Encoder : FloatEncoding {
     // MARK: Float and Double
 
     func addFloat(float: Float?) {
@@ -280,47 +164,11 @@ extension Encoder : BasicTypesEncoding {
 
         setValueForCurrentKey(array)
     }
-
-    // MARK: Basic Types
-
-    func addBool(bool: Bool?) {
-        if bool != nil {
-            setValueForCurrentKey(NSNumber(bool: bool!))
-        } else {
-            setValueForCurrentKey(nil)
-        }
-    }
-
-    func addBoolArray(doubleArray: Array<Bool>?) {
-        guard let array = doubleArray else {
-            setValueForCurrentKey(nil)
-            return
-        }
-
-        setValueForCurrentKey(array)
-    }
-
-    func addString(string: String?) {
-        if string != nil {
-            setValueForCurrentKey(string)
-        } else {
-            setValueForCurrentKey(nil)
-        }
-    }
-
-    func addStringArray(doubleArray: Array<String>?) {
-        guard let array = doubleArray else {
-            setValueForCurrentKey(nil)
-            return
-        }
-
-        setValueForCurrentKey(array)
-    }
 }
 
 // MARK: Decoder
 
-extension Decoder : BasicTypesEncoding {
+extension Decoder : FloatEncoding {
     // MARK: Float and Double types
 
     func getFloatValue() -> Float? {
@@ -333,6 +181,23 @@ extension Decoder : BasicTypesEncoding {
 
     func getFloatArray() -> Array<Float>? {
         guard let val = valueForCurrentKey() as? Array<Float> else {
+            return nil
+        }
+
+
+        return val
+    }
+
+    func getFloatNamed(key: String) -> Float? {
+        guard let val = valueForKey(key) as? NSNumber else {
+            return nil
+        }
+
+        return val.floatValue
+    }
+
+    func getFloatArrayNamed(key: String) -> Array<Float>? {
+        guard let val = valueForKey(key) as? Array<Float> else {
             return nil
         }
 
@@ -357,36 +222,16 @@ extension Decoder : BasicTypesEncoding {
         return val
     }
 
-
-    // MARK: Basic Types
-
-    func getBoolValue() -> Bool? {
-        guard let val = valueForCurrentKey() as? NSNumber else {
+    func getDoubleNamed(key: String) -> Double? {
+        guard let val = valueForKey(key) as? NSNumber else {
             return nil
         }
 
-        return val.boolValue
+        return val.doubleValue
     }
 
-    func getBoolArray() -> Array<Bool>? {
-        guard let val = valueForCurrentKey() as? Array<Bool> else {
-            return nil
-        }
-
-
-        return val
-    }
-
-    func getStringValue() -> String? {
-        guard let val = valueForCurrentKey() as? String else {
-            return nil
-        }
-
-        return val
-    }
-
-    func getStringArray() -> Array<String>? {
-        guard let val = valueForCurrentKey() as? Array<String> else {
+    func getDoubleArrayNamed(key: String) -> Array<Double>? {
+        guard let val = valueForKey(key) as? Array<Double> else {
             return nil
         }
 
