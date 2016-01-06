@@ -45,8 +45,8 @@ class ConstUnsignedIntegerArrayModel: Encodable {
 
     init(uintA: [UInt], uint8A: [UInt8], uint16A: [UInt16], uint32A: [UInt32], uint64A: [UInt64],
         uintAOpt: [UInt]?, uint8AOpt: [UInt8]?, uint16AOpt: [UInt16]?, uint32AOpt: [UInt32]?,
-        uint64AOpt: [UInt64]?, uintAOptNil: [UInt]?, uint8AOptNil: [UInt8]?, uint16AOptNil: [UInt16]?,
-        uint32AOptNil: [UInt32]?, uint64AOptNil: [UInt64]?) {
+        uint64AOpt: [UInt64]?, uintAOptNil: [UInt]?, uint8AOptNil: [UInt8]?,
+        uint16AOptNil: [UInt16]?, uint32AOptNil: [UInt32]?, uint64AOptNil: [UInt64]?) {
             self.uintA = uintA
             self.uint8A = uint8A
             self.uint16A = uint16A

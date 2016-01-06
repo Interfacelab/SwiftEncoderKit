@@ -26,21 +26,21 @@
 
 import Foundation
 
-class EnumModel : Encodable {
-    var int: IntEnum = .value1
-    var int8: Int8Enum = .value1
-    var int16: Int16Enum = .value1
-    var int32: Int32Enum = .value1
-    var int64: Int64Enum = .value1
-    var uint: UIntEnum = .value1
-    var uint8: UInt8Enum = .value1
-    var uint16: UInt16Enum = .value1
-    var uint32: UInt32Enum = .value1
-    var uint64: UInt64Enum = .value1
-    var string: StringEnum = .value1
-    var float: FloatEnum = .value1
-    var double: DoubleEnum = .value1
-    var character: CharacterEnum = .value1
+class EnumModel: Encodable {
+    var int: IntEnum = .Value1
+    var int8: Int8Enum = .Value1
+    var int16: Int16Enum = .Value1
+    var int32: Int32Enum = .Value1
+    var int64: Int64Enum = .Value1
+    var uint: UIntEnum = .Value1
+    var uint8: UInt8Enum = .Value1
+    var uint16: UInt16Enum = .Value1
+    var uint32: UInt32Enum = .Value1
+    var uint64: UInt64Enum = .Value1
+    var string: StringEnum = .Value1
+    var float: FloatEnum = .Value1
+    var double: DoubleEnum = .Value1
+    var character: CharacterEnum = .Value1
 
     var intOpt: IntEnum?
     var int8Opt: Int8Enum?
@@ -57,20 +57,20 @@ class EnumModel : Encodable {
     var doubleOpt: DoubleEnum?
     var characterOpt: CharacterEnum?
 
-    var intOptNil: IntEnum? = .value1
-    var int8OptNil: Int8Enum? = .value1
-    var int16OptNil: Int16Enum? = .value1
-    var int32OptNil: Int32Enum? = .value1
-    var int64OptNil: Int64Enum? = .value1
-    var uintOptNil: UIntEnum? = .value1
-    var uint8OptNil: UInt8Enum? = .value1
-    var uint16OptNil: UInt16Enum? = .value1
-    var uint32OptNil: UInt32Enum? = .value1
-    var uint64OptNil: UInt64Enum? = .value1
-    var stringOptNil: StringEnum? = .value1
-    var floatOptNil: FloatEnum? = .value1
-    var doubleOptNil: DoubleEnum? = .value1
-    var characterOptNil: CharacterEnum? = .value1
+    var intOptNil: IntEnum? = .Value1
+    var int8OptNil: Int8Enum? = .Value1
+    var int16OptNil: Int16Enum? = .Value1
+    var int32OptNil: Int32Enum? = .Value1
+    var int64OptNil: Int64Enum? = .Value1
+    var uintOptNil: UIntEnum? = .Value1
+    var uint8OptNil: UInt8Enum? = .Value1
+    var uint16OptNil: UInt16Enum? = .Value1
+    var uint32OptNil: UInt32Enum? = .Value1
+    var uint64OptNil: UInt64Enum? = .Value1
+    var stringOptNil: StringEnum? = .Value1
+    var floatOptNil: FloatEnum? = .Value1
+    var doubleOptNil: DoubleEnum? = .Value1
+    var characterOptNil: CharacterEnum? = .Value1
 
     init() {
 

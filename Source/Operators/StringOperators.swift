@@ -28,11 +28,11 @@ import Foundation
 
 // MARK: String
 
-func --> (left:String, right: Encoder) {
+func --> (left: String, right: Encoder) {
     right.addString(left, key: nil)
 }
 
-func <-- (inout left:String, right: Decoder) {
+func <-- (inout left: String, right: Decoder) {
     guard let rightValue = right.string(nil) else {
         return
     }
@@ -42,11 +42,11 @@ func <-- (inout left:String, right: Decoder) {
 
 // MARK: String Optional
 
-func --> (left:String?, right: Encoder) {
+func --> (left: String?, right: Encoder) {
     right.addString(left, key: nil)
 }
 
-func <-- (inout left:String?, right: Decoder) {
+func <-- (inout left: String?, right: Decoder) {
     guard let rightValue = right.string(nil) else {
         left = nil
         return
@@ -57,11 +57,11 @@ func <-- (inout left:String?, right: Decoder) {
 
 // MARK: String arrays
 
-func --> (left:Array<String>, right: Encoder) {
+func --> (left: Array<String>, right: Encoder) {
     right.addStringArray(left, key: nil)
 }
 
-func <-- (inout left:Array<String>, right: Decoder) {
+func <-- (inout left: Array<String>, right: Decoder) {
     guard let rightValue = right.stringArray(nil) else {
         return
     }
@@ -71,11 +71,11 @@ func <-- (inout left:Array<String>, right: Decoder) {
 
 // MARK: Optional String arrays
 
-func --> (left:Array<String>?, right: Encoder) {
+func --> (left: Array<String>?, right: Encoder) {
     right.addStringArray(left, key: nil)
 }
 
-func <-- (inout left:Array<String>?, right: Decoder) {
+func <-- (inout left: Array<String>?, right: Decoder) {
     guard let rightValue = right.stringArray(nil) else {
         left = nil
         return

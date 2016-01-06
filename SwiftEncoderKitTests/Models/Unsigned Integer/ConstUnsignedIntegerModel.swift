@@ -43,9 +43,21 @@ class ConstUnsignedIntegerModel: Encodable {
     let uint32OptNil: UInt32?
     let uint64OptNil: UInt64?
 
-    init(uint: UInt, uint8: UInt8, uint16: UInt16, uint32: UInt32, uint64: UInt64, uintOpt: UInt?,
-        uint8Opt: UInt8?, uint16Opt: UInt16?, uint32Opt: UInt32?, uint64Opt: UInt64?, uintOptNil: UInt?,
-        uint8OptNil: UInt8?, uint16OptNil: UInt16?, uint32OptNil: UInt32?, uint64OptNil: UInt64?) {
+    init(uint: UInt,
+        uint8: UInt8,
+        uint16: UInt16,
+        uint32: UInt32,
+        uint64: UInt64,
+        uintOpt: UInt?,
+        uint8Opt: UInt8?,
+        uint16Opt: UInt16?,
+        uint32Opt: UInt32?,
+        uint64Opt: UInt64?,
+        uintOptNil: UInt?,
+        uint8OptNil: UInt8?,
+        uint16OptNil: UInt16?,
+        uint32OptNil: UInt32?,
+        uint64OptNil: UInt64?) {
             self.uint = uint
             self.uint8 = uint8
             self.uint16 = uint16

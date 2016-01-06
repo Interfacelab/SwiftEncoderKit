@@ -28,54 +28,44 @@ import XCTest
 
 class EnumArrayTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testArrayEncodingDecoding() {
         let fileName = "/tmp/enumArray.plist"
 
         let model = EnumArrayModel()
 
-        model.int = [.value2, .value3, .value1]
-        model.int8 = [.value3, .value3, .value1]
-        model.int16 = [.value2, .value3, .value1]
-        model.int32 = [.value3, .value3, .value1]
-        model.int64 = [.value2, .value3, .value1]
+        model.int = [.Value2, .Value3, .Value1]
+        model.int8 = [.Value3, .Value3, .Value1]
+        model.int16 = [.Value2, .Value3, .Value1]
+        model.int32 = [.Value3, .Value3, .Value1]
+        model.int64 = [.Value2, .Value3, .Value1]
 
-        model.uint = [.value3, .value3, .value1]
-        model.uint8 = [.value2, .value3, .value1]
-        model.uint16 = [.value3, .value3, .value1]
-        model.uint32 = [.value2, .value3, .value1]
-        model.uint64 = [.value3, .value3, .value1]
+        model.uint = [.Value3, .Value3, .Value1]
+        model.uint8 = [.Value2, .Value3, .Value1]
+        model.uint16 = [.Value3, .Value3, .Value1]
+        model.uint32 = [.Value2, .Value3, .Value1]
+        model.uint64 = [.Value3, .Value3, .Value1]
 
-        model.float = [.value2, .value3, .value1]
-        model.double = [.value3, .value3, .value1]
-        model.string = [.value2, .value3, .value1]
-        model.character = [.value3, .value3, .value1]
+        model.float = [.Value2, .Value3, .Value1]
+        model.double = [.Value3, .Value3, .Value1]
+        model.string = [.Value2, .Value3, .Value1]
+        model.character = [.Value3, .Value3, .Value1]
 
-        model.intOpt = [.value2, .value3, .value1]
-        model.int8Opt = [.value3, .value3, .value1]
-        model.int16Opt = [.value2, .value3, .value1]
-        model.int32Opt = [.value3, .value3, .value1]
-        model.int64Opt = [.value2, .value3, .value1]
+        model.intOpt = [.Value2, .Value3, .Value1]
+        model.int8Opt = [.Value3, .Value3, .Value1]
+        model.int16Opt = [.Value2, .Value3, .Value1]
+        model.int32Opt = [.Value3, .Value3, .Value1]
+        model.int64Opt = [.Value2, .Value3, .Value1]
 
-        model.uintOpt = [.value3, .value3, .value1]
-        model.uint8Opt = [.value2, .value3, .value1]
-        model.uint16Opt = [.value3, .value3, .value1]
-        model.uint32Opt = [.value2, .value3, .value1]
-        model.uint64Opt = [.value3, .value3, .value1]
+        model.uintOpt = [.Value3, .Value3, .Value1]
+        model.uint8Opt = [.Value2, .Value3, .Value1]
+        model.uint16Opt = [.Value3, .Value3, .Value1]
+        model.uint32Opt = [.Value2, .Value3, .Value1]
+        model.uint64Opt = [.Value3, .Value3, .Value1]
 
-        model.floatOpt = [.value2, .value3, .value1]
-        model.doubleOpt = [.value3, .value3, .value1]
-        model.stringOpt = [.value2, .value3, .value1]
-        model.characterOpt = [.value3, .value3, .value1]
+        model.floatOpt = [.Value2, .Value3, .Value1]
+        model.doubleOpt = [.Value3, .Value3, .Value1]
+        model.stringOpt = [.Value2, .Value3, .Value1]
+        model.characterOpt = [.Value3, .Value3, .Value1]
 
         model.intOptNil = nil
         model.int8OptNil = nil
@@ -93,39 +83,39 @@ class EnumArrayTests: XCTestCase {
         model.characterOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:EnumArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: EnumArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
         if reModel != nil {
-            XCTAssert(reModel!.int == [.value2, .value3, .value1])
-            XCTAssert(reModel!.int8 == [.value3, .value3, .value1])
-            XCTAssert(reModel!.int16 == [.value2, .value3, .value1])
-            XCTAssert(reModel!.int32 == [.value3, .value3, .value1])
-            XCTAssert(reModel!.int64 == [.value2, .value3, .value1])
-            XCTAssert(reModel!.uint == [.value3, .value3, .value1])
-            XCTAssert(reModel!.uint8 == [.value2, .value3, .value1])
-            XCTAssert(reModel!.uint16 == [.value3, .value3, .value1])
-            XCTAssert(reModel!.uint32 == [.value2, .value3, .value1])
-            XCTAssert(reModel!.uint64 == [.value3, .value3, .value1])
-            XCTAssert(reModel!.float == [.value2, .value3, .value1])
-            XCTAssert(reModel!.double == [.value3, .value3, .value1])
-            XCTAssert(reModel!.string == [.value2, .value3, .value1])
-            XCTAssert(reModel!.character == [.value3, .value3, .value1])
-            XCTAssert(reModel!.intOpt! == [.value2, .value3, .value1])
-            XCTAssert(reModel!.int8Opt! == [.value3, .value3, .value1])
-            XCTAssert(reModel!.int16Opt! == [.value2, .value3, .value1])
-            XCTAssert(reModel!.int32Opt! == [.value3, .value3, .value1])
-            XCTAssert(reModel!.int64Opt! == [.value2, .value3, .value1])
-            XCTAssert(reModel!.uintOpt! == [.value3, .value3, .value1])
-            XCTAssert(reModel!.uint8Opt! == [.value2, .value3, .value1])
-            XCTAssert(reModel!.uint16Opt! == [.value3, .value3, .value1])
-            XCTAssert(reModel!.uint32Opt! == [.value2, .value3, .value1])
-            XCTAssert(reModel!.uint64Opt! == [.value3, .value3, .value1])
-            XCTAssert(reModel!.floatOpt! == [.value2, .value3, .value1])
-            XCTAssert(reModel!.doubleOpt! == [.value3, .value3, .value1])
-            XCTAssert(reModel!.stringOpt! == [.value2, .value3, .value1])
-            XCTAssert(reModel!.characterOpt! == [.value3, .value3, .value1])
+            XCTAssert(reModel!.int == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.int8 == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.int16 == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.int32 == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.int64 == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.uint == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.uint8 == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.uint16 == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.uint32 == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.uint64 == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.float == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.double == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.string == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.character == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.intOpt! == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.int8Opt! == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.int16Opt! == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.int32Opt! == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.int64Opt! == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.uintOpt! == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.uint8Opt! == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.uint16Opt! == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.uint32Opt! == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.uint64Opt! == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.floatOpt! == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.doubleOpt! == [.Value3, .Value3, .Value1])
+            XCTAssert(reModel!.stringOpt! == [.Value2, .Value3, .Value1])
+            XCTAssert(reModel!.characterOpt! == [.Value3, .Value3, .Value1])
 
             XCTAssert(reModel!.intOptNil == nil)
             XCTAssert(reModel!.int8OptNil == nil)
@@ -147,35 +137,35 @@ class EnumArrayTests: XCTestCase {
     func testConstArrayEncodingDecoding() {
         let fileName = "/tmp/constEnumArray.plist"
 
-        let int: [IntEnum] = [.value2, .value2]
-        let int8: [Int8Enum] = [.value3, .value2]
-        let int16: [Int16Enum] = [.value2, .value2]
-        let int32: [Int32Enum] = [.value3, .value2]
-        let int64: [Int64Enum] = [.value2, .value2]
-        let uint: [UIntEnum] = [.value3, .value2]
-        let uint8: [UInt8Enum] = [.value2, .value2]
-        let uint16: [UInt16Enum] = [.value3, .value2]
-        let uint32: [UInt32Enum] = [.value2, .value2]
-        let uint64: [UInt64Enum] = [.value3, .value2]
-        let float: [FloatEnum] = [.value2, .value2]
-        let double: [DoubleEnum] = [.value3, .value2]
-        let string: [StringEnum] = [.value2, .value2]
-        let character: [CharacterEnum] = [.value3, .value2]
+        let int: [IntEnum] = [.Value2, .Value2]
+        let int8: [Int8Enum] = [.Value3, .Value2]
+        let int16: [Int16Enum] = [.Value2, .Value2]
+        let int32: [Int32Enum] = [.Value3, .Value2]
+        let int64: [Int64Enum] = [.Value2, .Value2]
+        let uint: [UIntEnum] = [.Value3, .Value2]
+        let uint8: [UInt8Enum] = [.Value2, .Value2]
+        let uint16: [UInt16Enum] = [.Value3, .Value2]
+        let uint32: [UInt32Enum] = [.Value2, .Value2]
+        let uint64: [UInt64Enum] = [.Value3, .Value2]
+        let float: [FloatEnum] = [.Value2, .Value2]
+        let double: [DoubleEnum] = [.Value3, .Value2]
+        let string: [StringEnum] = [.Value2, .Value2]
+        let character: [CharacterEnum] = [.Value3, .Value2]
 
-        let intOpt: [IntEnum] = [.value2, .value2]
-        let int8Opt: [Int8Enum] = [.value3, .value2]
-        let int16Opt: [Int16Enum] = [.value2, .value2]
-        let int32Opt: [Int32Enum] = [.value3, .value2]
-        let int64Opt: [Int64Enum] = [.value2, .value2]
-        let uintOpt: [UIntEnum] = [.value3, .value2]
-        let uint8Opt: [UInt8Enum] = [.value2, .value2]
-        let uint16Opt: [UInt16Enum] = [.value3, .value2]
-        let uint32Opt: [UInt32Enum] = [.value2, .value2]
-        let uint64Opt: [UInt64Enum] = [.value3, .value2]
-        let floatOpt: [FloatEnum] = [.value2, .value2]
-        let doubleOpt: [DoubleEnum] = [.value3, .value2]
-        let stringOpt: [StringEnum] = [.value2, .value2]
-        let characterOpt: [CharacterEnum] = [.value3, .value2]
+        let intOpt: [IntEnum] = [.Value2, .Value2]
+        let int8Opt: [Int8Enum] = [.Value3, .Value2]
+        let int16Opt: [Int16Enum] = [.Value2, .Value2]
+        let int32Opt: [Int32Enum] = [.Value3, .Value2]
+        let int64Opt: [Int64Enum] = [.Value2, .Value2]
+        let uintOpt: [UIntEnum] = [.Value3, .Value2]
+        let uint8Opt: [UInt8Enum] = [.Value2, .Value2]
+        let uint16Opt: [UInt16Enum] = [.Value3, .Value2]
+        let uint32Opt: [UInt32Enum] = [.Value2, .Value2]
+        let uint64Opt: [UInt64Enum] = [.Value3, .Value2]
+        let floatOpt: [FloatEnum] = [.Value2, .Value2]
+        let doubleOpt: [DoubleEnum] = [.Value3, .Value2]
+        let stringOpt: [StringEnum] = [.Value2, .Value2]
+        let characterOpt: [CharacterEnum] = [.Value3, .Value2]
 
         let model = ConstEnumArrayModel(int: int,
             int8: int8,
@@ -221,40 +211,40 @@ class EnumArrayTests: XCTestCase {
             characterOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstEnumArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstEnumArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
         if reModel != nil {
-            XCTAssert(reModel!.int == [.value2, .value2])
-            XCTAssert(reModel!.int8 == [.value3, .value2])
-            XCTAssert(reModel!.int16 == [.value2, .value2])
-            XCTAssert(reModel!.int32 == [.value3, .value2])
-            XCTAssert(reModel!.int64 == [.value2, .value2])
-            XCTAssert(reModel!.uint == [.value3, .value2])
-            XCTAssert(reModel!.uint8 == [.value2, .value2])
-            XCTAssert(reModel!.uint16 == [.value3, .value2])
-            XCTAssert(reModel!.uint32 == [.value2, .value2])
-            XCTAssert(reModel!.uint64 == [.value3, .value2])
-            XCTAssert(reModel!.float == [.value2, .value2])
-            XCTAssert(reModel!.double == [.value3, .value2])
-            XCTAssert(reModel!.string == [.value2, .value2])
-            XCTAssert(reModel!.character == [.value3, .value2])
+            XCTAssert(reModel!.int == [.Value2, .Value2])
+            XCTAssert(reModel!.int8 == [.Value3, .Value2])
+            XCTAssert(reModel!.int16 == [.Value2, .Value2])
+            XCTAssert(reModel!.int32 == [.Value3, .Value2])
+            XCTAssert(reModel!.int64 == [.Value2, .Value2])
+            XCTAssert(reModel!.uint == [.Value3, .Value2])
+            XCTAssert(reModel!.uint8 == [.Value2, .Value2])
+            XCTAssert(reModel!.uint16 == [.Value3, .Value2])
+            XCTAssert(reModel!.uint32 == [.Value2, .Value2])
+            XCTAssert(reModel!.uint64 == [.Value3, .Value2])
+            XCTAssert(reModel!.float == [.Value2, .Value2])
+            XCTAssert(reModel!.double == [.Value3, .Value2])
+            XCTAssert(reModel!.string == [.Value2, .Value2])
+            XCTAssert(reModel!.character == [.Value3, .Value2])
 
-            XCTAssert(reModel!.intOpt! == [.value2, .value2])
-            XCTAssert(reModel!.int8Opt! == [.value3, .value2])
-            XCTAssert(reModel!.int16Opt! == [.value2, .value2])
-            XCTAssert(reModel!.int32Opt! == [.value3, .value2])
-            XCTAssert(reModel!.int64Opt! == [.value2, .value2])
-            XCTAssert(reModel!.uintOpt! == [.value3, .value2])
-            XCTAssert(reModel!.uint8Opt! == [.value2, .value2])
-            XCTAssert(reModel!.uint16Opt! == [.value3, .value2])
-            XCTAssert(reModel!.uint32Opt! == [.value2, .value2])
-            XCTAssert(reModel!.uint64Opt! == [.value3, .value2])
-            XCTAssert(reModel!.floatOpt! == [.value2, .value2])
-            XCTAssert(reModel!.doubleOpt! == [.value3, .value2])
-            XCTAssert(reModel!.stringOpt! == [.value2, .value2])
-            XCTAssert(reModel!.characterOpt! == [.value3, .value2])
+            XCTAssert(reModel!.intOpt! == [.Value2, .Value2])
+            XCTAssert(reModel!.int8Opt! == [.Value3, .Value2])
+            XCTAssert(reModel!.int16Opt! == [.Value2, .Value2])
+            XCTAssert(reModel!.int32Opt! == [.Value3, .Value2])
+            XCTAssert(reModel!.int64Opt! == [.Value2, .Value2])
+            XCTAssert(reModel!.uintOpt! == [.Value3, .Value2])
+            XCTAssert(reModel!.uint8Opt! == [.Value2, .Value2])
+            XCTAssert(reModel!.uint16Opt! == [.Value3, .Value2])
+            XCTAssert(reModel!.uint32Opt! == [.Value2, .Value2])
+            XCTAssert(reModel!.uint64Opt! == [.Value3, .Value2])
+            XCTAssert(reModel!.floatOpt! == [.Value2, .Value2])
+            XCTAssert(reModel!.doubleOpt! == [.Value3, .Value2])
+            XCTAssert(reModel!.stringOpt! == [.Value2, .Value2])
+            XCTAssert(reModel!.characterOpt! == [.Value3, .Value2])
 
             XCTAssert(reModel!.intOptNil == nil)
             XCTAssert(reModel!.int8OptNil == nil)

@@ -29,11 +29,11 @@ import QuartzCore
 
 // MARK: Float
 
-func --> (left:Float, right: Encoder) {
+func --> (left: Float, right: Encoder) {
     right.addFloat(left, key: nil)
 }
 
-func <-- (inout left:Float, right: Decoder) {
+func <-- (inout left: Float, right: Decoder) {
     guard let rightValue = right.float(nil) else {
         return
     }
@@ -43,11 +43,11 @@ func <-- (inout left:Float, right: Decoder) {
 
 // MARK: Float Optional
 
-func --> (left:Float?, right: Encoder) {
+func --> (left: Float?, right: Encoder) {
     right.addFloat(left, key: nil)
 }
 
-func <-- (inout left:Float?, right: Decoder) {
+func <-- (inout left: Float?, right: Decoder) {
     guard let rightValue = right.float(nil) else {
         left = nil
         return
@@ -58,11 +58,11 @@ func <-- (inout left:Float?, right: Decoder) {
 
 // MARK: Float arrays
 
-func --> (left:Array<Float>, right: Encoder) {
+func --> (left: Array<Float>, right: Encoder) {
     right.addFloatArray(left, key: nil)
 }
 
-func <-- (inout left:Array<Float>, right: Decoder) {
+func <-- (inout left: Array<Float>, right: Decoder) {
     guard let rightValue = right.floatArray(nil) else {
         return
     }
@@ -72,11 +72,11 @@ func <-- (inout left:Array<Float>, right: Decoder) {
 
 // MARK: Optional float arrays
 
-func --> (left:Array<Float>?, right: Encoder) {
+func --> (left: Array<Float>?, right: Encoder) {
     right.addFloatArray(left, key: nil)
 }
 
-func <-- (inout left:Array<Float>?, right: Decoder) {
+func <-- (inout left: Array<Float>?, right: Decoder) {
     guard let rightValue = right.floatArray(nil) else {
         left = nil
         return
@@ -116,11 +116,11 @@ func <-- (inout left: [String: Float]?, right: Decoder) {
 
 // MARK: CGFloat
 
-func --> (left:CGFloat, right: Encoder) {
+func --> (left: CGFloat, right: Encoder) {
     right.addCGFloat(left, key: nil)
 }
 
-func <-- (inout left:CGFloat, right: Decoder) {
+func <-- (inout left: CGFloat, right: Decoder) {
     guard let rightValue = right.cgFloat(nil) else {
         return
     }
@@ -130,11 +130,11 @@ func <-- (inout left:CGFloat, right: Decoder) {
 
 // MARK: CGFloat Optional
 
-func --> (left:CGFloat?, right: Encoder) {
+func --> (left: CGFloat?, right: Encoder) {
     right.addCGFloat(left, key: nil)
 }
 
-func <-- (inout left:CGFloat?, right: Decoder) {
+func <-- (inout left: CGFloat?, right: Decoder) {
     guard let rightValue = right.cgFloat(nil) else {
         left = nil
         return
@@ -145,11 +145,11 @@ func <-- (inout left:CGFloat?, right: Decoder) {
 
 // MARK: CGFloat arrays
 
-func --> (left:Array<CGFloat>, right: Encoder) {
+func --> (left: Array<CGFloat>, right: Encoder) {
     right.addCGFloatArray(left, key: nil)
 }
 
-func <-- (inout left:Array<CGFloat>, right: Decoder) {
+func <-- (inout left: Array<CGFloat>, right: Decoder) {
     guard let rightValue = right.cgFloatArray(nil) else {
         return
     }
@@ -159,11 +159,11 @@ func <-- (inout left:Array<CGFloat>, right: Decoder) {
 
 // MARK: Optional CGFloat arrays
 
-func --> (left:Array<CGFloat>?, right: Encoder) {
+func --> (left: Array<CGFloat>?, right: Encoder) {
     right.addCGFloatArray(left, key: nil)
 }
 
-func <-- (inout left:Array<CGFloat>?, right: Decoder) {
+func <-- (inout left: Array<CGFloat>?, right: Decoder) {
     guard let rightValue = right.cgFloatArray(nil) else {
         left = nil
         return
@@ -203,11 +203,11 @@ func <-- (inout left: [String: CGFloat]?, right: Decoder) {
 
 // MARK: Double
 
-func --> (left:Double, right: Encoder) {
+func --> (left: Double, right: Encoder) {
     right.addDouble(left, key: nil)
 }
 
-func <-- (inout left:Double, right: Decoder) {
+func <-- (inout left: Double, right: Decoder) {
     guard let rightValue = right.double(nil) else {
         return
     }
@@ -217,11 +217,11 @@ func <-- (inout left:Double, right: Decoder) {
 
 // MARK: Double Optional
 
-func --> (left:Double?, right: Encoder) {
+func --> (left: Double?, right: Encoder) {
     right.addDouble(left, key: nil)
 }
 
-func <-- (inout left:Double?, right: Decoder) {
+func <-- (inout left: Double?, right: Decoder) {
     guard let rightValue = right.double(nil) else {
         left = nil
         return
@@ -232,11 +232,11 @@ func <-- (inout left:Double?, right: Decoder) {
 
 // MARK: Double arrays
 
-func --> (left:Array<Double>, right: Encoder) {
+func --> (left: Array<Double>, right: Encoder) {
     right.addDoubleArray(left, key: nil)
 }
 
-func <-- (inout left:Array<Double>, right: Decoder) {
+func <-- (inout left: Array<Double>, right: Decoder) {
     guard let rightValue = right.doubleArray(nil) else {
         return
     }
@@ -246,11 +246,11 @@ func <-- (inout left:Array<Double>, right: Decoder) {
 
 // MARK: Optional double arrays
 
-func --> (left:Array<Double>?, right: Encoder) {
+func --> (left: Array<Double>?, right: Encoder) {
     right.addDoubleArray(left, key: nil)
 }
 
-func <-- (inout left:Array<Double>?, right: Decoder) {
+func <-- (inout left: Array<Double>?, right: Decoder) {
     guard let rightValue = right.doubleArray(nil) else {
         left = nil
         return

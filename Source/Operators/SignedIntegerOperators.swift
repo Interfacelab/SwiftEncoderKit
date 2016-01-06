@@ -28,11 +28,11 @@ import Foundation
 
 // MARK: Integer values
 
-func --> <T: SignedIntegerType>(left:T, right: Encoder) {
+func --> <T: SignedIntegerType>(left: T, right: Encoder) {
     right.addInteger(left, key: nil)
 }
 
-func <-- <T: SignedIntegerType>(inout left:T, right: Decoder) {
+func <-- <T: SignedIntegerType>(inout left: T, right: Decoder) {
     guard let rightValue: T = right.integer(nil) else {
         return
     }
@@ -43,12 +43,12 @@ func <-- <T: SignedIntegerType>(inout left:T, right: Decoder) {
 
 // MARK: Integer arrays
 
-func --> <T: SignedIntegerType>(left:Array<T>, right: Encoder) {
+func --> <T: SignedIntegerType>(left: Array<T>, right: Encoder) {
     right.addIntegerArray(left, key: nil)
 }
 
-func <-- <T: SignedIntegerType>(inout left:Array<T>, right: Decoder) {
-    guard let rightValue:Array<T> = right.integerArray(nil) else {
+func <-- <T: SignedIntegerType>(inout left: Array<T>, right: Decoder) {
+    guard let rightValue: Array<T> = right.integerArray(nil) else {
         return
     }
 
@@ -57,11 +57,11 @@ func <-- <T: SignedIntegerType>(inout left:Array<T>, right: Decoder) {
 
 // MARK: Optional integer values
 
-func --> <T: SignedIntegerType>(left:T?, right: Encoder) {
+func --> <T: SignedIntegerType>(left: T?, right: Encoder) {
     right.addInteger(left, key: nil)
 }
 
-func <-- <T: SignedIntegerType>(inout left:T?, right: Decoder) {
+func <-- <T: SignedIntegerType>(inout left: T?, right: Decoder) {
     guard let rightValue: T = right.integer(nil) else {
         left = nil
         return
@@ -72,12 +72,12 @@ func <-- <T: SignedIntegerType>(inout left:T?, right: Decoder) {
 
 // MARK: Optional integer arrays
 
-func --> <T: SignedIntegerType>(left:Array<T>?, right: Encoder) {
+func --> <T: SignedIntegerType>(left: Array<T>?, right: Encoder) {
     right.addIntegerArray(left, key: nil)
 }
 
-func <-- <T: SignedIntegerType>(inout left:Array<T>?, right: Decoder) {
-    guard let rightValue:Array<T> = right.integerArray(nil) else {
+func <-- <T: SignedIntegerType>(inout left: Array<T>?, right: Decoder) {
+    guard let rightValue: Array<T> = right.integerArray(nil) else {
         left = nil
         return
     }

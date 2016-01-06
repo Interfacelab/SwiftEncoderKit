@@ -28,7 +28,7 @@ import Foundation
 
 import UIKit
 
-class ConstNSCodingArrayModel : Encodable {
+class ConstNSCodingArrayModel: Encodable {
     let imageA: [UIImage]
     let imageOptA: [UIImage]?
     let imageOptNilA: [UIImage]?

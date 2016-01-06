@@ -78,7 +78,7 @@ extension Encoder : UnsignedIntegerEncoding {
             return
         }
 
-        var encoded:[NSCoding] = []
+        var encoded: [NSCoding] = []
 
         for uint in array {
             if let val = encodedValueForUnsignedInteger(uint) {
@@ -95,30 +95,31 @@ extension Encoder : UnsignedIntegerEncoding {
 
     // MARK: Dictionaries
 
-    func addUnsignedIntegerDictionary<T: UnsignedIntegerType>(uintegerDict: [String: T]?, key: String?) {
-        guard let dict = uintegerDict else {
+    func addUnsignedIntegerDictionary<T: UnsignedIntegerType>(uintegerDict: [String: T]?,
+        key: String?) {
+            guard let dict = uintegerDict else {
+                if key == nil {
+                    setValueForCurrentKey(nil)
+                } else {
+                    setValue(key!, value: nil)
+                }
+                
+                return
+            }
+
+            var encoded: [String: NSCoding] = [:]
+
+            for (key, uint) in dict {
+                if let val = encodedValueForUnsignedInteger(uint) {
+                    encoded[key] = val
+                }
+            }
+
             if key == nil {
-                setValueForCurrentKey(nil)
+                setValueForCurrentKey(encoded)
             } else {
-                setValue(key!, value: nil)
+                setValue(key!, value: encoded)
             }
-
-            return
-        }
-
-        var encoded:[String: NSCoding] = [:]
-
-        for (key, uint) in dict {
-            if let val = encodedValueForUnsignedInteger(uint) {
-                encoded[key] = val
-            }
-        }
-
-        if key == nil {
-            setValueForCurrentKey(encoded)
-        } else {
-            setValue(key!, value: encoded)
-        }
     }
 }
 

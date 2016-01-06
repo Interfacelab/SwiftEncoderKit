@@ -67,7 +67,7 @@ extension Encoder : EnumEncoding {
         return nil
     }
 
-    func addEnumValue<T: RawRepresentable>(enumValue: T?, key:String?) {
+    func addEnumValue<T: RawRepresentable>(enumValue: T?, key: String?) {
         let val = encodedEnumValue(enumValue)
 
         if key == nil {
@@ -88,7 +88,7 @@ extension Encoder : EnumEncoding {
             return
         }
 
-        var encoded:[NSCoding] = []
+        var encoded: [NSCoding] = []
 
         for enumVal in array {
             if let val = encodedEnumValue(enumVal) {
@@ -114,7 +114,7 @@ extension Encoder : EnumEncoding {
             return
         }
 
-        var encoded:[String: NSCoding] = [:]
+        var encoded: [String: NSCoding] = [:]
 
         for (key, enumVal) in dict {
             if let val = encodedEnumValue(enumVal) {

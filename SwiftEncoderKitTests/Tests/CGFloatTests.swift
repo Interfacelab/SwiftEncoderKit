@@ -28,16 +28,6 @@ import XCTest
 
 class CGFloatTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     // MARK: Basic encoding
 
     func testFloatEncodingDecoding() {
@@ -50,7 +40,7 @@ class CGFloatTests: XCTestCase {
         model.floatOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:CGFloatModel? = Decoder(path: fileName).decodedObject()
+        let reModel: CGFloatModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -68,7 +58,7 @@ class CGFloatTests: XCTestCase {
             floatOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstCGFloatModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstCGFloatModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -91,7 +81,7 @@ class CGFloatTests: XCTestCase {
         model.floatAOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:CGFloatArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: CGFloatArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -111,7 +101,7 @@ class CGFloatTests: XCTestCase {
         let model = ConstCGFloatArrayModel(floatA: floatA, floatAOpt: floatAOpt, floatAOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstCGFloatArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstCGFloatArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -134,12 +124,13 @@ class CGFloatTests: XCTestCase {
         model.floatDOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:CGFloatDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: CGFloatDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
         if reModel != nil {
-            XCTAssert(reModel!.floatD == ["a": 0.0, "b": CGFloat.infinity / 2.0, "c": CGFloat.infinity])
+            XCTAssert(reModel!.floatD == ["a": 0.0, "b": CGFloat.infinity / 2.0,
+                "c": CGFloat.infinity])
             XCTAssert(reModel!.floatDOpt! == ["a": 20.0, "b": CGFloat.infinity / 3.0,
                 "c": CGFloat.infinity])
             XCTAssert(reModel!.floatDOptNil == nil)
@@ -156,12 +147,13 @@ class CGFloatTests: XCTestCase {
             floatDOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstCGFloatDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstCGFloatDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
         if reModel != nil {
-            XCTAssert(reModel!.floatD == ["a": 0.0, "b": CGFloat.infinity / 2.0, "c": CGFloat.infinity])
+            XCTAssert(reModel!.floatD == ["a": 0.0, "b": CGFloat.infinity / 2.0,
+                "c": CGFloat.infinity])
             XCTAssert(reModel!.floatDOpt! == ["a": 20.0, "b": CGFloat.infinity / 3.0,
                 "c": CGFloat.infinity])
             XCTAssert(reModel!.floatDOptNil == nil)

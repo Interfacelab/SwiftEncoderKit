@@ -37,11 +37,11 @@ class SignedIntegerArrayModel: Encodable {
     var int32AOpt: [Int32]?
     var int64AOpt: [Int64]?
 
-    var intAOptNil: [Int]? = [1,2,3,4]
-    var int8AOptNil: [Int8]? = [1,2,3,4]
-    var int16AOptNil: [Int16]? = [1,2,3,4]
-    var int32AOptNil: [Int32]? = [1,2,3,4]
-    var int64AOptNil: [Int64]? = [1,2,3,4]
+    var intAOptNil: [Int]? = [1, 2, 3, 4]
+    var int8AOptNil: [Int8]? = [1, 2, 3, 4]
+    var int16AOptNil: [Int16]? = [1, 2, 3, 4]
+    var int32AOptNil: [Int32]? = [1, 2, 3, 4]
+    var int64AOptNil: [Int64]? = [1, 2, 3, 4]
 
     init() {
 

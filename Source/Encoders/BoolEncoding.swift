@@ -34,8 +34,7 @@ extension Encoder : BoolEncoding {
     func addBool(bool: Bool?, key: String?) {
         if key == nil {
             setValueForCurrentKey(bool)
-        }
-        else {
+        } else {
             setValue(key!, value: bool)
         }
     }
@@ -43,8 +42,7 @@ extension Encoder : BoolEncoding {
     func addBoolArray(boolArray: Array<Bool>?, key: String?) {
         if key == nil {
             setValueForCurrentKey(boolArray)
-        }
-        else {
+        } else {
             setValue(key!, value: boolArray)
         }
     }

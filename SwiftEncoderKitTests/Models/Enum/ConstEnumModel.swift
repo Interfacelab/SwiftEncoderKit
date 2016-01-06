@@ -26,7 +26,7 @@
 
 import Foundation
 
-class ConstEnumModel : Encodable {
+class ConstEnumModel: Encodable {
     let int: IntEnum
     let int8: Int8Enum
     let int16: Int16Enum
@@ -159,20 +159,20 @@ class ConstEnumModel : Encodable {
     }
 
     required init?(_ decoder: Decoder) {
-        int = decoder.enumValue("int") ?? .value1
-        int8 = decoder.enumValue("int8") ?? .value1
-        int16 = decoder.enumValue("int16") ?? .value1
-        int32 = decoder.enumValue("int32") ?? .value1
-        int64 = decoder.enumValue("int64") ?? .value1
-        uint = decoder.enumValue("uint") ?? .value1
-        uint8 = decoder.enumValue("uint8") ?? .value1
-        uint16 = decoder.enumValue("uint16") ?? .value1
-        uint32 = decoder.enumValue("uint32") ?? .value1
-        uint64 = decoder.enumValue("uint64") ?? .value1
-        float = decoder.enumValue("float") ?? .value1
-        double = decoder.enumValue("double") ?? .value1
-        string = decoder.enumValue("string") ?? .value1
-        character = decoder.enumValue("character") ?? .value1
+        int = decoder.enumValue("int") ?? .Value1
+        int8 = decoder.enumValue("int8") ?? .Value1
+        int16 = decoder.enumValue("int16") ?? .Value1
+        int32 = decoder.enumValue("int32") ?? .Value1
+        int64 = decoder.enumValue("int64") ?? .Value1
+        uint = decoder.enumValue("uint") ?? .Value1
+        uint8 = decoder.enumValue("uint8") ?? .Value1
+        uint16 = decoder.enumValue("uint16") ?? .Value1
+        uint32 = decoder.enumValue("uint32") ?? .Value1
+        uint64 = decoder.enumValue("uint64") ?? .Value1
+        float = decoder.enumValue("float") ?? .Value1
+        double = decoder.enumValue("double") ?? .Value1
+        string = decoder.enumValue("string") ?? .Value1
+        character = decoder.enumValue("character") ?? .Value1
 
         intOpt = decoder.enumValue("intOpt")
         int8Opt = decoder.enumValue("int8Opt")

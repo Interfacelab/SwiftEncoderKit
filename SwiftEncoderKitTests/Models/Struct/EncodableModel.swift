@@ -26,7 +26,7 @@
 
 import Foundation
 
-class EncodableModel : Encodable {
+class EncodableModel: Encodable {
     var rect: EncodableRect = EncodableRect()
     var rectOpt: EncodableRect?
     var rectOptNil: EncodableRect?

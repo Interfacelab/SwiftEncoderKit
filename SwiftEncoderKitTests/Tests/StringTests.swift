@@ -28,16 +28,6 @@ import XCTest
 
 class StringTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testStringEncodingDecoding() {
 
         let fileName = "/tmp/string.plist"
@@ -49,7 +39,7 @@ class StringTests: XCTestCase {
         model.stringOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:StringModel? = Decoder(path: fileName).decodedObject()
+        let reModel: StringModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -66,7 +56,7 @@ class StringTests: XCTestCase {
         let model = ConstStringModel(string: "Nice", stringOpt: "Things", stringOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstStringModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstStringModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -87,7 +77,7 @@ class StringTests: XCTestCase {
         model.stringAOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:StringArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: StringArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -105,7 +95,7 @@ class StringTests: XCTestCase {
             stringAOpt: ["by", "design"], stringAOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstStringArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstStringArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -126,7 +116,7 @@ class StringTests: XCTestCase {
         model.stringDOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:StringDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: StringDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -147,7 +137,7 @@ class StringTests: XCTestCase {
             stringDOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstStringDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstStringDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

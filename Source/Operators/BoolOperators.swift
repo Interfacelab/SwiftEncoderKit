@@ -28,11 +28,11 @@ import Foundation
 
 // MARK: Bool
 
-func --> (left:Bool, right: Encoder) {
+func --> (left: Bool, right: Encoder) {
     right.addBool(left, key: nil)
 }
 
-func <-- (inout left:Bool, right: Decoder) {
+func <-- (inout left: Bool, right: Decoder) {
     guard let rightValue = right.bool(nil) else {
         return
     }
@@ -42,11 +42,11 @@ func <-- (inout left:Bool, right: Decoder) {
 
 // MARK: Bool Optional
 
-func --> (left:Bool?, right: Encoder) {
+func --> (left: Bool?, right: Encoder) {
     right.addBool(left, key: nil)
 }
 
-func <-- (inout left:Bool?, right: Decoder) {
+func <-- (inout left: Bool?, right: Decoder) {
     guard let rightValue = right.bool(nil) else {
         left = nil
         return
@@ -57,11 +57,11 @@ func <-- (inout left:Bool?, right: Decoder) {
 
 // MARK: Bool arrays
 
-func --> (left:Array<Bool>, right: Encoder) {
+func --> (left: Array<Bool>, right: Encoder) {
     right.addBoolArray(left, key: nil)
 }
 
-func <-- (inout left:Array<Bool>, right: Decoder) {
+func <-- (inout left: Array<Bool>, right: Decoder) {
     guard let rightValue = right.boolArray(nil) else {
         return
     }
@@ -71,11 +71,11 @@ func <-- (inout left:Array<Bool>, right: Decoder) {
 
 // MARK: Optional bool arrays
 
-func --> (left:Array<Bool>?, right: Encoder) {
+func --> (left: Array<Bool>?, right: Encoder) {
     right.addBoolArray(left, key: nil)
 }
 
-func <-- (inout left:Array<Bool>?, right: Decoder) {
+func <-- (inout left: Array<Bool>?, right: Decoder) {
     guard let rightValue = right.boolArray(nil) else {
         left = nil
         return

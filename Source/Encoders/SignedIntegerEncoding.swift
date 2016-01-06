@@ -54,7 +54,7 @@ extension Encoder : SignedIntegerEncoding {
 
     // MARK: Integer types
 
-    func addInteger<T: SignedIntegerType>(int: T?, key:String?) {
+    func addInteger<T: SignedIntegerType>(int: T?, key: String?) {
         let val = encodedValueForInteger(int)
 
         if key == nil {
@@ -75,7 +75,7 @@ extension Encoder : SignedIntegerEncoding {
             return
         }
 
-        var encoded:[NSCoding] = []
+        var encoded: [NSCoding] = []
 
         for int in array {
             if let val = encodedValueForInteger(int) {
@@ -101,7 +101,7 @@ extension Encoder : SignedIntegerEncoding {
             return
         }
 
-        var encoded:[String: NSCoding] = [:]
+        var encoded: [String: NSCoding] = [:]
 
         for (key, int) in dict {
             if let val = encodedValueForInteger(int) {
@@ -144,7 +144,7 @@ extension Decoder : SignedIntegerEncoding {
 
     // MARK: Integer types
 
-    func integer<T: SignedIntegerType>(key:String?) -> T? {
+    func integer<T: SignedIntegerType>(key: String?) -> T? {
         let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? NSNumber
 
         let decodedVal: T? = decodedIntegerForValue(val)

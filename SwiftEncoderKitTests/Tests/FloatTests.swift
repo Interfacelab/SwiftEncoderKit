@@ -28,16 +28,6 @@ import XCTest
 
 class FloatTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     // MARK: Basic encoding
 
     func testFloatEncodingDecoding() {
@@ -54,7 +44,7 @@ class FloatTests: XCTestCase {
         model.doubleOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:FloatModel? = Decoder(path: fileName).decodedObject()
+        let reModel: FloatModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -77,7 +67,7 @@ class FloatTests: XCTestCase {
             doubleOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstFloatModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstFloatModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -108,7 +98,7 @@ class FloatTests: XCTestCase {
         model.doubleAOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:FloatArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: FloatArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -135,7 +125,7 @@ class FloatTests: XCTestCase {
             doubleA: doubleA, doubleAOpt: doubleAOpt, doubleAOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstFloatArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstFloatArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -166,7 +156,7 @@ class FloatTests: XCTestCase {
         model.doubleDOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:FloatDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: FloatDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -197,7 +187,7 @@ class FloatTests: XCTestCase {
             floatDOptNil: nil, doubleD: doubleD, doubleDOpt: doubleDOpt, doubleDOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstFloatDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstFloatDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

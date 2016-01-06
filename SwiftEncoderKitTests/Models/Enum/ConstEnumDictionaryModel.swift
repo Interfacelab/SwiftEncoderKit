@@ -26,7 +26,7 @@
 
 import Foundation
 
-class ConstEnumDictionaryModel : Encodable {
+class ConstEnumDictionaryModel: Encodable {
     let int: [String: IntEnum]
     let int8: [String: Int8Enum]
     let int16: [String: Int16Enum]

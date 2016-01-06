@@ -29,7 +29,7 @@ infix operator <-- { }
 
 class Decoder {
     private var _currentKey: String?
-    private let _data:[String: AnyObject]
+    private let _data: [String: AnyObject]
 
     init(path: String) {
         if let root = NSKeyedUnarchiver.unarchiveObjectWithFile(path) {

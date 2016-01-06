@@ -30,16 +30,6 @@ import AVFoundation
 
 class CoreMediaTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testCMTimeEncodingDecoding() {
         let fileName = "/tmp/cmtime.plist"
 
@@ -62,7 +52,7 @@ class CoreMediaTests: XCTestCase {
         model.timeOptNilD = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:CMTimeModel? = Decoder(path: fileName).decodedObject()
+        let reModel: CMTimeModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -113,7 +103,7 @@ class CoreMediaTests: XCTestCase {
         )
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstCMTimeModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstCMTimeModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -182,7 +172,7 @@ class CoreMediaTests: XCTestCase {
         model.timeRangeOptNilD = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:CMTimeRangeModel? = Decoder(path: fileName).decodedObject()
+        let reModel: CMTimeRangeModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -274,7 +264,7 @@ class CoreMediaTests: XCTestCase {
         )
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstCMTimeRangeModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstCMTimeRangeModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -346,7 +336,7 @@ class CoreMediaTests: XCTestCase {
         model.timeMapOptNilD = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:CMTimeMappingModel? = Decoder(path: fileName).decodedObject()
+        let reModel: CMTimeMappingModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -417,7 +407,7 @@ class CoreMediaTests: XCTestCase {
             timeMapOptNilD: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstCMTimeMappingModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstCMTimeMappingModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

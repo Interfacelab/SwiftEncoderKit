@@ -27,16 +27,6 @@
 import XCTest
 
 class NSCodingTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
 
     // MARK: Basic encoding
 
@@ -58,7 +48,7 @@ class NSCodingTests: XCTestCase {
         model.colorOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:NSCodingModel? = Decoder(path: fileName).decodedObject()
+        let reModel: NSCodingModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -100,7 +90,7 @@ class NSCodingTests: XCTestCase {
             colorOpt: UIColor(red:1.0, green: 1.0, blue: 0.0, alpha: 1.0), colorOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstNSCodingModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstNSCodingModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -141,8 +131,8 @@ class NSCodingTests: XCTestCase {
 
         let model = NSCodingArrayModel()
 
-        model.imageA = [UIImage(contentsOfFile: path!)!,UIImage(contentsOfFile: path!)!]
-        model.imageOptA = [UIImage(contentsOfFile: path!)!,UIImage(contentsOfFile: path!)!,
+        model.imageA = [UIImage(contentsOfFile: path!)!, UIImage(contentsOfFile: path!)!]
+        model.imageOptA = [UIImage(contentsOfFile: path!)!, UIImage(contentsOfFile: path!)!,
             UIImage(contentsOfFile: path!)!]
         model.imageOptNilA = nil
 
@@ -155,7 +145,7 @@ class NSCodingTests: XCTestCase {
         model.colorOptNilA = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:NSCodingArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: NSCodingArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -222,8 +212,8 @@ class NSCodingTests: XCTestCase {
         let path = bundle.pathForResource("test-image", ofType: "jpg")
         let image = UIImage(contentsOfFile: path!)!
 
-        let imageA = [UIImage(contentsOfFile: path!)!,UIImage(contentsOfFile: path!)!]
-        let imageOptA = [UIImage(contentsOfFile: path!)!,UIImage(contentsOfFile: path!)!,
+        let imageA = [UIImage(contentsOfFile: path!)!, UIImage(contentsOfFile: path!)!]
+        let imageOptA = [UIImage(contentsOfFile: path!)!, UIImage(contentsOfFile: path!)!,
             UIImage(contentsOfFile: path!)!]
 
         let colorA = [UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
@@ -236,7 +226,7 @@ class NSCodingTests: XCTestCase {
             colorA: colorA, colorOptA: colorOptA, colorOptNilA: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstNSCodingArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstNSCodingArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -318,7 +308,7 @@ class NSCodingTests: XCTestCase {
         model.colorOptNilD = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:NSCodingDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: NSCodingDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -411,7 +401,7 @@ class NSCodingTests: XCTestCase {
             imageOptNilD: nil, colorD: colorD, colorOptD: colorOptD, colorOptNilD: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstNSCodingDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstNSCodingDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

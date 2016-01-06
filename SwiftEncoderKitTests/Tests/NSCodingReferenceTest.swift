@@ -28,16 +28,6 @@ import XCTest
 
 class NSCodingReferenceTest: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testNSCodingReference() {
         let fileName = "/tmp/nscoding-ref.plist"
 
@@ -74,8 +64,8 @@ class NSCodingReferenceTest: XCTestCase {
         model.stringD = ["A String": "Another String"]
         model.boolD = ["entry": true]
 
-        model.intEnum = IntEnum.value3
-        model.stringEnum = StringEnum.value3
+        model.intEnum = IntEnum.Value3
+        model.stringEnum = StringEnum.Value3
 
         let data = NSKeyedArchiver.archivedDataWithRootObject(model)
         data.writeToFile(fileName, atomically: true)
@@ -104,8 +94,8 @@ class NSCodingReferenceTest: XCTestCase {
             XCTAssert(reModel!.doubleD == ["entry": Double.infinity])
             XCTAssert(reModel!.stringD == ["A String": "Another String"])
             XCTAssert(reModel!.boolD == ["entry": true])
-            XCTAssert(reModel!.intEnum == IntEnum.value3)
-            XCTAssert(reModel!.stringEnum == StringEnum.value3)
+            XCTAssert(reModel!.intEnum == IntEnum.Value3)
+            XCTAssert(reModel!.stringEnum == StringEnum.Value3)
         }
     }    
 }

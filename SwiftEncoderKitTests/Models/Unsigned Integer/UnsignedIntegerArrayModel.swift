@@ -37,11 +37,11 @@ class UnsignedIntegerArrayModel: Encodable {
     var uint32AOpt: [UInt32]?
     var uint64AOpt: [UInt64]?
 
-    var uintAOptNil: [UInt]? = [1,2,3,4]
-    var uint8AOptNil: [UInt8]? = [1,2,3,4]
-    var uint16AOptNil: [UInt16]? = [1,2,3,4]
-    var uint32AOptNil: [UInt32]? = [1,2,3,4]
-    var uint64AOptNil: [UInt64]? = [1,2,3,4]
+    var uintAOptNil: [UInt]? = [1, 2, 3, 4]
+    var uint8AOptNil: [UInt8]? = [1, 2, 3, 4]
+    var uint16AOptNil: [UInt16]? = [1, 2, 3, 4]
+    var uint32AOptNil: [UInt32]? = [1, 2, 3, 4]
+    var uint64AOptNil: [UInt64]? = [1, 2, 3, 4]
 
     init() {
 

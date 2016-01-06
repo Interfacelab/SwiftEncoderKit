@@ -34,8 +34,7 @@ extension Encoder : NSCodingEncoding {
     func addNSCoding(object: NSCoding?, key: String?) {
         if key == nil {
             setValueForCurrentKey(object)
-        }
-        else {
+        } else {
             setValue(key!, value: object)
         }
     }
@@ -43,8 +42,7 @@ extension Encoder : NSCodingEncoding {
     func addNSCodingArray(objectArray: Array<NSCoding>?, key: String?) {
         if key == nil {
             setValueForCurrentKey(objectArray)
-        }
-        else {
+        } else {
             setValue(key!, value: objectArray)
         }
     }

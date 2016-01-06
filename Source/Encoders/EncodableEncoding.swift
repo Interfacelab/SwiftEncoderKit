@@ -35,8 +35,7 @@ extension Encoder : EncodableEncoding {
         guard let encodableObj = encodable else {
             if key == nil {
                 setValueForCurrentKey(nil)
-            }
-            else {
+            } else {
                 setValue(key!, value: nil)
             }
 
@@ -47,8 +46,7 @@ extension Encoder : EncodableEncoding {
 
         if key == nil {
             setValueForCurrentKey(encoder.data)
-        }
-        else {
+        } else {
             setValue(key!, value: encoder.data)
         }
     }
@@ -57,8 +55,7 @@ extension Encoder : EncodableEncoding {
         guard let array = arrayOfEncodable else {
             if key == nil {
                 setValueForCurrentKey(nil)
-            }
-            else {
+            } else {
                 setValue(key!, value: nil)
             }
             return
@@ -72,8 +69,7 @@ extension Encoder : EncodableEncoding {
 
         if key == nil {
             setValueForCurrentKey(encoded)
-        }
-        else {
+        } else {
             setValue(key!, value: encoded)
         }
     }
@@ -83,8 +79,7 @@ extension Encoder : EncodableEncoding {
         guard let dict = encodableDict else {
             if key == nil {
                 setValueForCurrentKey(nil)
-            }
-            else {
+            } else {
                 setValue(key!, value: nil)
             }
             return
@@ -98,8 +93,7 @@ extension Encoder : EncodableEncoding {
 
         if key == nil {
             setValueForCurrentKey(encoded)
-        }
-        else {
+        } else {
             setValue(key!, value: encoded)
         }
     }

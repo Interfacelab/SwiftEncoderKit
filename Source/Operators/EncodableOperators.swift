@@ -28,11 +28,11 @@ import Foundation
 
 // MARK: Encodable values
 
-func --> <T: Encodable>(left:T, right: Encoder) {
+func --> <T: Encodable>(left: T, right: Encoder) {
     right.addEncodable(left, key: nil)
 }
 
-func <-- <T: Encodable>(inout left:T, right: Decoder) {
+func <-- <T: Encodable>(inout left: T, right: Decoder) {
     guard let rightValue: T = right.encodable(nil) else {
         return
     }
@@ -42,11 +42,11 @@ func <-- <T: Encodable>(inout left:T, right: Decoder) {
 
 // MARK: Optional Encodable values
 
-func --> <T: Encodable>(left:T?, right: Encoder) {
+func --> <T: Encodable>(left: T?, right: Encoder) {
     right.addEncodable(left, key: nil)
 }
 
-func <-- <T: Encodable>(inout left:T?, right: Decoder) {
+func <-- <T: Encodable>(inout left: T?, right: Decoder) {
     guard let rightValue: T = right.encodable(nil) else {
         left = nil
         return
@@ -57,12 +57,12 @@ func <-- <T: Encodable>(inout left:T?, right: Decoder) {
 
 // MARK: Encodable arrays
 
-func --> <T: Encodable>(left:Array<T>, right: Encoder) {
+func --> <T: Encodable>(left: Array<T>, right: Encoder) {
     right.addEncodableArray(left, key: nil)
 }
 
-func <-- <T: Encodable>(inout left:Array<T>, right: Decoder) {
-    guard let rightValue:Array<T> = right.encodableArray(nil) else {
+func <-- <T: Encodable>(inout left: Array<T>, right: Decoder) {
+    guard let rightValue: Array<T> = right.encodableArray(nil) else {
         return
     }
 
@@ -71,12 +71,12 @@ func <-- <T: Encodable>(inout left:Array<T>, right: Decoder) {
 
 // MARK: Optional encodable arrays
 
-func --> <T: Encodable>(left:Array<T>?, right: Encoder) {
+func --> <T: Encodable>(left: Array<T>?, right: Encoder) {
     right.addEncodableArray(left, key: nil)
 }
 
-func <-- <T: Encodable>(inout left:Array<T>?, right: Decoder) {
-    guard let rightValue:Array<T> = right.encodableArray(nil) else {
+func <-- <T: Encodable>(inout left: Array<T>?, right: Decoder) {
+    guard let rightValue: Array<T> = right.encodableArray(nil) else {
         left = nil
         return
     }

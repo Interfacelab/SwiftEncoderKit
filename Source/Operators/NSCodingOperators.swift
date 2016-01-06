@@ -28,11 +28,11 @@ import Foundation
 
 // MARK: NSCoding
 
-func --> <T: NSCoding>(left:T, right: Encoder) {
+func --> <T: NSCoding>(left: T, right: Encoder) {
     right.addNSCoding(left, key: nil)
 }
 
-func <-- <T: NSCoding>(inout left:T, right: Decoder) {
+func <-- <T: NSCoding>(inout left: T, right: Decoder) {
     guard let rightValue: T = right.nsCoding(nil) else {
         return
     }
@@ -42,11 +42,11 @@ func <-- <T: NSCoding>(inout left:T, right: Decoder) {
 
 // MARK: Optional NSCoding
 
-func --> <T: NSCoding>(left:T?, right: Encoder) {
+func --> <T: NSCoding>(left: T?, right: Encoder) {
     right.addNSCoding(left, key: nil)
 }
 
-func <-- <T: NSCoding>(inout left:T?, right: Decoder) {
+func <-- <T: NSCoding>(inout left: T?, right: Decoder) {
     guard let rightValue: T = right.nsCoding(nil) else {
         return
     }
@@ -57,11 +57,11 @@ func <-- <T: NSCoding>(inout left:T?, right: Decoder) {
 
 // MARK: NSCoding arrays
 
-func --> <T: NSCoding>(left:Array<T>, right: Encoder) {
+func --> <T: NSCoding>(left: Array<T>, right: Encoder) {
     right.addNSCodingArray(left, key: nil)
 }
 
-func <-- <T: NSCoding>(inout left:Array<T>, right: Decoder) {
+func <-- <T: NSCoding>(inout left: Array<T>, right: Decoder) {
     guard let rightValue: Array<T> = right.nsCodingArray(nil) else {
         return
     }
@@ -71,11 +71,11 @@ func <-- <T: NSCoding>(inout left:Array<T>, right: Decoder) {
 
 // MARK: Optional NSCoding arrays
 
-func --> <T: NSCoding>(left:Array<T>?, right: Encoder) {
+func --> <T: NSCoding>(left: Array<T>?, right: Encoder) {
     right.addNSCodingArray(left, key: nil)
 }
 
-func <-- <T: NSCoding>(inout left:Array<T>?, right: Decoder) {
+func <-- <T: NSCoding>(inout left: Array<T>?, right: Decoder) {
     guard let rightValue: Array<T> = right.nsCodingArray(nil) else {
         left = nil
         return

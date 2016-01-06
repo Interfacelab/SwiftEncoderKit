@@ -28,8 +28,8 @@ import Foundation
 
 import UIKit
 
-class NSCodingModel : Encodable {
-    var image:UIImage
+class NSCodingModel: Encodable {
+    var image: UIImage
     var imageOpt: UIImage?
     var imageOptNil: UIImage?
 

@@ -28,16 +28,6 @@ import XCTest
 
 class EncodableTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testEncodableEncodingDecoding() {
         let fileName = "/tmp/encodable.plist"
 
@@ -48,7 +38,7 @@ class EncodableTests: XCTestCase {
         model.rectOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:EncodableModel? = Decoder(path: fileName).decodedObject()
+        let reModel: EncodableModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -76,7 +66,7 @@ class EncodableTests: XCTestCase {
         let model = ConstEncodableModel(rect: rect, rectOpt: rectOpt, rectOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstEncodableModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstEncodableModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -107,7 +97,7 @@ class EncodableTests: XCTestCase {
         model.rectOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:EncodableArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: EncodableArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -147,7 +137,7 @@ class EncodableTests: XCTestCase {
         let model = ConstEncodableArrayModel(rect: rect, rectOpt: rectOpt, rectOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstEncodableArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstEncodableArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -188,7 +178,7 @@ class EncodableTests: XCTestCase {
         model.rectOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:EncodableDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: EncodableDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -233,7 +223,7 @@ class EncodableTests: XCTestCase {
         let model = ConstEncodableDictionaryModel(rect: rect, rectOpt: rectOpt, rectOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstEncodableDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstEncodableDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

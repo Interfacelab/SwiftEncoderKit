@@ -28,8 +28,8 @@ import Foundation
 
 import UIKit
 
-class ConstNSCodingModel : Encodable {
-    let image:UIImage
+class ConstNSCodingModel: Encodable {
+    let image: UIImage
     let imageOpt: UIImage?
     let imageOptNil: UIImage?
 
@@ -50,7 +50,7 @@ class ConstNSCodingModel : Encodable {
         colorOptNil = UIColor.whiteColor()
     }
 
-    init(image:UIImage, imageOpt: UIImage?, imageOptNil: UIImage?, color: UIColor,
+    init(image: UIImage, imageOpt: UIImage?, imageOptNil: UIImage?, color: UIColor,
         colorOpt: UIColor?, colorOptNil: UIColor?) {
             self.image = image
             self.imageOpt = imageOpt

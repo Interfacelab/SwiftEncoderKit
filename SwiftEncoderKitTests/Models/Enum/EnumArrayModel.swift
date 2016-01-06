@@ -26,7 +26,7 @@
 
 import Foundation
 
-class EnumArrayModel : Encodable {
+class EnumArrayModel: Encodable {
     var int: [IntEnum] = []
     var int8: [Int8Enum] = []
     var int16: [Int16Enum] = []

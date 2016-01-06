@@ -28,11 +28,11 @@ import Foundation
 
 // MARK: Enum
 
-func --> <T:RawRepresentable>(left:T, right: Encoder) {
+func --> <T: RawRepresentable>(left: T, right: Encoder) {
     right.addEnumValue(left, key: nil)
 }
 
-func <-- <T:RawRepresentable>(inout left:T, right: Decoder) {
+func <-- <T: RawRepresentable>(inout left: T, right: Decoder) {
     guard let rightValue: T = right.enumValue(nil) else {
         return
     }
@@ -42,11 +42,11 @@ func <-- <T:RawRepresentable>(inout left:T, right: Decoder) {
 
 // MARK: Optional Enum
 
-func --> <T:RawRepresentable>(left:T?, right: Encoder) {
+func --> <T: RawRepresentable>(left: T?, right: Encoder) {
     right.addEnumValue(left, key: nil)
 }
 
-func <-- <T:RawRepresentable>(inout left:T?, right: Decoder) {
+func <-- <T: RawRepresentable>(inout left: T?, right: Decoder) {
     guard let rightValue: T = right.enumValue(nil) else {
         left = nil
         return
@@ -57,12 +57,12 @@ func <-- <T:RawRepresentable>(inout left:T?, right: Decoder) {
 
 // MARK: enum arrays
 
-func --> <T: RawRepresentable>(left:Array<T>, right: Encoder) {
+func --> <T: RawRepresentable>(left: Array<T>, right: Encoder) {
     right.addEnumArray(left, key:nil)
 }
 
-func <-- <T: RawRepresentable>(inout left:Array<T>, right: Decoder) {
-    guard let rightValue:Array<T> = right.enumArray(nil) else {
+func <-- <T: RawRepresentable>(inout left: Array<T>, right: Decoder) {
+    guard let rightValue: Array<T> = right.enumArray(nil) else {
         return
     }
 
@@ -71,12 +71,12 @@ func <-- <T: RawRepresentable>(inout left:Array<T>, right: Decoder) {
 
 // MARK: Optional enum arrays
 
-func --> <T: RawRepresentable>(left:Array<T>?, right: Encoder) {
+func --> <T: RawRepresentable>(left: Array<T>?, right: Encoder) {
     right.addEnumArray(left, key:nil)
 }
 
-func <-- <T: RawRepresentable>(inout left:Array<T>?, right: Decoder) {
-    guard let rightValue:Array<T> = right.enumArray(nil) else {
+func <-- <T: RawRepresentable>(inout left: Array<T>?, right: Decoder) {
+    guard let rightValue: Array<T> = right.enumArray(nil) else {
         left = nil
         return
     }

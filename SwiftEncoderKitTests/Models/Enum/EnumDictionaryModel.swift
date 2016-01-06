@@ -26,7 +26,7 @@
 
 import Foundation
 
-class EnumDictionaryModel : Encodable {
+class EnumDictionaryModel: Encodable {
     var int: [String: IntEnum] = [:]
     var int8: [String: Int8Enum] = [:]
     var int16: [String: Int16Enum] = [:]

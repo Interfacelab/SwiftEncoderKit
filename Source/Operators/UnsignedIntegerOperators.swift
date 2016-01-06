@@ -28,11 +28,11 @@ import Foundation
 
 // MARK: Integer values
 
-func --> <T: UnsignedIntegerType>(left:T, right: Encoder) {
+func --> <T: UnsignedIntegerType>(left: T, right: Encoder) {
     right.addUnsignedInteger(left, key:nil)
 }
 
-func <-- <T: UnsignedIntegerType>(inout left:T, right: Decoder) {
+func <-- <T: UnsignedIntegerType>(inout left: T, right: Decoder) {
     guard let rightValue: T = right.unsignedInteger(nil) else {
         return
     }
@@ -42,11 +42,11 @@ func <-- <T: UnsignedIntegerType>(inout left:T, right: Decoder) {
 
 // MARK: Optional integer values
 
-func --> <T: UnsignedIntegerType>(left:T?, right: Encoder) {
+func --> <T: UnsignedIntegerType>(left: T?, right: Encoder) {
     right.addUnsignedInteger(left, key:nil)
 }
 
-func <-- <T: UnsignedIntegerType>(inout left:T?, right: Decoder) {
+func <-- <T: UnsignedIntegerType>(inout left: T?, right: Decoder) {
     guard let rightValue: T = right.unsignedInteger(nil) else {
         left = nil
         return
@@ -57,12 +57,12 @@ func <-- <T: UnsignedIntegerType>(inout left:T?, right: Decoder) {
 
 // MARK: Integer arrays
 
-func --> <T: UnsignedIntegerType>(left:Array<T>, right: Encoder) {
+func --> <T: UnsignedIntegerType>(left: Array<T>, right: Encoder) {
     right.addUnsignedIntegerArray(left, key:nil)
 }
 
-func <-- <T: UnsignedIntegerType>(inout left:Array<T>, right: Decoder) {
-    guard let rightValue:Array<T> = right.unsignedIntegerArray(nil) else {
+func <-- <T: UnsignedIntegerType>(inout left: Array<T>, right: Decoder) {
+    guard let rightValue: Array<T> = right.unsignedIntegerArray(nil) else {
         return
     }
 
@@ -71,12 +71,12 @@ func <-- <T: UnsignedIntegerType>(inout left:Array<T>, right: Decoder) {
 
 // MARK: Optional integer arrays
 
-func --> <T: UnsignedIntegerType>(left:Array<T>?, right: Encoder) {
+func --> <T: UnsignedIntegerType>(left: Array<T>?, right: Encoder) {
     right.addUnsignedIntegerArray(left, key:nil)
 }
 
-func <-- <T: UnsignedIntegerType>(inout left:Array<T>?, right: Decoder) {
-    guard let rightValue:Array<T> = right.unsignedIntegerArray(nil) else {
+func <-- <T: UnsignedIntegerType>(inout left: Array<T>?, right: Decoder) {
+    guard let rightValue: Array<T> = right.unsignedIntegerArray(nil) else {
         left = nil
         return
     }

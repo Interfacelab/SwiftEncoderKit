@@ -28,7 +28,7 @@ import Foundation
 
 import UIKit
 
-class ConstNSCodingDictionaryModel : Encodable {
+class ConstNSCodingDictionaryModel: Encodable {
     let imageD: [String: UIImage]
     let imageOptD: [String: UIImage]?
     let imageOptNilD: [String: UIImage]?

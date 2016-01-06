@@ -26,7 +26,7 @@
 
 import Foundation
 
-class ConstEncodableDictionaryModel : Encodable {
+class ConstEncodableDictionaryModel: Encodable {
     let rect: [String: EncodableRect]
     let rectOpt: [String: EncodableRect]?
     let rectOptNil: [String: EncodableRect]?

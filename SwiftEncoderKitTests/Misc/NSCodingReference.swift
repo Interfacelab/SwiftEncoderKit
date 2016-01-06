@@ -28,7 +28,7 @@ import UIKit
 import AVFoundation
 
 /// The purpose of this class is to highlight what is encodable/decodable by NSCoder by default
-class NSCodingReference : NSObject, NSCoding {
+class NSCodingReference: NSObject, NSCoding {
 
     // MARK: Basic types
 
@@ -92,10 +92,10 @@ class NSCodingReference : NSObject, NSCoding {
 
     // MARK: Enums
 
-    var intEnum: IntEnum = IntEnum.value1
-    var noRawValueEnum: NoRawValueEnum = NoRawValueEnum.value1
-    var stringEnum: StringEnum = StringEnum.value1
-    var indirectEnum: IndirectEnum = IndirectEnum.value2(IndirectEnum.value1(5))
+    var intEnum: IntEnum = IntEnum.Value1
+    var noRawValueEnum: NoRawValueEnum = NoRawValueEnum.Value1
+    var stringEnum: StringEnum = StringEnum.Value1
+    var indirectEnum: IndirectEnum = IndirectEnum.Value2(IndirectEnum.Value1(5))
 
 
     override init() {

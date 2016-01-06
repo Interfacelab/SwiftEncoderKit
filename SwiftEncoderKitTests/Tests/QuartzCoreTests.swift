@@ -28,16 +28,6 @@ import XCTest
 
 class QuartzCoreTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testRectEncodeDecode() {
         let fileName = "/tmp/cgrect.plist"
 
@@ -60,7 +50,7 @@ class QuartzCoreTests: XCTestCase {
         model.rectOptNilD = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:CGRectModel? = Decoder(path: fileName).decodedObject()
+        let reModel: CGRectModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -111,7 +101,7 @@ class QuartzCoreTests: XCTestCase {
             rectOptNilD: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstCGRectModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstCGRectModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -153,7 +143,7 @@ class QuartzCoreTests: XCTestCase {
         model.vectorOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:CGVectorModel? = Decoder(path: fileName).decodedObject()
+        let reModel: CGVectorModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -166,8 +156,10 @@ class QuartzCoreTests: XCTestCase {
             XCTAssert(reModel!.vectorOptA! == [CGVector(dx: 30, dy: 20), CGVector(dx: 2, dy: 0)])
             XCTAssert(reModel!.vectorOptNil == nil)
 
-            XCTAssert(reModel!.vectorD == ["a": CGVector(dx: 10, dy: 50), "c": CGVector(dx: 110, dy: 150)])
-            XCTAssert(reModel!.vectorOptD! == ["c": CGVector(dx: 30, dy: 20), "d": CGVector(dx: 2, dy: 0)])
+            XCTAssert(reModel!.vectorD == ["a": CGVector(dx: 10, dy: 50),
+                "c": CGVector(dx: 110, dy: 150)])
+            XCTAssert(reModel!.vectorOptD! == ["c": CGVector(dx: 30, dy: 20),
+                "d": CGVector(dx: 2, dy: 0)])
             XCTAssert(reModel!.vectorOptNil == nil)
         }
     }
@@ -196,7 +188,7 @@ class QuartzCoreTests: XCTestCase {
             vectorOptNilD: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstCGVectorModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstCGVectorModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -209,8 +201,10 @@ class QuartzCoreTests: XCTestCase {
             XCTAssert(reModel!.vectorOptA! == [CGVector(dx: 30, dy: 20), CGVector(dx: 2, dy: 0)])
             XCTAssert(reModel!.vectorOptNil == nil)
 
-            XCTAssert(reModel!.vectorD == ["a": CGVector(dx: 10, dy: 50), "c": CGVector(dx: 110, dy: 150)])
-            XCTAssert(reModel!.vectorOptD! == ["c": CGVector(dx: 30, dy: 20), "d": CGVector(dx: 2, dy: 0)])
+            XCTAssert(reModel!.vectorD == ["a": CGVector(dx: 10, dy: 50),
+                "c": CGVector(dx: 110, dy: 150)])
+            XCTAssert(reModel!.vectorOptD! == ["c": CGVector(dx: 30, dy: 20),
+                "d": CGVector(dx: 2, dy: 0)])
             XCTAssert(reModel!.vectorOptNil == nil)
         }
     }
@@ -237,25 +231,35 @@ class QuartzCoreTests: XCTestCase {
         model.transformOptNilD = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:CGAffineTransformModel? = Decoder(path: fileName).decodedObject()
+        let reModel: CGAffineTransformModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
         if reModel != nil {
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transform, CGAffineTransformMakeScale(1.0, 2.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOpt!, CGAffineTransformMakeScale(3.0, 4.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transform,
+                CGAffineTransformMakeScale(1.0, 2.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOpt!,
+                CGAffineTransformMakeScale(3.0, 4.0)))
             XCTAssert(reModel!.transformOptNil == nil)
 
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformA[0], CGAffineTransformMakeScale(1.0, 2.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformA[1], CGAffineTransformMakeScale(4.0, 8.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptA![0], CGAffineTransformMakeScale(3.0, 4.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptA![1], CGAffineTransformMakeScale(9.0, 1.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformA[0],
+                CGAffineTransformMakeScale(1.0, 2.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformA[1],
+                CGAffineTransformMakeScale(4.0, 8.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptA![0],
+                CGAffineTransformMakeScale(3.0, 4.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptA![1],
+                CGAffineTransformMakeScale(9.0, 1.0)))
             XCTAssert(reModel!.transformOptNilA == nil)
 
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformD["a"]!, CGAffineTransformMakeScale(1.0, 2.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformD["b"]!, CGAffineTransformMakeScale(4.0, 8.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptD!["c"]!, CGAffineTransformMakeScale(3.0, 4.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptD!["d"]!, CGAffineTransformMakeScale(9.0, 1.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformD["a"]!,
+                CGAffineTransformMakeScale(1.0, 2.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformD["b"]!,
+                CGAffineTransformMakeScale(4.0, 8.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptD!["c"]!,
+                CGAffineTransformMakeScale(3.0, 4.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptD!["d"]!,
+                CGAffineTransformMakeScale(9.0, 1.0)))
             XCTAssert(reModel!.transformOptNilD == nil)
         }
     }
@@ -287,25 +291,35 @@ class QuartzCoreTests: XCTestCase {
             transformOptNilD: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstCGAffineTransformModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstCGAffineTransformModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
         if reModel != nil {
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transform, CGAffineTransformMakeScale(1.0, 2.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOpt!, CGAffineTransformMakeScale(3.0, 4.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transform,
+                CGAffineTransformMakeScale(1.0, 2.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOpt!,
+                CGAffineTransformMakeScale(3.0, 4.0)))
             XCTAssert(reModel!.transformOptNil == nil)
 
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformA[0], CGAffineTransformMakeScale(1.0, 2.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformA[1], CGAffineTransformMakeScale(4.0, 8.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptA![0], CGAffineTransformMakeScale(3.0, 4.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptA![1], CGAffineTransformMakeScale(9.0, 1.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformA[0],
+                CGAffineTransformMakeScale(1.0, 2.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformA[1],
+                CGAffineTransformMakeScale(4.0, 8.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptA![0],
+                CGAffineTransformMakeScale(3.0, 4.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptA![1],
+                CGAffineTransformMakeScale(9.0, 1.0)))
             XCTAssert(reModel!.transformOptNilA == nil)
 
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformD["a"]!, CGAffineTransformMakeScale(1.0, 2.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformD["b"]!, CGAffineTransformMakeScale(4.0, 8.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptD!["c"]!, CGAffineTransformMakeScale(3.0, 4.0)))
-            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptD!["d"]!, CGAffineTransformMakeScale(9.0, 1.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformD["a"]!,
+                CGAffineTransformMakeScale(1.0, 2.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformD["b"]!,
+                CGAffineTransformMakeScale(4.0, 8.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptD!["c"]!,
+                CGAffineTransformMakeScale(3.0, 4.0)))
+            XCTAssert(CGAffineTransformEqualToTransform(reModel!.transformOptD!["d"]!,
+                CGAffineTransformMakeScale(9.0, 1.0)))
             XCTAssert(reModel!.transformOptNilD == nil)
         }
     }

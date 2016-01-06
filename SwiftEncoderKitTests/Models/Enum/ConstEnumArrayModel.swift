@@ -26,7 +26,7 @@
 
 import Foundation
 
-class ConstEnumArrayModel : Encodable {
+class ConstEnumArrayModel: Encodable {
     let int: [IntEnum]
     let int8: [Int8Enum]
     let int16: [Int16Enum]

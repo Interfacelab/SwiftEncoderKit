@@ -28,16 +28,6 @@ import XCTest
 
 class BoolTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testBoolEncodingDecoding() {
         let fileName = "/tmp/bool.plist"
 
@@ -48,7 +38,7 @@ class BoolTests: XCTestCase {
         model.boolOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:BoolModel? = Decoder(path: fileName).decodedObject()
+        let reModel: BoolModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -65,7 +55,7 @@ class BoolTests: XCTestCase {
         let model = ConstBoolModel(bool: true, boolOpt: true, boolOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstBoolModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstBoolModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -86,7 +76,7 @@ class BoolTests: XCTestCase {
         model.boolAOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:BoolArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: BoolArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -104,7 +94,7 @@ class BoolTests: XCTestCase {
             boolAOpt: [true, true, false], boolAOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstBoolArrayModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstBoolArrayModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -125,7 +115,7 @@ class BoolTests: XCTestCase {
         model.boolDOptNil = nil
 
         Encoder(model).writeToFile(fileName)
-        let reModel:BoolDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: BoolDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 
@@ -145,7 +135,7 @@ class BoolTests: XCTestCase {
         let model = ConstBoolDictionaryModel(boolD: boolD, boolDOpt: boolDOpt, boolDOptNil: nil)
 
         Encoder(model).writeToFile(fileName)
-        let reModel:ConstBoolDictionaryModel? = Decoder(path: fileName).decodedObject()
+        let reModel: ConstBoolDictionaryModel? = Decoder(path: fileName).decodedObject()
 
         XCTAssert(reModel != nil)
 

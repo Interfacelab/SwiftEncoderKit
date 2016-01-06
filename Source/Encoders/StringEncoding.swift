@@ -34,8 +34,7 @@ extension Encoder : StringEncoding {
     func addString(string: String?, key: String?) {
         if key == nil {
             setValueForCurrentKey(string)
-        }
-        else {
+        } else {
             setValue(key!, value: string)
         }
     }
@@ -43,8 +42,7 @@ extension Encoder : StringEncoding {
     func addStringArray(stringArray: Array<String>?, key: String?) {
         if key == nil {
             setValueForCurrentKey(stringArray)
-        }
-        else {
+        } else {
             setValue(key!, value: stringArray)
         }
     }

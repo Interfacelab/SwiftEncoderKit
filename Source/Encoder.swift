@@ -29,7 +29,7 @@ infix operator --> {}
 
 class Encoder {
     private var _currentKey: String?
-    private var _data:[String: NSCoding]=[:]
+    private var _data: [String: NSCoding]=[:]
 
     /// The current encoder key
     var currentKey: String? {
