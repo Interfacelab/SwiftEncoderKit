@@ -11,7 +11,6 @@
 		FF0B5C271C3CF40C00A15C56 /* SwiftEncoderKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0B5C241C3CF40C00A15C56 /* SwiftEncoderKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF0B5C2C1C3CF63200A15C56 /* OtherTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C281C3CF63200A15C56 /* OtherTestModel.swift */; };
 		FF0B5C2D1C3CF63200A15C56 /* Shave_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C291C3CF63200A15C56 /* Shave_iOSTests.swift */; };
-		FF0B5C2E1C3CF63200A15C56 /* SwiftEncoderKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C2A1C3CF63200A15C56 /* SwiftEncoderKitTests.swift */; };
 		FF0B5C2F1C3CF63200A15C56 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C2B1C3CF63200A15C56 /* TestModel.swift */; };
 		FF0B5C381C3CF63D00A15C56 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C301C3CF63D00A15C56 /* Decoder.swift */; };
 		FF0B5C391C3CF63D00A15C56 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C301C3CF63D00A15C56 /* Decoder.swift */; };
@@ -23,6 +22,10 @@
 		FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C361C3CF63D00A15C56 /* Encoder.swift */; };
 		FF0B5C401C3CF63D00A15C56 /* EncodingOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C371C3CF63D00A15C56 /* EncodingOperators.swift */; };
 		FF0B5C411C3CF63D00A15C56 /* EncodingOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C371C3CF63D00A15C56 /* EncodingOperators.swift */; };
+		FF0B5C431C3CF75C00A15C56 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF0B5C421C3CF75C00A15C56 /* test-image.jpg */; };
+		FF0B5C471C3CF76C00A15C56 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C441C3CF76C00A15C56 /* ImageModel.swift */; };
+		FF0B5C481C3CF76C00A15C56 /* SignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C451C3CF76C00A15C56 /* SignedIntegerModel.swift */; };
+		FF0B5C491C3CF76C00A15C56 /* UnsignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C461C3CF76C00A15C56 /* UnsignedIntegerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,13 +46,16 @@
 		FF0B5C241C3CF40C00A15C56 /* SwiftEncoderKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftEncoderKit.h; sourceTree = "<group>"; };
 		FF0B5C281C3CF63200A15C56 /* OtherTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherTestModel.swift; sourceTree = "<group>"; };
 		FF0B5C291C3CF63200A15C56 /* Shave_iOSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shave_iOSTests.swift; sourceTree = "<group>"; };
-		FF0B5C2A1C3CF63200A15C56 /* SwiftEncoderKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftEncoderKitTests.swift; sourceTree = "<group>"; };
 		FF0B5C2B1C3CF63200A15C56 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		FF0B5C301C3CF63D00A15C56 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		FF0B5C311C3CF63D00A15C56 /* DecodingOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodingOperators.swift; sourceTree = "<group>"; };
 		FF0B5C321C3CF63D00A15C56 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		FF0B5C361C3CF63D00A15C56 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
 		FF0B5C371C3CF63D00A15C56 /* EncodingOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodingOperators.swift; sourceTree = "<group>"; };
+		FF0B5C421C3CF75C00A15C56 /* test-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test-image.jpg"; sourceTree = "<group>"; };
+		FF0B5C441C3CF76C00A15C56 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		FF0B5C451C3CF76C00A15C56 /* SignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerModel.swift; sourceTree = "<group>"; };
+		FF0B5C461C3CF76C00A15C56 /* UnsignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +99,12 @@
 		FF0B5C161C3CF3CA00A15C56 /* SwiftEncoderKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5C441C3CF76C00A15C56 /* ImageModel.swift */,
+				FF0B5C451C3CF76C00A15C56 /* SignedIntegerModel.swift */,
+				FF0B5C461C3CF76C00A15C56 /* UnsignedIntegerModel.swift */,
+				FF0B5C421C3CF75C00A15C56 /* test-image.jpg */,
 				FF0B5C281C3CF63200A15C56 /* OtherTestModel.swift */,
 				FF0B5C291C3CF63200A15C56 /* Shave_iOSTests.swift */,
-				FF0B5C2A1C3CF63200A15C56 /* SwiftEncoderKitTests.swift */,
 				FF0B5C2B1C3CF63200A15C56 /* TestModel.swift */,
 				FF0B5C191C3CF3CA00A15C56 /* Info.plist */,
 			);
@@ -117,35 +126,10 @@
 				FF0B5C301C3CF63D00A15C56 /* Decoder.swift */,
 				FF0B5C311C3CF63D00A15C56 /* DecodingOperators.swift */,
 				FF0B5C321C3CF63D00A15C56 /* Encodable.swift */,
-				FF0B5C331C3CF63D00A15C56 /* Encoder */,
-				FF0B5C351C3CF63D00A15C56 /* Encoders */,
 				FF0B5C361C3CF63D00A15C56 /* Encoder.swift */,
 				FF0B5C371C3CF63D00A15C56 /* EncodingOperators.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		FF0B5C331C3CF63D00A15C56 /* Encoder */ = {
-			isa = PBXGroup;
-			children = (
-				FF0B5C341C3CF63D00A15C56 /* Encoders */,
-			);
-			path = Encoder;
-			sourceTree = "<group>";
-		};
-		FF0B5C341C3CF63D00A15C56 /* Encoders */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Encoders;
-			sourceTree = "<group>";
-		};
-		FF0B5C351C3CF63D00A15C56 /* Encoders */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Encoders;
-			path = Encoder/Encoders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0B5C431C3CF75C00A15C56 /* test-image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,10 +254,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0B5C2C1C3CF63200A15C56 /* OtherTestModel.swift in Sources */,
-				FF0B5C2E1C3CF63200A15C56 /* SwiftEncoderKitTests.swift in Sources */,
+				FF0B5C491C3CF76C00A15C56 /* UnsignedIntegerModel.swift in Sources */,
+				FF0B5C471C3CF76C00A15C56 /* ImageModel.swift in Sources */,
 				FF0B5C411C3CF63D00A15C56 /* EncodingOperators.swift in Sources */,
 				FF0B5C2F1C3CF63200A15C56 /* TestModel.swift in Sources */,
 				FF0B5C391C3CF63D00A15C56 /* Decoder.swift in Sources */,
+				FF0B5C481C3CF76C00A15C56 /* SignedIntegerModel.swift in Sources */,
 				FF0B5C3B1C3CF63D00A15C56 /* DecodingOperators.swift in Sources */,
 				FF0B5C2D1C3CF63200A15C56 /* Shave_iOSTests.swift in Sources */,
 				FF0B5C3D1C3CF63D00A15C56 /* Encodable.swift in Sources */,

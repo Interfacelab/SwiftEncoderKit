@@ -23,7 +23,7 @@ class Shave_iOSTests: XCTestCase {
     }
     
     func testSignedIntegerEncodingDecoding() {
-        let model = TestModel()
+        let model = SignedIntegerModel()
 
         model.int = Int.max
         model.int8 = Int8.max
@@ -42,7 +42,7 @@ class Shave_iOSTests: XCTestCase {
         encoder.writeToFile("/tmp/signed.plist")
 
         let decoder=Decoder(path: "/tmp/signed.plist")
-        let reModel = TestModel(decoder)
+        let reModel = SignedIntegerModel(decoder)
 
         XCTAssert(reModel != nil)
 
@@ -62,7 +62,7 @@ class Shave_iOSTests: XCTestCase {
     }
 
     func testUnsignedIntegerEncodingDecoding() {
-        let model = TestModel()
+        let model = UnsignedIntegerModel()
 
         model.uint = UInt.max
         model.uint8 = UInt8.max
@@ -81,7 +81,7 @@ class Shave_iOSTests: XCTestCase {
         encoder.writeToFile("/tmp/unsigned.plist")
 
         let decoder=Decoder(path: "/tmp/unsigned.plist")
-        let reModel = TestModel(decoder)
+        let reModel = UnsignedIntegerModel(decoder)
 
         XCTAssert(reModel != nil)
 
@@ -98,12 +98,26 @@ class Shave_iOSTests: XCTestCase {
             XCTAssert(reModel!.uint32Opt == nil)
             XCTAssert(reModel!.uint64Opt == model.uint64Opt)
         }
+    }
 
-        let jsonString = encoder.jsonString
+    func testImageEncodingDecoding() {
+        let model = ImageModel()
 
-        XCTAssert(jsonString != nil)
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile("/tmp/image.plist")
 
-        try! jsonString!.writeToFile("/tmp/unsigned.json", atomically: false, encoding: NSUTF8StringEncoding)
+        let decoder=Decoder(path: "/tmp/image.plist")
+        let reModel = ImageModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(CGSizeEqualToSize(reModel!.image.size, model.image.size))
+            XCTAssert(reModel!.imageOpt != nil)
+            XCTAssert(CGSizeEqualToSize(reModel!.imageOpt!.size, model.imageOpt!.size))
+            XCTAssert(reModel!.imageOptNil == nil)
+        }
     }
     
     func testPerformanceExample() {

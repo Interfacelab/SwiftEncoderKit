@@ -38,6 +38,16 @@ func --> <T: UnsignedIntegerType>(left:T?, right: Encoder) {
     right.addUnsignedInteger(left)
 }
 
+// MARK: NSCoding Protocol
+
+func --> <T: NSCoding>(left:T, right: Encoder) {
+    right.addNSCoding(left)
+}
+
+func --> <T: NSCoding>(left:T?, right: Encoder) {
+    right.addNSCoding(left)
+}
+
 // MARK: Encodable protocol
 
 func --> <T: Encodable>(left:T, right: Encoder) {

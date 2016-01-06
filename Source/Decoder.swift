@@ -67,4 +67,12 @@ class Decoder {
         
         return nil
     }
+
+    func getNSCoder<T: NSCoding>(object: T?) -> T? {
+        guard let key = currentKey, let val = data[key] as? NSCoding else {
+            return nil
+        }
+
+        return val as? T
+    }
 }

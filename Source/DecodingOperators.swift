@@ -46,6 +46,24 @@ func <-- <T: UnsignedIntegerType>(inout left:T?, right: Decoder) {
     left = rightValue
 }
 
+// MARK: NSCoding
+
+func <-- <T: NSCoding>(inout left:T, right: Decoder) {
+    guard let rightValue = right.getNSCoder(left) else {
+        return
+    }
+
+    left = rightValue
+}
+
+func <-- <T: NSCoding>(inout left:T?, right: Decoder) {
+    guard let rightValue = right.getNSCoder(left) else {
+        return
+    }
+
+    left = rightValue
+}
+
 func <-- <T: Encodable>(inout left:T, right: Decoder) {
     left = T(right)!
 }

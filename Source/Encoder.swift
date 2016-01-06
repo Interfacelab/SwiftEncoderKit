@@ -78,4 +78,12 @@ class Encoder {
             data[key] = NSNumber(unsignedLongLong: x)
         }
     }
+
+    func addNSCoding(object: NSCoding?) {
+        guard let key = currentKey, let obj = object else {
+            return
+        }
+
+        data[key] = obj
+    }
 }
