@@ -8,82 +8,54 @@
 
 import Foundation
 
-class Encoder {
-    private var currentKey: String?
-    private var data:[String: NSCoding]=[:]
+infix operator --> {}
 
-    var jsonString:String? {
+class Encoder {
+    private var _currentKey: String?
+    private var _data:[String: NSCoding]=[:]
+
+    /// The current encoder key
+    var currentKey: String? {
         get {
-            let jsonData = try! NSJSONSerialization.dataWithJSONObject(data, options: .PrettyPrinted)
-            return String(data: jsonData, encoding: NSUTF8StringEncoding)
+            return _currentKey
+        }
+    }
+
+    /// The currently encoded data
+    var data: [String: NSCoding] {
+        get {
+            return _data
         }
     }
 
     init() {
     }
 
-    func writeToFile(path: String) {
-        let archivedData = NSKeyedArchiver.archivedDataWithRootObject(data)
-        archivedData.writeToFile(path, atomically: true)
-    }
-
     subscript(key: String) -> Encoder {
-        currentKey = key
+        _currentKey = key
         return self
     }
 
-    func addEncodable(encodable: Encodable) {
-        guard let key = currentKey else {
+    func setValue(key: String, value: NSCoding?) {
+        _data[key] = value ?? NSNull()
+    }
+
+    func setValueForCurrentKey(value: NSCoding?) {
+        guard let key = _currentKey else {
             return
         }
 
-        let encoder = Encoder()
-        encodable.encode(encoder)
-
-        data[key] = encoder.data
+        _data[key] = value ?? NSNull()
     }
 
-    func addSignedInteger<T: SignedIntegerType>(int: T?) {
-        guard let key = currentKey else {
-            return
-        }
+    /**
+    Writes the contents of the encoder to a binary plist file
 
-        if let x = int as? Int {
-            data[key] = NSNumber(integer: x)
-        } else if let x = int as? Int8 {
-            data[key] = NSNumber(char: x)
-        } else if let x = int as? Int16 {
-            data[key] = NSNumber(short: x)
-        } else if let x = int as? Int32 {
-            data[key] = NSNumber(int: x)
-        } else if let x = int as? Int64 {
-            data[key] = NSNumber(longLong: x)
-        }
+    - parameter path:	The file path to write to
+    */
+    func writeToFile(path: String) {
+        let archivedData = NSKeyedArchiver.archivedDataWithRootObject(_data)
+        archivedData.writeToFile(path, atomically: true)
     }
 
-    func addUnsignedInteger<T: UnsignedIntegerType>(uint: T?) {
-        guard let key = currentKey else {
-            return
-        }
-
-        if let x = uint as? UInt {
-            data[key] = NSNumber(unsignedInteger: x)
-        } else if let x = uint as? UInt8 {
-            data[key] = NSNumber(unsignedChar: x)
-        } else if let x = uint as? UInt16 {
-            data[key] = NSNumber(unsignedShort: x)
-        } else if let x = uint as? UInt32 {
-            data[key] = NSNumber(unsignedInt: x)
-        } else if let x = uint as? UInt64 {
-            data[key] = NSNumber(unsignedLongLong: x)
-        }
-    }
-
-    func addNSCoding(object: NSCoding?) {
-        guard let key = currentKey, let obj = object else {
-            return
-        }
-
-        data[key] = obj
-    }
 }

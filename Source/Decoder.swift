@@ -8,71 +8,37 @@
 
 import Foundation
 
+infix operator <-- {}
+
 class Decoder {
-    private var currentKey: String?
-    private var data:[String: AnyObject]=[:]
+    private var _currentKey: String?
+    private var _data:[String: AnyObject]=[:]
 
     init(path: String) {
         if let root = NSKeyedUnarchiver.unarchiveObjectWithFile(path) {
-            data = root as! [String: AnyObject]
-            print(data)
+            _data = root as! [String: AnyObject]
+            print(_data)
         }
     }
 
     subscript(key: String) -> Decoder {
-        currentKey = key
+        _currentKey = key
         return self
     }
 
-    func getSignedIntegerValue<T: SignedIntegerType>(int: T?) -> T? {
-        guard let key = currentKey, let val = data[key] as? NSNumber else {
+    func valueForCurrentKey() -> AnyObject? {
+        guard let key = _currentKey, let val = _data[key] else {
             return nil
         }
 
-        let dt = int.dynamicType
-
-        if dt == Int.self || dt == Int?.self {
-            return val.integerValue as? T
-        } else if dt == Int8.self || dt == Int8?.self {
-            return val.charValue as? T
-        } else if dt == Int16.self || dt == Int16?.self {
-            return val.shortValue as? T
-        } else if dt == Int32.self || dt == Int32?.self {
-            return val.intValue as? T
-        } else if dt == Int64.self || dt == Int64?.self {
-            return val.longLongValue as? T
-        }
-
-        return nil
+        return val
     }
 
-    func getUnsignedIntegerValue<T: UnsignedIntegerType>(uint: T?) -> T? {
-        guard let key = currentKey, let val = data[key] as? NSNumber else {
+    func valueForKey(key: String) -> AnyObject? {
+        guard let val = _data[key] else {
             return nil
         }
 
-        let dt = uint.dynamicType
-
-        if dt == UInt.self || dt == UInt?.self {
-            return val.unsignedIntegerValue as? T
-        } else if dt == UInt8.self || dt == UInt8?.self {
-            return val.unsignedCharValue as? T
-        } else if dt == UInt16.self || dt == UInt16?.self {
-            return val.unsignedShortValue as? T
-        } else if dt == UInt32.self || dt == UInt32?.self {
-            return val.unsignedIntValue as? T
-        } else if dt == UInt64.self || dt == UInt64?.self {
-            return val.unsignedLongLongValue as? T
-        }
-        
-        return nil
-    }
-
-    func getNSCoder<T: NSCoding>(object: T?) -> T? {
-        guard let key = currentKey, let val = data[key] as? NSCoding else {
-            return nil
-        }
-
-        return val as? T
+        return val
     }
 }
