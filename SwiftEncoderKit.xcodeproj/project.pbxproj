@@ -54,6 +54,10 @@
 		FF0B5CAA1C3D35B300A15C56 /* SignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6B1C3CF9E900A15C56 /* SignedIntegerEncoding.swift */; };
 		FF0B5CAB1C3D35B600A15C56 /* UnsignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6C1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift */; };
 		FF0B5CAC1C3D35B900A15C56 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C541C3CF8BF00A15C56 /* ArrayExtension.swift */; };
+		FF0B5CB31C3D362500A15C56 /* ConstFloatArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CAF1C3D362500A15C56 /* ConstFloatArrayModel.swift */; };
+		FF0B5CB41C3D362500A15C56 /* ConstFloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CB01C3D362500A15C56 /* ConstFloatModel.swift */; };
+		FF0B5CB51C3D362500A15C56 /* FloatArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CB11C3D362500A15C56 /* FloatArrayModel.swift */; };
+		FF0B5CB61C3D362500A15C56 /* FloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CB21C3D362500A15C56 /* FloatModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +110,10 @@
 		FF0B5C9F1C3D359E00A15C56 /* BoolModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolModel.swift; sourceTree = "<group>"; };
 		FF0B5CA01C3D359E00A15C56 /* ConstBoolArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstBoolArrayModel.swift; sourceTree = "<group>"; };
 		FF0B5CA11C3D359E00A15C56 /* ConstBoolModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstBoolModel.swift; sourceTree = "<group>"; };
+		FF0B5CAF1C3D362500A15C56 /* ConstFloatArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFloatArrayModel.swift; sourceTree = "<group>"; };
+		FF0B5CB01C3D362500A15C56 /* ConstFloatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFloatModel.swift; sourceTree = "<group>"; };
+		FF0B5CB11C3D362500A15C56 /* FloatArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatArrayModel.swift; sourceTree = "<group>"; };
+		FF0B5CB21C3D362500A15C56 /* FloatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +216,7 @@
 		FF0B5C581C3CF99D00A15C56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5CAE1C3D362500A15C56 /* Float */,
 				FF0B5C9D1C3D359E00A15C56 /* Bool */,
 				FF0B5C721C3CFA8F00A15C56 /* NSCoding */,
 				FF0B5C741C3CFA8F00A15C56 /* Signed Integer */,
@@ -290,6 +299,17 @@
 				FF0B5CA11C3D359E00A15C56 /* ConstBoolModel.swift */,
 			);
 			path = Bool;
+			sourceTree = "<group>";
+		};
+		FF0B5CAE1C3D362500A15C56 /* Float */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B5CAF1C3D362500A15C56 /* ConstFloatArrayModel.swift */,
+				FF0B5CB01C3D362500A15C56 /* ConstFloatModel.swift */,
+				FF0B5CB11C3D362500A15C56 /* FloatArrayModel.swift */,
+				FF0B5CB21C3D362500A15C56 /* FloatModel.swift */,
+			);
+			path = Float;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,10 +439,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0B5CB61C3D362500A15C56 /* FloatModel.swift in Sources */,
 				FF0B5C8A1C3CFA8F00A15C56 /* ImmutableStruct.swift in Sources */,
 				FF0B5C8C1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift in Sources */,
 				FF0B5C981C3CFAC100A15C56 /* EncodableEncoding.swift in Sources */,
 				FF0B5C671C3CF99D00A15C56 /* NSCodingTests.swift in Sources */,
+				FF0B5CB31C3D362500A15C56 /* ConstFloatArrayModel.swift in Sources */,
 				FF0B5C971C3CFAC100A15C56 /* BoolEncoding.swift in Sources */,
 				FF0B5C9A1C3CFAC100A15C56 /* StringEncoding.swift in Sources */,
 				FF0B5C891C3CFA8F00A15C56 /* EncodableStruct.swift in Sources */,
@@ -444,10 +466,12 @@
 				FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
 				FF0B5C3F1C3CF63D00A15C56 /* Encoder.swift in Sources */,
 				FF0B5CA41C3D359E00A15C56 /* ConstBoolArrayModel.swift in Sources */,
+				FF0B5CB51C3D362500A15C56 /* FloatArrayModel.swift in Sources */,
 				FF0B5C881C3CFA8F00A15C56 /* SignedIntegerModel.swift in Sources */,
 				FF0B5C851C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift in Sources */,
 				FF0B5C921C3CFA9F00A15C56 /* BasicTypesTests.swift in Sources */,
 				FF0B5C551C3CF8BF00A15C56 /* ArrayExtension.swift in Sources */,
+				FF0B5CB41C3D362500A15C56 /* ConstFloatModel.swift in Sources */,
 				FF0B5CA31C3D359E00A15C56 /* BoolModel.swift in Sources */,
 				FF0B5CA21C3D359E00A15C56 /* BoolArrayModel.swift in Sources */,
 				FF0B5C861C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift in Sources */,

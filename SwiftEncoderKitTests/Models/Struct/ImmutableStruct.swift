@@ -38,8 +38,8 @@ struct ImmutableStruct : Encodable {
         int = decoder.integer("int") ?? 0
         bool = decoder.bool("bool") ?? false
         string = decoder.getStringNamed("string") ?? "Hello"
-        float = decoder.getFloatNamed("float") ?? 0.0
-        double = decoder.getDoubleNamed("double") ?? 0.0
+        float = decoder.float("float") ?? 0.0
+        double = decoder.double("double") ?? 0.0
         uint = decoder.unsignedInteger("uint") ?? 0
 
         intArray = decoder.integerArray("intArray") ?? []

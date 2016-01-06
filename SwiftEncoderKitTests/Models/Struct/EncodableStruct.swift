@@ -18,8 +18,8 @@ struct EncodablePoint: Encodable {
     }
 
     init?(_ decoder: Decoder) {
-        x = decoder.getFloatNamed("x") ?? 0
-        y = decoder.getFloatNamed("y") ?? 0
+        x = decoder.float("x") ?? 0
+        y = decoder.float("y") ?? 0
     }
 
     func encode(encoder: Encoder) {
@@ -38,8 +38,8 @@ struct EncodableSize: Encodable {
     }
 
     init?(_ decoder: Decoder) {
-        width = decoder.getFloatNamed("width") ?? 0
-        height = decoder.getFloatNamed("height") ?? 0
+        width = decoder.float("width") ?? 0
+        height = decoder.float("height") ?? 0
     }
 
     func encode(encoder: Encoder) {
