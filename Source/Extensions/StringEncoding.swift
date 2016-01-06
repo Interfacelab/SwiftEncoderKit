@@ -13,7 +13,7 @@ protocol StringEncoding {}
 // MARK: String
 
 func --> (left:String, right: Encoder) {
-    right.addString(left)
+    right.addString(left, key: nil)
 }
 
 func <-- (inout left:String, right: Decoder) {
@@ -27,7 +27,7 @@ func <-- (inout left:String, right: Decoder) {
 // MARK: String Optional
 
 func --> (left:String?, right: Encoder) {
-    right.addString(left)
+    right.addString(left, key: nil)
 }
 
 func <-- (inout left:String?, right: Decoder) {
@@ -42,7 +42,7 @@ func <-- (inout left:String?, right: Decoder) {
 // MARK: String arrays
 
 func --> (left:Array<String>, right: Encoder) {
-    right.addStringArray(left)
+    right.addStringArray(left, key: nil)
 }
 
 func <-- (inout left:Array<String>, right: Decoder) {
@@ -56,7 +56,7 @@ func <-- (inout left:Array<String>, right: Decoder) {
 // MARK: Optional String arrays
 
 func --> (left:Array<String>?, right: Encoder) {
-    right.addStringArray(left)
+    right.addStringArray(left, key: nil)
 }
 
 func <-- (inout left:Array<String>?, right: Decoder) {
@@ -71,12 +71,22 @@ func <-- (inout left:Array<String>?, right: Decoder) {
 // MARK: Encoder
 
 extension Encoder : StringEncoding {
-    func addString(string: String?) {
-        setValueForCurrentKey(string)
+    func addString(string: String?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(string)
+        }
+        else {
+            setValue(key!, value: string)
+        }
     }
 
-    func addStringArray(stringArray: Array<String>?) {
-        setValueForCurrentKey(stringArray)
+    func addStringArray(stringArray: Array<String>?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(stringArray)
+        }
+        else {
+            setValue(key!, value: stringArray)
+        }
     }
 }
 

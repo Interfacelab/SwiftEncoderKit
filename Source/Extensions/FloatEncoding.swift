@@ -13,7 +13,7 @@ protocol FloatEncoding {}
 // MARK: Float
 
 func --> (left:Float, right: Encoder) {
-    right.addFloat(left)
+    right.addFloat(left, key: nil)
 }
 
 func <-- (inout left:Float, right: Decoder) {
@@ -27,7 +27,7 @@ func <-- (inout left:Float, right: Decoder) {
 // MARK: Float Optional
 
 func --> (left:Float?, right: Encoder) {
-    right.addFloat(left)
+    right.addFloat(left, key: nil)
 }
 
 func <-- (inout left:Float?, right: Decoder) {
@@ -42,7 +42,7 @@ func <-- (inout left:Float?, right: Decoder) {
 // MARK: Float arrays
 
 func --> (left:Array<Float>, right: Encoder) {
-    right.addFloatArray(left)
+    right.addFloatArray(left, key: nil)
 }
 
 func <-- (inout left:Array<Float>, right: Decoder) {
@@ -56,7 +56,7 @@ func <-- (inout left:Array<Float>, right: Decoder) {
 // MARK: Optional float arrays
 
 func --> (left:Array<Float>?, right: Encoder) {
-    right.addFloatArray(left)
+    right.addFloatArray(left, key: nil)
 }
 
 func <-- (inout left:Array<Float>?, right: Decoder) {
@@ -71,7 +71,7 @@ func <-- (inout left:Array<Float>?, right: Decoder) {
 // MARK: Double
 
 func --> (left:Double, right: Encoder) {
-    right.addDouble(left)
+    right.addDouble(left, key: nil)
 }
 
 func <-- (inout left:Double, right: Decoder) {
@@ -85,7 +85,7 @@ func <-- (inout left:Double, right: Decoder) {
 // MARK: Double Optional
 
 func --> (left:Double?, right: Encoder) {
-    right.addDouble(left)
+    right.addDouble(left, key: nil)
 }
 
 func <-- (inout left:Double?, right: Decoder) {
@@ -100,7 +100,7 @@ func <-- (inout left:Double?, right: Decoder) {
 // MARK: Double arrays
 
 func --> (left:Array<Double>, right: Encoder) {
-    right.addDoubleArray(left)
+    right.addDoubleArray(left, key: nil)
 }
 
 func <-- (inout left:Array<Double>, right: Decoder) {
@@ -114,7 +114,7 @@ func <-- (inout left:Array<Double>, right: Decoder) {
 // MARK: Optional double arrays
 
 func --> (left:Array<Double>?, right: Encoder) {
-    right.addDoubleArray(left)
+    right.addDoubleArray(left, key: nil)
 }
 
 func <-- (inout left:Array<Double>?, right: Decoder) {
@@ -131,20 +131,40 @@ func <-- (inout left:Array<Double>?, right: Decoder) {
 extension Encoder : FloatEncoding {
     // MARK: Float and Double
 
-    func addFloat(float: Float?) {
-        setValueForCurrentKey((float == nil) ? nil : NSNumber(float: float!))
+    func addFloat(float: Float?, key: String?) {
+        let val: NSNumber? = (float == nil) ? nil : NSNumber(float: float!)
+
+        if key == nil {
+            setValueForCurrentKey(val)
+        } else {
+            setValue(key!, value: val)
+        }
     }
 
-    func addFloatArray(floatArray: Array<Float>?) {
-        setValueForCurrentKey(floatArray)
+    func addFloatArray(floatArray: Array<Float>?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(floatArray)
+        } else {
+            setValue(key!, value: floatArray)
+        }
     }
 
-    func addDouble(double: Double?) {
-        setValueForCurrentKey((double == nil) ? nil : NSNumber(double: double!))
+    func addDouble(double: Double?, key: String?) {
+        let val: NSNumber? = (double == nil) ? nil : NSNumber(double: double!)
+
+        if key == nil {
+            setValueForCurrentKey(val)
+        } else {
+            setValue(key!, value: val)
+        }
     }
 
-    func addDoubleArray(doubleArray: Array<Double>?) {
-        setValueForCurrentKey(doubleArray)
+    func addDoubleArray(doubleArray: Array<Double>?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(doubleArray)
+        } else {
+            setValue(key!, value: doubleArray)
+        }
     }
 }
 

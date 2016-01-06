@@ -13,7 +13,7 @@ protocol BoolEncoding {}
 // MARK: Bool
 
 func --> (left:Bool, right: Encoder) {
-    right.addBool(left)
+    right.addBool(left, key: nil)
 }
 
 func <-- (inout left:Bool, right: Decoder) {
@@ -27,7 +27,7 @@ func <-- (inout left:Bool, right: Decoder) {
 // MARK: Bool Optional
 
 func --> (left:Bool?, right: Encoder) {
-    right.addBool(left)
+    right.addBool(left, key: nil)
 }
 
 func <-- (inout left:Bool?, right: Decoder) {
@@ -42,7 +42,7 @@ func <-- (inout left:Bool?, right: Decoder) {
 // MARK: Bool arrays
 
 func --> (left:Array<Bool>, right: Encoder) {
-    right.addBoolArray(left)
+    right.addBoolArray(left, key: nil)
 }
 
 func <-- (inout left:Array<Bool>, right: Decoder) {
@@ -56,7 +56,7 @@ func <-- (inout left:Array<Bool>, right: Decoder) {
 // MARK: Optional bool arrays
 
 func --> (left:Array<Bool>?, right: Encoder) {
-    right.addBoolArray(left)
+    right.addBoolArray(left, key: nil)
 }
 
 func <-- (inout left:Array<Bool>?, right: Decoder) {
@@ -71,12 +71,22 @@ func <-- (inout left:Array<Bool>?, right: Decoder) {
 // MARK: Encoder
 
 extension Encoder : BoolEncoding {
-    func addBool(bool: Bool?) {
-        setValueForCurrentKey(bool)
+    func addBool(bool: Bool?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(bool)
+        }
+        else {
+            setValue(key!, value: bool)
+        }
     }
 
-    func addBoolArray(boolArray: Array<Bool>?) {
-        setValueForCurrentKey(boolArray)
+    func addBoolArray(boolArray: Array<Bool>?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(boolArray)
+        }
+        else {
+            setValue(key!, value: boolArray)
+        }
     }
 }
 

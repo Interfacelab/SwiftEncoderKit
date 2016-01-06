@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol NSCodingExtension {}
+protocol NSCodingEncoding {}
 
 // MARK: NSCoding
 
 func --> <T: NSCoding>(left:T, right: Encoder) {
-    right.addNSCoding(left)
+    right.addNSCoding(left, key: nil)
 }
 
 func <-- <T: NSCoding>(inout left:T, right: Decoder) {
@@ -27,7 +27,7 @@ func <-- <T: NSCoding>(inout left:T, right: Decoder) {
 // MARK: Optional NSCoding
 
 func --> <T: NSCoding>(left:T?, right: Encoder) {
-    right.addNSCoding(left)
+    right.addNSCoding(left, key: nil)
 }
 
 func <-- <T: NSCoding>(inout left:T?, right: Decoder) {
@@ -42,7 +42,7 @@ func <-- <T: NSCoding>(inout left:T?, right: Decoder) {
 // MARK: NSCoding arrays
 
 func --> <T: NSCoding>(left:Array<T>, right: Encoder) {
-    right.addNSCodingArray(left)
+    right.addNSCodingArray(left, key: nil)
 }
 
 func <-- <T: NSCoding>(inout left:Array<T>, right: Decoder) {
@@ -56,7 +56,7 @@ func <-- <T: NSCoding>(inout left:Array<T>, right: Decoder) {
 // MARK: Optional NSCoding arrays
 
 func --> <T: NSCoding>(left:Array<T>?, right: Encoder) {
-    right.addNSCodingArray(left)
+    right.addNSCodingArray(left, key: nil)
 }
 
 func <-- <T: NSCoding>(inout left:Array<T>?, right: Decoder) {
@@ -70,19 +70,29 @@ func <-- <T: NSCoding>(inout left:Array<T>?, right: Decoder) {
 
 // MARK: Encoder
 
-extension Encoder : NSCodingExtension {
-    func addNSCoding(object: NSCoding?) {
-        setValueForCurrentKey(object)
+extension Encoder : NSCodingEncoding {
+    func addNSCoding(object: NSCoding?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(object)
+        }
+        else {
+            setValue(key!, value: object)
+        }
     }
 
-    func addNSCodingArray(nsCodingArray: Array<NSCoding>?) {
-        setValueForCurrentKey(nsCodingArray)
+    func addNSCodingArray(objectArray: Array<NSCoding>?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(objectArray)
+        }
+        else {
+            setValue(key!, value: objectArray)
+        }
     }
 }
 
 // MARK: Decoder
 
-extension Decoder : NSCodingExtension {
+extension Decoder : NSCodingEncoding {
     func nsCoding<T: NSCoding>(key: String?) -> T? {
         let val = ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? NSCoding
         guard val != nil else {

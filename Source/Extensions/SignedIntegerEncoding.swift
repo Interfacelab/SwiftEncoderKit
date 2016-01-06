@@ -13,7 +13,7 @@ protocol SignedIntegerEncoding {}
 // MARK: Integer values
 
 func --> <T: SignedIntegerType>(left:T, right: Encoder) {
-    right.addInteger(left)
+    right.addInteger(left, key: nil)
 }
 
 func <-- <T: SignedIntegerType>(inout left:T, right: Decoder) {
@@ -28,7 +28,7 @@ func <-- <T: SignedIntegerType>(inout left:T, right: Decoder) {
 // MARK: Integer arrays
 
 func --> <T: SignedIntegerType>(left:Array<T>, right: Encoder) {
-    right.addIntegerArray(left)
+    right.addIntegerArray(left, key: nil)
 }
 
 func <-- <T: SignedIntegerType>(inout left:Array<T>, right: Decoder) {
@@ -42,7 +42,7 @@ func <-- <T: SignedIntegerType>(inout left:Array<T>, right: Decoder) {
 // MARK: Optional integer values
 
 func --> <T: SignedIntegerType>(left:T?, right: Encoder) {
-    right.addInteger(left)
+    right.addInteger(left, key: nil)
 }
 
 func <-- <T: SignedIntegerType>(inout left:T?, right: Decoder) {
@@ -57,7 +57,7 @@ func <-- <T: SignedIntegerType>(inout left:T?, right: Decoder) {
 // MARK: Optional integer arrays
 
 func --> <T: SignedIntegerType>(left:Array<T>?, right: Encoder) {
-    right.addIntegerArray(left)
+    right.addIntegerArray(left, key: nil)
 }
 
 func <-- <T: SignedIntegerType>(inout left:Array<T>?, right: Decoder) {
@@ -72,7 +72,7 @@ func <-- <T: SignedIntegerType>(inout left:Array<T>?, right: Decoder) {
 // MARK: Integer dictionaries
 
 func --> <T: SignedIntegerType>(left: [String: T], right: Encoder) {
-    right.addIntegerDictionary(left)
+    right.addIntegerDictionary(left, key: nil)
 }
 
 func <-- <T: SignedIntegerType>(inout left: [String: T], right: Decoder) {
@@ -86,7 +86,7 @@ func <-- <T: SignedIntegerType>(inout left: [String: T], right: Decoder) {
 // MARK: Optional Integer dictionaries
 
 func --> <T: SignedIntegerType>(left: [String: T]?, right: Encoder) {
-    right.addIntegerDictionary(left)
+    right.addIntegerDictionary(left, key: nil)
 }
 
 func <-- <T: SignedIntegerType>(inout left: [String: T]?, right: Decoder) {
@@ -103,25 +103,36 @@ func <-- <T: SignedIntegerType>(inout left: [String: T]?, right: Decoder) {
 extension Encoder : SignedIntegerEncoding {
     // MARK: Integer types
 
-    func addInteger<T: SignedIntegerType>(int: T?) {
+    func addInteger<T: SignedIntegerType>(int: T?, key:String?) {
+        var val: NSNumber? = nil
+
         if let x = int as? Int {
-            setValueForCurrentKey(NSNumber(integer: x))
+            val = NSNumber(integer: x)
         } else if let x = int as? Int8 {
-            setValueForCurrentKey(NSNumber(char: x))
+            val = NSNumber(char: x)
         } else if let x = int as? Int16 {
-            setValueForCurrentKey(NSNumber(short: x))
+            val = NSNumber(short: x)
         } else if let x = int as? Int32 {
-            setValueForCurrentKey(NSNumber(int: x))
+            val = NSNumber(int: x)
         } else if let x = int as? Int64 {
-            setValueForCurrentKey(NSNumber(longLong: x))
+            val = NSNumber(longLong: x)
+        }
+
+        if key == nil {
+            setValueForCurrentKey(val)
         } else {
-            setValueForCurrentKey(nil)
+            setValue(key!, value: val)
         }
     }
 
-    func addIntegerArray<T: SignedIntegerType>(integerArray: Array<T>?) {
+    func addIntegerArray<T: SignedIntegerType>(integerArray: Array<T>?, key: String?) {
         guard let array = integerArray else {
-            setValueForCurrentKey(nil)
+            if key == nil {
+                setValueForCurrentKey(nil)
+            } else {
+                setValue(key!, value: nil)
+            }
+
             return
         }
 
@@ -141,12 +152,21 @@ extension Encoder : SignedIntegerEncoding {
             }
         }
 
-        setValueForCurrentKey(encoded)
+        if key == nil {
+            setValueForCurrentKey(encoded)
+        } else {
+            setValue(key!, value: encoded)
+        }
     }
 
-    func addIntegerDictionary<T: SignedIntegerType>(integerDict: [String: T]?) {
+    func addIntegerDictionary<T: SignedIntegerType>(integerDict: [String: T]?, key: String?) {
         guard let dict = integerDict else {
-            setValueForCurrentKey(nil)
+            if key == nil {
+                setValueForCurrentKey(nil)
+            } else {
+                setValue(key!, value: nil)
+            }
+
             return
         }
 
@@ -166,7 +186,11 @@ extension Encoder : SignedIntegerEncoding {
             }
         }
 
-        setValueForCurrentKey(encoded)
+        if key == nil {
+            setValueForCurrentKey(encoded)
+        } else {
+            setValue(key!, value: encoded)
+        }
     }
 }
 
@@ -180,7 +204,7 @@ extension Decoder : SignedIntegerEncoding {
             return nil
         }
 
-        let dt=T.self
+        let dt = T.self
 
         if dt == Int.self || dt == Int?.self {
             return val!.integerValue as? T

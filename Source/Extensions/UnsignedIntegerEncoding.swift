@@ -13,7 +13,7 @@ protocol UnsignedIntegerEncoding {}
 // MARK: Integer values
 
 func --> <T: UnsignedIntegerType>(left:T, right: Encoder) {
-    right.addUnsignedInteger(left)
+    right.addUnsignedInteger(left, key:nil)
 }
 
 func <-- <T: UnsignedIntegerType>(inout left:T, right: Decoder) {
@@ -27,7 +27,7 @@ func <-- <T: UnsignedIntegerType>(inout left:T, right: Decoder) {
 // MARK: Integer arrays
 
 func --> <T: UnsignedIntegerType>(left:Array<T>, right: Encoder) {
-    right.addUnsignedIntegerArray(left)
+    right.addUnsignedIntegerArray(left, key:nil)
 }
 
 func <-- <T: UnsignedIntegerType>(inout left:Array<T>, right: Decoder) {
@@ -41,7 +41,7 @@ func <-- <T: UnsignedIntegerType>(inout left:Array<T>, right: Decoder) {
 // MARK: Optional integer values
 
 func --> <T: UnsignedIntegerType>(left:T?, right: Encoder) {
-    right.addUnsignedInteger(left)
+    right.addUnsignedInteger(left, key:nil)
 }
 
 func <-- <T: UnsignedIntegerType>(inout left:T?, right: Decoder) {
@@ -56,7 +56,7 @@ func <-- <T: UnsignedIntegerType>(inout left:T?, right: Decoder) {
 // MARK: Optional integer arrays
 
 func --> <T: UnsignedIntegerType>(left:Array<T>?, right: Encoder) {
-    right.addUnsignedIntegerArray(left)
+    right.addUnsignedIntegerArray(left, key:nil)
 }
 
 func <-- <T: UnsignedIntegerType>(inout left:Array<T>?, right: Decoder) {
@@ -71,7 +71,7 @@ func <-- <T: UnsignedIntegerType>(inout left:Array<T>?, right: Decoder) {
 // MARK: Integer dictionaries
 
 func --> <T: UnsignedIntegerType>(left: [String: T], right: Encoder) {
-    right.addUnsignedIntegerDictionary(left)
+    right.addUnsignedIntegerDictionary(left, key:nil)
 }
 
 func <-- <T: UnsignedIntegerType>(inout left: [String: T], right: Decoder) {
@@ -85,7 +85,7 @@ func <-- <T: UnsignedIntegerType>(inout left: [String: T], right: Decoder) {
 // MARK: Optional Integer dictionaries
 
 func --> <T: UnsignedIntegerType>(left: [String: T]?, right: Encoder) {
-    right.addUnsignedIntegerDictionary(left)
+    right.addUnsignedIntegerDictionary(left, key:nil)
 }
 
 func <-- <T: UnsignedIntegerType>(inout left: [String: T]?, right: Decoder) {
@@ -99,25 +99,36 @@ func <-- <T: UnsignedIntegerType>(inout left: [String: T]?, right: Decoder) {
 
 extension Encoder : UnsignedIntegerEncoding {
 
-    func addUnsignedInteger<T: UnsignedIntegerType>(uint: T?) {
+    func addUnsignedInteger<T: UnsignedIntegerType>(uint: T?, key: String?) {
+        var val: NSNumber? = nil
+
         if let x = uint as? UInt {
-            setValueForCurrentKey(NSNumber(unsignedInteger: x))
+            val = NSNumber(unsignedInteger: x)
         } else if let x = uint as? UInt8 {
-            setValueForCurrentKey(NSNumber(unsignedChar: x))
+            val = NSNumber(unsignedChar: x)
         } else if let x = uint as? UInt16 {
-            setValueForCurrentKey(NSNumber(unsignedShort: x))
+            val = NSNumber(unsignedShort: x)
         } else if let x = uint as? UInt32 {
-            setValueForCurrentKey(NSNumber(unsignedInt: x))
+            val = NSNumber(unsignedInt: x)
         } else if let x = uint as? UInt64 {
-            setValueForCurrentKey(NSNumber(unsignedLongLong: x))
+            val = NSNumber(unsignedLongLong: x)
+        }
+
+        if key == nil {
+            setValueForCurrentKey(val)
         } else {
-            setValueForCurrentKey(nil)
+            setValue(key!, value: val)
         }
     }
 
-    func addUnsignedIntegerArray<T: UnsignedIntegerType>(uintegerArray: Array<T>?) {
+    func addUnsignedIntegerArray<T: UnsignedIntegerType>(uintegerArray: Array<T>?, key: String?) {
         guard let array = uintegerArray else {
-            setValueForCurrentKey(nil)
+            if key == nil {
+                setValueForCurrentKey(nil)
+            } else {
+                setValue(key!, value: nil)
+            }
+
             return
         }
 
@@ -137,12 +148,21 @@ extension Encoder : UnsignedIntegerEncoding {
             }
         }
 
-        setValueForCurrentKey(encoded)
+        if key == nil {
+            setValueForCurrentKey(encoded)
+        } else {
+            setValue(key!, value: encoded)
+        }
     }
 
-    func addUnsignedIntegerDictionary<T: UnsignedIntegerType>(uintegerDict: [String: T]?) {
+    func addUnsignedIntegerDictionary<T: UnsignedIntegerType>(uintegerDict: [String: T]?, key: String?) {
         guard let dict = uintegerDict else {
-            setValueForCurrentKey(nil)
+            if key == nil {
+                setValueForCurrentKey(nil)
+            } else {
+                setValue(key!, value: nil)
+            }
+
             return
         }
 
@@ -162,7 +182,11 @@ extension Encoder : UnsignedIntegerEncoding {
             }
         }
 
-        setValueForCurrentKey(encoded)
+        if key == nil {
+            setValueForCurrentKey(encoded)
+        } else {
+            setValue(key!, value: encoded)
+        }
     }
 }
 
