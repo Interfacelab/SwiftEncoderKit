@@ -68,6 +68,35 @@ func <-- (inout left:Array<String>?, right: Decoder) {
     left = rightValue
 }
 
+// MARK: String dictionaries
+
+func --> (left: [String: String], right: Encoder) {
+    right.addStringDictionary(left, key: nil)
+}
+
+func <-- (inout left: [String: String], right: Decoder) {
+    guard let rightValue: [String: String] = right.stringDictionary(nil) else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Optional Double dictionaries
+
+func --> (left: [String: String]?, right: Encoder) {
+    right.addStringDictionary(left, key: nil)
+}
+
+func <-- (inout left: [String: String]?, right: Decoder) {
+    guard let rightValue: [String: String] = right.stringDictionary(nil) else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
+
 // MARK: Encoder
 
 extension Encoder : StringEncoding {
@@ -88,6 +117,14 @@ extension Encoder : StringEncoding {
             setValue(key!, value: stringArray)
         }
     }
+
+    func addStringDictionary(stringDict: [String: String]?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(stringDict)
+        } else {
+            setValue(key!, value: stringDict)
+        }
+    }
 }
 
 // MARK: Decoder
@@ -99,5 +136,9 @@ extension Decoder : StringEncoding {
 
     func stringArray(key: String?) -> Array<String>? {
         return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<String>
+    }
+
+    func stringDictionary(key: String?) -> [String: String]? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? [String: String]
     }
 }

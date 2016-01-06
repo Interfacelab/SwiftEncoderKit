@@ -45,6 +45,27 @@ class StringTests: XCTestCase {
         }
     }
 
+    func testConstStringEncodingDecoding() {
+        let fileName = "/tmp/constString.plist"
+
+        let model = ConstStringModel(string: "Nice", stringOpt: "Things", stringOptNil: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstStringModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.string == "Nice")
+            XCTAssert(reModel!.stringOpt! == "Things")
+            XCTAssert(reModel!.stringOptNil == nil)
+        }
+    }
+
     func testArrayEncodingDecoding() {
         let fileName = "/tmp/stringArray.plist"
 
@@ -70,27 +91,6 @@ class StringTests: XCTestCase {
         }
     }
 
-    func testConstStringEncodingDecoding() {
-        let fileName = "/tmp/constString.plist"
-
-        let model = ConstStringModel(string: "Nice", stringOpt: "Things", stringOptNil: nil)
-
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstStringModel(decoder)
-
-        XCTAssert(reModel != nil)
-
-        if reModel != nil {
-            XCTAssert(reModel!.string == "Nice")
-            XCTAssert(reModel!.stringOpt! == "Things")
-            XCTAssert(reModel!.stringOptNil == nil)
-        }
-    }
-
     func testConstArrayEncodingDecoding() {
         let fileName = "/tmp/stringConstArray.plist"
 
@@ -110,6 +110,56 @@ class StringTests: XCTestCase {
             XCTAssert(reModel!.stringA == ["this", "that", "other"])
             XCTAssert(reModel!.stringAOpt! == ["by", "design"])
             XCTAssert(reModel!.stringAOptNil == nil)
+        }
+    }
+
+    func testDictionaryEncodingDecoding() {
+        let fileName = "/tmp/stringDict.plist"
+
+        let model = StringDictionaryModel()
+
+        model.stringD = ["A": "this", "B": "that", "C": "other"]
+        model.stringDOpt = ["A": "by", "B": "design"]
+        model.stringDOptNil = nil
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = StringDictionaryModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.stringD == ["A": "this", "B": "that", "C": "other"])
+            XCTAssert(reModel!.stringDOpt! == ["A": "by", "B": "design"])
+            XCTAssert(reModel!.stringDOptNil == nil)
+        }
+    }
+
+    func testConstDictionaryEncodingDecoding() {
+        let fileName = "/tmp/constStringDict.plist"
+
+        let stringD = ["A": "this", "B": "that", "C": "other"]
+        let stringDOpt = ["A": "by", "B": "design"]
+
+        let model = ConstStringDictionaryModel(stringD: stringD, stringDOpt: stringDOpt,
+            stringDOptNil: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstStringDictionaryModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.stringD == ["A": "this", "B": "that", "C": "other"])
+            XCTAssert(reModel!.stringDOpt! == ["A": "by", "B": "design"])
+            XCTAssert(reModel!.stringDOptNil == nil)
         }
     }
 
