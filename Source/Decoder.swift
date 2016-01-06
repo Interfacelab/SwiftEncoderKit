@@ -17,7 +17,6 @@ class Decoder {
     init(path: String) {
         if let root = NSKeyedUnarchiver.unarchiveObjectWithFile(path) {
             _data = root as! [String: AnyObject]
-            print(_data)
         }
     }
 

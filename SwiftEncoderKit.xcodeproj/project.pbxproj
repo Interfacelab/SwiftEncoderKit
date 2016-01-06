@@ -32,6 +32,7 @@
 		FF0B5C6D1C3CF9E900A15C56 /* BasicTypesEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6A1C3CF9E900A15C56 /* BasicTypesEncoding.swift */; };
 		FF0B5C6E1C3CF9E900A15C56 /* SignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6B1C3CF9E900A15C56 /* SignedIntegerEncoding.swift */; };
 		FF0B5C6F1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C6C1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift */; };
+		FF0B5C711C3CFA3D00A15C56 /* BasicTypesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C701C3CFA3D00A15C56 /* BasicTypesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		FF0B5C6A1C3CF9E900A15C56 /* BasicTypesEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTypesEncoding.swift; sourceTree = "<group>"; };
 		FF0B5C6B1C3CF9E900A15C56 /* SignedIntegerEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerEncoding.swift; sourceTree = "<group>"; };
 		FF0B5C6C1C3CF9E900A15C56 /* UnsignedIntegerEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerEncoding.swift; sourceTree = "<group>"; };
+		FF0B5C701C3CFA3D00A15C56 /* BasicTypesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTypesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		FF0B5C581C3CF99D00A15C56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5C701C3CFA3D00A15C56 /* BasicTypesModel.swift */,
 				FF0B5C591C3CF99D00A15C56 /* ImageModel.swift */,
 				FF0B5C5A1C3CF99D00A15C56 /* OtherTestModel.swift */,
 				FF0B5C5B1C3CF99D00A15C56 /* SignedIntegerModel.swift */,
@@ -297,6 +300,7 @@
 			files = (
 				FF0B5C6D1C3CF9E900A15C56 /* BasicTypesEncoding.swift in Sources */,
 				FF0B5C671C3CF99D00A15C56 /* NSCodingTests.swift in Sources */,
+				FF0B5C711C3CFA3D00A15C56 /* BasicTypesModel.swift in Sources */,
 				FF0B5C501C3CF84E00A15C56 /* NSCodingExtension.swift in Sources */,
 				FF0B5C661C3CF99D00A15C56 /* UnsignedIntegerModel.swift in Sources */,
 				FF0B5C391C3CF63D00A15C56 /* Decoder.swift in Sources */,
