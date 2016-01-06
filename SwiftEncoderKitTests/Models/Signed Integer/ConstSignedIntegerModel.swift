@@ -72,22 +72,22 @@ class ConstSignedIntegerModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        int     --> encoder["int"]
-        int8    --> encoder["int8"]
-        int16   --> encoder["int16"]
-        int32   --> encoder["int32"]
-        int64   --> encoder["int64"]
+        encoder.addInteger(int, key: "int")
+        encoder.addInteger(int8, key: "int8")
+        encoder.addInteger(int16, key: "int16")
+        encoder.addInteger(int32, key: "int32")
+        encoder.addInteger(int64, key: "int64")
 
-        intOpt     --> encoder["intOpt"]
-        int8Opt    --> encoder["int8Opt"]
-        int16Opt   --> encoder["int16Opt"]
-        int32Opt   --> encoder["int32Opt"]
-        int64Opt   --> encoder["int64Opt"]
-
-        intOptNil     --> encoder["intOptNil"]
-        int8OptNil    --> encoder["int8OptNil"]
-        int16OptNil   --> encoder["int16OptNil"]
-        int32OptNil   --> encoder["int32OptNil"]
-        int64OptNil   --> encoder["int64OptNil"]
+        encoder.addInteger(intOpt, key: "intOpt")
+        encoder.addInteger(int8Opt, key: "int8Opt")
+        encoder.addInteger(int16Opt, key: "int16Opt")
+        encoder.addInteger(int32Opt, key: "int32Opt")
+        encoder.addInteger(int64Opt, key: "int64Opt")
+        
+        encoder.addInteger(intOptNil, key: "intOptNil")
+        encoder.addInteger(int8OptNil, key: "int8OptNil")
+        encoder.addInteger(int16OptNil, key: "int16OptNil")
+        encoder.addInteger(int32OptNil, key: "int32OptNil")
+        encoder.addInteger(int64OptNil, key: "int64OptNil")
     }
 }

@@ -35,8 +35,8 @@ class ConstBoolArrayModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        boolA           --> encoder["boolA"]
-        boolAOpt        --> encoder["boolAOpt"]
-        boolAOptNil     --> encoder["boolAOptNil"]
+        encoder.addBoolArray(boolA, key: "boolA")
+        encoder.addBoolArray(boolAOpt, key: "boolAOpt")
+        encoder.addBoolArray(boolAOptNil, key: "boolAOptNil")
     }
 }

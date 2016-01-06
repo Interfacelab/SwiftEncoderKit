@@ -13,7 +13,7 @@ protocol EnumEncoding {}
 // MARK: Enum
 
 func --> <T:RawRepresentable>(left:T, right: Encoder) {
-    right.addEnum(left, key: nil)
+    right.addEnumValue(left, key: nil)
 }
 
 func <-- <T:RawRepresentable>(inout left:T, right: Decoder) {
@@ -27,7 +27,7 @@ func <-- <T:RawRepresentable>(inout left:T, right: Decoder) {
 // MARK: Optional Enum
 
 func --> <T:RawRepresentable>(left:T?, right: Encoder) {
-    right.addEnum(left, key: nil)
+    right.addEnumValue(left, key: nil)
 }
 
 func <-- <T:RawRepresentable>(inout left:T?, right: Decoder) {
@@ -137,7 +137,7 @@ extension Encoder : EnumEncoding {
         return nil
     }
 
-    func addEnum<T: RawRepresentable>(enumValue: T?, key:String?) {
+    func addEnumValue<T: RawRepresentable>(enumValue: T?, key:String?) {
         let val = encodedEnumValue(enumValue)
 
         if key == nil {

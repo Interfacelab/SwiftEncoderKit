@@ -54,14 +54,16 @@ class ConstCATransform3DModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        t3d --> encoder["t3d"]
-        t3dOpt --> encoder["t3dOpt"]
-        t3dOptNil --> encoder["t3dOptNil"]
-        t3dA --> encoder["t3dA"]
-        t3dOptA --> encoder["t3dOptA"]
-        t3dOptNilA --> encoder["t3dOptNilA"]
-        t3dD --> encoder["t3dD"]
-        t3dOptD --> encoder["t3dOptD"]
-        t3dOptNilD --> encoder["t3dOptNilD"]
+        encoder.addEncodable(t3d, key: "t3d")
+        encoder.addEncodable(t3dOpt, key: "t3dOpt")
+        encoder.addEncodable(t3dOptNil, key: "t3dOptNil")
+
+        encoder.addEncodableArray(t3dA, key: "t3dA")
+        encoder.addEncodableArray(t3dOptA, key: "t3dOptA")
+        encoder.addEncodableArray(t3dOptNilA, key: "t3dOptNilA")
+        
+        encoder.addEncodableDictionary(t3dD, key: "t3dD")
+        encoder.addEncodableDictionary(t3dOptD, key: "t3dOptD")
+        encoder.addEncodableDictionary(t3dOptNilD, key: "t3dOptNilD")
     }
 }

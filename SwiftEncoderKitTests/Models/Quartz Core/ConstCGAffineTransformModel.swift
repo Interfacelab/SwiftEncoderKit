@@ -56,17 +56,17 @@ class ConstCGAffineTransformModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        transform --> encoder["transform"]
-        transformOpt --> encoder["transformOpt"]
-        transformOptNil --> encoder["transformOptNil"]
+        encoder.addEncodable(transform, key: "transform")
+        encoder.addEncodable(transformOpt, key: "transformOpt")
+        encoder.addEncodable(transformOptNil, key: "transformOptNil")
 
-        transformA --> encoder["transformA"]
-        transformOptA --> encoder["transformOptA"]
-        transformOptNilA --> encoder["transformOptNilA"]
+        encoder.addEncodableArray(transformA, key: "transformA")
+        encoder.addEncodableArray(transformOptA, key: "transformOptA")
+        encoder.addEncodableArray(transformOptNilA, key: "transformOptNilA")
         
-        transformD --> encoder["transformD"]
-        transformOptD --> encoder["transformOptD"]
-        transformOptNilD --> encoder["transformOptNilD"]
+        encoder.addEncodableDictionary(transformD, key: "transformD")
+        encoder.addEncodableDictionary(transformOptD, key: "transformOptD")
+        encoder.addEncodableDictionary(transformOptNilD, key: "transformOptNilD")
     }
     
 }

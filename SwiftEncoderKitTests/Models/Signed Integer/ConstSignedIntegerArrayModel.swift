@@ -74,22 +74,22 @@ class ConstSignedIntegerArrayModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        intA     --> encoder["intA"]
-        int8A    --> encoder["int8A"]
-        int16A   --> encoder["int16A"]
-        int32A   --> encoder["int32A"]
-        int64A   --> encoder["int64A"]
+        encoder.addIntegerArray(intA, key: "intA")
+        encoder.addIntegerArray(int8A, key: "int8A")
+        encoder.addIntegerArray(int16A, key: "int16A")
+        encoder.addIntegerArray(int32A, key: "int32A")
+        encoder.addIntegerArray(int64A, key: "int64A")
 
-        intAOpt     --> encoder["intAOpt"]
-        int8AOpt    --> encoder["int8AOpt"]
-        int16AOpt   --> encoder["int16AOpt"]
-        int32AOpt   --> encoder["int32AOpt"]
-        int64AOpt   --> encoder["int64AOpt"]
-
-        intAOptNil     --> encoder["intAOptNil"]
-        int8AOptNil    --> encoder["int8AOptNil"]
-        int16AOptNil   --> encoder["int16AOptNil"]
-        int32AOptNil   --> encoder["int32AOptNil"]
-        int64AOptNil   --> encoder["int64AOptNil"]
+        encoder.addIntegerArray(intAOpt, key: "intAOpt")
+        encoder.addIntegerArray(int8AOpt, key: "int8AOpt")
+        encoder.addIntegerArray(int16AOpt, key: "int16AOpt")
+        encoder.addIntegerArray(int32AOpt, key: "int32AOpt")
+        encoder.addIntegerArray(int64AOpt, key: "int64AOpt")
+        
+        encoder.addIntegerArray(intAOptNil, key: "intAOptNil")
+        encoder.addIntegerArray(int8AOptNil, key: "int8AOptNil")
+        encoder.addIntegerArray(int16AOptNil, key: "int16AOptNil")
+        encoder.addIntegerArray(int32AOptNil, key: "int32AOptNil")
+        encoder.addIntegerArray(int64AOptNil, key: "int64AOptNil")
     }
 }

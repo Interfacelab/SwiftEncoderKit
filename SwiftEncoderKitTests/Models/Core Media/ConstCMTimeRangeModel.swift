@@ -56,16 +56,16 @@ class ConstCMTimeRangeModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        timeRange --> encoder["timeRange"]
-        timeRangeOpt --> encoder["timeRangeOpt"]
-        timeRangeOptNil --> encoder["timeRangeOptNil"]
+        encoder.addEncodable(timeRange, key: "timeRange")
+        encoder.addEncodable(timeRangeOpt, key: "timeRangeOpt")
+        encoder.addEncodable(timeRangeOptNil, key: "timeRangeOptNil")
 
-        timeRangeA --> encoder["timeRangeA"]
-        timeRangeOptA --> encoder["timeRangeOptA"]
-        timeRangeOptNilA --> encoder["timeRangeOptNilA"]
+        encoder.addEncodableArray(timeRangeA, key: "timeRangeA")
+        encoder.addEncodableArray(timeRangeOptA, key: "timeRangeOptA")
+        encoder.addEncodableArray(timeRangeOptNilA, key: "timeRangeOptNilA")
 
-        timeRangeD --> encoder["timeRangeD"]
-        timeRangeOptD --> encoder["timeRangeOptD"]
-        timeRangeOptNilD --> encoder["timeRangeOptNilD"]
+        encoder.addEncodableDictionary(timeRangeD, key: "timeRangeD")
+        encoder.addEncodableDictionary(timeRangeOptD, key: "timeRangeOptD")
+        encoder.addEncodableDictionary(timeRangeOptNilD, key: "timeRangeOptNilD")
     }
 }

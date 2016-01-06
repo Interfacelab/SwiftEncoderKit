@@ -72,22 +72,22 @@ class ConstUnsignedIntegerModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        uint     --> encoder["uint"]
-        uint8    --> encoder["uint8"]
-        uint16   --> encoder["uint16"]
-        uint32   --> encoder["uint32"]
-        uint64   --> encoder["uint64"]
+        encoder.addUnsignedInteger(uint, key: "uint")
+        encoder.addUnsignedInteger(uint8, key: "uint8")
+        encoder.addUnsignedInteger(uint16, key: "uint16")
+        encoder.addUnsignedInteger(uint32, key: "uint32")
+        encoder.addUnsignedInteger(uint64, key: "uint64")
+        
+        encoder.addUnsignedInteger(uintOpt, key: "uintOpt")
+        encoder.addUnsignedInteger(uint8Opt, key: "uint8Opt")
+        encoder.addUnsignedInteger(uint16Opt, key: "uint16Opt")
+        encoder.addUnsignedInteger(uint32Opt, key: "uint32Opt")
+        encoder.addUnsignedInteger(uint64Opt, key: "uint64Opt")
 
-        uintOpt     --> encoder["uintOpt"]
-        uint8Opt    --> encoder["uint8Opt"]
-        uint16Opt   --> encoder["uint16Opt"]
-        uint32Opt   --> encoder["uint32Opt"]
-        uint64Opt   --> encoder["uint64Opt"]
-
-        uintOptNil     --> encoder["uintOptNil"]
-        uint8OptNil    --> encoder["uint8OptNil"]
-        uint16OptNil   --> encoder["uint16OptNil"]
-        uint32OptNil   --> encoder["uint32OptNil"]
-        uint64OptNil   --> encoder["uint64OptNil"]
+        encoder.addUnsignedInteger(uintOptNil, key: "uintOptNil")
+        encoder.addUnsignedInteger(uint8OptNil, key: "uint8OptNil")
+        encoder.addUnsignedInteger(uint16OptNil, key: "uint16OptNil")
+        encoder.addUnsignedInteger(uint32OptNil, key: "uint32OptNil")
+        encoder.addUnsignedInteger(uint64OptNil, key: "uint64OptNil")
     }
 }

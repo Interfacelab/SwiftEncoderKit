@@ -56,17 +56,17 @@ class ConstCGRectModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        rect --> encoder["rect"]
-        rectOpt --> encoder["rectOpt"]
-        rectOptNil --> encoder["rectOptNil"]
+        encoder.addEncodable(rect, key: "rect")
+        encoder.addEncodable(rectOpt, key: "rectOpt")
+        encoder.addEncodable(rectOptNil, key: "rectOptNil")
 
-        rectA --> encoder["rectA"]
-        rectOptA --> encoder["rectOptA"]
-        rectOptNilA --> encoder["rectOptNilA"]
+        encoder.addEncodableArray(rectA, key: "rectA")
+        encoder.addEncodableArray(rectOptA, key: "rectOptA")
+        encoder.addEncodableArray(rectOptNilA, key: "rectOptNilA")
         
-        rectD --> encoder["rectD"]
-        rectOptD --> encoder["rectOptD"]
-        rectOptNilD --> encoder["rectOptNilD"]
+        encoder.addEncodableDictionary(rectD, key: "rectD")
+        encoder.addEncodableDictionary(rectOptD, key: "rectOptD")
+        encoder.addEncodableDictionary(rectOptNilD, key: "rectOptNilD")
     }
     
 }

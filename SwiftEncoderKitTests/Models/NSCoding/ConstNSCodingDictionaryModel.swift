@@ -47,12 +47,12 @@ class ConstNSCodingDictionaryModel : Encodable {
     }
 
     func encode(encoder: Encoder) {
-        imageD --> encoder["imageD"]
-        imageOptD --> encoder["imageOptD"]
-        imageOptNilD --> encoder["imageOptNilD"]
-
-        colorD --> encoder["colorD"]
-        colorOptD --> encoder["colorOptD"]
-        colorOptNilD --> encoder["colorOptNilD"]
+        encoder.addNSCodingDictionary(imageD, key: "imageD")
+        encoder.addNSCodingDictionary(imageOptD, key: "imageOptD")
+        encoder.addNSCodingDictionary(imageOptNilD, key: "imageOptNilD")
+        
+        encoder.addNSCodingDictionary(colorD, key: "colorD")
+        encoder.addNSCodingDictionary(colorOptD, key: "colorOptD")
+        encoder.addNSCodingDictionary(colorOptNilD, key: "colorOptNilD")
     }
 }

@@ -76,22 +76,22 @@ class ConstUnsignedIntegerDictionaryModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        uint     --> encoder["uint"]
-        uint8    --> encoder["uint8"]
-        uint16   --> encoder["uint16"]
-        uint32   --> encoder["uint32"]
-        uint64   --> encoder["uint64"]
+        encoder.addUnsignedIntegerDictionary(uint, key: "uint")
+        encoder.addUnsignedIntegerDictionary(uint8, key: "uint8")
+        encoder.addUnsignedIntegerDictionary(uint16, key: "uint16")
+        encoder.addUnsignedIntegerDictionary(uint32, key: "uint32")
+        encoder.addUnsignedIntegerDictionary(uint64, key: "uint64")
 
-        uintOpt     --> encoder["uintOpt"]
-        uint8Opt    --> encoder["uint8Opt"]
-        uint16Opt   --> encoder["uint16Opt"]
-        uint32Opt   --> encoder["uint32Opt"]
-        uint64Opt   --> encoder["uint64Opt"]
-
-        uintOptNil     --> encoder["uintOptNil"]
-        uint8OptNil    --> encoder["uint8OptNil"]
-        uint16OptNil   --> encoder["uint16OptNil"]
-        uint32OptNil   --> encoder["uint32OptNil"]
-        uint64OptNil   --> encoder["uint64OptNil"]
+        encoder.addUnsignedIntegerDictionary(uintOpt, key: "uintOpt")
+        encoder.addUnsignedIntegerDictionary(uint8Opt, key: "uint8Opt")
+        encoder.addUnsignedIntegerDictionary(uint16Opt, key: "uint16Opt")
+        encoder.addUnsignedIntegerDictionary(uint32Opt, key: "uint32Opt")
+        encoder.addUnsignedIntegerDictionary(uint64Opt, key: "uint64Opt")
+        
+        encoder.addUnsignedIntegerDictionary(uintOptNil, key: "uintOptNil")
+        encoder.addUnsignedIntegerDictionary(uint8OptNil, key: "uint8OptNil")
+        encoder.addUnsignedIntegerDictionary(uint16OptNil, key: "uint16OptNil")
+        encoder.addUnsignedIntegerDictionary(uint32OptNil, key: "uint32OptNil")
+        encoder.addUnsignedIntegerDictionary(uint64OptNil, key: "uint64OptNil")
     }
 }

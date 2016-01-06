@@ -56,17 +56,17 @@ class ConstCGVectorModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        vector --> encoder["vector"]
-        vectorOpt --> encoder["vectorOpt"]
-        vectorOptNil --> encoder["vectorOptNil"]
+        encoder.addEncodable(vector, key: "vector")
+        encoder.addEncodable(vectorOpt, key: "vectorOpt")
+        encoder.addEncodable(vectorOptNil, key: "vectorOptNil")
 
-        vectorA --> encoder["vectorA"]
-        vectorOptA --> encoder["vectorOptA"]
-        vectorOptNilA --> encoder["vectorOptNilA"]
+        encoder.addEncodableArray(vectorA, key: "vectorA")
+        encoder.addEncodableArray(vectorOptA, key: "vectorOptA")
+        encoder.addEncodableArray(vectorOptNilA, key: "vectorOptNilA")
         
-        vectorD --> encoder["vectorD"]
-        vectorOptD --> encoder["vectorOptD"]
-        vectorOptNilD --> encoder["vectorOptNilD"]
+        encoder.addEncodableDictionary(vectorD, key: "vectorD")
+        encoder.addEncodableDictionary(vectorOptD, key: "vectorOptD")
+        encoder.addEncodableDictionary(vectorOptNilD, key: "vectorOptNilD")
     }
     
 }

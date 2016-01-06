@@ -25,8 +25,8 @@ class ConstBoolDictionaryModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        boolD           --> encoder["boolD"]
-        boolDOpt        --> encoder["boolDOpt"]
-        boolDOptNil     --> encoder["boolDOptNil"]
+        encoder.addBoolDictionary(boolD, key: "boolD")
+        encoder.addBoolDictionary(boolDOpt, key: "boolDOpt")
+        encoder.addBoolDictionary(boolDOptNil, key: "boolDOptNil")
     }
 }

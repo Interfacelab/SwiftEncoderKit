@@ -35,8 +35,8 @@ class ConstStringArrayModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        stringA         --> encoder["stringA"]
-        stringAOpt      --> encoder["stringAOpt"]
-        stringAOptNil   --> encoder["stringAOptNil"]
+        encoder.addStringArray(stringA, key: "stringA")
+        encoder.addStringArray(stringAOpt, key: "stringAOpt")
+        encoder.addStringArray(stringAOptNil, key: "stringAOptNil")
     }
 }

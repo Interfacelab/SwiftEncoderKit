@@ -293,7 +293,7 @@ class QuartzCoreTests: XCTestCase {
         encoder.writeToFile(fileName)
 
         let decoder=Decoder(path: fileName)
-        let reModel = CGAffineTransformModel(decoder)
+        let reModel = ConstCGAffineTransformModel(decoder)
 
         XCTAssert(reModel != nil)
 

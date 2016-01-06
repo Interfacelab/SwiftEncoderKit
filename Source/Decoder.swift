@@ -8,7 +8,7 @@
 
 import Foundation
 
-infix operator <-- { associativity right }
+infix operator <-- { }
 
 class Decoder {
     private var _currentKey: String?

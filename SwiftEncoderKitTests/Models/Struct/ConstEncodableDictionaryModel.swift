@@ -27,8 +27,8 @@ class ConstEncodableDictionaryModel : Encodable {
     }
 
     func encode(encoder: Encoder) {
-        rect --> encoder["rect"]
-        rectOpt --> encoder["rectOpt"]
-        rectOptNil --> encoder["rectOptNil"]
+        encoder.addEncodableDictionary(rect, key: "rect")
+        encoder.addEncodableDictionary(rectOpt, key: "rectOpt")
+        encoder.addEncodableDictionary(rectOptNil, key: "rectOptNil")
     }
 }

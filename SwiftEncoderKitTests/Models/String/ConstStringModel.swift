@@ -12,12 +12,6 @@ class ConstStringModel: Encodable {
     let stringOpt: String?
     let stringOptNil: String?
 
-    init() {
-        string = "Crazy"
-        stringOpt = nil
-        stringOptNil = "Stuff"
-    }
-
     init(string: String, stringOpt: String?, stringOptNil: String?) {
         self.string = string
         self.stringOpt = stringOpt
@@ -35,8 +29,8 @@ class ConstStringModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        string          --> encoder["string"]
-        stringOpt       --> encoder["stringOpt"]
-        stringOptNil    --> encoder["stringOptNil"]
+        encoder.addString(string, key: "string")
+        encoder.addString(stringOpt, key: "stringOpt")
+        encoder.addString(stringOptNil, key: "stringOptNil")
     }
 }

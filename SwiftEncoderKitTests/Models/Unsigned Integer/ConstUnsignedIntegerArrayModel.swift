@@ -73,22 +73,22 @@ class ConstUnsignedIntegerArrayModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        uintA     --> encoder["uintA"]
-        uint8A    --> encoder["uint8A"]
-        uint16A   --> encoder["uint16A"]
-        uint32A   --> encoder["uint32A"]
-        uint64A   --> encoder["uint64A"]
+        encoder.addUnsignedIntegerArray(uintA, key: "uintA")
+        encoder.addUnsignedIntegerArray(uint8A, key: "uint8A")
+        encoder.addUnsignedIntegerArray(uint16A, key: "uint16A")
+        encoder.addUnsignedIntegerArray(uint32A, key: "uint32A")
+        encoder.addUnsignedIntegerArray(uint64A, key: "uint64A")
 
-        uintAOpt     --> encoder["uintAOpt"]
-        uint8AOpt    --> encoder["uint8AOpt"]
-        uint16AOpt   --> encoder["uint16AOpt"]
-        uint32AOpt   --> encoder["uint32AOpt"]
-        uint64AOpt   --> encoder["uint64AOpt"]
+        encoder.addUnsignedIntegerArray(uintAOpt, key: "uintAOpt")
+        encoder.addUnsignedIntegerArray(uint8AOpt, key: "uint8AOpt")
+        encoder.addUnsignedIntegerArray(uint16AOpt, key: "uint16AOpt")
+        encoder.addUnsignedIntegerArray(uint32AOpt, key: "uint32AOpt")
+        encoder.addUnsignedIntegerArray(uint64AOpt, key: "uint64AOpt")
 
-        uintAOptNil     --> encoder["uintAOptNil"]
-        uint8AOptNil    --> encoder["uint8AOptNil"]
-        uint16AOptNil   --> encoder["uint16AOptNil"]
-        uint32AOptNil   --> encoder["uint32AOptNil"]
-        uint64AOptNil   --> encoder["uint64AOptNil"]
+        encoder.addUnsignedIntegerArray(uintAOptNil, key: "uintAOptNil")
+        encoder.addUnsignedIntegerArray(uint8AOptNil, key: "uint8AOptNil")
+        encoder.addUnsignedIntegerArray(uint16AOptNil, key: "uint16AOptNil")
+        encoder.addUnsignedIntegerArray(uint32AOptNil, key: "uint32AOptNil")
+        encoder.addUnsignedIntegerArray(uint64AOptNil, key: "uint64AOptNil")
     }
 }

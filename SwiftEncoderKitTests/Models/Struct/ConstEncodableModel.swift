@@ -26,8 +26,8 @@ class ConstEncodableModel : Encodable {
     }
 
     func encode(encoder: Encoder) {
-        rect --> encoder["rect"]
-        rectOpt --> encoder["rectOpt"]
-        rectOptNil --> encoder["rectOptNil"]
+        encoder.addEncodable(rect, key: "rect")
+        encoder.addEncodable(rectOpt, key: "rectOpt")
+        encoder.addEncodable(rectOptNil, key: "rectOptNil")
     }
 }

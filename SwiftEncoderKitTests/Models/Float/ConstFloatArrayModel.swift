@@ -52,12 +52,12 @@ class ConstFloatArrayModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        floatA          --> encoder["floatA"]
-        floatAOpt       --> encoder["floatAOpt"]
-        floatAOptNil    --> encoder["floatAOptNil"]
+        encoder.addFloatArray(floatA, key: "floatA")
+        encoder.addFloatArray(floatAOpt, key: "floatAOpt")
+        encoder.addFloatArray(floatAOptNil, key: "floatAOptNil")
 
-        doubleA         --> encoder["doubleA"]
-        doubleAOpt      --> encoder["doubleAOpt"]
-        doubleAOptNil   --> encoder["doubleAOptNil"]
+        encoder.addDoubleArray(doubleA, key: "doubleA")
+        encoder.addDoubleArray(doubleAOpt, key: "doubleAOpt")
+        encoder.addDoubleArray(doubleAOptNil, key: "doubleAOptNil")
     }
 }

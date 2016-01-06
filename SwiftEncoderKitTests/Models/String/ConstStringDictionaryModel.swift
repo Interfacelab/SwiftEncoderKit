@@ -26,8 +26,8 @@ class ConstStringDictionaryModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        stringD         --> encoder["stringD"]
-        stringDOpt      --> encoder["stringDOpt"]
-        stringDOptNil   --> encoder["stringDOptNil"]
+        encoder.addStringDictionary(stringD, key: "stringD")
+        encoder.addStringDictionary(stringDOpt, key: "stringDOpt")
+        encoder.addStringDictionary(stringDOptNil, key: "stringDOptNil")
     }
 }

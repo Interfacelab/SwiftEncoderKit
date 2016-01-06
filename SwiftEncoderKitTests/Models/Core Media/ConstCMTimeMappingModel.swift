@@ -56,16 +56,16 @@ class ConstCMTimeMappingModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        timeMap --> encoder["timeMap"]
-        timeMapOpt --> encoder["timeMapOpt"]
-        timeMapOptNil --> encoder["timeMapOptNil"]
+        encoder.addEncodable(timeMap, key: "timeMap")
+        encoder.addEncodable(timeMapOpt, key: "timeMapOpt")
+        encoder.addEncodable(timeMapOptNil, key: "timeMapOptNil")
 
-        timeMapA --> encoder["timeMapA"]
-        timeMapOptA --> encoder["timeMapOptA"]
-        timeMapOptNilA --> encoder["timeMapOptNilA"]
+        encoder.addEncodableArray(timeMapA, key: "timeMapA")
+        encoder.addEncodableArray(timeMapOptA, key: "timeMapOptA")
+        encoder.addEncodableArray(timeMapOptNilA, key: "timeMapOptNilA")
 
-        timeMapD --> encoder["timeMapD"]
-        timeMapOptD --> encoder["timeMapOptD"]
-        timeMapOptNilD --> encoder["timeMapOptNilD"]
+        encoder.addEncodableDictionary(timeMapD, key: "timeMapD")
+        encoder.addEncodableDictionary(timeMapOptD, key: "timeMapOptD")
+        encoder.addEncodableDictionary(timeMapOptNilD, key: "timeMapOptNilD")
     }
 }

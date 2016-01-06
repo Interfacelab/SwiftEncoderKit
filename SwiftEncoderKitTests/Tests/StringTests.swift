@@ -21,6 +21,7 @@ class StringTests: XCTestCase {
     }
 
     func testStringEncodingDecoding() {
+
         let fileName = "/tmp/string.plist"
 
         let model = StringModel()

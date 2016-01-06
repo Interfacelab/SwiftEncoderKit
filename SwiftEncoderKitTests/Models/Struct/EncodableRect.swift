@@ -35,7 +35,7 @@ extension EncodableRect : Encodable {
     }
 
     func encode(encoder: Encoder) {
-        origin --> encoder["origin"]
-        size --> encoder["size"]
+        encoder.addEncodable(origin, key: "origin")
+        encoder.addEncodable(size, key: "size")
     }
 }

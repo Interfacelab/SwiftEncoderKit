@@ -39,12 +39,12 @@ class ConstFloatDictionaryModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        floatD          --> encoder["floatD"]
-        floatDOpt       --> encoder["floatDOpt"]
-        floatDOptNil    --> encoder["floatDOptNil"]
+        encoder.addFloatDictionary(floatD, key: "floatD")
+        encoder.addFloatDictionary(floatDOpt, key: "floatDOpt")
+        encoder.addFloatDictionary(floatDOptNil, key: "floatDOptNil")
 
-        doubleD         --> encoder["doubleD"]
-        doubleDOpt      --> encoder["doubleDOpt"]
-        doubleDOptNil   --> encoder["doubleDOptNil"]
+        encoder.addDoubleDictionary(doubleD, key: "doubleD")
+        encoder.addDoubleDictionary(doubleDOpt, key: "doubleDOpt")
+        encoder.addDoubleDictionary(doubleDOptNil, key: "doubleDOptNil")
     }
 }

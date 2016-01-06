@@ -55,12 +55,12 @@ class ConstNSCodingArrayModel : Encodable {
     }
 
     func encode(encoder: Encoder) {
-        imageA --> encoder["imageA"]
-        imageOptA --> encoder["imageOptA"]
-        imageOptNilA --> encoder["imageOptNilA"]
+        encoder.addNSCodingArray(imageA, key: "imageA")
+        encoder.addNSCodingArray(imageOptA, key: "imageOptA")
+        encoder.addNSCodingArray(imageOptNilA, key: "imageOptNilA")
 
-        colorA --> encoder["colorA"]
-        colorOptA --> encoder["colorOptA"]
-        colorOptNilA --> encoder["colorOptNilA"]
+        encoder.addNSCodingArray(colorA, key: "colorA")
+        encoder.addNSCodingArray(colorOptA, key: "colorOptA")
+        encoder.addNSCodingArray(colorOptNilA, key: "colorOptNilA")
     }
 }

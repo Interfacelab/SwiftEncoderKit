@@ -75,22 +75,22 @@ class ConstSignedIntegerDictionaryModel: Encodable {
     }
 
     func encode(encoder: Encoder) {
-        int     --> encoder["int"]
-        int8    --> encoder["int8"]
-        int16   --> encoder["int16"]
-        int32   --> encoder["int32"]
-        int64   --> encoder["int64"]
+        encoder.addIntegerDictionary(int, key: "int")
+        encoder.addIntegerDictionary(int8, key: "int8")
+        encoder.addIntegerDictionary(int16, key: "int16")
+        encoder.addIntegerDictionary(int32, key: "int32")
+        encoder.addIntegerDictionary(int64, key: "int64")
 
-        intOpt     --> encoder["intOpt"]
-        int8Opt    --> encoder["int8Opt"]
-        int16Opt   --> encoder["int16Opt"]
-        int32Opt   --> encoder["int32Opt"]
-        int64Opt   --> encoder["int64Opt"]
+        encoder.addIntegerDictionary(intOpt, key: "intOpt")
+        encoder.addIntegerDictionary(int8Opt, key: "int8Opt")
+        encoder.addIntegerDictionary(int16Opt, key: "int16Opt")
+        encoder.addIntegerDictionary(int32Opt, key: "int32Opt")
+        encoder.addIntegerDictionary(int64Opt, key: "int64Opt")
 
-        intOptNil     --> encoder["intOptNil"]
-        int8OptNil    --> encoder["int8OptNil"]
-        int16OptNil   --> encoder["int16OptNil"]
-        int32OptNil   --> encoder["int32OptNil"]
-        int64OptNil   --> encoder["int64OptNil"]
+        encoder.addIntegerDictionary(intOptNil, key: "intOptNil")
+        encoder.addIntegerDictionary(int8OptNil, key: "int8OptNil")
+        encoder.addIntegerDictionary(int16OptNil, key: "int16OptNil")
+        encoder.addIntegerDictionary(int32OptNil, key: "int32OptNil")
+        encoder.addIntegerDictionary(int64OptNil, key: "int64OptNil")
     }
 }
