@@ -31,11 +31,17 @@ class NSCodingModel : Encodable {
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
 
+        // This non-optional hasn't been initialized yet, so we can't use the
+        // <-- infix operator
         image = decoder.nsCoding("image") ?? UIImage(contentsOfFile: path!)!
+
         imageOpt <-- decoder["imageOpt"]
         imageOptNil <-- decoder["imageOptNil"]
 
+        // This non-optional hasn't been initialized yet, so we can't use the
+        // <-- infix operator
         color = decoder.nsCoding("color") ?? UIColor.whiteColor()
+
         colorOpt <-- decoder["colorOpt"]
         colorOptNil <-- decoder["colorOptNil"]
     }

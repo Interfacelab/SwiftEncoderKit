@@ -48,6 +48,10 @@ class ConstSignedIntegerModel: Encodable {
     }
 
     required init?(_ decoder: Decoder) {
+        // Because all of our properties are constants and haven't been initialized yet
+        // the <-- infix operator won't work here, so we'll use the methods on the
+        // decoder to get our values
+        
         int = decoder.integer("int") ?? 0
         int8 = decoder.integer("int8") ?? 0
         int16 = decoder.integer("int16") ?? 0

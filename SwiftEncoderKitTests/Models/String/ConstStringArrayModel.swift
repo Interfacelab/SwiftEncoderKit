@@ -25,6 +25,10 @@ class ConstStringArrayModel: Encodable {
     }
 
     required init?(_ decoder: Decoder) {
+        // Because all of our properties are constants and haven't been initialized yet
+        // the <-- infix operator won't work here, so we'll use the methods on the
+        // decoder to get our values
+        
         stringA = decoder.stringArray("stringA") ?? []
         stringAOpt = decoder.stringArray("stringAOpt")
         stringAOptNil = decoder.stringArray("stringAOptNil")

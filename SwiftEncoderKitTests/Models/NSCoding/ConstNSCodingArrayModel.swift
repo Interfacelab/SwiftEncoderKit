@@ -41,6 +41,10 @@ class ConstNSCodingArrayModel : Encodable {
     }
 
     required init?(_ decoder: Decoder) {
+        // Because all of our properties are constants and haven't been initialized yet
+        // the <-- infix operator won't work here, so we'll use the methods on the
+        // decoder to get our values
+
         imageA = decoder.nsCodingArray("imageA") ?? []
         imageOptA = decoder.nsCodingArray("imageOptA")
         imageOptNilA = decoder.nsCodingArray("imageOptNilA")

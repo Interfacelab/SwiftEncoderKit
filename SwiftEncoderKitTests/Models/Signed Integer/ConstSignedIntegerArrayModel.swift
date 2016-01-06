@@ -49,6 +49,10 @@ class ConstSignedIntegerArrayModel: Encodable {
     }
 
     required init?(_ decoder: Decoder) {
+        // Because all of our properties are constants and haven't been initialized yet
+        // the <-- infix operator won't work here, so we'll use the methods on the
+        // decoder to get our values
+        
         intA = decoder.integerArray("intA") ?? []
         int8A = decoder.integerArray("int8A") ?? []
         int16A = decoder.integerArray("int16A") ?? []

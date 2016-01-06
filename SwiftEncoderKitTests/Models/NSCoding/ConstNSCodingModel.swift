@@ -47,6 +47,10 @@ class ConstNSCodingModel : Encodable {
         let bundle = NSBundle(forClass: self.dynamicType)
         let path = bundle.pathForResource("test-image", ofType: "jpg")
 
+        // Because all of our properties are constants and haven't been initialized yet
+        // the <-- infix operator won't work here, so we'll use the methods on the
+        // decoder to get our values
+
         image = decoder.nsCoding("image") ?? UIImage(contentsOfFile: path!)!
         imageOpt = decoder.nsCoding("imageOpt")
         imageOptNil = decoder.nsCoding("imageOptNil")

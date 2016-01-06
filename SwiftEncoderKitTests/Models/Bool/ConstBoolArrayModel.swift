@@ -25,6 +25,10 @@ class ConstBoolArrayModel: Encodable {
     }
 
     required init?(_ decoder: Decoder) {
+        // Because all of our properties are constants and haven't been initialized yet
+        // the <-- infix operator won't work here, so we'll use the methods on the
+        // decoder to get our values
+
         boolA = decoder.boolArray("boolA") ?? []
         boolAOpt = decoder.boolArray("boolAOpt")
         boolAOptNil = decoder.boolArray("boolAOptNil")

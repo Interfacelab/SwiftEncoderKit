@@ -48,6 +48,10 @@ class ConstUnsignedIntegerModel: Encodable {
     }
 
     required init?(_ decoder: Decoder) {
+        // Because all of our properties are constants and haven't been initialized yet
+        // the <-- infix operator won't work here, so we'll use the methods on the
+        // decoder to get our values
+        
         uint = decoder.unsignedInteger("uint") ?? 0
         uint8 = decoder.unsignedInteger("uint8") ?? 0
         uint16 = decoder.unsignedInteger("uint16") ?? 0

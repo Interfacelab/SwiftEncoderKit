@@ -25,11 +25,17 @@ class NSCodingArrayModel : Encodable {
     }
 
     required init?(_ decoder: Decoder) {
+        // This non-optional hasn't been initialized yet, so we can't use the
+        // <-- infix operator
         imageA = decoder.nsCodingArray("imageA") ?? []
+
         imageOptA <-- decoder["imageOptA"]
         imageOptNilA <-- decoder["imageOptNilA"]
 
+        // This non-optional hasn't been initialized yet, so we can't use the
+        // <-- infix operator
         colorA = decoder.nsCodingArray("colorA") ?? []
+
         colorOptA <-- decoder["colorOptA"]
         colorOptNilA <-- decoder["colorOptNilA"]
     }
