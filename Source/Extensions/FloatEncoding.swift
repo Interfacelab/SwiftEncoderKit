@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import QuartzCore
 
 protocol FloatEncoding {}
 
@@ -97,6 +98,92 @@ func <-- (inout left: [String: Float]?, right: Decoder) {
     left = rightValue
 }
 
+// MARK: CGFloat
+
+func --> (left:CGFloat, right: Encoder) {
+    right.addCGFloat(left, key: nil)
+}
+
+func <-- (inout left:CGFloat, right: Decoder) {
+    guard let rightValue = right.cgFloat(nil) else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: CGFloat Optional
+
+func --> (left:CGFloat?, right: Encoder) {
+    right.addCGFloat(left, key: nil)
+}
+
+func <-- (inout left:CGFloat?, right: Decoder) {
+    guard let rightValue = right.cgFloat(nil) else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: CGFloat arrays
+
+func --> (left:Array<CGFloat>, right: Encoder) {
+    right.addCGFloatArray(left, key: nil)
+}
+
+func <-- (inout left:Array<CGFloat>, right: Decoder) {
+    guard let rightValue = right.cgFloatArray(nil) else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Optional CGFloat arrays
+
+func --> (left:Array<CGFloat>?, right: Encoder) {
+    right.addCGFloatArray(left, key: nil)
+}
+
+func <-- (inout left:Array<CGFloat>?, right: Decoder) {
+    guard let rightValue = right.cgFloatArray(nil) else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: CGFloat dictionaries
+
+func --> (left: [String: CGFloat], right: Encoder) {
+    right.addCGFloatDictionary(left, key: nil)
+}
+
+func <-- (inout left: [String: CGFloat], right: Decoder) {
+    guard let rightValue: [String: CGFloat] = right.cgFloatDictionary(nil) else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Optional CGFloat dictionaries
+
+func --> (left: [String: CGFloat]?, right: Encoder) {
+    right.addCGFloatDictionary(left, key: nil)
+}
+
+func <-- (inout left: [String: CGFloat]?, right: Decoder) {
+    guard let rightValue: [String: CGFloat] = right.cgFloatDictionary(nil) else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
 
 // MARK: Double
 
@@ -216,6 +303,36 @@ extension Encoder : FloatEncoding {
         }
     }
 
+    // MARK: CGFloat
+
+    func addCGFloat(float: CGFloat?, key: String?) {
+        let val: NSNumber? = (float == nil) ? nil : NSNumber(float: Float(float!))
+
+        if key == nil {
+            setValueForCurrentKey(val)
+        } else {
+            setValue(key!, value: val)
+        }
+    }
+
+    func addCGFloatArray(floatArray: Array<CGFloat>?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(floatArray)
+        } else {
+            setValue(key!, value: floatArray)
+        }
+    }
+
+    func addCGFloatDictionary(floatDict: [String: CGFloat]?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(floatDict)
+        } else {
+            setValue(key!, value: floatDict)
+        }
+    }
+
+    // MARK: Double
+
     func addDouble(double: Double?, key: String?) {
         let val: NSNumber? = (double == nil) ? nil : NSNumber(double: double!)
 
@@ -246,7 +363,7 @@ extension Encoder : FloatEncoding {
 // MARK: Decoder
 
 extension Decoder : FloatEncoding {
-    // MARK: Float and Double types
+    // MARK: Float
 
     func float(key: String?) -> Float? {
         return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Float
@@ -259,6 +376,22 @@ extension Decoder : FloatEncoding {
     func floatDictionary(key: String?) -> [String: Float]? {
         return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? [String: Float]
     }
+
+    // MARK: CGFloat
+
+    func cgFloat(key: String?) -> CGFloat? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? CGFloat
+    }
+
+    func cgFloatArray(key: String?) -> Array<CGFloat>? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<CGFloat>
+    }
+
+    func cgFloatDictionary(key: String?) -> [String: CGFloat]? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? [String: CGFloat]
+    }
+
+    // MARK: Double
 
     func double(key: String?) -> Double? {
         return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Double

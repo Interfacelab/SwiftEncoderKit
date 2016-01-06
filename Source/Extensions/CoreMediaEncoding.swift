@@ -6,7 +6,7 @@
 //  Copyright © 2016 Interfacelab LLC. All rights reserved.
 //
 
-import AVFoundation
+import CoreMedia
 
 extension CMTime: Encodable {
     init?(_ decoder: Decoder) {
