@@ -160,9 +160,9 @@
 		FF0B5C191C3CF3CA00A15C56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF0B5C231C3CF40C00A15C56 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF0B5C241C3CF40C00A15C56 /* SwiftEncoderKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftEncoderKit.h; sourceTree = "<group>"; };
-		FF0B5C301C3CF63D00A15C56 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
-		FF0B5C321C3CF63D00A15C56 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
-		FF0B5C361C3CF63D00A15C56 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
+		FF0B5C301C3CF63D00A15C56 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Decoder.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5C321C3CF63D00A15C56 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Encodable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5C361C3CF63D00A15C56 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Encoder.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF0B5C571C3CF99D00A15C56 /* test-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test-image.jpg"; sourceTree = "<group>"; };
 		FF0B5C751C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstSignedIntegerArrayModel.swift; sourceTree = "<group>"; };
 		FF0B5C761C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstSignedIntegerModel.swift; sourceTree = "<group>"; };
@@ -252,21 +252,21 @@
 		FF0B5D7D1C3D412A00A15C56 /* ConstCGFloatArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCGFloatArrayModel.swift; sourceTree = "<group>"; };
 		FF0B5D7E1C3D412A00A15C56 /* ConstCGFloatDictionaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCGFloatDictionaryModel.swift; sourceTree = "<group>"; };
 		FF0B5D7F1C3D412A00A15C56 /* ConstCGFloatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstCGFloatModel.swift; sourceTree = "<group>"; };
-		FF0B5D921C3D423000A15C56 /* BoolEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolEncoding.swift; sourceTree = "<group>"; };
-		FF0B5D931C3D423000A15C56 /* CoreGraphicsEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsEncoding.swift; sourceTree = "<group>"; };
-		FF0B5D941C3D423000A15C56 /* CoreMediaEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreMediaEncoding.swift; sourceTree = "<group>"; };
-		FF0B5D951C3D423000A15C56 /* EncodableEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableEncoding.swift; sourceTree = "<group>"; };
-		FF0B5D961C3D423000A15C56 /* EnumEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumEncoding.swift; sourceTree = "<group>"; };
-		FF0B5D971C3D423000A15C56 /* FloatEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatEncoding.swift; sourceTree = "<group>"; };
-		FF0B5D981C3D423000A15C56 /* NSCodingEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingEncoding.swift; sourceTree = "<group>"; };
+		FF0B5D921C3D423000A15C56 /* BoolEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BoolEncoding.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5D931C3D423000A15C56 /* CoreGraphicsEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CoreGraphicsEncoding.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5D941C3D423000A15C56 /* CoreMediaEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CoreMediaEncoding.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5D951C3D423000A15C56 /* EncodableEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EncodableEncoding.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5D961C3D423000A15C56 /* EnumEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EnumEncoding.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5D971C3D423000A15C56 /* FloatEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FloatEncoding.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5D981C3D423000A15C56 /* NSCodingEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NSCodingEncoding.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF0B5D991C3D423000A15C56 /* QuartzCoreEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzCoreEncoding.swift; sourceTree = "<group>"; };
 		FF0B5D9A1C3D423000A15C56 /* SignedIntegerEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerEncoding.swift; sourceTree = "<group>"; };
 		FF0B5D9B1C3D423000A15C56 /* StringEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringEncoding.swift; sourceTree = "<group>"; };
 		FF0B5D9C1C3D423000A15C56 /* UnsignedIntegerEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerEncoding.swift; sourceTree = "<group>"; };
-		FF0B5DB41C3D439700A15C56 /* BoolOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolOperators.swift; sourceTree = "<group>"; };
-		FF0B5DB51C3D439700A15C56 /* EncodableOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableOperators.swift; sourceTree = "<group>"; };
-		FF0B5DB61C3D439700A15C56 /* EnumOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumOperators.swift; sourceTree = "<group>"; };
-		FF0B5DB71C3D439700A15C56 /* FloatOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatOperators.swift; sourceTree = "<group>"; };
+		FF0B5DB41C3D439700A15C56 /* BoolOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BoolOperators.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5DB51C3D439700A15C56 /* EncodableOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EncodableOperators.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5DB61C3D439700A15C56 /* EnumOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EnumOperators.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF0B5DB71C3D439700A15C56 /* FloatOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FloatOperators.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF0B5DB81C3D439700A15C56 /* NSCodingOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingOperators.swift; sourceTree = "<group>"; };
 		FF0B5DB91C3D439700A15C56 /* SignedIntegerOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerOperators.swift; sourceTree = "<group>"; };
 		FF0B5DBA1C3D439700A15C56 /* StringOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringOperators.swift; sourceTree = "<group>"; };
@@ -367,8 +367,6 @@
 				FF0B5C741C3CFA8F00A15C56 /* Signed Integer */,
 				FF0B5C791C3CFA8F00A15C56 /* Struct */,
 				FF0B5C7C1C3CFA8F00A15C56 /* Unsigned Integer */,
-				FF0B5C811C3CFA8F00A15C56 /* CGFloat */,
-				FF0B5C831C3CFA8F00A15C56 /* API */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,20 +424,6 @@
 				FF0B5C801C3CFA8F00A15C56 /* UnsignedIntegerModel.swift */,
 			);
 			path = "Unsigned Integer";
-			sourceTree = "<group>";
-		};
-		FF0B5C811C3CFA8F00A15C56 /* CGFloat */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CGFloat;
-			sourceTree = "<group>";
-		};
-		FF0B5C831C3CFA8F00A15C56 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		FF0B5C9D1C3D359E00A15C56 /* Bool */ = {
