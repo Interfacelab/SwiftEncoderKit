@@ -68,6 +68,36 @@ func <-- (inout left:Array<Float>?, right: Decoder) {
     left = rightValue
 }
 
+// MARK: Float dictionaries
+
+func --> (left: [String: Float], right: Encoder) {
+    right.addFloatDictionary(left, key: nil)
+}
+
+func <-- (inout left: [String: Float], right: Decoder) {
+    guard let rightValue: [String: Float] = right.floatDictionary(nil) else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Optional Float dictionaries
+
+func --> (left: [String: Float]?, right: Encoder) {
+    right.addFloatDictionary(left, key: nil)
+}
+
+func <-- (inout left: [String: Float]?, right: Decoder) {
+    guard let rightValue: [String: Float] = right.floatDictionary(nil) else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
+
+
 // MARK: Double
 
 func --> (left:Double, right: Encoder) {
@@ -126,6 +156,35 @@ func <-- (inout left:Array<Double>?, right: Decoder) {
     left = rightValue
 }
 
+// MARK: Double dictionaries
+
+func --> (left: [String: Double], right: Encoder) {
+    right.addDoubleDictionary(left, key: nil)
+}
+
+func <-- (inout left: [String: Double], right: Decoder) {
+    guard let rightValue: [String: Double] = right.doubleDictionary(nil) else {
+        return
+    }
+
+    left = rightValue
+}
+
+// MARK: Optional Double dictionaries
+
+func --> (left: [String: Double]?, right: Encoder) {
+    right.addDoubleDictionary(left, key: nil)
+}
+
+func <-- (inout left: [String: Double]?, right: Decoder) {
+    guard let rightValue: [String: Double] = right.doubleDictionary(nil) else {
+        left = nil
+        return
+    }
+
+    left = rightValue
+}
+
 // MARK: Encoder
 
 extension Encoder : FloatEncoding {
@@ -149,6 +208,14 @@ extension Encoder : FloatEncoding {
         }
     }
 
+    func addFloatDictionary(floatDict: [String: Float]?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(floatDict)
+        } else {
+            setValue(key!, value: floatDict)
+        }
+    }
+
     func addDouble(double: Double?, key: String?) {
         let val: NSNumber? = (double == nil) ? nil : NSNumber(double: double!)
 
@@ -166,6 +233,14 @@ extension Encoder : FloatEncoding {
             setValue(key!, value: doubleArray)
         }
     }
+
+    func addDoubleDictionary(doubleDict: [String: Double]?, key: String?) {
+        if key == nil {
+            setValueForCurrentKey(doubleDict)
+        } else {
+            setValue(key!, value: doubleDict)
+        }
+    }
 }
 
 // MARK: Decoder
@@ -181,11 +256,19 @@ extension Decoder : FloatEncoding {
         return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<Float>
     }
 
+    func floatDictionary(key: String?) -> [String: Float]? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? [String: Float]
+    }
+
     func double(key: String?) -> Double? {
         return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Double
     }
 
     func doubleArray(key: String?) -> Array<Double>? {
         return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? Array<Double>
+    }
+
+    func doubleDictionary(key: String?) -> [String: Double]? {
+        return ((key == nil) ? valueForCurrentKey() : valueForKey(key!)) as? [String: Double]
     }
 }

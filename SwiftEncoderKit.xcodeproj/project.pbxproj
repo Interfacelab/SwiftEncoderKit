@@ -73,6 +73,8 @@
 		FF0B5CEF1C3D39E200A15C56 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CED1C3D39E200A15C56 /* APIModel.swift */; };
 		FF0B5CF21C3D3A3800A15C56 /* ConstNSCodingDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF01C3D3A3800A15C56 /* ConstNSCodingDictionaryModel.swift */; };
 		FF0B5CF31C3D3A3800A15C56 /* NSCodingDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF11C3D3A3800A15C56 /* NSCodingDictionaryModel.swift */; };
+		FF0B5CF61C3D3AA100A15C56 /* ConstFloatDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF41C3D3AA100A15C56 /* ConstFloatDictionaryModel.swift */; };
+		FF0B5CF71C3D3AA100A15C56 /* FloatDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF51C3D3AA100A15C56 /* FloatDictionaryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		FF0B5CED1C3D39E200A15C56 /* APIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		FF0B5CF01C3D3A3800A15C56 /* ConstNSCodingDictionaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstNSCodingDictionaryModel.swift; sourceTree = "<group>"; };
 		FF0B5CF11C3D3A3800A15C56 /* NSCodingDictionaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCodingDictionaryModel.swift; sourceTree = "<group>"; };
+		FF0B5CF41C3D3AA100A15C56 /* ConstFloatDictionaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFloatDictionaryModel.swift; sourceTree = "<group>"; };
+		FF0B5CF51C3D3AA100A15C56 /* FloatDictionaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatDictionaryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +342,8 @@
 		FF0B5CAE1C3D362500A15C56 /* Float */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B5CF41C3D3AA100A15C56 /* ConstFloatDictionaryModel.swift */,
+				FF0B5CF51C3D3AA100A15C56 /* FloatDictionaryModel.swift */,
 				FF0B5CAF1C3D362500A15C56 /* ConstFloatArrayModel.swift */,
 				FF0B5CB01C3D362500A15C56 /* ConstFloatModel.swift */,
 				FF0B5CB11C3D362500A15C56 /* FloatArrayModel.swift */,
@@ -536,6 +542,7 @@
 				FF0B5C8D1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift in Sources */,
 				FF0B5CE71C3D398A00A15C56 /* NSCodingEncoding.swift in Sources */,
 				FF0B5CEE1C3D39E200A15C56 /* APIArrayModel.swift in Sources */,
+				FF0B5CF61C3D3AA100A15C56 /* ConstFloatDictionaryModel.swift in Sources */,
 				FF0B5CDC1C3D386600A15C56 /* UnsignedIntegerTests.swift in Sources */,
 				FF0B5C391C3CF63D00A15C56 /* Decoder.swift in Sources */,
 				FF0B5CBF1C3D366D00A15C56 /* StringModel.swift in Sources */,
@@ -565,6 +572,7 @@
 				FF0B5C551C3CF8BF00A15C56 /* ArrayExtension.swift in Sources */,
 				FF0B5CB41C3D362500A15C56 /* ConstFloatModel.swift in Sources */,
 				FF0B5CF31C3D3A3800A15C56 /* NSCodingDictionaryModel.swift in Sources */,
+				FF0B5CF71C3D3AA100A15C56 /* FloatDictionaryModel.swift in Sources */,
 				FF0B5CA31C3D359E00A15C56 /* BoolModel.swift in Sources */,
 				FF0B5CA21C3D359E00A15C56 /* BoolArrayModel.swift in Sources */,
 				FF0B5C861C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift in Sources */,

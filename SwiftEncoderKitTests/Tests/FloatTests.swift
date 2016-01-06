@@ -20,6 +20,7 @@ class FloatTests: XCTestCase {
         super.tearDown()
     }
 
+    // MARK: Basic encoding
 
     func testFloatEncodingDecoding() {
         let fileName = "/tmp/float.plist"
@@ -54,6 +55,35 @@ class FloatTests: XCTestCase {
         }
     }
 
+    func testConstFloatEncodingDecoding() {
+        let fileName = "/tmp/constFloat.plist"
+
+        let model = ConstFloatModel(float: Float.infinity, floatOpt: Float.infinity / 2.0,
+            floatOptNil: nil, double: Double.infinity, doubleOpt: Double.infinity / 2.0,
+            doubleOptNil: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstFloatModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.float == Float.infinity)
+            XCTAssert(reModel!.floatOpt! == Float.infinity / 2.0)
+            XCTAssert(reModel!.floatOptNil == nil)
+
+            XCTAssert(reModel!.double == Double.infinity)
+            XCTAssert(reModel!.doubleOpt! == Double.infinity / 2.0)
+            XCTAssert(reModel!.doubleOptNil == nil)
+        }
+    }
+
+    // MARK: Array encoding
+
     func testArrayEncodingDecoding() {
         let fileName = "/tmp/floatArray.plist"
 
@@ -84,33 +114,6 @@ class FloatTests: XCTestCase {
             XCTAssert(reModel!.doubleA == [0.0, Double.infinity / 2.0, Double.infinity])
             XCTAssert(reModel!.doubleAOpt! == [20.0, Double.infinity / 3.0, Double.infinity])
             XCTAssert(reModel!.doubleAOptNil == nil)
-        }
-    }
-
-    func testConstFloatEncodingDecoding() {
-        let fileName = "/tmp/constFloat.plist"
-
-        let model = ConstFloatModel(float: Float.infinity, floatOpt: Float.infinity / 2.0,
-            floatOptNil: nil, double: Double.infinity, doubleOpt: Double.infinity / 2.0,
-            doubleOptNil: nil)
-
-        let encoder=Encoder()
-        model.encode(encoder)
-        encoder.writeToFile(fileName)
-
-        let decoder=Decoder(path: fileName)
-        let reModel = ConstFloatModel(decoder)
-
-        XCTAssert(reModel != nil)
-
-        if reModel != nil {
-            XCTAssert(reModel!.float == Float.infinity)
-            XCTAssert(reModel!.floatOpt! == Float.infinity / 2.0)
-            XCTAssert(reModel!.floatOptNil == nil)
-
-            XCTAssert(reModel!.double == Double.infinity)
-            XCTAssert(reModel!.doubleOpt! == Double.infinity / 2.0)
-            XCTAssert(reModel!.doubleOptNil == nil)
         }
     }
 
@@ -145,4 +148,76 @@ class FloatTests: XCTestCase {
         }
     }
 
+    // MARK: Dictionary encoding
+
+    func testDictionaryEncodingDecoding() {
+        let fileName = "/tmp/floatDict.plist"
+
+        let model = FloatDictionaryModel()
+
+        model.floatD = ["a": 0.0, "b": Float.infinity / 2.0, "c": Float.infinity]
+        model.floatDOpt = ["a": 20.0, "b": Float.infinity / 3.0, "c": Float.infinity]
+        model.floatDOptNil = nil
+
+        model.doubleD = ["a": 0.0, "b": Double.infinity / 2.0, "c": Double.infinity]
+        model.doubleDOpt = ["a": 20.0, "b": Double.infinity / 3.0, "c": Double.infinity]
+        model.doubleDOptNil = nil
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = FloatDictionaryModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.floatD == ["a": 0.0, "b": Float.infinity / 2.0, "c": Float.infinity])
+            XCTAssert(reModel!.floatDOpt! == ["a": 20.0, "b": Float.infinity / 3.0,
+                "c": Float.infinity])
+            XCTAssert(reModel!.floatDOptNil == nil)
+
+            XCTAssert(reModel!.doubleD == ["a": 0.0, "b": Double.infinity / 2.0,
+                "c": Double.infinity])
+            XCTAssert(reModel!.doubleDOpt! == ["a": 20.0, "b": Double.infinity / 3.0,
+                "c": Double.infinity])
+            XCTAssert(reModel!.doubleDOptNil == nil)
+        }
+    }
+
+    func testConstDictionaryEncodingDecoding() {
+        let fileName = "/tmp/constFloatDict.plist"
+
+        let floatD = ["a": 0.0, "b": Float.infinity / 2.0, "c": Float.infinity]
+        let floatDOpt = ["a": 20.0, "b": Float.infinity / 3.0, "c": Float.infinity]
+
+        let doubleD = ["a": 0.0, "b": Double.infinity / 2.0, "c": Double.infinity]
+        let doubleDOpt = ["a": 20.0, "b": Double.infinity / 3.0, "c": Double.infinity]
+
+        let model = ConstFloatDictionaryModel(floatD: floatD, floatDOpt: floatDOpt,
+            floatDOptNil: nil, doubleD: doubleD, doubleDOpt: doubleDOpt, doubleDOptNil: nil)
+
+        let encoder=Encoder()
+        model.encode(encoder)
+        encoder.writeToFile(fileName)
+
+        let decoder=Decoder(path: fileName)
+        let reModel = ConstFloatDictionaryModel(decoder)
+
+        XCTAssert(reModel != nil)
+
+        if reModel != nil {
+            XCTAssert(reModel!.floatD == ["a": 0.0, "b": Float.infinity / 2.0, "c": Float.infinity])
+            XCTAssert(reModel!.floatDOpt! == ["a": 20.0, "b": Float.infinity / 3.0,
+                "c": Float.infinity])
+            XCTAssert(reModel!.floatDOptNil == nil)
+
+            XCTAssert(reModel!.doubleD == ["a": 0.0, "b": Double.infinity / 2.0,
+                "c": Double.infinity])
+            XCTAssert(reModel!.doubleDOpt! == ["a": 20.0, "b": Double.infinity / 3.0,
+                "c": Double.infinity])
+            XCTAssert(reModel!.doubleDOptNil == nil)
+        }
+    }
 }
