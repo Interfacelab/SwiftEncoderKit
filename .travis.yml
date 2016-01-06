@@ -6,7 +6,7 @@ env:
     - LANG=en_US.UTF-8
     - LC_ALL=en_US.UTF-8
     - IOS_FRAMEWORK_SCHEME="SwiftEncoderKit-iOS"
-    - OSX_FRAMEWORK_SCHEME="SwiftEncoderKit-Mac"
+    - OSX_FRAMEWORK_SCHEME="SwiftEncoderKit-OSX"
 #    - TVOS_FRAMEWORK_SCHEME="SwiftEncoderKit-tvOS"
     - IOS_SDK=iphonesimulator9.2
     - OSX_SDK=macosx10.11
