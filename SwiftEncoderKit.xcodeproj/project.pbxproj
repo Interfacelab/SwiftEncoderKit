@@ -279,6 +279,142 @@
 		FF0B5E6F1C3D85F500A15C56 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF0B5C571C3CF99D00A15C56 /* test-image.jpg */; };
 		FF0B5E711C3D880B00A15C56 /* OSTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5E701C3D880B00A15C56 /* OSTypes.swift */; };
 		FF0B5E721C3D880B00A15C56 /* OSTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5E701C3D880B00A15C56 /* OSTypes.swift */; };
+		FF0B5E821C3DA6FD00A15C56 /* SwiftEncoderKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0B5E781C3DA6FD00A15C56 /* SwiftEncoderKit.framework */; };
+		FF0B5E8F1C3DA78100A15C56 /* SwiftEncoderKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0B5C241C3CF40C00A15C56 /* SwiftEncoderKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF0B5E901C3DA79300A15C56 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C321C3CF63D00A15C56 /* Encodable.swift */; };
+		FF0B5E911C3DA79300A15C56 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C301C3CF63D00A15C56 /* Decoder.swift */; };
+		FF0B5E921C3DA79300A15C56 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C361C3CF63D00A15C56 /* Encoder.swift */; };
+		FF0B5E931C3DA79400A15C56 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C321C3CF63D00A15C56 /* Encodable.swift */; };
+		FF0B5E941C3DA79400A15C56 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C301C3CF63D00A15C56 /* Decoder.swift */; };
+		FF0B5E951C3DA79400A15C56 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C361C3CF63D00A15C56 /* Encoder.swift */; };
+		FF0B5E961C3DA79800A15C56 /* BoolOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB41C3D439700A15C56 /* BoolOperators.swift */; };
+		FF0B5E971C3DA79800A15C56 /* EncodableOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB51C3D439700A15C56 /* EncodableOperators.swift */; };
+		FF0B5E981C3DA79800A15C56 /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB61C3D439700A15C56 /* EnumOperators.swift */; };
+		FF0B5E991C3DA79800A15C56 /* FloatOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB71C3D439700A15C56 /* FloatOperators.swift */; };
+		FF0B5E9A1C3DA79800A15C56 /* NSCodingOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB81C3D439700A15C56 /* NSCodingOperators.swift */; };
+		FF0B5E9B1C3DA79800A15C56 /* SignedIntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB91C3D439700A15C56 /* SignedIntegerOperators.swift */; };
+		FF0B5E9C1C3DA79800A15C56 /* StringOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DBA1C3D439700A15C56 /* StringOperators.swift */; };
+		FF0B5E9D1C3DA79800A15C56 /* UnsignedIntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DBB1C3D439700A15C56 /* UnsignedIntegerOperators.swift */; };
+		FF0B5E9E1C3DA79900A15C56 /* BoolOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB41C3D439700A15C56 /* BoolOperators.swift */; };
+		FF0B5E9F1C3DA79900A15C56 /* EncodableOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB51C3D439700A15C56 /* EncodableOperators.swift */; };
+		FF0B5EA01C3DA79900A15C56 /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB61C3D439700A15C56 /* EnumOperators.swift */; };
+		FF0B5EA11C3DA79900A15C56 /* FloatOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB71C3D439700A15C56 /* FloatOperators.swift */; };
+		FF0B5EA21C3DA79900A15C56 /* NSCodingOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB81C3D439700A15C56 /* NSCodingOperators.swift */; };
+		FF0B5EA31C3DA79900A15C56 /* SignedIntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DB91C3D439700A15C56 /* SignedIntegerOperators.swift */; };
+		FF0B5EA41C3DA79900A15C56 /* StringOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DBA1C3D439700A15C56 /* StringOperators.swift */; };
+		FF0B5EA51C3DA79900A15C56 /* UnsignedIntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5DBB1C3D439700A15C56 /* UnsignedIntegerOperators.swift */; };
+		FF0B5EA61C3DA79D00A15C56 /* BoolEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D921C3D423000A15C56 /* BoolEncoding.swift */; };
+		FF0B5EA71C3DA79D00A15C56 /* CoreGraphicsEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D931C3D423000A15C56 /* CoreGraphicsEncoding.swift */; };
+		FF0B5EA81C3DA79D00A15C56 /* CoreMediaEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D941C3D423000A15C56 /* CoreMediaEncoding.swift */; };
+		FF0B5EA91C3DA79D00A15C56 /* EncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D951C3D423000A15C56 /* EncodableEncoding.swift */; };
+		FF0B5EAA1C3DA79D00A15C56 /* EnumEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D961C3D423000A15C56 /* EnumEncoding.swift */; };
+		FF0B5EAB1C3DA79D00A15C56 /* FloatEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D971C3D423000A15C56 /* FloatEncoding.swift */; };
+		FF0B5EAC1C3DA79D00A15C56 /* NSCodingEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D981C3D423000A15C56 /* NSCodingEncoding.swift */; };
+		FF0B5EAD1C3DA79D00A15C56 /* QuartzCoreEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D991C3D423000A15C56 /* QuartzCoreEncoding.swift */; };
+		FF0B5EAE1C3DA79D00A15C56 /* SignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D9A1C3D423000A15C56 /* SignedIntegerEncoding.swift */; };
+		FF0B5EAF1C3DA79D00A15C56 /* StringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D9B1C3D423000A15C56 /* StringEncoding.swift */; };
+		FF0B5EB01C3DA79D00A15C56 /* UnsignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D9C1C3D423000A15C56 /* UnsignedIntegerEncoding.swift */; };
+		FF0B5EB11C3DA79E00A15C56 /* BoolEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D921C3D423000A15C56 /* BoolEncoding.swift */; };
+		FF0B5EB21C3DA79E00A15C56 /* CoreGraphicsEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D931C3D423000A15C56 /* CoreGraphicsEncoding.swift */; };
+		FF0B5EB31C3DA79E00A15C56 /* CoreMediaEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D941C3D423000A15C56 /* CoreMediaEncoding.swift */; };
+		FF0B5EB41C3DA79E00A15C56 /* EncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D951C3D423000A15C56 /* EncodableEncoding.swift */; };
+		FF0B5EB51C3DA79E00A15C56 /* EnumEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D961C3D423000A15C56 /* EnumEncoding.swift */; };
+		FF0B5EB61C3DA79E00A15C56 /* FloatEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D971C3D423000A15C56 /* FloatEncoding.swift */; };
+		FF0B5EB71C3DA79E00A15C56 /* NSCodingEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D981C3D423000A15C56 /* NSCodingEncoding.swift */; };
+		FF0B5EB81C3DA79E00A15C56 /* QuartzCoreEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D991C3D423000A15C56 /* QuartzCoreEncoding.swift */; };
+		FF0B5EB91C3DA79E00A15C56 /* SignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D9A1C3D423000A15C56 /* SignedIntegerEncoding.swift */; };
+		FF0B5EBA1C3DA79E00A15C56 /* StringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D9B1C3D423000A15C56 /* StringEncoding.swift */; };
+		FF0B5EBB1C3DA79E00A15C56 /* UnsignedIntegerEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D9C1C3D423000A15C56 /* UnsignedIntegerEncoding.swift */; };
+		FF0B5EBC1C3DA7AF00A15C56 /* CGFloatArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D7A1C3D412A00A15C56 /* CGFloatArrayModel.swift */; };
+		FF0B5EBD1C3DA7AF00A15C56 /* CGFloatDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D7B1C3D412A00A15C56 /* CGFloatDictionaryModel.swift */; };
+		FF0B5EBE1C3DA7AF00A15C56 /* CGFloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D7C1C3D412A00A15C56 /* CGFloatModel.swift */; };
+		FF0B5EBF1C3DA7AF00A15C56 /* ConstCGFloatArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D7D1C3D412A00A15C56 /* ConstCGFloatArrayModel.swift */; };
+		FF0B5EC01C3DA7AF00A15C56 /* ConstCGFloatDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D7E1C3D412A00A15C56 /* ConstCGFloatDictionaryModel.swift */; };
+		FF0B5EC11C3DA7AF00A15C56 /* ConstCGFloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D7F1C3D412A00A15C56 /* ConstCGFloatModel.swift */; };
+		FF0B5EC21C3DA7B300A15C56 /* CGAffineTransformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D691C3D408700A15C56 /* CGAffineTransformModel.swift */; };
+		FF0B5EC31C3DA7B300A15C56 /* CGRectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6A1C3D408700A15C56 /* CGRectModel.swift */; };
+		FF0B5EC41C3DA7B300A15C56 /* CGVectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6B1C3D408700A15C56 /* CGVectorModel.swift */; };
+		FF0B5EC51C3DA7B300A15C56 /* ConstCGAffineTransformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6C1C3D408700A15C56 /* ConstCGAffineTransformModel.swift */; };
+		FF0B5EC61C3DA7B300A15C56 /* ConstCGRectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6D1C3D408700A15C56 /* ConstCGRectModel.swift */; };
+		FF0B5EC71C3DA7B300A15C56 /* ConstCGVectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D6E1C3D408700A15C56 /* ConstCGVectorModel.swift */; };
+		FF0B5EC81C3DA7B700A15C56 /* CATransform3DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D621C3D402A00A15C56 /* CATransform3DModel.swift */; };
+		FF0B5EC91C3DA7B700A15C56 /* ConstCATransform3DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D631C3D402A00A15C56 /* ConstCATransform3DModel.swift */; };
+		FF0B5ECA1C3DA7BB00A15C56 /* CMTimeMappingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D5D1C3D3FCF00A15C56 /* CMTimeMappingModel.swift */; };
+		FF0B5ECB1C3DA7BB00A15C56 /* ConstCMTimeMappingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D5E1C3D3FCF00A15C56 /* ConstCMTimeMappingModel.swift */; };
+		FF0B5ECC1C3DA7BB00A15C56 /* CMTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D551C3D3F8F00A15C56 /* CMTimeModel.swift */; };
+		FF0B5ECD1C3DA7BB00A15C56 /* CMTimeRangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D561C3D3F8F00A15C56 /* CMTimeRangeModel.swift */; };
+		FF0B5ECE1C3DA7BB00A15C56 /* ConstCMTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D571C3D3F8F00A15C56 /* ConstCMTimeModel.swift */; };
+		FF0B5ECF1C3DA7BB00A15C56 /* ConstCMTimeRangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D581C3D3F8F00A15C56 /* ConstCMTimeRangeModel.swift */; };
+		FF0B5ED01C3DA7C000A15C56 /* ConstEnumArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D311C3D3D0800A15C56 /* ConstEnumArrayModel.swift */; };
+		FF0B5ED11C3DA7C000A15C56 /* ConstEnumDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D321C3D3D0800A15C56 /* ConstEnumDictionaryModel.swift */; };
+		FF0B5ED21C3DA7C000A15C56 /* ConstEnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D331C3D3D0800A15C56 /* ConstEnumModel.swift */; };
+		FF0B5ED31C3DA7C000A15C56 /* EnumArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D341C3D3D0800A15C56 /* EnumArrayModel.swift */; };
+		FF0B5ED41C3DA7C000A15C56 /* EnumDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D351C3D3D0800A15C56 /* EnumDictionaryModel.swift */; };
+		FF0B5ED51C3DA7C000A15C56 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D241C3D3C8800A15C56 /* EnumModel.swift */; };
+		FF0B5ED61C3DA7C000A15C56 /* TestEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D251C3D3C8800A15C56 /* TestEnums.swift */; };
+		FF0B5ED71C3DA7C500A15C56 /* ConstStringDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF81C3D3B1F00A15C56 /* ConstStringDictionaryModel.swift */; };
+		FF0B5ED81C3DA7C500A15C56 /* StringDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF91C3D3B1F00A15C56 /* StringDictionaryModel.swift */; };
+		FF0B5ED91C3DA7C500A15C56 /* ConstStringArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CB81C3D366D00A15C56 /* ConstStringArrayModel.swift */; };
+		FF0B5EDA1C3DA7C500A15C56 /* ConstStringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CB91C3D366D00A15C56 /* ConstStringModel.swift */; };
+		FF0B5EDB1C3DA7C500A15C56 /* StringArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CBA1C3D366D00A15C56 /* StringArrayModel.swift */; };
+		FF0B5EDC1C3DA7C500A15C56 /* StringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CBB1C3D366D00A15C56 /* StringModel.swift */; };
+		FF0B5EDD1C3DA7CA00A15C56 /* ConstFloatDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF41C3D3AA100A15C56 /* ConstFloatDictionaryModel.swift */; };
+		FF0B5EDE1C3DA7CA00A15C56 /* FloatDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF51C3D3AA100A15C56 /* FloatDictionaryModel.swift */; };
+		FF0B5EDF1C3DA7CA00A15C56 /* ConstFloatArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CAF1C3D362500A15C56 /* ConstFloatArrayModel.swift */; };
+		FF0B5EE01C3DA7CA00A15C56 /* ConstFloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CB01C3D362500A15C56 /* ConstFloatModel.swift */; };
+		FF0B5EE11C3DA7CA00A15C56 /* FloatArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CB11C3D362500A15C56 /* FloatArrayModel.swift */; };
+		FF0B5EE21C3DA7CA00A15C56 /* FloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CB21C3D362500A15C56 /* FloatModel.swift */; };
+		FF0B5EE31C3DA7CF00A15C56 /* BoolDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CFC1C3D3B5B00A15C56 /* BoolDictionaryModel.swift */; };
+		FF0B5EE41C3DA7CF00A15C56 /* ConstBoolDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CFD1C3D3B5B00A15C56 /* ConstBoolDictionaryModel.swift */; };
+		FF0B5EE51C3DA7CF00A15C56 /* BoolArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C9E1C3D359E00A15C56 /* BoolArrayModel.swift */; };
+		FF0B5EE61C3DA7CF00A15C56 /* BoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C9F1C3D359E00A15C56 /* BoolModel.swift */; };
+		FF0B5EE71C3DA7CF00A15C56 /* ConstBoolArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CA01C3D359E00A15C56 /* ConstBoolArrayModel.swift */; };
+		FF0B5EE81C3DA7CF00A15C56 /* ConstBoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CA11C3D359E00A15C56 /* ConstBoolModel.swift */; };
+		FF0B5EE91C3DA7D400A15C56 /* ConstNSCodingDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF01C3D3A3800A15C56 /* ConstNSCodingDictionaryModel.swift */; };
+		FF0B5EEA1C3DA7D400A15C56 /* NSCodingDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CF11C3D3A3800A15C56 /* NSCodingDictionaryModel.swift */; };
+		FF0B5EEB1C3DA7D400A15C56 /* ConstNSCodingArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CC41C3D36FD00A15C56 /* ConstNSCodingArrayModel.swift */; };
+		FF0B5EEC1C3DA7D400A15C56 /* ConstNSCodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CC51C3D36FD00A15C56 /* ConstNSCodingModel.swift */; };
+		FF0B5EED1C3DA7D400A15C56 /* NSCodingArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CC61C3D36FD00A15C56 /* NSCodingArrayModel.swift */; };
+		FF0B5EEE1C3DA7D400A15C56 /* NSCodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CC71C3D36FD00A15C56 /* NSCodingModel.swift */; };
+		FF0B5EEF1C3DA7D800A15C56 /* ConstSignedIntegerDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CCC1C3D37FF00A15C56 /* ConstSignedIntegerDictionaryModel.swift */; };
+		FF0B5EF01C3DA7D800A15C56 /* SignedIntegerDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CCD1C3D37FF00A15C56 /* SignedIntegerDictionaryModel.swift */; };
+		FF0B5EF11C3DA7D800A15C56 /* ConstSignedIntegerArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C751C3CFA8F00A15C56 /* ConstSignedIntegerArrayModel.swift */; };
+		FF0B5EF21C3DA7D800A15C56 /* ConstSignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C761C3CFA8F00A15C56 /* ConstSignedIntegerModel.swift */; };
+		FF0B5EF31C3DA7D800A15C56 /* SignedIntegerArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C771C3CFA8F00A15C56 /* SignedIntegerArrayModel.swift */; };
+		FF0B5EF41C3DA7D800A15C56 /* SignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C781C3CFA8F00A15C56 /* SignedIntegerModel.swift */; };
+		FF0B5EF51C3DA7DF00A15C56 /* ConstEncodableArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D001C3D3BA800A15C56 /* ConstEncodableArrayModel.swift */; };
+		FF0B5EF61C3DA7DF00A15C56 /* ConstEncodableDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D011C3D3BA800A15C56 /* ConstEncodableDictionaryModel.swift */; };
+		FF0B5EF71C3DA7DF00A15C56 /* ConstEncodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D021C3D3BA800A15C56 /* ConstEncodableModel.swift */; };
+		FF0B5EF81C3DA7DF00A15C56 /* EncodableArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D031C3D3BA800A15C56 /* EncodableArrayModel.swift */; };
+		FF0B5EF91C3DA7DF00A15C56 /* EncodableDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D041C3D3BA800A15C56 /* EncodableDictionaryModel.swift */; };
+		FF0B5EFA1C3DA7DF00A15C56 /* EncodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D051C3D3BA800A15C56 /* EncodableModel.swift */; };
+		FF0B5EFB1C3DA7DF00A15C56 /* EncodablePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D061C3D3BA800A15C56 /* EncodablePoint.swift */; };
+		FF0B5EFC1C3DA7DF00A15C56 /* EncodableRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D071C3D3BA800A15C56 /* EncodableRect.swift */; };
+		FF0B5EFD1C3DA7DF00A15C56 /* EncodableSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D081C3D3BA800A15C56 /* EncodableSize.swift */; };
+		FF0B5EFE1C3DA7E400A15C56 /* ConstUnsignedIntegerDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CE21C3D394300A15C56 /* ConstUnsignedIntegerDictionaryModel.swift */; };
+		FF0B5EFF1C3DA7E400A15C56 /* UnsignedIntegerDictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CE31C3D394300A15C56 /* UnsignedIntegerDictionaryModel.swift */; };
+		FF0B5F001C3DA7E400A15C56 /* ConstUnsignedIntegerArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C7D1C3CFA8F00A15C56 /* ConstUnsignedIntegerArrayModel.swift */; };
+		FF0B5F011C3DA7E400A15C56 /* ConstUnsignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C7E1C3CFA8F00A15C56 /* ConstUnsignedIntegerModel.swift */; };
+		FF0B5F021C3DA7E400A15C56 /* UnsignedIntegerArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C7F1C3CFA8F00A15C56 /* UnsignedIntegerArrayModel.swift */; };
+		FF0B5F031C3DA7E400A15C56 /* UnsignedIntegerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5C801C3CFA8F00A15C56 /* UnsignedIntegerModel.swift */; };
+		FF0B5F041C3DA7E800A15C56 /* OSTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5E701C3D880B00A15C56 /* OSTypes.swift */; };
+		FF0B5F051C3DA7F000A15C56 /* CGFloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D771C3D412200A15C56 /* CGFloatTests.swift */; };
+		FF0B5F061C3DA7F000A15C56 /* CoreAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D751C3D409800A15C56 /* CoreAnimationTests.swift */; };
+		FF0B5F071C3DA7F000A15C56 /* QuartzCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D661C3D403C00A15C56 /* QuartzCoreTests.swift */; };
+		FF0B5F081C3DA7F000A15C56 /* CoreMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D521C3D3F4000A15C56 /* CoreMediaTests.swift */; };
+		FF0B5F091C3DA7F000A15C56 /* EnumArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D2D1C3D3CF400A15C56 /* EnumArrayTests.swift */; };
+		FF0B5F0A1C3DA7F000A15C56 /* EnumDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D2E1C3D3CF400A15C56 /* EnumDictionaryTests.swift */; };
+		FF0B5F0B1C3DA7F000A15C56 /* EnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D2A1C3D3CA000A15C56 /* EnumTests.swift */; };
+		FF0B5F0C1C3DA7F000A15C56 /* EncodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5D151C3D3BDA00A15C56 /* EncodableTests.swift */; };
+		FF0B5F0D1C3DA7F000A15C56 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CD11C3D386600A15C56 /* BoolTests.swift */; };
+		FF0B5F0E1C3DA7F000A15C56 /* FloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CD21C3D386600A15C56 /* FloatTests.swift */; };
+		FF0B5F0F1C3DA7F000A15C56 /* NSCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CD31C3D386600A15C56 /* NSCodingTests.swift */; };
+		FF0B5F101C3DA7F000A15C56 /* SignedIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CD41C3D386600A15C56 /* SignedIntegerTests.swift */; };
+		FF0B5F111C3DA7F000A15C56 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CD51C3D386600A15C56 /* StringTests.swift */; };
+		FF0B5F121C3DA7F000A15C56 /* UnsignedIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CD61C3D386600A15C56 /* UnsignedIntegerTests.swift */; };
+		FF0B5F131C3DA7F000A15C56 /* NSCodingReferenceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CE01C3D38BF00A15C56 /* NSCodingReferenceTest.swift */; };
+		FF0B5F141C3DA7F400A15C56 /* NSCodingReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B5CDE1C3D38B500A15C56 /* NSCodingReference.swift */; };
+		FF0B5F151C3DA7FA00A15C56 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF0B5C571C3CF99D00A15C56 /* test-image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +431,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FF0B5DD21C3D84B900A15C56;
 			remoteInfo = "SwiftEncoderKit-OSX";
+		};
+		FF0B5E831C3DA6FD00A15C56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF0B5BFF1C3CF3C900A15C56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF0B5E771C3DA6FD00A15C56;
+			remoteInfo = "SwiftEncoderKit-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -416,8 +559,10 @@
 		FF0B5DBA1C3D439700A15C56 /* StringOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringOperators.swift; sourceTree = "<group>"; };
 		FF0B5DBB1C3D439700A15C56 /* UnsignedIntegerOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsignedIntegerOperators.swift; sourceTree = "<group>"; };
 		FF0B5DD31C3D84B900A15C56 /* SwiftEncoderKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftEncoderKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF0B5DDC1C3D84B900A15C56 /* SwiftEncoderKitTest-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftEncoderKitTest-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF0B5DDC1C3D84B900A15C56 /* SwiftEncoderKitTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftEncoderKitTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0B5E701C3D880B00A15C56 /* OSTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTypes.swift; sourceTree = "<group>"; };
+		FF0B5E781C3DA6FD00A15C56 /* SwiftEncoderKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftEncoderKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF0B5E811C3DA6FD00A15C56 /* SwiftEncoderKitTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftEncoderKitTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,6 +596,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF0B5E741C3DA6FD00A15C56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0B5E7E1C3DA6FD00A15C56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0B5E821C3DA6FD00A15C56 /* SwiftEncoderKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -470,7 +630,9 @@
 				FF0B5C081C3CF3C900A15C56 /* SwiftEncoderKit.framework */,
 				FF0B5C121C3CF3CA00A15C56 /* SwiftEncoderKitTests-iOS.xctest */,
 				FF0B5DD31C3D84B900A15C56 /* SwiftEncoderKit.framework */,
-				FF0B5DDC1C3D84B900A15C56 /* SwiftEncoderKitTest-OSX.xctest */,
+				FF0B5DDC1C3D84B900A15C56 /* SwiftEncoderKitTests-OSX.xctest */,
+				FF0B5E781C3DA6FD00A15C56 /* SwiftEncoderKit.framework */,
+				FF0B5E811C3DA6FD00A15C56 /* SwiftEncoderKitTests-tvOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -774,6 +936,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF0B5E751C3DA6FD00A15C56 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0B5E8F1C3DA78100A15C56 /* SwiftEncoderKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -832,9 +1002,9 @@
 			productReference = FF0B5DD31C3D84B900A15C56 /* SwiftEncoderKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		FF0B5DDB1C3D84B900A15C56 /* SwiftEncoderKitTest-OSX */ = {
+		FF0B5DDB1C3D84B900A15C56 /* SwiftEncoderKitTests-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF0B5DE91C3D84B900A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKitTest-OSX" */;
+			buildConfigurationList = FF0B5DE91C3D84B900A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKitTests-OSX" */;
 			buildPhases = (
 				FF0B5DD81C3D84B900A15C56 /* Sources */,
 				FF0B5DD91C3D84B900A15C56 /* Frameworks */,
@@ -845,9 +1015,45 @@
 			dependencies = (
 				FF0B5DDF1C3D84B900A15C56 /* PBXTargetDependency */,
 			);
-			name = "SwiftEncoderKitTest-OSX";
+			name = "SwiftEncoderKitTests-OSX";
 			productName = "SwiftEncoderKit-OSXTests";
-			productReference = FF0B5DDC1C3D84B900A15C56 /* SwiftEncoderKitTest-OSX.xctest */;
+			productReference = FF0B5DDC1C3D84B900A15C56 /* SwiftEncoderKitTests-OSX.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF0B5E771C3DA6FD00A15C56 /* SwiftEncoderKit-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0B5E8D1C3DA6FD00A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKit-tvOS" */;
+			buildPhases = (
+				FF0B5E731C3DA6FD00A15C56 /* Sources */,
+				FF0B5E741C3DA6FD00A15C56 /* Frameworks */,
+				FF0B5E751C3DA6FD00A15C56 /* Headers */,
+				FF0B5E761C3DA6FD00A15C56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftEncoderKit-tvOS";
+			productName = "SwiftEncoderKit-tvOS";
+			productReference = FF0B5E781C3DA6FD00A15C56 /* SwiftEncoderKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FF0B5E801C3DA6FD00A15C56 /* SwiftEncoderKitTests-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0B5E8E1C3DA6FD00A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKitTests-tvOS" */;
+			buildPhases = (
+				FF0B5E7D1C3DA6FD00A15C56 /* Sources */,
+				FF0B5E7E1C3DA6FD00A15C56 /* Frameworks */,
+				FF0B5E7F1C3DA6FD00A15C56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF0B5E841C3DA6FD00A15C56 /* PBXTargetDependency */,
+			);
+			name = "SwiftEncoderKitTests-tvOS";
+			productName = "SwiftEncoderKit-tvOSTests";
+			productReference = FF0B5E811C3DA6FD00A15C56 /* SwiftEncoderKitTests-tvOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -872,6 +1078,12 @@
 					FF0B5DDB1C3D84B900A15C56 = {
 						CreatedOnToolsVersion = 7.2;
 					};
+					FF0B5E771C3DA6FD00A15C56 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					FF0B5E801C3DA6FD00A15C56 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 				};
 			};
 			buildConfigurationList = FF0B5C021C3CF3C900A15C56 /* Build configuration list for PBXProject "SwiftEncoderKit" */;
@@ -888,8 +1100,10 @@
 			targets = (
 				FF0B5C071C3CF3C900A15C56 /* SwiftEncoderKit-iOS */,
 				FF0B5DD21C3D84B900A15C56 /* SwiftEncoderKit-OSX */,
+				FF0B5E771C3DA6FD00A15C56 /* SwiftEncoderKit-tvOS */,
 				FF0B5C111C3CF3CA00A15C56 /* SwiftEncoderKitTests-iOS */,
-				FF0B5DDB1C3D84B900A15C56 /* SwiftEncoderKitTest-OSX */,
+				FF0B5DDB1C3D84B900A15C56 /* SwiftEncoderKitTests-OSX */,
+				FF0B5E801C3DA6FD00A15C56 /* SwiftEncoderKitTests-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -922,6 +1136,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0B5E6F1C3D85F500A15C56 /* test-image.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0B5E761C3DA6FD00A15C56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0B5E7F1C3DA6FD00A15C56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0B5F151C3DA7FA00A15C56 /* test-image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1238,6 +1467,153 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF0B5E731C3DA6FD00A15C56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0B5EA81C3DA79D00A15C56 /* CoreMediaEncoding.swift in Sources */,
+				FF0B5EAC1C3DA79D00A15C56 /* NSCodingEncoding.swift in Sources */,
+				FF0B5E9B1C3DA79800A15C56 /* SignedIntegerOperators.swift in Sources */,
+				FF0B5EAD1C3DA79D00A15C56 /* QuartzCoreEncoding.swift in Sources */,
+				FF0B5E911C3DA79300A15C56 /* Decoder.swift in Sources */,
+				FF0B5E9C1C3DA79800A15C56 /* StringOperators.swift in Sources */,
+				FF0B5E961C3DA79800A15C56 /* BoolOperators.swift in Sources */,
+				FF0B5EA61C3DA79D00A15C56 /* BoolEncoding.swift in Sources */,
+				FF0B5E901C3DA79300A15C56 /* Encodable.swift in Sources */,
+				FF0B5EAB1C3DA79D00A15C56 /* FloatEncoding.swift in Sources */,
+				FF0B5E971C3DA79800A15C56 /* EncodableOperators.swift in Sources */,
+				FF0B5E981C3DA79800A15C56 /* EnumOperators.swift in Sources */,
+				FF0B5EAF1C3DA79D00A15C56 /* StringEncoding.swift in Sources */,
+				FF0B5EAA1C3DA79D00A15C56 /* EnumEncoding.swift in Sources */,
+				FF0B5EAE1C3DA79D00A15C56 /* SignedIntegerEncoding.swift in Sources */,
+				FF0B5E991C3DA79800A15C56 /* FloatOperators.swift in Sources */,
+				FF0B5EB01C3DA79D00A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
+				FF0B5EA71C3DA79D00A15C56 /* CoreGraphicsEncoding.swift in Sources */,
+				FF0B5E9D1C3DA79800A15C56 /* UnsignedIntegerOperators.swift in Sources */,
+				FF0B5E9A1C3DA79800A15C56 /* NSCodingOperators.swift in Sources */,
+				FF0B5E921C3DA79300A15C56 /* Encoder.swift in Sources */,
+				FF0B5EA91C3DA79D00A15C56 /* EncodableEncoding.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0B5E7D1C3DA6FD00A15C56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0B5F131C3DA7F000A15C56 /* NSCodingReferenceTest.swift in Sources */,
+				FF0B5EE41C3DA7CF00A15C56 /* ConstBoolDictionaryModel.swift in Sources */,
+				FF0B5F011C3DA7E400A15C56 /* ConstUnsignedIntegerModel.swift in Sources */,
+				FF0B5EB31C3DA79E00A15C56 /* CoreMediaEncoding.swift in Sources */,
+				FF0B5EEF1C3DA7D800A15C56 /* ConstSignedIntegerDictionaryModel.swift in Sources */,
+				FF0B5EC31C3DA7B300A15C56 /* CGRectModel.swift in Sources */,
+				FF0B5ED41C3DA7C000A15C56 /* EnumDictionaryModel.swift in Sources */,
+				FF0B5EBE1C3DA7AF00A15C56 /* CGFloatModel.swift in Sources */,
+				FF0B5EFD1C3DA7DF00A15C56 /* EncodableSize.swift in Sources */,
+				FF0B5F041C3DA7E800A15C56 /* OSTypes.swift in Sources */,
+				FF0B5F0D1C3DA7F000A15C56 /* BoolTests.swift in Sources */,
+				FF0B5EB71C3DA79E00A15C56 /* NSCodingEncoding.swift in Sources */,
+				FF0B5ED11C3DA7C000A15C56 /* ConstEnumDictionaryModel.swift in Sources */,
+				FF0B5EBC1C3DA7AF00A15C56 /* CGFloatArrayModel.swift in Sources */,
+				FF0B5EF91C3DA7DF00A15C56 /* EncodableDictionaryModel.swift in Sources */,
+				FF0B5EA31C3DA79900A15C56 /* SignedIntegerOperators.swift in Sources */,
+				FF0B5EF81C3DA7DF00A15C56 /* EncodableArrayModel.swift in Sources */,
+				FF0B5EB81C3DA79E00A15C56 /* QuartzCoreEncoding.swift in Sources */,
+				FF0B5F0B1C3DA7F000A15C56 /* EnumTests.swift in Sources */,
+				FF0B5ED81C3DA7C500A15C56 /* StringDictionaryModel.swift in Sources */,
+				FF0B5ECB1C3DA7BB00A15C56 /* ConstCMTimeMappingModel.swift in Sources */,
+				FF0B5EFE1C3DA7E400A15C56 /* ConstUnsignedIntegerDictionaryModel.swift in Sources */,
+				FF0B5F0C1C3DA7F000A15C56 /* EncodableTests.swift in Sources */,
+				FF0B5EC91C3DA7B700A15C56 /* ConstCATransform3DModel.swift in Sources */,
+				FF0B5EF01C3DA7D800A15C56 /* SignedIntegerDictionaryModel.swift in Sources */,
+				FF0B5E941C3DA79400A15C56 /* Decoder.swift in Sources */,
+				FF0B5EF31C3DA7D800A15C56 /* SignedIntegerArrayModel.swift in Sources */,
+				FF0B5EC21C3DA7B300A15C56 /* CGAffineTransformModel.swift in Sources */,
+				FF0B5EE61C3DA7CF00A15C56 /* BoolModel.swift in Sources */,
+				FF0B5EF21C3DA7D800A15C56 /* ConstSignedIntegerModel.swift in Sources */,
+				FF0B5EED1C3DA7D400A15C56 /* NSCodingArrayModel.swift in Sources */,
+				FF0B5ED31C3DA7C000A15C56 /* EnumArrayModel.swift in Sources */,
+				FF0B5EE31C3DA7CF00A15C56 /* BoolDictionaryModel.swift in Sources */,
+				FF0B5EC51C3DA7B300A15C56 /* ConstCGAffineTransformModel.swift in Sources */,
+				FF0B5F121C3DA7F000A15C56 /* UnsignedIntegerTests.swift in Sources */,
+				FF0B5F101C3DA7F000A15C56 /* SignedIntegerTests.swift in Sources */,
+				FF0B5ED91C3DA7C500A15C56 /* ConstStringArrayModel.swift in Sources */,
+				FF0B5EA41C3DA79900A15C56 /* StringOperators.swift in Sources */,
+				FF0B5EBF1C3DA7AF00A15C56 /* ConstCGFloatArrayModel.swift in Sources */,
+				FF0B5ECD1C3DA7BB00A15C56 /* CMTimeRangeModel.swift in Sources */,
+				FF0B5EDF1C3DA7CA00A15C56 /* ConstFloatArrayModel.swift in Sources */,
+				FF0B5EF51C3DA7DF00A15C56 /* ConstEncodableArrayModel.swift in Sources */,
+				FF0B5ECC1C3DA7BB00A15C56 /* CMTimeModel.swift in Sources */,
+				FF0B5ECF1C3DA7BB00A15C56 /* ConstCMTimeRangeModel.swift in Sources */,
+				FF0B5EC71C3DA7B300A15C56 /* ConstCGVectorModel.swift in Sources */,
+				FF0B5ECA1C3DA7BB00A15C56 /* CMTimeMappingModel.swift in Sources */,
+				FF0B5EFB1C3DA7DF00A15C56 /* EncodablePoint.swift in Sources */,
+				FF0B5E9E1C3DA79900A15C56 /* BoolOperators.swift in Sources */,
+				FF0B5EF11C3DA7D800A15C56 /* ConstSignedIntegerArrayModel.swift in Sources */,
+				FF0B5ED21C3DA7C000A15C56 /* ConstEnumModel.swift in Sources */,
+				FF0B5EDB1C3DA7C500A15C56 /* StringArrayModel.swift in Sources */,
+				FF0B5EC81C3DA7B700A15C56 /* CATransform3DModel.swift in Sources */,
+				FF0B5EF71C3DA7DF00A15C56 /* ConstEncodableModel.swift in Sources */,
+				FF0B5EC11C3DA7AF00A15C56 /* ConstCGFloatModel.swift in Sources */,
+				FF0B5EE21C3DA7CA00A15C56 /* FloatModel.swift in Sources */,
+				FF0B5EEB1C3DA7D400A15C56 /* ConstNSCodingArrayModel.swift in Sources */,
+				FF0B5EB11C3DA79E00A15C56 /* BoolEncoding.swift in Sources */,
+				FF0B5F141C3DA7F400A15C56 /* NSCodingReference.swift in Sources */,
+				FF0B5E931C3DA79400A15C56 /* Encodable.swift in Sources */,
+				FF0B5F031C3DA7E400A15C56 /* UnsignedIntegerModel.swift in Sources */,
+				FF0B5ECE1C3DA7BB00A15C56 /* ConstCMTimeModel.swift in Sources */,
+				FF0B5EE81C3DA7CF00A15C56 /* ConstBoolModel.swift in Sources */,
+				FF0B5EF61C3DA7DF00A15C56 /* ConstEncodableDictionaryModel.swift in Sources */,
+				FF0B5EEA1C3DA7D400A15C56 /* NSCodingDictionaryModel.swift in Sources */,
+				FF0B5EEC1C3DA7D400A15C56 /* ConstNSCodingModel.swift in Sources */,
+				FF0B5EC61C3DA7B300A15C56 /* ConstCGRectModel.swift in Sources */,
+				FF0B5EB61C3DA79E00A15C56 /* FloatEncoding.swift in Sources */,
+				FF0B5F021C3DA7E400A15C56 /* UnsignedIntegerArrayModel.swift in Sources */,
+				FF0B5F0F1C3DA7F000A15C56 /* NSCodingTests.swift in Sources */,
+				FF0B5EE91C3DA7D400A15C56 /* ConstNSCodingDictionaryModel.swift in Sources */,
+				FF0B5E9F1C3DA79900A15C56 /* EncodableOperators.swift in Sources */,
+				FF0B5ED51C3DA7C000A15C56 /* EnumModel.swift in Sources */,
+				FF0B5F051C3DA7F000A15C56 /* CGFloatTests.swift in Sources */,
+				FF0B5F111C3DA7F000A15C56 /* StringTests.swift in Sources */,
+				FF0B5EF41C3DA7D800A15C56 /* SignedIntegerModel.swift in Sources */,
+				FF0B5EFF1C3DA7E400A15C56 /* UnsignedIntegerDictionaryModel.swift in Sources */,
+				FF0B5EC01C3DA7AF00A15C56 /* ConstCGFloatDictionaryModel.swift in Sources */,
+				FF0B5EE11C3DA7CA00A15C56 /* FloatArrayModel.swift in Sources */,
+				FF0B5ED71C3DA7C500A15C56 /* ConstStringDictionaryModel.swift in Sources */,
+				FF0B5EE51C3DA7CF00A15C56 /* BoolArrayModel.swift in Sources */,
+				FF0B5F061C3DA7F000A15C56 /* CoreAnimationTests.swift in Sources */,
+				FF0B5EA01C3DA79900A15C56 /* EnumOperators.swift in Sources */,
+				FF0B5F081C3DA7F000A15C56 /* CoreMediaTests.swift in Sources */,
+				FF0B5EBA1C3DA79E00A15C56 /* StringEncoding.swift in Sources */,
+				FF0B5EBD1C3DA7AF00A15C56 /* CGFloatDictionaryModel.swift in Sources */,
+				FF0B5EDC1C3DA7C500A15C56 /* StringModel.swift in Sources */,
+				FF0B5ED61C3DA7C000A15C56 /* TestEnums.swift in Sources */,
+				FF0B5EEE1C3DA7D400A15C56 /* NSCodingModel.swift in Sources */,
+				FF0B5EB51C3DA79E00A15C56 /* EnumEncoding.swift in Sources */,
+				FF0B5EB91C3DA79E00A15C56 /* SignedIntegerEncoding.swift in Sources */,
+				FF0B5EE01C3DA7CA00A15C56 /* ConstFloatModel.swift in Sources */,
+				FF0B5EFA1C3DA7DF00A15C56 /* EncodableModel.swift in Sources */,
+				FF0B5EE71C3DA7CF00A15C56 /* ConstBoolArrayModel.swift in Sources */,
+				FF0B5EA11C3DA79900A15C56 /* FloatOperators.swift in Sources */,
+				FF0B5EBB1C3DA79E00A15C56 /* UnsignedIntegerEncoding.swift in Sources */,
+				FF0B5EDE1C3DA7CA00A15C56 /* FloatDictionaryModel.swift in Sources */,
+				FF0B5EDA1C3DA7C500A15C56 /* ConstStringModel.swift in Sources */,
+				FF0B5ED01C3DA7C000A15C56 /* ConstEnumArrayModel.swift in Sources */,
+				FF0B5EB21C3DA79E00A15C56 /* CoreGraphicsEncoding.swift in Sources */,
+				FF0B5F071C3DA7F000A15C56 /* QuartzCoreTests.swift in Sources */,
+				FF0B5EA51C3DA79900A15C56 /* UnsignedIntegerOperators.swift in Sources */,
+				FF0B5EC41C3DA7B300A15C56 /* CGVectorModel.swift in Sources */,
+				FF0B5F001C3DA7E400A15C56 /* ConstUnsignedIntegerArrayModel.swift in Sources */,
+				FF0B5EA21C3DA79900A15C56 /* NSCodingOperators.swift in Sources */,
+				FF0B5E951C3DA79400A15C56 /* Encoder.swift in Sources */,
+				FF0B5F0E1C3DA7F000A15C56 /* FloatTests.swift in Sources */,
+				FF0B5EFC1C3DA7DF00A15C56 /* EncodableRect.swift in Sources */,
+				FF0B5EDD1C3DA7CA00A15C56 /* ConstFloatDictionaryModel.swift in Sources */,
+				FF0B5F091C3DA7F000A15C56 /* EnumArrayTests.swift in Sources */,
+				FF0B5EB41C3DA79E00A15C56 /* EncodableEncoding.swift in Sources */,
+				FF0B5F0A1C3DA7F000A15C56 /* EnumDictionaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1250,6 +1626,11 @@
 			isa = PBXTargetDependency;
 			target = FF0B5DD21C3D84B900A15C56 /* SwiftEncoderKit-OSX */;
 			targetProxy = FF0B5DDE1C3D84B900A15C56 /* PBXContainerItemProxy */;
+		};
+		FF0B5E841C3DA6FD00A15C56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF0B5E771C3DA6FD00A15C56 /* SwiftEncoderKit-tvOS */;
+			targetProxy = FF0B5E831C3DA6FD00A15C56 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1470,6 +1851,68 @@
 			};
 			name = Release;
 		};
+		FF0B5E891C3DA6FD00A15C56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.interfacelab.SwiftEncoderKit-tvOS";
+				PRODUCT_NAME = SwiftEncoderKit;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		FF0B5E8A1C3DA6FD00A15C56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.interfacelab.SwiftEncoderKit-tvOS";
+				PRODUCT_NAME = SwiftEncoderKit;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		FF0B5E8B1C3DA6FD00A15C56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftEncoderKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.interfacelab.SwiftEncoderKit-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		FF0B5E8C1C3DA6FD00A15C56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftEncoderKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.interfacelab.SwiftEncoderKit-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1507,12 +1950,30 @@
 				FF0B5DE51C3D84B900A15C56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		FF0B5DE91C3D84B900A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKitTest-OSX" */ = {
+		FF0B5DE91C3D84B900A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKitTests-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF0B5DE61C3D84B900A15C56 /* Debug */,
 				FF0B5DE71C3D84B900A15C56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF0B5E8D1C3DA6FD00A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKit-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0B5E891C3DA6FD00A15C56 /* Debug */,
+				FF0B5E8A1C3DA6FD00A15C56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FF0B5E8E1C3DA6FD00A15C56 /* Build configuration list for PBXNativeTarget "SwiftEncoderKitTests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0B5E8B1C3DA6FD00A15C56 /* Debug */,
+				FF0B5E8C1C3DA6FD00A15C56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

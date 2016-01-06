@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF0B5DD21C3D84B900A15C56"
-               BuildableName = "SwiftEncoderKit.framework"
-               BlueprintName = "SwiftEncoderKit-OSX"
+               BlueprintIdentifier = "FF0B5E771C3DA6FD00A15C56"
+               BuildableName = "SwiftEncoderKit-tvOS.framework"
+               BlueprintName = "SwiftEncoderKit-tvOS"
                ReferencedContainer = "container:SwiftEncoderKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF0B5DDB1C3D84B900A15C56"
-               BuildableName = "SwiftEncoderKitTests-OSX.xctest"
-               BlueprintName = "SwiftEncoderKitTests-OSX"
+               BlueprintIdentifier = "FF0B5E801C3DA6FD00A15C56"
+               BuildableName = "SwiftEncoderKitTests-tvOS.xctest"
+               BlueprintName = "SwiftEncoderKitTests-tvOS"
                ReferencedContainer = "container:SwiftEncoderKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FF0B5DD21C3D84B900A15C56"
-            BuildableName = "SwiftEncoderKit.framework"
-            BlueprintName = "SwiftEncoderKit-OSX"
+            BlueprintIdentifier = "FF0B5E771C3DA6FD00A15C56"
+            BuildableName = "SwiftEncoderKit-tvOS.framework"
+            BlueprintName = "SwiftEncoderKit-tvOS"
             ReferencedContainer = "container:SwiftEncoderKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FF0B5DD21C3D84B900A15C56"
-            BuildableName = "SwiftEncoderKit.framework"
-            BlueprintName = "SwiftEncoderKit-OSX"
+            BlueprintIdentifier = "FF0B5E771C3DA6FD00A15C56"
+            BuildableName = "SwiftEncoderKit-tvOS.framework"
+            BlueprintName = "SwiftEncoderKit-tvOS"
             ReferencedContainer = "container:SwiftEncoderKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FF0B5DD21C3D84B900A15C56"
-            BuildableName = "SwiftEncoderKit.framework"
-            BlueprintName = "SwiftEncoderKit-OSX"
+            BlueprintIdentifier = "FF0B5E771C3DA6FD00A15C56"
+            BuildableName = "SwiftEncoderKit-tvOS.framework"
+            BlueprintName = "SwiftEncoderKit-tvOS"
             ReferencedContainer = "container:SwiftEncoderKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
