@@ -22,14 +22,12 @@ env:
 
 before_install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-  - sudo easy_install codecov
 
 script: 
   - set -o pipefail
-  - python --version
   - xcodebuild -version
   - xcodebuild -project SwiftEncoderKit.xcodeproj -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -enableCodeCoverage YES -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
 notifications:
   email: false
