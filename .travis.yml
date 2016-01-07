@@ -22,7 +22,7 @@ env:
 
 before_install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-  - easy_install codecov
+  - sudo easy_install codecov
 
 script: 
   - set -o pipefail
